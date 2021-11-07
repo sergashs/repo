@@ -138,13 +138,15 @@
 				}
 
 				.dropdown {
-					@include media("<tablet") {
-						display: block;
-						overflow: visible;
-						opacity: 1;
-						visibility: visible;
-						pointer-events: all;
-						transition: $transition;
+					.mobile-menu-opened & {
+						@include media("<tablet") {
+							display: block;
+							overflow: visible;
+							opacity: 1;
+							visibility: visible;
+							pointer-events: all;
+							transition: $transition;
+						}
 					}
 				}
 			}
@@ -250,11 +252,13 @@
 
 			&:hover {
 				.sub-dropdown {
-					@include media(">tablet") {
-						opacity: 1;
-						visibility: visible;
-						pointer-events: all;
-						transition: $transition;
+					.mobile-menu-opened & {
+						@include media(">tablet") {
+							opacity: 1;
+							visibility: visible;
+							pointer-events: all;
+							transition: $transition;
+						}
 					}
 				}
 

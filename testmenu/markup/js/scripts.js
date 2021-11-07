@@ -12,8 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // load fonts
 function loadFonts() {
 	WebFont.load({
-		custom: {
-		},
 		google: {
 			families: ['Open Sans:n4']
 		}

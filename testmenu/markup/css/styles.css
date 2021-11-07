@@ -273,7 +273,7 @@ figure {
 	}
 }
 @media (max-width: 766px) {
-	.main-nav .main-menu .has-dropdown.open .dropdown {
+	.mobile-menu-opened .main-nav .main-menu .has-dropdown.open .dropdown {
 		display: block;
 		overflow: visible;
 		opacity: 1;
@@ -391,7 +391,7 @@ figure {
 	}
 }
 @media (min-width: 768px) {
-	.main-nav .main-menu .has-sub-dropdown:hover .sub-dropdown {
+	.mobile-menu-opened .main-nav .main-menu .has-sub-dropdown:hover .sub-dropdown {
 		opacity: 1;
 		visibility: visible;
 		pointer-events: all;
