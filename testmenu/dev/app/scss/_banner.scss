@@ -1,0 +1,72 @@
+.banner {
+	padding: 4rem 0;
+
+	.container {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	.col {
+		width: 100%;
+
+		@include media(">tablet") {
+			width: 50%;
+		}
+
+		&.col-center {
+			display: flex;
+			justify-content: center;
+		}
+	}
+
+	.btn {
+		width: 50%;
+	}
+
+	.img-holder {
+		position: relative;
+
+		@include media("<tablet") {
+			margin-top: 5rem;
+		}
+
+		@include media(">tablet") {
+			width: 40rem;
+			height: 40rem;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		&.show {
+			.desc-img {
+				opacity: 1;
+				visibility: visible;
+				pointer-events: all;
+				transition: $transition;
+			}
+		}
+
+		.desc-img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			padding: 2rem;
+			background: rgba($white, 0.5);
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+			transition: $transition;
+
+			p {
+				margin: 0 0 1rem 0;
+			}
+		}
+	}
+}

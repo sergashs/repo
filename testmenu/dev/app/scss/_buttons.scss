@@ -1,0 +1,16 @@
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	padding: 1rem 2rem;
+	color: $white;
+	background: $blue;
+	border-radius: 0.5rem;
+	border: 0.1rem solid $blue;
+
+	&:hover {
+		text-decoration: none;
+		color: $blue;
+		background: $white;
+		border: 0.1rem solid $blue;
+	}
+}

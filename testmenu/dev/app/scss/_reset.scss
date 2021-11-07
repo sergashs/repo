@@ -1,0 +1,90 @@
+html {
+	font-size: 10px;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	background: $body-bg;
+	color: $black;
+	font: $font-weight-base #{$font-size-base}/ $line-height-base $font-family-base;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: flex;
+	flex-direction: column;
+
+	&.mobile-menu-opened {
+		overflow: hidden;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $links-color-base;
+	transition: $transition;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+button,
+input[type="search"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: none;
+	cursor: pointer;
+	transition: $transition;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+	border: none;
+	padding: 0;
+}
+
+.wrapper {
+	min-height: 100vh;
+	min-height: calc(var(--vh, 1vh) * 100);
+	display: flex;
+	flex-direction: column;
+}
+
+#main {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+figure {
+	margin: 0;
+}
+
+.container {
+	max-width: 112rem;
+	margin: auto;
+	padding: 0 2rem;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}

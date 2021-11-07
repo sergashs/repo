@@ -1,0 +1,12 @@
+bower_components
+node_modules/
+package-lock.json
+.sass-cache
+.DS_Store
+
+docker-compose.yml
+plugins
+uploads
+sql/db_antologia.sql
+uploads.ini
+languages
