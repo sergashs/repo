@@ -1,0 +1,90 @@
+.cats-video {
+	position: relative;
+
+	.catsTable {
+		margin-bottom: 2rem;
+
+		&.u-cat-columns {
+			display: flex;
+			overflow: auto;
+		}
+
+		.catsTd {
+			margin: 0;
+			padding: 0;
+			white-space: nowrap;
+			background: $tuatara;
+			border-radius: 3rem;
+
+			&:not(:last-child) {
+				margin-right: 1rem;
+			}
+
+			.catName {
+				padding: 1rem 1.5rem;
+				color: $gray2;
+			}
+
+			.catNumData {
+				display: none;
+			}
+
+			&:hover {
+				background: $mine-shaft;
+			}
+		}
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	.btn-prev-holder,
+	.btn-next-holder {
+		position: absolute;
+		top: 0;
+		width: 5.6rem;
+		height: 100%;
+		display: flex;
+
+		align-items: center;
+		transition: $transition;
+
+		&.hide {
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+			transition: $transition;
+		}
+	}
+
+	.btn-next-holder {
+		justify-content: flex-end;
+		right: 0;
+		background: linear-gradient(270deg, $cod-gray, 70%, transparent);
+	}
+
+	.btn-prev-holder {
+		justify-content: flex-start;
+		left: 0;
+		background: linear-gradient(90deg, $cod-gray, 70%, transparent);
+	}
+
+	.btn-next,
+	.btn-prev {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 3rem;
+		height: 100%;
+		color: $white;
+		text-decoration: none;
+		opacity: 0.7;
+		transition: $transition;
+
+		&:hover {
+			opacity: 1;
+			transition: $transition;
+		}
+	}
+}

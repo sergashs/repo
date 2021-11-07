@@ -1,0 +1,40 @@
+.comments {
+	margin-top: 2rem;
+	font-size: 1.4rem;
+	line-height: 1.3;
+	color: $cloudy;
+
+	.uComment {
+		margin: 0 0 2rem 0;
+		padding: 1.5rem;
+		border-radius: 0.5rem;
+
+		&.cBlock1,
+		&.cBlock2 {
+			background: $tuatara;
+		}
+	}
+
+	.com-order-block {
+		display: none;
+	}
+}
+
+.uComForm {
+	font-size: 1.4rem;
+	line-height: 1.3;
+	color: $cloudy;
+
+	.ucf-content {
+		margin: 0;
+	}
+
+	.uf-tooltip {
+		left: unset;
+		right: 0;
+	}
+
+	&.uComForm {
+		margin: 0 0 4rem 0;
+	}
+}

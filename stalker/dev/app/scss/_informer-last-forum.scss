@@ -1,0 +1,46 @@
+.informer-last-forum {
+	margin: 0 0 2rem 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		padding: 0.5rem;
+
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+			border-bottom: solid 0.1rem $tuatara;
+		}
+
+		&:hover {
+			background: $tuatara;
+		}
+
+		i {
+			font-size: 1.2rem;
+			margin-right: 0.5rem;
+		}
+
+		a {
+			display: block;
+			padding: 0.1rem 0;
+			color: $cloudy;
+			text-decoration: none;
+		}
+
+		.theme {
+			display: flex;
+			justify-content: space-between;
+			padding: 0.5rem 0;
+		}
+
+		.forum {
+			font-size: 1.2rem;
+		}
+
+		.replies {
+			margin-left: 2rem;
+			font-size: 1.2rem;
+			white-space: nowrap;
+		}
+	}
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<!-- <nav>
+	<ul>
+		<li class="has-dropdown">
+			<a class="dropdown-open-link" href="#">dropdown link</a>
+			<div class="dropdown">
+				<a class="close-btn" href="#">close</a>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, praesentium! Tempora, earum asperiores? Eaque inventore enim est voluptates. Nisi quod alias ad modi sit corrupti iste eos consequuntur in eveniet?</p>
+			</div>
+		</li>
+		<li class="has-dropdown">
+			<a class="dropdown-open-link" href="#">dropdown link</a>
+			<div class="dropdown">
+				<a class="close-btn" href="#">close</a>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, praesentium! Tempora, earum asperiores? Eaque inventore enim est voluptates. Nisi quod alias ad modi sit corrupti iste eos consequuntur in eveniet?</p>
+			</div>
+		</li>
+	</ul>
+</nav> -->
+<body>
+	<!-- <script>
+		document.addEventListener("DOMContentLoaded", () => {
+			headerDropdowns();
+		});
+
+		function headerDropdowns() {
+			var closeDropdownButtons = document.querySelectorAll(".close-btn");
+			var dropdownOpenLinks = document.querySelectorAll(".dropdown-open-link");
+			var dropdowns = document.querySelectorAll(".dropdown");
+			var body = document.querySelector("body");
+
+			function removeClass(arrayOfItems, clasName) {
+				for (item of arrayOfItems) {
+					item.classList.remove(clasName);
+				}
+			}
+
+			dropdownOpenLinks.forEach(function (item) {
+				item.addEventListener("click", function (e) {
+					e.preventDefault();
+					const link = this;
+					const childElem = this.nextElementSibling;
+
+					removeClass(dropdownOpenLinks, "active");
+					link.classList.add("active");
+
+					removeClass(dropdowns, "open");
+					childElem.classList.add("open");
+				});
+			});
+
+			closeDropdownButtons.forEach(function (item) {
+				item.addEventListener("click", function (e) {
+					removeClass(dropdownOpenLinks, "active");
+					removeClass(dropdowns, "open");
+				});
+			});
+
+
+			// close if clicked outside of dropdown
+
+			// if (body) {
+			// 	body.addEventListener("click", function (e) {
+			// 		if (e.target == body) {
+			// 			removeClass(dropdownOpenLinks, "active");
+			// 			removeClass(dropdowns, "open");
+			// 		}
+			// 	});
+			// }
+		}
+
+
+	</script> -->
+
+	<div class="eyes">
+  
+		<div class="eye">
+		  <div class="iris">
+		  </div>
+	  </div>
+  
+		<div class="eye">
+		   <div class="iris">
+		  </div>
+	  </div>
+  
+</div>
+
+<script>
+	var iris = document.querySelectorAll('.iris');
+
+	document.onmousemove = function (event) {
+
+
+
+
+		let x = event.clientX * 70 / window.innerWidth + "%";
+		let y = event.clientY * 100 / window.innerHeight + "%";
+
+		console.log(x);
+
+
+		for (var i = 0; i < 2; i++) {
+			// iris[i].style.left = x;
+			// iris[i].style.top = y;
+			iris[i].style.transform = `translate(${x},${y})`;
+		}
+
+	}
+</script>
+</body>
+</html>

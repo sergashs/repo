@@ -1,0 +1,96 @@
+html {
+	font-size: 10px;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	// background: $body-bg;
+	background: url(#{$images}wall-bg.jpg);
+	color: $body-color;
+	font: $font-weight-base #{$font-size-base}/ $line-height-base $font-family-base;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: flex;
+	flex-direction: column;
+
+	@include media-breakpoint-up(xl) {
+		padding: 5rem 0;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $links-color-base;
+	transition: $transition;
+}
+
+a:hover {
+	color: $links-color-base;
+	text-decoration: underline;
+}
+
+button,
+input[type="search"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: none;
+	cursor: pointer;
+	transition: $transition;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+	border: none;
+	padding: 0;
+}
+
+.wrapper {
+	position: relative;
+	max-width: 125rem;
+	width: 100%;
+	margin: auto;
+	min-height: 100vh;
+	min-height: calc(var(--vh, 1vh) * 100);
+	display: flex;
+	flex-direction: column;
+	background: $cod-gray;
+	border-radius: 1.5rem;
+	border: solid 0.1rem $tuatara;
+}
+
+#main {
+	flex-grow: 1;
+}
+
+h1 {
+	font-family: $roboto;
+	margin-bottom: 1rem;
+	font-size: 2.6rem;
+	font-weight: 500;
+	color: $mercury;
+}
+
+h2 {
+	margin: 0 0 1.5rem 0;
+	font-family: $roboto-condensed;
+	font-weight: 500;
+	font-size: 2rem;
+	color: $mercury;
+	text-transform: uppercase;
+	border-bottom: 0.1rem solid $tuatara;
+	padding-bottom: 1.5rem;
+}
+
+h3 {
+	font-family: $roboto;
+	margin-bottom: 1.5rem;
+	font-size: 1.6rem;
+	font-weight: 500;
+	color: $mercury;
+}

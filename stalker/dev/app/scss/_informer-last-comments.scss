@@ -1,0 +1,60 @@
+.informer-last-comments {
+	margin-bottom: 2rem;
+	height: 39rem;
+	overflow-x: auto;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	.item {
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+			padding-bottom: 2rem;
+			border-bottom: 0.1rem solid $tuatara;
+		}
+
+		figure {
+			display: flex;
+			align-self: center;
+
+			figcaption {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.author-link {
+				display: inline-flex;
+				margin-bottom: 0.5rem;
+				font-weight: 500;
+				color: $mercury;
+			}
+
+			.date {
+				display: block;
+				color: $dove-gray;
+			}
+		}
+
+		.img-holder {
+			max-width: 5rem;
+			margin-right: 1rem;
+
+			img {
+				width: 100%;
+				border-radius: 0.5rem;
+			}
+		}
+
+		.text {
+			font-size: 1.3rem;
+			color: $cloudy;
+		}
+
+		.link-to-post {
+			font-size: 1.3rem;
+			color: $dove-gray;
+		}
+	}
+}

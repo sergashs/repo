@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<a class="open-modal" modal-id="modal-1">modal 1 open link</a>
+<div class="overlay">
+	<div class="modal from-bottom" id="modal-1">
+		<a href="#" class="close-modal">X</a>
+		<div class="modal-content">
+			<h2>title of modal</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente doloremque sit quasi nesciunt soluta perferendis dicta ab qui tenetur enim maiores facere possimus aliquid, at iure ipsum, nisi asperiores itaque.</p>
+			<a class="open-modal" modal-id="modal-2">modal 2 open link</a>
+		</div>
+	</div>
+	<div class="modal" id="modal-2">
+		<a href="#" class="close-modal">X</a>
+		<div class="modal-content">
+			<h2>title of modal 2</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente doloremque sit quasi nesciunt soluta perferendis dicta ab qui tenetur enim maiores facere possimus aliquid, at iure ipsum, nisi asperiores itaque.</p>
+			<a class="open-modal" modal-id="modal-1">modal 1 open link</a>
+		</div>
+	</div>
+</div>
+<body>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const modalButtons = document.querySelectorAll(".open-modal");
+			const overlay = document.querySelector(".overlay");
+			const closeButtons = document.querySelectorAll(".close-modal");
+			const body = document.querySelector("body");
+			const modals = document.querySelectorAll(".modal");
+
+			function deleteActiveClass() {
+				for (modal of modals) {
+					modal.classList.remove("open");
+				}
+			}
+
+
+			modalButtons.forEach(function (item) {
+				item.addEventListener("click", function (e) {
+					e.preventDefault();
+					deleteActiveClass();
+					const thisButtonAttribute = this.getAttribute("modal-id");
+					const modal = document.getElementById(thisButtonAttribute);
+					modal.classList.add("open");
+					body.classList.add("modal-open");
+				});
+			})
+
+			closeButtons.forEach(function (item) {
+				item.addEventListener("click", function (e) {
+					var parentModal = this.parentNode;
+					parentModal.classList.remove("open");
+					body.classList.remove("modal-open");
+				});
+			});
+
+			body.addEventListener(
+				"keyup",
+				function (e) {
+					var key = e.keyCode;
+					if (key == 27) {
+						document.querySelector(".modal.open").classList.remove("open");
+						body.classList.remove("modal-open");
+					}
+				},
+				false
+			);
+
+
+			overlay.addEventListener("click", function (e) {
+				e.preventDefault();
+				if (e.target == overlay) {
+					document.querySelector(".modal.open").classList.remove("open");
+					body.classList.remove("modal-open");
+				}
+			});
+
+		})
+	</script>
+</body>
+</html>
