@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+
 // load fonts
 function loadFonts() {
 	WebFont.load({
@@ -68,13 +70,14 @@ function headerMenuDropdownsMobile() {
 	const dropdowns = document.querySelectorAll('.has-dropdown');
 	const subDropdowns = document.querySelectorAll('.has-sub-dropdown');
 
+
 	dropdowns.forEach(function (item) {
 		item.children[1].addEventListener("click", function (e) {
 			e.preventDefault();
-
 			item.classList.toggle('open');
 		});
 	});
+
 
 	subDropdowns.forEach(function (item) {
 		item.children[1].addEventListener("click", function (e) {
@@ -88,6 +91,5 @@ function headerMenuDropdownsMobile() {
 			}
 		});
 	});
-
 
 }
