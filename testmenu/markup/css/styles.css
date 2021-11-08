@@ -391,7 +391,7 @@ figure {
 	}
 }
 @media (min-width: 768px) {
-	.mobile-menu-opened .main-nav .main-menu .has-sub-dropdown:hover .sub-dropdown {
+	.main-nav .main-menu .has-sub-dropdown:hover .sub-dropdown {
 		opacity: 1;
 		visibility: visible;
 		pointer-events: all;

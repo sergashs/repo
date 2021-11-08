@@ -252,13 +252,11 @@
 
 			&:hover {
 				.sub-dropdown {
-					.mobile-menu-opened & {
-						@include media(">tablet") {
-							opacity: 1;
-							visibility: visible;
-							pointer-events: all;
-							transition: $transition;
-						}
+					@include media(">tablet") {
+						opacity: 1;
+						visibility: visible;
+						pointer-events: all;
+						transition: $transition;
 					}
 				}
 
