@@ -9,6 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+window.addEventListener('resize', () => {
+
+	headerMenuDropdownsMobile();
+
+
+
+})
 
 
 // load fonts
@@ -71,25 +78,27 @@ function headerMenuDropdownsMobile() {
 	const subDropdowns = document.querySelectorAll('.has-sub-dropdown');
 
 
-	dropdowns.forEach(function (item) {
-		item.children[1].addEventListener("click", function (e) {
-			e.preventDefault();
-			item.classList.toggle('open');
+	if (window.innerWidth < 768) {
+		dropdowns.forEach(function (item) {
+			item.children[1].addEventListener("click", function (e) {
+				e.preventDefault();
+				item.classList.toggle('open');
+			});
 		});
-	});
 
+		subDropdowns.forEach(function (item) {
+			item.children[1].addEventListener("click", function (e) {
+				e.preventDefault();
 
-	subDropdowns.forEach(function (item) {
-		item.children[1].addEventListener("click", function (e) {
-			e.preventDefault();
-			item.classList.toggle('open');
+				item.classList.toggle('open');
+				if (item.classList.contains("open")) {
+					item.children[2].style.maxHeight = item.children[2].scrollHeight + 40 + "px";
+				} else {
+					item.children[2].style.maxHeight = null;
+				}
 
-			if (item.classList.contains("open")) {
-				item.children[2].style.maxHeight = item.children[2].scrollHeight + 40 + "px";
-			} else {
-				item.children[2].style.maxHeight = null;
-			}
+			});
 		});
-	});
+	}
 
 }

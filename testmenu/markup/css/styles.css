@@ -123,12 +123,12 @@ figure {
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.main-nav .left-side {
 		width: 50%;
 	}
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.main-nav .right-side {
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -172,7 +172,7 @@ figure {
 		        justify-content: space-between;
 	}
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
 	.main-nav .main-menu {
 		position: fixed;
 		top: 4.2rem;
@@ -196,7 +196,7 @@ figure {
 		overflow: auto;
 	}
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
 	.mobile-menu-opened .main-nav .main-menu {
 		opacity: 1;
 		visibility: visible;
@@ -205,7 +205,7 @@ figure {
 		transition: all 0.3s ease;
 	}
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.main-nav .main-menu li:hover .menu-link {
 		background: rgba(0, 0, 0, 0.1);
 	}
@@ -218,7 +218,7 @@ figure {
 .main-nav .main-menu .has-dropdown {
 	position: relative;
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
 	.main-nav .main-menu .has-dropdown {
 		width: 100%;
 		display: -webkit-box;
@@ -244,7 +244,7 @@ figure {
 	transition: all 0.3s ease;
 	cursor: pointer;
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.main-nav .main-menu .has-dropdown .dropdown-arrow {
 		position: absolute;
 		top: 50%;
@@ -253,7 +253,7 @@ figure {
 		right: 0;
 	}
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
 	.main-nav .main-menu .has-dropdown .dropdown-arrow {
 		width: 3rem;
 		height: 3rem;
@@ -264,7 +264,7 @@ figure {
 		        transform: rotate(90deg);
 	}
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
 	.main-nav .main-menu .has-dropdown.open .dropdown-arrow {
 		-webkit-transform: rotate(-90deg);
 		        transform: rotate(-90deg);
@@ -272,7 +272,7 @@ figure {
 		transition: all 0.3s ease;
 	}
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
 	.mobile-menu-opened .main-nav .main-menu .has-dropdown.open .dropdown {
 		display: block;
 		overflow: visible;
@@ -283,7 +283,7 @@ figure {
 		transition: all 0.3s ease;
 	}
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.main-nav .main-menu .has-dropdown:hover .dropdown {
 		opacity: 1;
 		visibility: visible;
@@ -292,7 +292,7 @@ figure {
 		transition: all 0.3s ease;
 	}
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.main-nav .main-menu .has-dropdown:hover .dropdown-arrow {
 		-webkit-transform: translateY(-50%) rotate(-90deg);
 		        transform: translateY(-50%) rotate(-90deg);
@@ -311,13 +311,13 @@ figure {
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
 	.main-nav .main-menu .has-dropdown .dropdown {
 		width: 100%;
 		display: none;
 	}
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.main-nav .main-menu .has-dropdown .dropdown {
 		position: absolute;
 		top: 100%;
@@ -338,12 +338,12 @@ figure {
 .main-nav .main-menu .has-sub-dropdown {
 	position: relative;
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
 	.main-nav .main-menu .has-sub-dropdown:not(:first-child) {
 		border-top: solid 0.1rem rgba(0, 0, 0, 0.08);
 	}
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
 	.main-nav .main-menu .has-sub-dropdown {
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -355,7 +355,7 @@ figure {
 		    flex-wrap: wrap;
 	}
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
 	.main-nav .main-menu .has-sub-dropdown a {
 		-webkit-box-flex: 1;
 		    -ms-flex: 1;
@@ -372,7 +372,7 @@ figure {
 	transition: all 0.3s ease;
 	cursor: pointer;
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
 	.main-nav .main-menu .has-sub-dropdown .icon-plus {
 		width: 3rem;
 		height: 3rem;
@@ -381,7 +381,7 @@ figure {
 		background-repeat: no-repeat;
 	}
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.main-nav .main-menu .has-sub-dropdown .icon-plus {
 		position: absolute;
 		top: 50%;
@@ -390,7 +390,7 @@ figure {
 		        transform: translateY(-50%);
 	}
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.main-nav .main-menu .has-sub-dropdown:hover .sub-dropdown {
 		opacity: 1;
 		visibility: visible;
@@ -399,18 +399,18 @@ figure {
 		transition: all 0.3s ease;
 	}
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.main-nav .main-menu .has-sub-dropdown:hover .icon-plus {
 		background: url(../images/minus.svg);
 		background-size: 1.5rem;
 	}
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.main-nav .main-menu .has-sub-dropdown:hover a {
 		background: rgba(0, 0, 0, 0.08);
 	}
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
 	.main-nav .main-menu .has-sub-dropdown.open .sub-dropdown {
 		opacity: 1;
 		visibility: visible;
@@ -421,7 +421,7 @@ figure {
 		padding: 2rem;
 	}
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
 	.main-nav .main-menu .has-sub-dropdown.open .icon-plus {
 		background: url(../images/minus.svg);
 		background-size: 1.5rem;
@@ -440,7 +440,7 @@ figure {
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
 	.main-nav .main-menu .has-sub-dropdown .sub-dropdown {
 		padding: 0 2rem;
 		max-height: 0;
@@ -450,7 +450,7 @@ figure {
 .main-nav .main-menu .has-sub-dropdown .sub-dropdown p {
 	margin: 0 0 1rem 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.main-nav .main-menu .has-sub-dropdown .sub-dropdown {
 		position: absolute;
 		top: 0;
@@ -458,7 +458,7 @@ figure {
 		min-width: 20rem;
 	}
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.main-nav .main-menu .list {
 		min-width: 20rem;
 	}
@@ -490,7 +490,7 @@ figure {
 	line-height: 0;
 	z-index: 100;
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.open-close-menu {
 		display: none;
 	}
@@ -542,7 +542,7 @@ figure {
 .banner .col {
 	width: 100%;
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.banner .col {
 		width: 50%;
 	}
@@ -561,12 +561,12 @@ figure {
 .banner .img-holder {
 	position: relative;
 }
-@media (max-width: 766px) {
+@media (max-width: 767px) {
 	.banner .img-holder {
 		margin-top: 5rem;
 	}
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.banner .img-holder {
 		width: 40rem;
 		height: 40rem;
