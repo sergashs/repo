@@ -1,0 +1,29 @@
+@import "_vars";
+@import "fontawesome/fontawesome";
+@import "fontawesome/brands";
+@import "fontawesome/solid";
+@import "fontawesome/regular";
+
+@font-face {
+	font-family: "Museo Sans Cyrl";
+	src: url("#{$fonts}MuseoSansCyrl-700.woff2") format("woff2"), url("#{$fonts}MuseoSansCyrl-700.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Museo Sans Cyrl";
+	src: url("#{$fonts}MuseoSansCyrl-300.woff2") format("woff2"), url("#{$fonts}MuseoSansCyrl-300.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Myriad Pro";
+	src: url("#{$fonts}MyriadPro-Regular.woff2") format("woff2"), url("#{$fonts}MyriadPro-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

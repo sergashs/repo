@@ -1,0 +1,61 @@
+// vars
+$images: "../images/";
+$fonts: "../fonts/";
+$fa-font-path: "../fonts/fontawesome";
+
+// fonts
+$iconfont: "FontAwesome";
+$ubuntu: "Ubuntu", sans-serif;
+$museo-sans-cyrl: "Museo Sans Cyrl";
+$myriad-pro: "Myriad Pro";
+
+// bootstrap grid
+$grid-columns: 12;
+$grid-gutter-width: 34px;
+$grid-gutter-width-mobile: $grid-gutter-width;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1340px,
+	xxl: 1600px,
+	dxxl: 1700px
+);
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1302px
+);
+
+// colors
+$white: #fff;
+$black: #000;
+$gray: #707070;
+$mine-shaft: #2d2d2d;
+$mine-shaft2: #303030;
+$mine-shaft3: #3a3a3a;
+$sandy-brown: #f79c6a;
+$alto: #dedede;
+$alabaster: #f9f9f9;
+$aqua-haze: #f6f8fa;
+$mine-shaft: #3b3b3b;
+$polar: #effafc;
+
+// base vars
+$text-color-base: $mine-shaft;
+$body-bg: $white;
+$font-family-base: $ubuntu;
+$font-size-base: 1.8rem;
+$font-weight-base: 400;
+$line-height-base: 1.6666666667;
+$links-color-base: inherit;
+
+$transition: all 0.3s ease;
+
+// dev2
+// dev3
+// dev4

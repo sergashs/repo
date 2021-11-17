@@ -1,0 +1,111 @@
+.section-illustrations {
+	.section-header {
+		margin-bottom: 3.3rem;
+
+		&.style2 {
+			margin: 7rem 0 6rem 0;
+		}
+	}
+
+	.h2 {
+		margin-bottom: 1.8rem;
+	}
+
+	.h3 {
+		letter-spacing: 0.18rem;
+	}
+
+	.item-row {
+		margin-bottom: 6rem;
+	}
+
+	.img-holder {
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		&.left-holder {
+			margin-left: -11.6rem;
+			margin-right: 2rem;
+		}
+
+		&.right-holder {
+			margin-right: -9.1rem;
+			margin-left: -0.6rem;
+			margin-top: 1rem;
+		}
+
+		&.w-lines-1 {
+			position: relative;
+
+			&::after {
+				content: "";
+				position: absolute;
+				right: -13.4rem;
+				bottom: -8rem;
+				width: 22.7rem;
+				height: 12.5rem;
+				background: url(#{$images}lines-1.svg);
+				background-size: 22.7rem;
+				background-repeat: no-repeat;
+			}
+		}
+
+		&.w-lines-2 {
+			position: relative;
+
+			&::after {
+				content: "";
+				position: absolute;
+				left: -11.4rem;
+				bottom: -18rem;
+				width: 16.8rem;
+				height: 21.4rem;
+				background: url(#{$images}lines-2.svg);
+				background-size: 16.8rem;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+
+	.text-holder {
+		p {
+			margin-bottom: 2.7rem;
+		}
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	.list {
+		li {
+			position: relative;
+			margin-bottom: 1.8rem;
+			padding-left: 3.9rem;
+			letter-spacing: 0.05rem;
+			line-height: 1.35;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0.5rem;
+				left: 0.3rem;
+				width: 2.4rem;
+				height: 2.4rem;
+				background: url(#{$images}icon-1.svg);
+				background-size: 2.4rem;
+			}
+		}
+
+		&.style1 {
+			font-family: $ubuntu;
+			font-weight: 400;
+			font-size: 1.8rem;
+			color: $mine-shaft;
+		}
+	}
+}

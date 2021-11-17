@@ -35,6 +35,7 @@ function lazyLoad() {
 			img.src = img.dataset.src;
 			img.onload = function () {
 				img.classList.add('lazyloaded');
+				initMasonry();
 			};
 			if (img.classList.contains('svg-html')) {
 				replaseInlineSvg(img);
@@ -111,6 +112,19 @@ function mobileMenu() {
 		}
 	});
 };
+
+
+function initMasonry() {
+	const containers = document.querySelectorAll('.masonry-row');
+
+
+	containers.forEach(containerEl => {
+		const msnry = new Masonry(containerEl, {
+		});
+	});
+}
+
+
 
 // jQuery
 (function ($) {

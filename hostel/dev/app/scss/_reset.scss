@@ -1,0 +1,97 @@
+html {
+	font-size: 10px;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	background: $body-bg;
+	color: $body-color;
+	font: $font-weight-base #{$font-size-base}/ $line-height-base $font-family-base;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: flex;
+	flex-direction: column;
+}
+
+a {
+	text-decoration: none;
+	color: $links-color-base;
+	transition: $transition;
+}
+
+a:hover {
+	color: $sandy-brown;
+	text-decoration: underline;
+}
+
+button,
+input[type="search"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: none;
+	cursor: pointer;
+	transition: $transition;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+	border: none;
+	padding: 0;
+}
+
+.wrapper {
+	min-height: 100vh;
+	min-height: calc(var(--vh, 1vh) * 100);
+	display: flex;
+	flex-direction: column;
+}
+
+#main {
+	flex-grow: 1;
+}
+// dev2
+// dev3
+// dev4
+
+.container {
+	max-width: 119.8rem;
+}
+
+.h1 {
+	margin-bottom: 3.4rem;
+	font-family: $ubuntu;
+	font-weight: 500;
+	font-size: 4.8rem;
+	color: $mine-shaft;
+}
+
+.h2 {
+	margin-bottom: 2.4rem;
+	font-family: $ubuntu;
+	font-weight: 400;
+	font-size: 4.2rem;
+	letter-spacing: 0.04rem;
+	color: $mine-shaft2;
+}
+
+.h3 {
+	font-family: $myriad-pro;
+	font-weight: 400;
+	font-size: 2.4rem;
+	color: $mine-shaft2;
+}
+
+.h4 {
+	margin-bottom: 4.7rem;
+	font-family: $ubuntu;
+	font-weight: 500;
+	font-size: 3rem;
+	color: $mine-shaft;
+	letter-spacing: 0.07rem;
+}
