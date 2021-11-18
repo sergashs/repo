@@ -69,6 +69,11 @@ input[type="submit"]::-moz-focus-inner {
 	font-weight: 500;
 	font-size: 4.8rem;
 	color: $mine-shaft;
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 2.4rem;
+		font-size: 3.8rem;
+	}
 }
 
 .h2 {
@@ -78,6 +83,11 @@ input[type="submit"]::-moz-focus-inner {
 	font-size: 4.2rem;
 	letter-spacing: 0.04rem;
 	color: $mine-shaft2;
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 1.4rem;
+		font-size: 3.2rem;
+	}
 }
 
 .h3 {
@@ -85,6 +95,10 @@ input[type="submit"]::-moz-focus-inner {
 	font-weight: 400;
 	font-size: 2.4rem;
 	color: $mine-shaft2;
+
+	@include media-breakpoint-down(lg) {
+		font-size: 2.1rem;
+	}
 }
 
 .h4 {
@@ -94,4 +108,9 @@ input[type="submit"]::-moz-focus-inner {
 	font-size: 3rem;
 	color: $mine-shaft;
 	letter-spacing: 0.07rem;
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 2.7rem;
+		font-size: 2.5rem;
+	}
 }

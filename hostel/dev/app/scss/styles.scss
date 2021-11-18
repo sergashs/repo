@@ -2,6 +2,7 @@
 @import "bootstrap/_bootstrap";
 @import "mixins";
 @import "reset";
+@import "swiper/swiper";
 
 @import "common";
 @import "buttons";
@@ -14,3 +15,7 @@
 @import "section-intro";
 @import "text-section";
 @import "section-illustrations";
+@import "section-pricing";
+@import "section-managment";
+@import "accordion";
+@import "section-faq";

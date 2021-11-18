@@ -16,24 +16,50 @@
 	}
 
 	.item-row {
-		margin-bottom: 6rem;
+		margin-bottom: 4.5rem;
+
+		@include media-breakpoint-up(md) {
+			margin-bottom: 5rem;
+		}
+
+		@include media-breakpoint-up(xl) {
+			margin-bottom: 6rem;
+		}
+
+		@include media-breakpoint-up(xxl) {
+			margin-bottom: 7rem;
+		}
 	}
 
 	.img-holder {
+		@include media-breakpoint-down(lg) {
+			margin-bottom: 2.5rem;
+		}
+
 		img {
 			width: 100%;
 			height: auto;
 		}
 
 		&.left-holder {
-			margin-left: -11.6rem;
-			margin-right: 2rem;
+			@include media-breakpoint-up(lg) {
+				margin-right: 2rem;
+			}
+
+			@include media-breakpoint-up(xxl) {
+				margin-left: -11.6rem;
+			}
 		}
 
 		&.right-holder {
-			margin-right: -9.1rem;
-			margin-left: -0.6rem;
-			margin-top: 1rem;
+			@include media-breakpoint-up(lg) {
+				margin-top: 1rem;
+			}
+
+			@include media-breakpoint-up(xxl) {
+				margin-right: -9.1rem;
+				margin-left: -0.6rem;
+			}
 		}
 
 		&.w-lines-1 {
@@ -42,6 +68,7 @@
 			&::after {
 				content: "";
 				position: absolute;
+				display: none;
 				right: -13.4rem;
 				bottom: -8rem;
 				width: 22.7rem;
@@ -49,6 +76,10 @@
 				background: url(#{$images}lines-1.svg);
 				background-size: 22.7rem;
 				background-repeat: no-repeat;
+
+				@include media-breakpoint-up(xxl) {
+					display: block;
+				}
 			}
 		}
 
@@ -58,6 +89,7 @@
 			&::after {
 				content: "";
 				position: absolute;
+				display: none;
 				left: -11.4rem;
 				bottom: -18rem;
 				width: 16.8rem;
@@ -65,6 +97,10 @@
 				background: url(#{$images}lines-2.svg);
 				background-size: 16.8rem;
 				background-repeat: no-repeat;
+
+				@include media-breakpoint-up(xxl) {
+					display: block;
+				}
 			}
 		}
 	}

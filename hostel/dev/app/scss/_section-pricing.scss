@@ -1,0 +1,34 @@
+.section-pricing {
+	margin: 8.7rem 0;
+	padding: 5.9rem 0;
+	background: $aqua-haze;
+
+	.h2 {
+		margin-bottom: 0;
+	}
+
+	.prices-title {
+		display: block;
+		margin-top: 3.7rem;
+		margin-bottom: 1.9rem;
+		font-weight: 300;
+		font-size: 3.2rem;
+
+		span {
+			font-size: 3rem;
+			color: $sandy-brown;
+		}
+	}
+
+	.btn-holder {
+		margin-top: 4.3rem;
+		display: flex;
+		justify-content: center;
+
+		.btn {
+			@include media-breakpoint-up(md) {
+				min-width: 36rem;
+			}
+		}
+	}
+}

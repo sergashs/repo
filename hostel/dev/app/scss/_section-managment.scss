@@ -1,0 +1,129 @@
+.section-managment {
+	padding-bottom: 8.5rem;
+
+	.section-header {
+		margin-bottom: 3.9rem;
+	}
+
+	.h2 {
+		span {
+			color: $royal-blue;
+		}
+	}
+
+	.swiper-safe {
+		@include media-breakpoint-down(xxl) {
+			padding: 0 4rem;
+		}
+
+		@include media-breakpoint-down(md) {
+			padding: 0 2rem;
+		}
+	}
+
+	.swiper {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.swiper-safe {
+		position: relative;
+	}
+
+	.slide-inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 3rem;
+		background: $catskill-white;
+
+		.illustration-wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 29rem;
+			margin-bottom: 3.6rem;
+			padding: 1rem;
+			background: $white;
+			border-radius: 1rem;
+			box-shadow: 0 0 4.4rem -1.3rem rgba($black, 0.13);
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.slide-title {
+			margin-bottom: 3.5rem;
+			font-size: 2rem;
+			font-weight: 500;
+		}
+
+		.price {
+			font-size: 1.6rem;
+
+			span {
+				font-size: 3rem;
+				color: $royal-blue;
+
+				&::after {
+					content: "/";
+					font-size: 1.6rem;
+					color: $mine-shaft;
+				}
+			}
+		}
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		width: 5.8rem;
+		height: 5.8rem;
+		background: $white;
+		box-shadow: 0 0 4.4rem -1.3rem rgba($black, 0.15);
+		border-radius: 50%;
+
+		@include media-breakpoint-down(md) {
+			width: 4rem;
+			height: 4rem;
+		}
+
+		&::after {
+			font-size: 2rem;
+			color: $boulder;
+
+			@include media-breakpoint-down(md) {
+				font-size: 1.7rem;
+			}
+		}
+	}
+
+	.swiper-button-next {
+		right: -4rem;
+
+		@include media-breakpoint-down(xxl) {
+			right: 1rem;
+		}
+
+		@include media-breakpoint-down(md) {
+			right: -0.4rem;
+		}
+	}
+
+	.swiper-button-prev {
+		left: -4rem;
+
+		@include media-breakpoint-down(xxl) {
+			left: 1rem;
+		}
+
+		@include media-breakpoint-down(md) {
+			left: -0.4rem;
+		}
+	}
+
+	.link-holder {
+		margin-top: 3.7rem;
+	}
+}

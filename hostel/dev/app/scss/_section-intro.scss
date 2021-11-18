@@ -24,12 +24,14 @@
 	}
 
 	.img-holder {
-		width: 100%;
-
 		@include media-breakpoint-up(dxxl) {
 			margin-left: -5.6rem;
 			width: 88.8rem;
 			margin-right: -29rem;
+		}
+
+		@include media-breakpoint-down(lg) {
+			margin-bottom: 2rem;
 		}
 
 		img {

@@ -1,10 +1,18 @@
 /* header */
 #header {
 	position: sticky;
-	padding: 0.1rem 4.7rem 0.1rem 1.3rem;
+	padding: 0.1rem 0;
 	background: $white;
 	box-shadow: 0 0.2rem 0.4rem 0 rgba($black, 0.05);
 	z-index: 100;
+
+	@include media-breakpoint-up(xl) {
+		padding: 0.1rem 1.3rem 0.1rem 1.3rem;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		padding: 0.1rem 4.7rem 0.1rem 1.3rem;
+	}
 
 	.container-fluid {
 		display: flex;

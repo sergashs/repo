@@ -36,3 +36,18 @@
 		background: $sandy-brown;
 	}
 }
+
+.g-more {
+	font-weight: 500;
+	font-size: 1.8rem;
+	color: $royal-blue;
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.link-holder {
+	text-align: center;
+}

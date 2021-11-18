@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	lazyLoad();
 	mobileMenu();
 	headerDropdowns();
+	initSwiper();
 });
 
 window.addEventListener('resize', () => {
@@ -179,6 +180,72 @@ function headerDropdowns() {
 		});
 	}
 }
+
+
+
+function initSwiper() {
+	var x = document.getElementsByClassName("swiper-safe");
+
+	for (var i = 0; i < x.length; i++) {
+
+		var el = x[i];
+
+		var swiper = el.getElementsByClassName("swiper")[0];
+		var nx = el.getElementsByClassName("swiper-button-next")[0];
+		var pr = el.getElementsByClassName("swiper-button-prev")[0];
+
+		new Swiper(swiper, {
+			slidesPerView: 1,
+			spaceBetween: 40,
+			navigation: {
+				nextEl: nx,
+				prevEl: pr
+			},
+			preloadImages: true,
+			lazy: {
+				loadPrevNext: true,
+			},
+			breakpoints: {
+				765: {
+					slidesPerView: 2,
+				},
+
+				1240: {
+					slidesPerView: 3,
+				}
+			},
+		});
+	}
+
+	// const swiper1 = document.querySelector(".swiper-managment");
+	// const swiperNavNext = document.querySelector(".swiper-button-next");
+	// const swiperNavPrev = document.querySelector(".swiper-button-prev");
+
+	// const swiper = new Swiper(swiper1, {
+	// 	navigation: {
+	// 		nextEl: swiperNavNext,
+	// 		prevEl: swiperNavPrev,
+	// 	},
+	// 	spaceBetween: 40,
+	// 	slidesPerView: 3,
+	// 	preloadImages: true,
+	// 	lazy: {
+	// 		loadPrevNext: true,
+	// 	},
+
+	// 	breakpoints: {
+	// 		765: {
+	// 			slidesPerView: 2,
+	// 		},
+
+	// 		1240: {
+	// 			slidesPerView: 3,
+	// 		}
+	// 	},
+	// });
+
+}
+
 
 // jQuery
 (function ($) {
