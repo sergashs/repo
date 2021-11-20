@@ -74,6 +74,11 @@ input[type="submit"]::-moz-focus-inner {
 		margin-bottom: 2.4rem;
 		font-size: 3.8rem;
 	}
+
+	@include media-breakpoint-down(md) {
+		margin-bottom: 2.4rem;
+		font-size: 3.1rem;
+	}
 }
 
 .h2 {
@@ -84,9 +89,9 @@ input[type="submit"]::-moz-focus-inner {
 	letter-spacing: 0.04rem;
 	color: $mine-shaft2;
 
-	@include media-breakpoint-down(lg) {
+	@include media-breakpoint-down(md) {
 		margin-bottom: 1.4rem;
-		font-size: 3.2rem;
+		font-size: 2.8rem;
 	}
 }
 
@@ -98,6 +103,10 @@ input[type="submit"]::-moz-focus-inner {
 
 	@include media-breakpoint-down(lg) {
 		font-size: 2.1rem;
+	}
+
+	@include media-breakpoint-down(md) {
+		font-size: 1.8rem;
 	}
 }
 
@@ -112,5 +121,9 @@ input[type="submit"]::-moz-focus-inner {
 	@include media-breakpoint-down(lg) {
 		margin-bottom: 2.7rem;
 		font-size: 2.5rem;
+	}
+
+	@include media-breakpoint-down(md) {
+		font-size: 1.9rem;
 	}
 }
