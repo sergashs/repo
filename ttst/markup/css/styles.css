@@ -11527,8 +11527,12 @@ input[type=submit]::-moz-focus-inner {
 		width: 75%;
 	}
 }
+.paper .right-col {
+	position: absolute;
+	z-index: -1;
+}
 @media (min-width: 768px) {
-	.paper .relative {
+	.paper .right-col {
 		position: relative;
 	}
 }
