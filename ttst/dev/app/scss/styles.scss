@@ -1,0 +1,15 @@
+@use "sass:math";
+
+@import "vars";
+@import "bootstrap/_bootstrap";
+@import "mixins";
+@import "reset";
+
+@import "common";
+@import "buttons";
+@import "header";
+@import "footer";
+
+@import "service";
+@import "paper";
+@import "product";
