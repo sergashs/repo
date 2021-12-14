@@ -1,0 +1,90 @@
+html {
+	font-size: 10px;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	background: #fff;
+	color: #000;
+	font: 300 1.8rem/1.42857143 "Roboto", sans-serif;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+button,
+input[type=search],
+input[type=button],
+input[type=reset],
+input[type=submit] {
+	-webkit-appearance: none;
+	cursor: pointer;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+button::-moz-focus-inner,
+input[type=reset]::-moz-focus-inner,
+input[type=button]::-moz-focus-inner,
+input[type=submit]::-moz-focus-inner {
+	border: none;
+	padding: 0;
+}
+
+.wrapper {
+	min-height: 100vh;
+	min-height: calc(var(--vh, 1vh) * 100);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+
+#main {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-flex: 1;
+	    -ms-flex-positive: 1;
+	        flex-grow: 1;
+}
+
+.container {
+	max-width: 114.2rem;
+	margin: auto;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+/* header */
+#header {
+	padding-top: 3.7rem;
+}
+/*# sourceMappingURL=styles.css.map */

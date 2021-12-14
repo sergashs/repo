@@ -1,0 +1,39 @@
+// vars
+$images: "../images/";
+
+// fonts
+$roboto: "Roboto", sans-serif;
+
+// breakpoints
+$breakpoints: (
+	phone: 374px,
+	tablet: 767px,
+	desktop: 991px,
+	lgdesktop: 1199px
+);
+
+// @include media("<tablet") {
+// 	padding: 9rem 2rem 3rem 2rem;
+// }
+
+// colors
+$white: #fff;
+$black: #000;
+$woodsmoke: #181a1e;
+$emerald: #50c878;
+$mercury: #e1e1e1;
+
+// base vars
+$text-color-base: $woodsmoke;
+$body-bg: $white;
+$font-family-base: $roboto;
+$font-size-base: 1.8rem;
+$font-weight-base: 300;
+$line-height-base: 1.42857143;
+$links-color-base: inherit;
+$headings-font-weight: 400;
+$transition: all 0.3s ease;
+
+// dev2
+// dev3
+// dev4
