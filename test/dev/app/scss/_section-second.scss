@@ -1,5 +1,6 @@
 .section-second {
-	padding: 13.5rem 0;
+	padding-top: 19.3rem;
+	padding-bottom: 18.7rem;
 
 	ul {
 		margin: 0;
@@ -17,8 +18,8 @@
 			align-items: center;
 
 			&:not(:last-child) {
-				padding-right: 8rem;
-				margin-right: 8rem;
+				padding-right: 10.6rem;
+				margin-right: 10.8rem;
 				border-right: 0.1rem solid $mercury;
 			}
 		}
@@ -30,7 +31,7 @@
 			align-items: center;
 			width: 8.7rem;
 			height: 5.6rem;
-			margin-bottom: 4.5rem;
+			margin-bottom: 3.2rem;
 			background: -webkit-linear-gradient($emerald, $green-haze);
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;

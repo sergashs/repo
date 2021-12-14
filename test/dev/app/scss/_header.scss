@@ -4,7 +4,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding-top: 3.7rem;
+	padding-top: 3.8rem;
 	z-index: 100;
 
 	.container {
@@ -13,8 +13,17 @@
 		justify-content: space-between;
 	}
 
+	.logo {
+		a {
+			position: relative;
+			bottom: -0.5rem;
+			display: flex;
+		}
+	}
+
 	.main-nav {
 		display: flex;
+		align-items: center;
 	}
 
 	.main-menu {
@@ -22,6 +31,7 @@
 		padding: 0;
 		list-style: none;
 		display: flex;
+		align-items: center;
 		font-weight: 700;
 		font-size: 1.6rem;
 		color: $woodsmoke;
@@ -37,6 +47,7 @@
 			padding: 0;
 			list-style: none;
 			display: flex;
+			align-items: center;
 			font-weight: 500;
 			font-size: 1.6rem;
 

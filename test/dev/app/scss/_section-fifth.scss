@@ -1,8 +1,8 @@
 .section-fifth {
-	padding-bottom: 16.2rem;
+	padding-bottom: 14.3rem;
 
 	h2 {
-		margin-bottom: 12.1rem;
+		margin-bottom: 12.4rem;
 		text-align: center;
 	}
 
@@ -12,6 +12,22 @@
 	}
 
 	.content-holder {
-		max-width: 44.2rem;
+		max-width: 48.4rem;
+	}
+
+	.img-holder {
+		margin-top: 3.4rem;
+		margin-left: -0.5rem;
+	}
+
+	.text-holder {
+		margin-bottom: 4.8rem;
+		font-size: 1.8rem;
+		line-height: 1.55;
+		opacity: 0.7;
+
+		p {
+			margin: 0 0 2.8rem 0;
+		}
 	}
 }

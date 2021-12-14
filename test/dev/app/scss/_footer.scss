@@ -1,2 +1,90 @@
 .footer {
+	.footer-top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 2.7rem;
+		padding: 2.2rem 0 1.4rem 0;
+		border-top: solid 0.1rem $mercury;
+		border-bottom: solid 0.1rem $mercury;
+
+		ul {
+			font-weight: 700;
+			font-size: 1.6rem;
+
+			li {
+				&:not(:last-child) {
+					margin-right: 8rem;
+				}
+			}
+		}
+	}
+
+	.footer-middle {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 2.5rem;
+		font-size: 1.2rem;
+		line-height: 1.33;
+		color: rgba($woodsmoke, 0.5);
+
+		.col {
+			display: flex;
+			align-items: center;
+		}
+
+		.links {
+			margin-right: 2.6rem;
+
+			li {
+				position: relative;
+
+				&:not(:first-child) {
+					&::before {
+						content: "|";
+						margin: 0 1.7rem;
+					}
+				}
+			}
+		}
+
+		.social-links {
+			align-items: center;
+
+			li {
+				&:not(:last-child) {
+					margin-right: 2.7rem;
+				}
+			}
+		}
+	}
+
+	.footer-bottom {
+		font-size: 1.2rem;
+		line-height: 1.33;
+		color: rgba($woodsmoke, 0.5);
+	}
+
+	.logo {
+		padding-right: 3rem;
+		margin-right: 3.2rem;
+		border-right: solid 0.1rem $mercury;
+
+		a {
+			display: flex;
+			width: 10.5rem;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+	}
 }

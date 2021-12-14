@@ -1,5 +1,8 @@
 .section-third {
+	padding-bottom: 21.3rem;
+
 	h2 {
+		margin-bottom: 8.7rem;
 		text-align: center;
 	}
 
@@ -17,5 +20,26 @@
 	.row {
 		display: flex;
 		justify-content: space-between;
+	}
+
+	.img-holder {
+		margin-left: -3.1rem;
+	}
+
+	.content-holder {
+		margin-top: 4rem;
+		max-width: 41.7rem;
+	}
+
+	.buttons {
+		display: flex;
+
+		a {
+			display: flex;
+
+			&:not(:last-child) {
+				margin-right: 1.7rem;
+			}
+		}
 	}
 }
