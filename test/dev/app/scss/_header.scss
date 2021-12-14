@@ -1,4 +1,60 @@
 /* header */
-#header {
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 	padding-top: 3.7rem;
+	z-index: 100;
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.main-nav {
+		display: flex;
+	}
+
+	.main-menu {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		font-weight: 700;
+		font-size: 1.6rem;
+		color: $woodsmoke;
+
+		li {
+			margin-right: 9.3rem;
+		}
+	}
+
+	.login-block {
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: flex;
+			font-weight: 500;
+			font-size: 1.6rem;
+
+			li {
+				&:first-child {
+					a {
+						text-decoration: underline;
+
+						&:hover {
+							text-decoration: none;
+						}
+					}
+				}
+			}
+
+			.btn {
+				margin-left: 3.2rem;
+			}
+		}
+	}
 }

@@ -17,7 +17,7 @@ function loadFonts() {
 		custom: {
 		},
 		google: {
-			families: ['Roboto:300, 700']
+			families: ['Roboto:n3,n5,n7']
 		}
 	});
 }
