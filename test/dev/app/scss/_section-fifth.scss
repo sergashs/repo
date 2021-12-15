@@ -4,20 +4,53 @@
 	h2 {
 		margin-bottom: 12.4rem;
 		text-align: center;
+
+		@include media("<tablet") {
+			margin-bottom: 8.7rem;
+		}
 	}
 
 	.row {
 		display: flex;
-		justify-content: space-between;
+
+		@include media(">desktop") {
+			justify-content: space-between;
+		}
+
+		@include media("<desktop") {
+			align-items: center;
+		}
+
+		@include media("<tablet") {
+			flex-direction: column;
+		}
 	}
 
 	.content-holder {
 		max-width: 48.4rem;
+
+		@include media(">tablet") {
+			margin-left: 2rem;
+		}
 	}
 
 	.img-holder {
-		margin-top: 3.4rem;
-		margin-left: -0.5rem;
+		width: 48rem;
+		max-width: 100%;
+
+		@include media(">desktop") {
+			margin-top: 3.4rem;
+			margin-left: -0.5rem;
+		}
+
+		@include media(">tablet") {
+			min-width: 40rem;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
 	}
 
 	.text-holder {
@@ -26,8 +59,20 @@
 		line-height: 1.55;
 		opacity: 0.7;
 
+		@include media("<tablet") {
+			text-align: center;
+			font-size: 1.6rem;
+		}
+
 		p {
 			margin: 0 0 2.8rem 0;
+		}
+	}
+
+	.btn-holder {
+		@include media("<tablet") {
+			display: flex;
+			justify-content: center;
 		}
 	}
 }
