@@ -3,6 +3,10 @@
 	padding-bottom: 6rem;
 	background: linear-gradient(180deg, $harp 6.02%, $hint-of-green 72.25%);
 
+	.dark & {
+		background: linear-gradient(180deg, $outer-space 6.02%, $woodsmoke 72.25%);
+	}
+
 	@include media("<tablet") {
 		padding-bottom: 13rem;
 	}

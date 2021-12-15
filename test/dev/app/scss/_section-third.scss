@@ -1,6 +1,10 @@
 .section-third {
 	padding-bottom: 21.3rem;
 
+	@include media("<tablet") {
+		padding-bottom: 26.3rem;
+	}
+
 	h2 {
 		margin-bottom: 8.7rem;
 		text-align: center;

@@ -6,15 +6,11 @@ $roboto: "Roboto", sans-serif;
 
 // breakpoints
 $breakpoints: (
-	phone: 374px,
+	phone: 575px,
 	tablet: 767px,
 	desktop: 991px,
 	lgdesktop: 1199px
 );
-
-// @include media("<lgdesktop") {
-// 	padding: 9rem 2rem 3rem 2rem;
-// }
 
 // colors
 $white: #fff;
@@ -26,6 +22,10 @@ $green-haze: #009976;
 $harp: #dfeee2;
 $hint-of-green: #fafffb;
 $killarney: #296138;
+$narvik: #f7fcf8;
+
+//dark-mode colors
+$outer-space: #343a3f;
 
 // base vars
 $text-color-base: $woodsmoke;

@@ -34,6 +34,10 @@
 			visibility: hidden;
 			pointer-events: none;
 			transition: $transition;
+
+			.dark & {
+				background: $woodsmoke;
+			}
 		}
 
 		@include media("<desktop") {
@@ -56,6 +60,10 @@
 		font-weight: 700;
 		font-size: 1.6rem;
 		color: $woodsmoke;
+
+		.dark & {
+			color: $white;
+		}
 
 		@include media("<desktop") {
 			flex-direction: column;

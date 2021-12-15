@@ -24,6 +24,11 @@ body {
 			overflow: hidden;
 		}
 	}
+
+	&.dark {
+		color: rgba($white, 0.5);
+		background: $woodsmoke;
+	}
 }
 
 a {
@@ -74,6 +79,14 @@ input[type="submit"]::-moz-focus-inner {
 	padding-right: 1.5rem;
 }
 
+h1,
+h2,
+h3 {
+	.dark & {
+		color: $white;
+	}
+}
+
 h1 {
 	margin: 0 0 1rem 0;
 	font-weight: 700;
@@ -82,6 +95,10 @@ h1 {
 
 	@include media("<desktop") {
 		font-size: 5.2rem;
+	}
+
+	@include media("<tablet") {
+		font-size: 4rem;
 	}
 }
 

@@ -1,6 +1,12 @@
 .section-second {
+	position: relative;
 	padding-top: 19.3rem;
 	padding-bottom: 18.7rem;
+
+	@include media("<desktop") {
+		padding-top: 8.3rem;
+		padding-bottom: 12.7rem;
+	}
 
 	ul {
 		margin: 0;
@@ -24,6 +30,10 @@
 
 			&:not(:last-child) {
 				border-right: 0.1rem solid $mercury;
+
+				.dark & {
+					border-color: $outer-space;
+				}
 
 				@include media(">tablet") {
 					padding-right: 5.6rem;
