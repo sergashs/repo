@@ -379,7 +379,7 @@ h3 {
 		display: block;
 		font-size: 0;
 		line-height: 0;
-		background: #009976;
+		background: linear-gradient(93.82deg, #50c878 3.27%, rgba(0, 153, 118, 0.3) 152.9%);
 		border-left: 1px solid #009976;
 	}
 	.header .open-menu span {
@@ -1068,14 +1068,14 @@ h3 {
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(6.02%, #dfeee2), color-stop(72.25%, #fafffb));
 	background: linear-gradient(180deg, #dfeee2 6.02%, #fafffb 72.25%);
 }
-.dark .section-fourth {
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(6.02%, #343a3f), color-stop(72.25%, #181a1e));
-	background: linear-gradient(180deg, #343a3f 6.02%, #181a1e 72.25%);
-}
 @media (max-width: 766px) {
 	.section-fourth {
 		padding-bottom: 13rem;
 	}
+}
+.dark .section-fourth {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(6.02%, #343a3f), color-stop(72.25%, #181a1e));
+	background: linear-gradient(180deg, #343a3f 6.02%, #181a1e 72.25%);
 }
 .section-fourth .container {
 	position: relative;

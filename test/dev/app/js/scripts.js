@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	correctVh();
 	lazyLoad();
 	mobileMenu();
+	animations();
 });
 
 window.addEventListener('resize', () => {
@@ -107,3 +108,147 @@ function mobileMenu() {
 		}
 	});
 };
+
+function animations() {
+	window.sr = ScrollReveal();
+	sr.reveal('.animation-fade', {
+		scale: 1,
+		reset: false,
+		//mobile: false,
+		duration: 1500,
+		distance: '0',
+		origin: 'bottom',
+		beforeReveal: function (el) {
+			setTimeout(function () {
+				el.classList.add('shown');
+			}, 1500);
+		}
+	});
+	sr.reveal('.fade-in-delay', {
+		scale: 1,
+		reset: false,
+		//mobile: false,
+		duration: 1500,
+		distance: '0',
+		origin: 'bottom',
+		interval: 200,
+		beforeReveal: function (el) {
+			setTimeout(function () {
+				el.classList.add('shown');
+			}, 1500);
+		}
+	});
+	sr.reveal('.animation-left', {
+		scale: 1,
+		reset: false,
+		opacity: 0,
+		//mobile: false,
+		duration: 1500,
+		distance: '50%',
+		origin: 'left',
+		delay: 500,
+		beforeReveal: function (el) {
+			setTimeout(function () {
+				el.classList.add('shown');
+			}, 1500);
+		}
+	});
+	sr.reveal('.animation-right', {
+		scale: 1,
+		reset: false,
+		opacity: 0,
+		//mobile: false,
+		duration: 1500,
+		distance: '50%',
+		origin: 'right',
+		beforeReveal: function (el) {
+			setTimeout(function () {
+				el.classList.add('shown');
+			}, 1500);
+		}
+	});
+	sr.reveal('.animation-up', {
+		scale: 1,
+		reset: false,
+		//mobile: false,
+		duration: 1500,
+		distance: '70px',
+		origin: 'bottom',
+		beforeReveal: function (el) {
+			setTimeout(function () {
+				el.classList.add('shown');
+			}, 1500);
+		}
+	});
+	sr.reveal('.animation-down', {
+		scale: 1,
+		reset: false,
+		//mobile: false,
+		duration: 1500,
+		distance: '70px',
+		origin: 'top',
+		beforeReveal: function (el) {
+			setTimeout(function () {
+				el.classList.add('shown');
+			}, 1500);
+		}
+	});
+	sr.reveal('.animation-scale', {
+		scale: 0,
+		reset: false,
+		opacity: 1,
+		//mobile: false,
+		duration: 1500,
+		beforeReveal: function (el) {
+			setTimeout(function () {
+				el.classList.add('shown');
+			}, 1500);
+		}
+	});
+	sr.reveal('.animation-interval', {
+		scale: 1,
+		reset: false,
+		//mobile: false,
+		duration: 1500,
+		distance: '70px',
+		interval: 300,
+		origin: 'bottom',
+		beforeReveal: function (el) {
+			setTimeout(function () {
+				el.classList.add('shown');
+			}, 1500);
+		}
+	});
+
+	sr.reveal('.animation-interval-group > *', {
+		scale: 1,
+		reset: false,
+		//mobile: false,
+		duration: 1500,
+		distance: '70px',
+		interval: 300,
+		origin: 'bottom',
+		beforeReveal: function (el) {
+			setTimeout(function () {
+				el.classList.add('shown');
+			}, 1500);
+		}
+	});
+
+	sr.reveal('.appear', {
+		origin: 'top',
+		distance: '0px',
+		duration: 800,
+		delay: 300,
+		scale: 1,
+		opacity: 1,
+		mobile: true,
+		reset: false,
+		easing: 'ease',
+		beforeReveal: function (el) {
+			setTimeout(function () {
+				el.classList.add('shown');
+			}, 1000);
+		}
+	});
+}
