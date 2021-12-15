@@ -3,6 +3,10 @@
 	padding-top: 3.8rem;
 	z-index: 100;
 
+	.main-loaded & {
+		transform: unset !important;
+	}
+
 	@include media("<tablet") {
 		padding-top: 2rem;
 	}

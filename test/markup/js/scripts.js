@@ -13,6 +13,10 @@ window.addEventListener('resize', () => {
 	correctVh();
 });
 
+window.addEventListener('load', () => {
+	document.body.classList.add('main-loaded');
+});
+
 // load fonts
 function loadFonts() {
 	WebFont.load({

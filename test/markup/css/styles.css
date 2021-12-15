@@ -207,6 +207,10 @@ h3 {
 	padding-top: 3.8rem;
 	z-index: 100;
 }
+.main-loaded .header {
+	-webkit-transform: unset !important;
+	        transform: unset !important;
+}
 @media (max-width: 766px) {
 	.header {
 		padding-top: 2rem;
