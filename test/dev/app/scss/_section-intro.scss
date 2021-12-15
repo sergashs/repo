@@ -153,6 +153,10 @@
 				right: 14.2rem;
 				bottom: 2.5rem;
 			}
+
+			.dark & {
+				background: rgba($white, 0.2);
+			}
 		}
 
 		img {

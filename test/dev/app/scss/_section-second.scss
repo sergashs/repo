@@ -8,6 +8,11 @@
 		padding-bottom: 12.7rem;
 	}
 
+	@include media("<tablet") {
+		padding-top: 4.3rem;
+		padding-bottom: 8.7rem;
+	}
+
 	ul {
 		margin: 0;
 		padding: 0;

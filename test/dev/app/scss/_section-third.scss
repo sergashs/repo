@@ -8,6 +8,10 @@
 	h2 {
 		margin-bottom: 8.7rem;
 		text-align: center;
+
+		@include media("<tablet") {
+			margin-bottom: 4rem;
+		}
 	}
 
 	.text-holder {
@@ -89,6 +93,20 @@
 			&:not(:last-child) {
 				margin-right: 1.7rem;
 			}
+		}
+	}
+
+	.dark-buttons {
+		display: none;
+
+		.dark & {
+			display: flex;
+		}
+	}
+
+	.white-buttons {
+		.dark & {
+			display: none;
 		}
 	}
 }

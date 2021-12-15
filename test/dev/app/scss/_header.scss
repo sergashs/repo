@@ -3,6 +3,10 @@
 	padding-top: 3.8rem;
 	z-index: 100;
 
+	@include media("<tablet") {
+		padding-top: 2rem;
+	}
+
 	.container {
 		display: flex;
 		align-items: center;
@@ -18,17 +22,21 @@
 	}
 
 	.main-nav {
-		display: flex;
-		align-items: center;
+		@include media(">desktop") {
+			display: flex;
+			align-items: center;
+		}
 
 		@include media("<desktop") {
 			position: fixed;
 			top: 0;
 			left: 0;
+			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			width: 100%;
 			height: 100%;
+			padding: 4rem 0;
 			background: $hint-of-green;
 			opacity: 0;
 			visibility: hidden;
@@ -56,10 +64,18 @@
 		list-style: none;
 		display: flex;
 		align-items: center;
-		flex-wrap: wrap;
 		font-weight: 700;
 		font-size: 1.6rem;
 		color: $woodsmoke;
+
+		@include media("<desktop") {
+			margin-bottom: 2rem;
+			overflow: auto;
+		}
+
+		@include media(">desktop") {
+			flex-wrap: wrap;
+		}
 
 		.dark & {
 			color: $white;
@@ -97,6 +113,10 @@
 			align-items: center;
 			font-weight: 500;
 			font-size: 1.6rem;
+
+			@include media("<desktop") {
+				justify-content: center;
+			}
 
 			li {
 				&:first-child {
