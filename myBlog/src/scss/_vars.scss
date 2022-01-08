@@ -1,0 +1,38 @@
+//fonts
+$syncopate: "Syncopate";
+$montserrat: "Montserrat";
+
+// bootstrap grid
+$grid-columns: 12;
+$grid-gutter-width: 34px;
+$grid-gutter-width-mobile: $grid-gutter-width;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+);
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1302px
+);
+
+// colors
+$white: #fff;
+$black: #000;
+
+// // base vars
+$text-color-base: $black;
+$body-bg: $white;
+$font-family-base: $montserrat;
+$font-size-base: 1.9rem;
+$font-weight-base: 400;
+$line-height-base: 1.04;
+$links-color-base: inherit;
+$headings-font-weight: 400;
+$transition: all 0.3s ease;

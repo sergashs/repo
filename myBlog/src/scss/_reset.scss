@@ -1,0 +1,78 @@
+html {
+	font-size: 10px;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	background: $body-bg;
+	color: $black;
+	font-family: $font-family-base;
+	font-weight: $font-weight-base;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: flex;
+	flex-direction: column;
+}
+
+a {
+	text-decoration: none;
+	color: $links-color-base;
+	transition: $transition;
+}
+
+a:hover {
+	opacity: 0.7;
+}
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+button,
+input[type="search"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: none;
+	cursor: pointer;
+	transition: $transition;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+	border: none;
+	padding: 0;
+}
+
+.wrapper {
+	min-height: 100vh;
+	min-height: calc(var(--vh, 1vh) * 100);
+	display: flex;
+	flex-direction: column;
+}
+
+#main {
+	flex-grow: 1;
+}
+
+.container-fluid {
+	@include media-breakpoint-up(xl) {
+		padding-left: 10rem;
+		padding-right: 10rem;
+	}
+
+	@include media-breakpoint-down(xl) {
+		padding-left: 5rem;
+		padding-right: 5rem;
+	}
+}
