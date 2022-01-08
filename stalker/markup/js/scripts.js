@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	correctVh();
 	lazyLoad();
 	initSliderLastOfGallery();
-	// initSliderReadMoreNews();
 	openUserProfileInHeader();
 	scrollVideoCats();
 });
@@ -35,7 +34,7 @@ function lazyLoad() {
 			img.src = img.dataset.src;
 			img.onload = function () {
 				img.classList.add('lazyloaded');
-				initMasonry();
+
 			};
 			if (img.classList.contains('svg-html')) {
 				replaseInlineSvg(img);
@@ -114,16 +113,6 @@ function mobileMenu() {
 };
 
 
-function initMasonry() {
-	const containers = document.querySelectorAll('.masonry-row');
-
-	containers.forEach(containerEl => {
-		const msnry = new Masonry(containerEl, {
-		});
-	});
-}
-
-
 function initSliderLastOfGallery() {
 	const swiper = new Swiper('.swiper-gallery', {
 		speed: 900,
@@ -139,24 +128,7 @@ function initSliderLastOfGallery() {
 	})
 }
 
-// function initSliderReadMoreNews() {
-// 	const swiper = new Swiper('.swiper-more-news', {
-// 		speed: 900,
-// 		loop: true,
-// 		slidesPerView: 1,
-// 		spaceBetween: 10,
-// 		lazy: {
-// 			loadPrevNext: true,
-// 		},
-// 		autoplay: {
-// 			delay: 2000,
-// 		},
-// 	})
-// }
 
-// window.addEventListener('scroll', function () {
-// 	document.documentElement.scrollTop > 0 ? document.documentElement.classList.add('scrolled') : document.documentElement.classList.remove('scrolled');
-// });
 
 function openUserProfileInHeader() {
 	const btnOpen = document.querySelector('.user-profile');
@@ -177,12 +149,6 @@ function openUserProfileInHeader() {
 }
 
 
-
-// $('.grid').masonry({
-// 	// options
-// 	itemSelector: '.grid-item',
-// 	columnWidth: 200
-//   });
 
 
 
@@ -233,24 +199,6 @@ function scrollVideoCats() {
 }
 
 
-
-
-
-// jQuery
-(function ($) {
-	'use strict';
-
-	$(document).ready(function () {
-	}); // ready
-
-	$(window).on('resize', function () {
-	}); // resize
-
-	$(window).on('load', function () {
-	}); // load
-
-	// functions
-})(this.jQuery);
 
 
 
