@@ -1,0 +1,35 @@
+.header {
+	.inner-holder {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 3.7rem 0;
+		border-bottom: 0.1rem solid $porcelain;
+	}
+
+	.logo {
+		font-family: $syncopate;
+		font-weight: 700;
+		font-size: 2.4rem;
+	}
+
+	nav {
+		ul {
+			display: flex;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			font-weight: 500;
+
+			a {
+				@include media-breakpoint-up(xl) {
+					margin-left: 10rem;
+				}
+
+				@include media-breakpoint-down(xl) {
+					margin-left: 5rem;
+				}
+			}
+		}
+	}
+}

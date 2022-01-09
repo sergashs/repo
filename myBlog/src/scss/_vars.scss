@@ -1,3 +1,7 @@
+@import "bootstrap/scss/_functions.scss";
+@import "bootstrap/scss/_variables.scss";
+@import "bootstrap/scss/_mixins.scss";
+
 //fonts
 $syncopate: "Syncopate";
 $montserrat: "Montserrat";
@@ -25,6 +29,7 @@ $container-max-widths: (
 // colors
 $white: #fff;
 $black: #000;
+$porcelain: #eceff1;
 
 // // base vars
 $text-color-base: $black;

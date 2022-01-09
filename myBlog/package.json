@@ -13,6 +13,7 @@
     "core-js": "^3.6.5",
     "vue": "^3.2.26",
     "vue-router": "^4.0.0-0",
+    "vue3-marquee": "^2.0.2-beta",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {

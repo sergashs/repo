@@ -1,0 +1,34 @@
+.section-mosaic {
+	.inner-holder {
+		position: relative;
+		min-height: 42.5rem;
+	}
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.row {
+		position: relative;
+
+		.col-2 {
+			&:nth-child(1) {
+				.illustration-block {
+					min-height: 40%;
+					background: transparent;
+					border-bottom: 1.8rem solid $white;
+				}
+			}
+
+			.illustration-block {
+				min-height: 27rem;
+				background-color: $white;
+			}
+		}
+	}
+}

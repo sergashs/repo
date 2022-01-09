@@ -1,18 +1,22 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div>
+		<SectionTicker>
+			<Marquee :text="'<span>we build magic</span><strong><span>we build magic</span></strong>'" :duration="30" />
+		</SectionTicker>
+		<SectionMosaic />
+	</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Marquee from "@/components/Marquee/Marquee.vue";
+import SectionTicker from "@/components/SectionTicker/SectionTicker.vue";
+import SectionMosaic from "@/components/SectionMosaic/SectionMosaic.vue";
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+	components: {
+		Marquee,
+		SectionTicker,
+		SectionMosaic
+	}
+};
 </script>

@@ -11,6 +11,7 @@ body {
 	font-weight: $font-weight-base;
 	font-size: $font-size-base;
 	line-height: $line-height-base;
+	letter-spacing: 0.04rem;
 	font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -26,6 +27,7 @@ a {
 }
 
 a:hover {
+	color: $links-color-base;
 	opacity: 0.7;
 }
 

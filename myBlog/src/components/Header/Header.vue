@@ -1,10 +1,19 @@
 <template>
 	<div class="header">
 		<div class="container-fluid">
-			<strong class="logo">
-				<a href="#">architectural</a>
-			</strong>
-			<nav></nav>
+			<div class="inner-holder">
+				<strong class="logo">
+					<a href="#">architectural</a>
+				</strong>
+				<nav>
+					<ul>
+						<li><router-link to="/">home</router-link></li>
+						<li><a href="#">projects</a></li>
+						<li><router-link to="/about">about</router-link></li>
+						<li><a href="#">contact</a></li>
+					</ul>
+				</nav>
+			</div>
 		</div>
 	</div>
 </template>
@@ -19,13 +28,5 @@ export default {
 </script>
 
 <style lang="scss">
-// @import "@/components/Header/Header.scss";
-
-.header {
-	.logo {
-		// font-family: $syncopate;
-		font-weight: 700;
-		letter-spacing: 0.04rem;
-	}
-}
+@import "@/components/Header/Header.scss";
 </style>
