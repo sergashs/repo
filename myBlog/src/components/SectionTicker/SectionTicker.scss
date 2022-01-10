@@ -1,3 +1,7 @@
 .section-ticker {
 	padding: 10rem 0;
+
+	@include media-breakpoint-down(md) {
+		padding: 5rem 0;
+	}
 }

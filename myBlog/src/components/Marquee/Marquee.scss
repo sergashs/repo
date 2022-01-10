@@ -2,6 +2,10 @@
 	font-family: $syncopate;
 	font-size: 7.2rem;
 
+	@include media-breakpoint-down(md) {
+		font-size: 3.15rem;
+	}
+
 	.marquee {
 		color: $white;
 		text-shadow: -1px 0 $black, 0 1px $black, 1px 0 $black, 0 -1px $black;

@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<SectionTicker>
-			<Marquee :text="'<span>we build magic</span><strong><span>we build magic</span></strong>'" :duration="30" />
+			<Marquee :text="'<span>i build magic</span><strong><span>i build magic</span></strong>'" :duration="30" />
 		</SectionTicker>
 		<SectionMosaic />
 	</div>

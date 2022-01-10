@@ -18,6 +18,10 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	display: flex;
 	flex-direction: column;
+
+	&.menu-opened {
+		overflow: hidden;
+	}
 }
 
 a {
@@ -28,7 +32,6 @@ a {
 
 a:hover {
 	color: $links-color-base;
-	opacity: 0.7;
 }
 
 *,
@@ -76,5 +79,10 @@ input[type="submit"]::-moz-focus-inner {
 	@include media-breakpoint-down(xxl) {
 		padding-left: 5rem;
 		padding-right: 5rem;
+	}
+
+	@include media-breakpoint-down(md) {
+		padding-left: 2.5rem;
+		padding-right: 2.5rem;
 	}
 }

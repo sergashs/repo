@@ -1,6 +1,26 @@
 .section-mosaic {
+	padding-bottom: 20rem;
+
+	@include media-breakpoint-down(md) {
+		padding-bottom: 10rem;
+	}
+
 	.inner-holder {
 		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: -10rem;
+			width: 100%;
+			height: 0;
+			border-bottom: 0.1rem solid $porcelain;
+
+			@include media-breakpoint-down(md) {
+				bottom: -5rem;
+			}
+		}
 	}
 
 	img {
@@ -16,7 +36,7 @@
 		position: relative;
 		min-height: 42rem;
 
-		.col-2 {
+		& > [class^="col"] {
 			position: relative;
 			display: flex;
 			flex-direction: column;
