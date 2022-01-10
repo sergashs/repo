@@ -22,24 +22,6 @@
 					<div class="col-2">
 						<div class="illustration-block"></div>
 					</div>
-					<div class="col-2">
-						<div class="illustration-block"></div>
-					</div>
-					<div class="col-2">
-						<div class="illustration-block"></div>
-					</div>
-					<div class="col-2">
-						<div class="illustration-block"></div>
-					</div>
-					<div class="col-2">
-						<div class="illustration-block"></div>
-					</div>
-					<div class="col-2">
-						<div class="illustration-block"></div>
-					</div>
-					<div class="col-2">
-						<div class="illustration-block"></div>
-					</div>
 				</div>
 			</div>
 		</div>

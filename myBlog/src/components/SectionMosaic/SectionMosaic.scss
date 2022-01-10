@@ -1,7 +1,6 @@
 .section-mosaic {
 	.inner-holder {
 		position: relative;
-		min-height: 42.5rem;
 	}
 
 	img {
@@ -15,8 +14,25 @@
 
 	.row {
 		position: relative;
+		min-height: 42rem;
 
 		.col-2 {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+
+			&:not(:last-child) {
+				&::after {
+					content: "";
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 1.8rem;
+					height: 100%;
+					background: $white;
+				}
+			}
+
 			&:nth-child(1) {
 				.illustration-block {
 					min-height: 40%;
@@ -25,8 +41,53 @@
 				}
 			}
 
+			&:nth-child(2) {
+				justify-content: flex-end;
+
+				.illustration-block {
+					min-height: 30%;
+					background-color: $white;
+				}
+			}
+
+			&:nth-child(3) {
+				.illustration-block {
+					min-height: 40%;
+					background-color: $white;
+					border-bottom: 1.8rem solid $white;
+				}
+			}
+
+			&:nth-child(4) {
+				justify-content: flex-end;
+
+				.illustration-block {
+					min-height: 30%;
+					background: transparent;
+					border-top: 1.8rem solid $white;
+				}
+			}
+
+			&:nth-child(5) {
+				justify-content: flex-end;
+
+				.illustration-block {
+					min-height: 60%;
+					border-top: 1.8rem solid $white;
+				}
+			}
+
+			&:nth-child(6) {
+				justify-content: flex-end;
+
+				.illustration-block {
+					min-height: 30%;
+					background: transparent;
+					border-top: 1.8rem solid $white;
+				}
+			}
+
 			.illustration-block {
-				min-height: 27rem;
 				background-color: $white;
 			}
 		}
