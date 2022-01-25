@@ -20,7 +20,9 @@ body {
 	flex-direction: column;
 
 	&.menu-opened {
-		overflow: hidden;
+		position: fixed;
+		width: 100%;
+		overflow-y: scroll;
 	}
 }
 

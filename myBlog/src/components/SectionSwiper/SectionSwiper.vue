@@ -1,7 +1,21 @@
 <template>
 	<div class="section-swiper">
-		<swiper :breakpoints="swiperOptions.breakpoints" :slidesPerView="'auto'" :loop="true" :speed="600">
-			<!-- :slidesPerView="'auto'" -->
+		<swiper
+			:slidesPerView="'auto'"
+			:loop="true"
+			:speed="600"
+			:breakpoints="{
+				'320': {
+					slidesPerView: 1,
+					spaceBetween: 30
+				},
+				'768': {
+					slidesPerView: 'auto',
+					spaceBetween: 50,
+					centeredSlides: true
+				}
+			}"
+		>
 			<swiper-slide>
 				<div class="img-holder">
 					<img src="@/assets/images/img-01.jpg" alt="#" />
@@ -46,21 +60,7 @@ export default {
 		SwiperSlide
 	},
 	data() {
-		return {
-			APIData: [],
-			swiperOptions: {
-				breakpoints: {
-					320: {
-						spaceBetween: 30,
-						slidesPerView: 1
-					},
-					768: {
-						spaceBetween: 50,
-						centeredSlides: "'true'"
-					}
-				}
-			}
-		};
+		return {};
 	}
 };
 </script>
