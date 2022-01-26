@@ -81,6 +81,12 @@
 			&:nth-child(4) {
 				justify-content: flex-end;
 
+				@include media-breakpoint-down(xl) {
+					&::after {
+						display: none;
+					}
+				}
+
 				.illustration-block {
 					min-height: 30%;
 					background: transparent;

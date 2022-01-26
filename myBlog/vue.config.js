@@ -8,5 +8,5 @@ module.exports = {
       },
     },
   },
-  publicPath: '/repo/blogdep/',
+  // publicPath: '/repo/blogdep/',
 };
