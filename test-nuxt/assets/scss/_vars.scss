@@ -1,0 +1,53 @@
+// @import "bootstrap/scss/_functions.scss";
+// @import "bootstrap/scss/_variables.scss";
+// @import "bootstrap/scss/_mixins.scss";
+
+//fonts
+$saira: 'Saira';
+$ubuntu: 'Ubuntu';
+
+// bootstrap grid
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+$grid-gutter-width-mobile: $grid-gutter-width;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1302px,
+);
+
+// colors
+$white: #fff;
+$black: #000;
+$porcelain: #eceff1;
+$celery: #ffd027;
+$mine-shaft: #262626;
+$tutu: #fffcff;
+$alabaster: #f9f9f9;
+$dusty-gray: #999999;
+$emperor: #4f4f4f;
+$gallery: #efefef;
+$red: #ff0000;
+$apple: #4ec543;
+$sunset-orange: #fd4f4f;
+
+// // base vars
+$text-color-base: $black;
+$body-bg: $white;
+$font-family-base: $saira;
+$font-size-base: 1.6rem;
+$font-weight-base: 400;
+$line-height-base: 1.8;
+$links-color-base: inherit;
+$transition: all 0.3s ease;
