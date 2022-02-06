@@ -1,12 +1,16 @@
 <template>
   <div>
-    <h1 class="h1">h1</h1>
-    <h2 class="h2">h2</h2>
+    <Marquee />
   </div>
 </template>
 
 <script>
+import Marquee from '@/components/Marquee.vue'
+
 export default {
   name: 'IndexPage',
+  components: {
+    Marquee,
+  },
 }
 </script>

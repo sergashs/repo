@@ -5,6 +5,10 @@
 		</SectionTicker>
 		<SectionMosaic />
 		<SectionSwiper />
+		<SectionReviews />
+		<SectionGallery />
+		<MultiplyMarquee />
+		<SectionContact />
 	</div>
 </template>
 
@@ -13,13 +17,21 @@ import Marquee from "@/components/Marquee/Marquee.vue";
 import SectionTicker from "@/components/SectionTicker/SectionTicker.vue";
 import SectionMosaic from "@/components/SectionMosaic/SectionMosaic.vue";
 import SectionSwiper from "@/components/SectionSwiper/SectionSwiper.vue";
+import SectionReviews from "@/components/SectionReviews/SectionReviews.vue";
+import SectionGallery from "@/components/SectionGallery/SectionGallery.vue";
+import MultiplyMarquee from "@/components/MultiplyMarquee/MultiplyMarquee.vue";
+import SectionContact from "@/components/SectionContact/SectionContact.vue";
 
 export default {
 	components: {
 		Marquee,
 		SectionTicker,
 		SectionMosaic,
-		SectionSwiper
+		SectionSwiper,
+		SectionReviews,
+		SectionGallery,
+		MultiplyMarquee,
+		SectionContact
 	}
 };
 </script>

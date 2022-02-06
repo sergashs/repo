@@ -1,0 +1,30 @@
+.multiply-marquee {
+	padding-top: 10rem;
+	padding-bottom: 10rem;
+	background: $alabaster;
+
+	@include media-breakpoint-down(md) {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+	}
+
+	.marquees {
+		margin-bottom: 10rem;
+
+		@include media-breakpoint-down(md) {
+			margin-bottom: 5rem;
+		}
+	}
+
+	.vue3-marquee {
+		margin-bottom: 5rem;
+
+		@include media-breakpoint-down(md) {
+			margin-bottom: 2.5rem;
+		}
+
+		.marquee {
+			color: $alabaster;
+		}
+	}
+}

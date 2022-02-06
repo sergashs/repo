@@ -1,14 +1,14 @@
-// @import "bootstrap/scss/_functions.scss";
-// @import "bootstrap/scss/_variables.scss";
-// @import "bootstrap/scss/_mixins.scss";
+// @import './bootstrap/scss/_functions.scss';
+// @import './bootstrap/scss/_variables.scss';
+// @import '../bootstrap/scss/_mixins.scss';
 
 //fonts
-$saira: 'Saira';
-$ubuntu: 'Ubuntu';
+$syncopate: 'Syncopate';
+$montserrat: 'Montserrat';
 
 // bootstrap grid
 $grid-columns: 12;
-$grid-gutter-width: 30px;
+$grid-gutter-width: 34px;
 $grid-gutter-width-mobile: $grid-gutter-width;
 
 $grid-breakpoints: (
@@ -31,23 +31,15 @@ $container-max-widths: (
 $white: #fff;
 $black: #000;
 $porcelain: #eceff1;
-$celery: #ffd027;
-$mine-shaft: #262626;
-$tutu: #fffcff;
-$alabaster: #f9f9f9;
-$dusty-gray: #999999;
-$emperor: #4f4f4f;
-$gallery: #efefef;
-$red: #ff0000;
-$apple: #4ec543;
-$sunset-orange: #fd4f4f;
+$mercury: #e5e5e5;
 
 // // base vars
 $text-color-base: $black;
 $body-bg: $white;
-$font-family-base: $saira;
-$font-size-base: 1.6rem;
+$font-family-base: $montserrat;
+$font-size-base: 1.9rem;
 $font-weight-base: 400;
-$line-height-base: 1.8;
+$line-height-base: 1.04;
 $links-color-base: inherit;
+$headings-font-weight: 400;
 $transition: all 0.3s ease;

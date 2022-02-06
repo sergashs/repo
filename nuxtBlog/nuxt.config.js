@@ -17,13 +17,13 @@ export default {
   ],
 
   styleResources: {
-    scss: ['./assets/scss/_vars.scss']
+    scss: ['./assets/scss/_vars.scss', './bootstrap/scss/_mixins.scss']
   },
 
 
   webfontloader: {
     google: {
-      families: ['Saira:400,500,700', 'Ubuntu:700'],
+      families: ["Syncopate:500,700", "Montserrat:400,500"]
     }
   },
 
@@ -57,5 +57,6 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+  },
 }

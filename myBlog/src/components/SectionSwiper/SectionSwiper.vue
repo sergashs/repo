@@ -35,9 +35,9 @@
 				<h3>Project #3</h3>
 			</swiper-slide>
 		</swiper>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="link-holder">
-				<a href="#">
+				<a href="#" class="btn btn-arrow">
 					discover our projects
 					<span class="icon-holder">
 						<img src="@/assets/images/icon-01.svg" alt="#" />
