@@ -17,7 +17,7 @@ export default {
   ],
 
   styleResources: {
-    scss: ['./assets/scss/_vars.scss']
+    scss: ['./assets/scss/_vars.scss', './bootstrap/scss/_mixins.scss']
   },
 
 

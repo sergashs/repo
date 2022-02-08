@@ -17,7 +17,7 @@ export default {
   ],
 
   styleResources: {
-    scss: ['./assets/scss/_vars.scss', './bootstrap/scss/_mixins.scss']
+    scss: ['./assets/scss/_vars.scss', './assets/scss/_mixins.scss', './bootstrap/scss/_mixins.scss']
   },
 
 
@@ -28,7 +28,7 @@ export default {
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: "~/plugins/marquee-text-component.js", mode: "client" }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -46,7 +46,6 @@ export default {
     'nuxt-webfontloader',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

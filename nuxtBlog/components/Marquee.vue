@@ -1,13 +1,22 @@
 <template>
-  <!-- <client-only> </client-only> -->
   <div class="marquee">
-    <span>i build magic</span>
+    <client-only>
+      <marquee-text :duration="30" :clone="true" :reverse="direction">
+        <slot name="text"></slot>
+      </marquee-text>
+    </client-only>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Marquee',
+  props: {
+    direction: {
+      type: Boolean,
+      default: true,
+    },
+  },
 }
 </script>
 
@@ -20,7 +29,7 @@ export default {
     font-size: 3.15rem;
   }
 
-  .marquee {
+  .marquee-text-wrap {
     color: $white;
     text-shadow: -0.1rem 0 $black, 0 0.1rem $black, 0.1rem 0 $black,
       0 -0.1rem $black;
@@ -36,6 +45,12 @@ export default {
     strong {
       color: $black;
     }
+
+    // .marquee-text-text {
+    //   &:nth-child(2) {
+    //     color: $black;
+    //   }
+    // }
   }
 }
 </style>

@@ -1,8 +1,35 @@
 <template>
-  <div>
+  <div class="section-swiper">
     <swiper ref="mySwiper" :options="swiperOptions">
-      <swiper-slide>test text</swiper-slide>
+      <swiper-slide>
+        <div class="img-holder">
+          <img src="@/assets/images/img-01.jpg" alt="#" />
+        </div>
+        <h3>Project #1</h3>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="img-holder">
+          <img src="@/assets/images/img-02.jpg" alt="#" />
+        </div>
+        <h3>Project #2</h3>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="img-holder">
+          <img src="@/assets/images/img-03.jpg" alt="#" />
+        </div>
+        <h3>Project #3</h3>
+      </swiper-slide>
     </swiper>
+    <div class="container-fluid">
+      <div class="btn-holder">
+        <a href="#" class="btn btn-arrow">
+          discover our projects
+          <span class="icon-holder">
+            <img src="@/assets/images/icon-01.svg" alt="#" />
+          </span>
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -23,11 +50,17 @@ export default {
     return {
       swiperOptions: {
         loop: true,
-        slidesPerView: 10,
-        centeredSlides: true,
-        speed: 6000,
-        autoplay: {
-          delay: 1,
+        speed: 600,
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+          },
+          768: {
+            slidesPerView: 'auto',
+            spaceBetween: 50,
+            centeredSlides: true,
+          },
         },
       },
     }
@@ -76,49 +109,6 @@ export default {
       h3 {
         color: $black;
         transition: $transition;
-      }
-    }
-  }
-
-  .link-holder {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 10rem;
-    border-bottom: 0.1rem solid $porcelain;
-
-    @include media-breakpoint-down(md) {
-      padding-bottom: 5rem;
-    }
-
-    a {
-      display: inline-flex;
-      align-items: center;
-      font-weight: 500;
-      font-size: 2.4rem;
-      letter-spacing: 0.04rem;
-
-      @include media-breakpoint-down(md) {
-        font-size: 1.8rem;
-      }
-
-      &:hover {
-        .icon-holder {
-          transform: translateX(0.5rem);
-          transition: $transition;
-        }
-      }
-
-      .icon-holder {
-        display: inline-flex;
-        width: 2.4rem;
-        height: 2.4rem;
-        margin-left: 1rem;
-        transition: $transition;
-
-        img {
-          width: 100%;
-          height: 100%;
-        }
       }
     }
   }
