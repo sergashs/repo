@@ -2,25 +2,25 @@
   <div class="multiply-marquee">
     <div class="marquees">
       <marquee>
-        <template v-slot:text>
+        <template #text>
           <span>we urban </span><strong><span>we</span></strong
           ><span>interior</span>
         </template>
       </marquee>
       <marquee :direction="false">
-        <template v-slot:text>
+        <template #text>
           <span>estrutural</span><strong><span>are</span></strong
           ><span>living ae</span>
         </template>
       </marquee>
       <marquee>
-        <template v-slot:text>
+        <template #text>
           <span>rustic</span><strong><span>about</span></strong
           ><span>futuristic</span>
         </template>
       </marquee>
       <marquee :direction="false">
-        <template v-slot:text>
+        <template #text>
           <span>natural</span><strong><span>arch</span></strong
           ><span>modern</span>
         </template>

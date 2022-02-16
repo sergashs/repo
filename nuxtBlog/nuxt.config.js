@@ -17,7 +17,8 @@ export default {
   ],
 
   styleResources: {
-    scss: ['./assets/scss/_vars.scss', './assets/scss/_mixins.scss', './bootstrap/scss/_mixins.scss']
+    scss: ['./bootstrap/scss/_mixins.scss', './assets/scss/_vars.scss', './assets/scss/_mixins.scss',
+    ]
   },
 
 
@@ -47,6 +48,12 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
   ],
+
+  bootstrapVue: {
+    bootstrapCSS: true,
+    bootstrapVueCSS: false
+  },
+
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {

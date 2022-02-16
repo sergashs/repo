@@ -4,16 +4,19 @@
     <main class="main">
       <Nuxt />
     </main>
+    <Footer />
   </div>
 </template>
 
 <script>
-import Header from '../components/Header.vue'
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
-  name: 'default',
+  name: 'Default',
   components: {
     Header,
+    Footer,
   },
 }
 </script>

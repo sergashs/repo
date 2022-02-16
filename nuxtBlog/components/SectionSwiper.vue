@@ -21,13 +21,15 @@
       </swiper-slide>
     </swiper>
     <div class="container-fluid">
-      <div class="btn-holder">
-        <a href="#" class="btn btn-arrow">
-          discover our projects
-          <span class="icon-holder">
-            <img src="@/assets/images/icon-01.svg" alt="#" />
-          </span>
-        </a>
+      <div class="inner-holder">
+        <div class="btn-holder">
+          <a href="#" class="btn btn-arrow">
+            discover our projects
+            <span class="icon-holder">
+              <img src="@/assets/images/icon-01.svg" alt="#" />
+            </span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -110,6 +112,15 @@ export default {
         color: $black;
         transition: $transition;
       }
+    }
+  }
+
+  .inner-holder {
+    padding-bottom: 10rem;
+    border-bottom: 0.1rem solid $porcelain;
+
+    @include media-breakpoint-down(md) {
+      padding-bottom: 5rem;
     }
   }
 }
