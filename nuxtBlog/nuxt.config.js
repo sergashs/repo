@@ -13,7 +13,7 @@ export default {
 
   target: 'static',
   router: {
-    base: '/repo/blogdep/'
+    base: '/nuxt-deploy-blog/'
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
