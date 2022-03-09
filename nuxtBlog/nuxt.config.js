@@ -1,3 +1,12 @@
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+      router: {
+        base: '/repo/nuxt-deploy-blog/'
+      }
+    }
+    : {}
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -11,10 +20,10 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  target: 'static',
-  router: {
-    base: '/repo/nuxt-deploy-blog/'
-  },
+  // target: 'static',
+  // router: {
+  //   base: '/repo/nuxt-deploy-blog/'
+  // },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
@@ -67,7 +76,14 @@ export default {
     },
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    /*
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) { }
   },
+  generate: {
+    fallback: true
+  },
+  ...routerBase
 }
