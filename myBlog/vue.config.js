@@ -9,5 +9,5 @@ module.exports = {
       },
     },
   },
-  publicPath: '/repo/blogdep/',
+  publicPath: '/repo/nuxt-deploy-blog/',
 };
