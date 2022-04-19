@@ -12817,7 +12817,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 }
 .informer-last-news .item h3, .informer-last-news .item .h3 {
 	margin-bottom: 1.5rem;
-	font-size: 1.5rem;
+	font-size: 1.8rem;
 }
 .informer-last-news .item h3 a, .informer-last-news .item .h3 a {
 	font-weight: 500;
@@ -12836,9 +12836,14 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 		        flex-direction: column;
 	}
 }
+.informer-last-news .item figure .img-holder {
+	position: relative;
+	width: 100%;
+	padding-bottom: 18%;
+}
 @media (min-width: 768px) {
 	.informer-last-news .item figure .img-holder {
-		max-width: 12rem;
+		max-width: 30rem;
 		margin-right: 1.5rem;
 	}
 }
@@ -12848,7 +12853,13 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	}
 }
 .informer-last-news .item figure img {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	   object-fit: cover;
 }
 .informer-last-news .item figure figcaption {
 	font-size: 1.4rem;
