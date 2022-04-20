@@ -1,14 +1,18 @@
 /* footer */
 #footer {
 	position: relative;
+	max-width: 125rem;
+	width: 100%;
+	margin: auto;
 	padding: 1.7rem 0;
-	margin: 2rem 1.7rem 1.7rem 1.7rem;
 	color: $gray;
 	background: url(#{$images}footer-bg.jpg);
 	background-position: 20% 70%;
 	background-repeat: no-repeat;
 	background-size: cover;
-	border-radius: 1rem;
+	border-left: solid 0.1rem $tuatara;
+	border-right: solid 0.1rem $tuatara;
+	border-bottom: solid 0.1rem $tuatara;
 
 	&::before {
 		content: "";

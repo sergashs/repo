@@ -24,7 +24,7 @@
 			.img-holder {
 				position: relative;
 				width: 100%;
-				padding-bottom: 18%;
+				min-height: 170px;
 
 				@include media-breakpoint-up(md) {
 					max-width: 30rem;
