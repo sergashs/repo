@@ -1,12 +1,11 @@
 .informer-last-news {
 	.item {
 		margin-bottom: 2rem;
-		padding-bottom: 2rem;
-		border-bottom: 0.1rem solid $tuatara;
 
 		h3 {
+			font-family: $roboto-condensed;
 			margin-bottom: 1.5rem;
-			font-size: 1.8rem;
+			font-size: 2rem;
 
 			a {
 				font-weight: 500;
@@ -16,6 +15,7 @@
 
 		figure {
 			display: flex;
+			margin-bottom: 2rem;
 
 			@include media-breakpoint-down(md) {
 				flex-direction: column;

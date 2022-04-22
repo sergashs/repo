@@ -2,9 +2,6 @@
 #header {
 	position: relative;
 	z-index: 10;
-	margin-bottom: 15rem;
-	background: $cod-gray;
-	border-bottom: solid 0.1rem $tuatara;
 
 	ul {
 		margin: 0;
@@ -26,6 +23,10 @@
 	.header-top {
 		padding-top: 1rem;
 		padding-bottom: 1rem;
+		margin-bottom: 15rem;
+		background: $cod-gray;
+		border-bottom: solid 0.1rem $tuatara;
+		box-shadow: 0.4rem 0 1rem rgba($black, 0.65);
 
 		.container-fluid {
 			display: flex;
@@ -122,27 +123,38 @@
 	}
 
 	.main-nav {
+		max-width: 125rem;
+		width: 100%;
+		margin: auto;
+		background: $cod-gray;
 		border-top: solid 0.1rem $tuatara;
+		border-left: solid 0.1rem $tuatara;
+		border-right: solid 0.1rem $tuatara;
+		box-shadow: 0.4rem 0 1rem rgba($black, 0.65);
 
 		ul {
 			display: flex;
+			margin-left: -1.7rem;
 
 			li {
-				&:not(:last-child) {
-					margin-right: 3rem;
-				}
+				// &:not(:last-child) {
+				// 	margin-right: 3rem;
+				// }
 
 				a {
 					display: inline-block;
-					padding-top: 1rem;
-					padding-bottom: 1rem;
-					font-family: $graffiti1CTT;
+					padding-top: 1.2rem;
+					padding-bottom: 1.2rem;
+					padding-right: 1.5rem;
+					padding-left: 1.5rem;
+					font-family: $roboto-condensed;
 					font-size: 1.8rem;
 					color: $silver;
 					text-decoration: none;
+					border-right: solid 0.1rem $tuatara;
 
 					&:hover {
-						text-shadow: 0 0.1rem 1rem $silver;
+						background: rgba($silver, 0.05);
 					}
 				}
 			}

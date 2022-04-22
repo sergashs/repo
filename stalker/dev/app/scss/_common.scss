@@ -16,17 +16,18 @@
 }
 
 .meta-info {
-	padding: 0;
+	padding: 1.5rem 0 0 0;
 	margin: 0;
 	list-style: none;
 	display: flex;
 	flex-wrap: wrap;
+	border-top: 0.1rem solid $tuatara;
 
 	li {
 		font-size: 1.3rem;
-		color: $cloudy;
+		color: darken($cloudy, 8);
 		margin-right: 3rem;
-		line-height: 1.5;
+		line-height: 1;
 
 		i {
 			margin-right: 0.5rem;
