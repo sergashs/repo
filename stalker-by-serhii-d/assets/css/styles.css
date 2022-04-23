@@ -11134,7 +11134,7 @@ input[type=submit]::-moz-focus-inner {
 	        flex-direction: column;
 }
 
-#main {
+.site-main {
 	position: relative;
 	z-index: 5;
 	-webkit-box-flex: 1;
@@ -12643,12 +12643,22 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .header .logo {
 	font-family: "Oswald", sans-serif;
 	text-transform: uppercase;
-	font-size: 2rem;
+	font-size: 1.8rem;
+	line-height: 1;
 }
 .header .logo a {
 	color: #e2e2e2;
 	text-decoration: none;
 	text-shadow: 0.1rem 0.1rem 0.2rem #000;
+}
+.header .site-subtitle {
+	text-transform: uppercase;
+	font-size: 1.1rem;
+	color: #e2e2e2;
+	line-height: 1;
+}
+.header .site-subtitle p {
+	margin-bottom: 0;
 }
 .header .header-top {
 	margin-bottom: 15rem;
@@ -12817,7 +12827,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 }
 
 /* footer */
-#footer {
+.site-footer {
 	position: relative;
 	max-width: 125rem;
 	width: 100%;
@@ -12834,7 +12844,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	-webkit-box-shadow: 0.4rem 0 3rem rgba(0, 0, 0, 0.65);
 	        box-shadow: 0.4rem 0 3rem rgba(0, 0, 0, 0.65);
 }
-#footer::before {
+.site-footer::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -12846,7 +12856,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	z-index: 1;
 	border-radius: 1rem;
 }
-#footer figure .footer-bg {
+.site-footer figure .footer-bg {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -12856,7 +12866,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	   object-fit: cover;
 	border-radius: 1rem;
 }
-#footer .container-fluid, #footer .container-sm, #footer .container-md, #footer .container-lg, #footer .container-xl {
+.site-footer .container-fluid, .site-footer .container-sm, .site-footer .container-md, .site-footer .container-lg, .site-footer .container-xl {
 	position: relative;
 	z-index: 1;
 }
@@ -12903,7 +12913,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 		margin-bottom: 1.5rem;
 	}
 }
-.informer-last-news .item figure img {
+.informer-last-news .item figure .img-holder img {
 	position: absolute;
 	top: 0;
 	left: 0;

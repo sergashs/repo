@@ -12,12 +12,24 @@
 	.logo {
 		font-family: $oswald;
 		text-transform: uppercase;
-		font-size: 2rem;
+		font-size: 1.8rem;
+		line-height: 1;
 
 		a {
 			color: $mercury;
 			text-decoration: none;
 			text-shadow: 0.1rem 0.1rem 0.2rem $black;
+		}
+	}
+
+	.site-subtitle {
+		text-transform: uppercase;
+		font-size: 1.1rem;
+		color: $mercury;
+		line-height: 1;
+
+		p {
+			margin-bottom: 0;
 		}
 	}
 

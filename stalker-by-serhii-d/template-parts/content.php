@@ -9,30 +9,23 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
+<div class="item">
+<!-- <h3><a href="#">GSC Game World почали купляти рекламні інтеграції в ютуб блогерів</a></h3> -->
+<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<h1>', '</h1>' );
 		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+			the_title( '<h3><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+		endif;?>
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				stalker_by_serhii_d_posted_on();
-				stalker_by_serhii_d_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+		
+<figure>
+<div class="img-holder">
+<img data-src="<?php the_post_thumbnail_url(); ?>" src="#" alt="<?php the_title() ?>" loading="lazy" class="lazyload">
 
-	<?php stalker_by_serhii_d_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
+</div>
+<figcaption>
+<?php
 		the_content(
 			sprintf(
 				wp_kses(
@@ -55,9 +48,20 @@
 			)
 		);
 		?>
-	</div><!-- .entry-content -->
+</figcaption>
+</figure>
+<ul class="meta-info">
+<li><?php $category = get_the_category();
+$firstCategory = $category[0]->cat_name; echo $firstCategory;?></li>
+<li><?php stalker_by_serhii_d_posted_on(); ?></li>
+<li><?php stalker_by_serhii_d_posted_by(); ?></li>
+<li>Reads <?= gt_get_post_view(the_ID()); ?></li>
+</ul>
+</div>
 
-	<footer class="entry-footer">
-		<?php stalker_by_serhii_d_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+
+
+
+
+
+<!-- #post-<?php the_ID(); ?> -->

@@ -16,7 +16,8 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
+	<div class="container-fluid">
+		<div class="informer-last-news">
 		<?php
 		if ( have_posts() ) :
 
@@ -49,7 +50,8 @@ get_header();
 
 		endif;
 		?>
-
+		 </div>
+    </div>
 	</main><!-- #main -->
 
 <?php

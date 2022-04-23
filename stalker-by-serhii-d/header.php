@@ -28,6 +28,7 @@
 	<header id="masthead" class="header">
 	<div class="header-top">
 		<div class="container-fluid">
+			<div class="left">
 			<strong class="logo">
 			<?php
 			the_custom_logo();
@@ -37,15 +38,20 @@
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				<?php endif; ?>
+			</strong>
+			
+			<?php
 			$stalker_by_serhii_d_description = get_bloginfo( 'description', 'display' );
 			if ( $stalker_by_serhii_d_description || is_customize_preview() ) :
 				?>
+				<div class="site-subtitle">
 				<p class="site-description"><?php echo $stalker_by_serhii_d_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-			</strong>
+			    </div>
+				<?php endif; ?>
+			</div>
+			
 			<div class="user-profile">
 				<div class="open-profile-dropdown">
 					<div class="user-avatar">

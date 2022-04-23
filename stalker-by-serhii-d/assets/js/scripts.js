@@ -16,11 +16,11 @@ window.addEventListener('resize', () => {
 // load fonts
 function loadFonts() {
 	WebFont.load({
-		// custom: {
-		// 	families: ['Graffiti1CTT', 'Stalker-font', 'Font Awesome 5 Brands'],
-		// 	// urls: ['/fonts/fonts.css']
-		// 	urls: [wp_helper.home_path + '/assets/css/fonts.css']
-		// },
+		custom: {
+			families: ['Graffiti1CTT', 'Stalker-font', 'Font Awesome 5 Brands'],
+			// urls: ['/fonts/fonts.css']
+			urls: [wp_helper.home_path + '/assets/css/fonts.css']
+		},
 		google: {
 			families: ['Roboto Condensed:n5', 'Oswald:400', 'Fira Sans Condensed:400']
 		}
