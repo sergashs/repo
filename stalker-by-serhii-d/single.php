@@ -11,7 +11,10 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
+	<div class="container-fluid">
+	<div class="row">
+	<div class="col-md-8 col-lg-9 informer-row-border">
+	<div class="single-post">
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -32,10 +35,16 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-   
+   </div>
+   </div>
+
+   <div class="col-md-4 col-lg-3"><?php get_sidebar();?></div>
+
+   </div>
+   </div>
 	</main><!-- #main -->
 	<?php gt_set_post_view(); ?>
 <?php
-get_sidebar();
+
 get_footer();
 

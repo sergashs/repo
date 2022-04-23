@@ -17,6 +17,8 @@ get_header();
 
 	<main id="primary" class="site-main">
 	<div class="container-fluid">
+	<div class="row">
+	<div class="col-md-8 col-lg-9 informer-row-border">
 		<div class="informer-last-news">
 		<?php
 		if ( have_posts() ) :
@@ -52,8 +54,15 @@ get_header();
 		?>
 		 </div>
     </div>
+
+	<div class="col-md-4 col-lg-3">
+	<?php get_sidebar(); ?>
+	</div>
+
+	</div>
+	</div>
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();

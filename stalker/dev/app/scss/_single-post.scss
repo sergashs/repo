@@ -1,0 +1,70 @@
+.single-post {
+	.item {
+		margin-bottom: 2rem;
+
+		h3 {
+			font-family: $fira-sans-condensed;
+			margin-bottom: 1.5rem;
+			font-size: 2rem;
+
+			a {
+				font-weight: 500;
+				color: $mercury;
+			}
+		}
+
+		figure {
+			.img-holder {
+				position: relative;
+				margin-bottom: 1.5rem;
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+
+			figcaption {
+				color: $cloudy;
+			}
+		}
+	}
+
+	.wp-block-embed__wrapper {
+		iframe {
+			width: 100%;
+		}
+	}
+
+	.post-navigation {
+		margin-bottom: 3rem;
+		color: $mercury;
+
+		.nav-links {
+			@include media-breakpoint-up(md) {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.nav-previous {
+				@include media-breakpoint-down(md) {
+					margin-bottom: 1.5rem;
+				}
+			}
+		}
+	}
+
+	.comments-area {
+		color: $cloudy;
+
+		textarea#comment {
+			width: 100%;
+			padding: 1rem;
+			color: $cloudy;
+			background: darken($tuatara, 5);
+			border: solid 0.1rem $tuatara;
+			outline: none;
+			resize: none;
+		}
+	}
+}

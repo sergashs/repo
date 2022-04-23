@@ -12834,15 +12834,16 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	margin: auto;
 	padding: 1.7rem 0;
 	color: #707070;
-	background: url(../images/footer-bg.jpg);
+	background: url(../images/bg.jpg);
 	background-position: 20% 70%;
 	background-repeat: no-repeat;
 	background-size: cover;
 	border-left: solid 0.1rem #181818;
 	border-right: solid 0.1rem #181818;
 	border-bottom: solid 0.1rem #181818;
-	-webkit-box-shadow: 0.4rem 0 3rem rgba(0, 0, 0, 0.65);
-	        box-shadow: 0.4rem 0 3rem rgba(0, 0, 0, 0.65);
+	-webkit-box-shadow: 0.4rem 4rem 3rem rgba(0, 0, 0, 0.65);
+	        box-shadow: 0.4rem 4rem 3rem rgba(0, 0, 0, 0.65);
+	z-index: 5;
 }
 .site-footer::before {
 	content: "";
@@ -13388,30 +13389,27 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	transition: all 0.3s ease;
 }
 
-.screenshots-holder {
-	margin: 1.5rem 0 0 0;
-}
-.screenshots-holder ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
-}
-.screenshots-holder ul li {
-	width: 23.1%;
+.single-post .item {
 	margin-bottom: 2rem;
 }
-.screenshots-holder ul li:not(:last-child) {
-	margin-right: 2rem;
+.single-post .item h3, .single-post .item .h3 {
+	font-family: "Fira Sans Condensed", sans-serif;
+	margin-bottom: 1.5rem;
+	font-size: 2rem;
 }
-.screenshots-holder ul li img {
+.single-post .item h3 a, .single-post .item .h3 a {
+	font-weight: 500;
+	color: #e2e2e2;
+}
+.single-post .item figure .img-holder {
+	position: relative;
+	margin-bottom: 1.5rem;
+}
+.single-post .item figure .img-holder img {
 	width: 100%;
-	height: 100%;
-	-o-object-fit: cover;
-	   object-fit: cover;
+	height: auto;
+}
+.single-post .item figure figcaption {
+	color: #afaeac;
 }
 /*# sourceMappingURL=styles.css.map */

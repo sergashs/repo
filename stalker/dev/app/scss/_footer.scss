@@ -6,14 +6,15 @@
 	margin: auto;
 	padding: 1.7rem 0;
 	color: $gray;
-	background: url(#{$images}footer-bg.jpg);
+	background: url(#{$images}bg.jpg);
 	background-position: 20% 70%;
 	background-repeat: no-repeat;
 	background-size: cover;
 	border-left: solid 0.1rem $tuatara;
 	border-right: solid 0.1rem $tuatara;
 	border-bottom: solid 0.1rem $tuatara;
-	box-shadow: 0.4rem 0 3rem rgba($black, 0.65);
+	box-shadow: 0.4rem 4rem 3rem rgba($black, 0.65);
+	z-index: 5;
 
 	&::before {
 		content: "";
