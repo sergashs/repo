@@ -1,5 +1,5 @@
 /* header */
-#header {
+.header {
 	position: relative;
 	z-index: 10;
 
@@ -10,8 +10,9 @@
 	}
 
 	.logo {
-		font-family: $stalker-font;
-		font-size: 3.5rem;
+		font-family: $oswald;
+		text-transform: uppercase;
+		font-size: 2rem;
 
 		a {
 			color: $mercury;
@@ -21,8 +22,6 @@
 	}
 
 	.header-top {
-		padding-top: 1rem;
-		padding-bottom: 1rem;
 		margin-bottom: 15rem;
 		background: $cod-gray;
 		border-bottom: solid 0.1rem $tuatara;
@@ -44,7 +43,6 @@
 			padding: 1rem;
 			background: rgba($black, 0.5);
 			backdrop-filter: blur(0.5rem);
-			border-radius: 0.5rem;
 			cursor: pointer;
 
 			.user-name {
@@ -126,6 +124,7 @@
 		max-width: 125rem;
 		width: 100%;
 		margin: auto;
+		font-family: $oswald;
 		background: $cod-gray;
 		border-top: solid 0.1rem $tuatara;
 		border-left: solid 0.1rem $tuatara;
@@ -137,17 +136,12 @@
 			margin-left: -1.7rem;
 
 			li {
-				// &:not(:last-child) {
-				// 	margin-right: 3rem;
-				// }
-
 				a {
 					display: inline-block;
 					padding-top: 1.2rem;
 					padding-bottom: 1.2rem;
 					padding-right: 1.5rem;
 					padding-left: 1.5rem;
-					font-family: $roboto-condensed;
 					font-size: 1.8rem;
 					color: $silver;
 					text-decoration: none;

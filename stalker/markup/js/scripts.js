@@ -21,7 +21,7 @@ function loadFonts() {
 			urls: ['/css/fonts.css']
 		},
 		google: {
-			families: ['Roboto:300,500', 'Roboto Condensed:n5', 'Nunito:n3']
+			families: ['Roboto Condensed:n5', 'Oswald:400', 'Fira Sans Condensed:400']
 		}
 	});
 }
