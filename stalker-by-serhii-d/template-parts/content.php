@@ -30,7 +30,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'stalker-by-serhii-d' ),
+					__( 'Читати повністю<span class="screen-reader-text"> "%s"</span>', 'stalker-by-serhii-d' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -55,7 +55,6 @@
 $firstCategory = $category[0]->cat_name; echo $firstCategory;?></li>
 <li><?php stalker_by_serhii_d_posted_on(); ?></li>
 <li><?php stalker_by_serhii_d_posted_by(); ?></li>
-<li>Reads <?= gt_get_post_view(the_ID()); ?></li>
 </ul>
 </div>
 

@@ -27,7 +27,7 @@ if ( ! function_exists( 'stalker_by_serhii_d_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'stalker-by-serhii-d' ),
+			esc_html_x( 'дата додавання %s', 'post date', 'stalker-by-serhii-d' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -43,7 +43,7 @@ if ( ! function_exists( 'stalker_by_serhii_d_posted_by' ) ) :
 	function stalker_by_serhii_d_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'stalker-by-serhii-d' ),
+			esc_html_x( 'додав %s', 'post author', 'stalker-by-serhii-d' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 

@@ -66,5 +66,76 @@
 			outline: none;
 			resize: none;
 		}
+
+		.comment-form-comment {
+			label {
+				display: block;
+				margin-bottom: 1rem;
+			}
+		}
+
+		.comment-reply-title {
+			text-transform: uppercase;
+		}
+
+		.submit {
+			padding: 1rem;
+			color: $cloudy;
+			background: $black;
+			border: solid 0.1rem $tuatara;
+
+			&:hover {
+				background: $cod-gray;
+			}
+		}
+	}
+
+	.comment-list {
+		padding-left: 0;
+		list-style: none;
+
+		.comment {
+			margin-bottom: 2rem;
+			padding: 1.5rem;
+			background: $tuatara;
+		}
+
+		.says {
+			display: none;
+		}
+
+		.avatar {
+			margin-right: 0.5rem;
+		}
+
+		.comment-meta {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 1.5rem;
+			border-bottom: solid 0.1rem lighten($tuatara, 10);
+			padding-bottom: 1.5rem;
+		}
+
+		.comment-author {
+			color: $mercury;
+		}
+
+		.comment-metadata {
+			opacity: 0.6;
+		}
+
+		.edit-link {
+			&::before {
+				content: "";
+				margin: 0 1rem;
+				width: 0.5rem;
+				height: 0.5rem;
+				background: rgba($mercury, 0.6);
+				display: inline-block;
+				transform: translateY(-50%);
+				border-radius: 50%;
+			}
+		}
 	}
 }

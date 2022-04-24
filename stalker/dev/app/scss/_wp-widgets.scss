@@ -1,0 +1,22 @@
+.widget_block {
+	&.widget_recent_comments {
+		color: $cloudy;
+
+		.wp-block-latest-comments {
+			margin-bottom: 2rem;
+			padding-left: 0;
+		}
+
+		.wp-block-latest-comments__comment-author {
+			color: $mercury;
+		}
+
+		.wp-block-latest-comments__comment-link {
+			color: $mercury;
+		}
+
+		.wp-block-latest-comments__comment-date {
+			color: $dove-gray;
+		}
+	}
+}

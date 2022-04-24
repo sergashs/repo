@@ -43,7 +43,8 @@ get_header();
    </div>
    </div>
 	</main><!-- #main -->
-	<?php gt_set_post_view(); ?>
+	
+
 <?php
 
 get_footer();
