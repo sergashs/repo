@@ -4,9 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	loadFonts();
 	correctVh();
 	lazyLoad();
-	initSliderLastOfGallery();
 	openUserProfileInHeader();
 	scrollVideoCats();
+	mobileMenu();
+	// initSliderSocials()
 });
 
 window.addEventListener('resize', () => {
@@ -100,7 +101,7 @@ function correctVh() {
 
 // mobile menu
 function mobileMenu() {
-	const openBtn = document.querySelector('.open-menu');
+	const openBtn = document.querySelector('.dropdown-menu-wrapper');
 
 	openBtn.addEventListener('click', function (event) {
 		event.preventDefault();
@@ -113,20 +114,20 @@ function mobileMenu() {
 };
 
 
-function initSliderLastOfGallery() {
-	const swiper = new Swiper('.swiper-gallery', {
-		speed: 900,
-		loop: true,
-		slidesPerView: 1,
-		spaceBetween: 10,
-		lazy: {
-			loadPrevNext: true,
-		},
-		autoplay: {
-			delay: 2000,
-		},
-	})
-}
+// function initSliderSocials() {
+// 	const swiper = new Swiper('.swiper-socials', {
+// 		speed: 900,
+// 		loop: true,
+// 		slidesPerView: 1,
+// 		spaceBetween: 10,
+// 		lazy: {
+// 			loadPrevNext: true,
+// 		},
+// 		autoplay: {
+// 			delay: 2000,
+// 		},
+// 	})
+// }
 
 
 

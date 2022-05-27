@@ -1,16 +1,4 @@
 @import "_vars";
-@import "fontawesome/fontawesome";
-@import "fontawesome/brands";
-@import "fontawesome/solid";
-@import "fontawesome/regular";
-
-@font-face {
-	font-family: "Graffiti1CTT";
-	src: url("#{$fonts}Graffiti1CTT-Regular.woff2") format("woff2"), url("#{$fonts}Graffiti1CTT-Regular.woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
 
 @font-face {
 	font-family: "Stalker-font";

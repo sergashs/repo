@@ -20,3 +20,38 @@
 		}
 	}
 }
+
+.widget_display_topics {
+	.bbp-topics-widget {
+		margin: 0 0 1.5rem 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			display: flex;
+			flex-wrap: wrap;
+			font-size: 1.3rem;
+			padding: 1rem;
+			background: lighten($cod-gray, 5);
+			border-radius: 0.5rem;
+
+			&:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+
+			.bbp-forum-title {
+				display: block;
+				width: 100%;
+				font-size: 1.6rem;
+			}
+
+			.topic-author {
+				margin: 0 0.5rem;
+
+				.bbp-author-avatar {
+					margin-right: 0.3rem;
+				}
+			}
+		}
+	}
+}

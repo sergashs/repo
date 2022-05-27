@@ -1,0 +1,265 @@
+.bbpress-wrapper {
+	.bbp-breadcrumb {
+		font-size: 1.5rem;
+	}
+
+	.bbp-search-form {
+		margin-bottom: 1.5rem;
+
+		#bbp-search-form {
+			> div {
+				display: flex;
+			}
+		}
+
+		input {
+			padding: 0.5rem 1rem;
+			color: $cloudy;
+			background: darken($tuatara, 5);
+			border: solid 0.1rem $tuatara;
+		}
+
+		.button {
+			padding: 0.5rem 1rem;
+			font-size: 1.5rem;
+			border-left: none;
+		}
+	}
+}
+
+#bbpress-forums {
+	li {
+		&.bbp-header {
+			padding: 1rem;
+			background: $cod-gray;
+			border: none;
+			font-weight: 400;
+			font-size: 1.4rem;
+		}
+	}
+
+	.bbp-forum-freshness {
+		font-size: 1.5rem;
+	}
+
+	.bbp-author-name {
+		font-size: 1.3rem !important;
+	}
+
+	.bbp-forum-content {
+		font-size: 1.3rem !important;
+	}
+
+	.forum-titles {
+		font-size: 1.6rem;
+		font-weight: 400;
+	}
+
+	ul {
+		.even {
+			background: $cod-gray;
+		}
+
+		&.forum {
+			font-size: 1.6rem;
+			background: $cod-gray;
+			border-top: solid 0.1rem lighten($tuatara, 10) !important;
+		}
+
+		&.bbp-forums {
+			border: solid 0.1rem lighten($tuatara, 10);
+		}
+	}
+
+	.bbp-footer {
+		font-weight: 400 !important;
+		font-size: 1.4rem;
+		background: $cod-gray !important;
+		border-top: solid 0.1rem lighten($tuatara, 10) !important;
+	}
+
+	.bbp-forums-list {
+		padding-left: 0.5rem !important;
+		border-left: solid 0.1rem lighten($tuatara, 10) !important;
+
+		.bbp-forum {
+			font-size: 1.4rem;
+		}
+	}
+
+	.bbp-template-notice {
+		&.info {
+			color: $cloudy;
+			background: lighten($tuatara, 10);
+			border: solid 0.1rem lighten($tuatara, 20) !important;
+
+			a {
+				color: lighten($cloudy, 20);
+			}
+		}
+	}
+
+	.bbp-topics {
+		border: solid 0.1rem lighten($tuatara, 10) !important;
+	}
+
+	ul {
+		&.topic {
+			font-size: 1.5rem;
+			background: $tuatara;
+			border-top: solid 0.1rem lighten($tuatara, 10) !important;
+
+			.bbp-author-avatar {
+				display: none !important;
+			}
+		}
+	}
+
+	.bbp-forum-description {
+		.bbp-author-avatar {
+			display: none !important;
+		}
+	}
+
+	.bbp-topic-freshness-author {
+		.bbp-author-avatar {
+			display: none !important;
+		}
+	}
+
+	.bbp-topic-description {
+		.bbp-author-avatar {
+			display: none !important;
+		}
+	}
+
+	.bbp-topic-started-by {
+		font-size: 1.3rem;
+
+		.bbp-author-avatar {
+			display: none !important;
+		}
+	}
+
+	.bbp-submit-wrapper {
+		button {
+			padding: 1rem 1rem;
+			color: $cloudy;
+			background: darken($tuatara, 5);
+			border: solid 0.1rem $tuatara;
+		}
+	}
+
+	fieldset {
+		&.bbp-form {
+			border: solid 0.1rem lighten($tuatara, 10) !important;
+
+			input {
+				padding: 0.5rem 1rem;
+				color: $cloudy;
+				background: darken($tuatara, 5);
+				border: solid 0.1rem $tuatara;
+			}
+		}
+	}
+
+	.bbp-topic-form {
+		input {
+			padding: 0.5rem 1rem;
+			color: $cloudy;
+			background: darken($tuatara, 5);
+			border: solid 0.1rem $tuatara;
+		}
+	}
+
+	.wp-editor-container {
+		border: solid 0.1rem $tuatara;
+
+		.quicktags-toolbar {
+			background: lighten($tuatara, 5) !important;
+			border-bottom: solid 0.1rem lighten($tuatara, 10) !important;
+
+			input {
+				padding: 1rem !important;
+				font-size: 1.4rem !important;
+				color: $cloudy !important;
+
+				&:hover {
+					background: lighten($tuatara, 10) !important;
+				}
+			}
+		}
+
+		.wp-editor-area {
+			color: $cloudy !important;
+			background: $tuatara !important;
+			resize: none;
+		}
+	}
+
+	select {
+		font-size: 1.4rem !important;
+		color: $cloudy !important;
+		background: lighten($tuatara, 5) !important;
+		border: solid 0.1rem lighten($tuatara, 10) !important;
+	}
+
+	.bbp-replies {
+		border: solid 0.1rem lighten($tuatara, 10) !important;
+	}
+
+	.bbp-reply-header {
+		background: lighten($tuatara, 5) !important;
+		border: none !important;
+	}
+
+	.topic,
+	.reply {
+		background: $cod-gray !important;
+
+		.bbp-reply-content {
+			font-size: 1.6rem;
+			line-height: 1.5;
+
+			@include media-breakpoint-up(sm) {
+				padding-left: 3rem;
+				border-left: solid 0.1rem lighten($tuatara, 10);
+			}
+		}
+
+		.bbp-author-avatar {
+			display: block;
+			margin-bottom: 1rem;
+		}
+
+		.bbp-reply-author {
+			@include media-breakpoint-down(sm) {
+				border-bottom: solid 0.1rem lighten($tuatara, 10) !important;
+			}
+
+			.bbp-author-name {
+				font-size: 1.5rem !important;
+			}
+
+			.bbp-author-role {
+				font-size: 1.3rem !important;
+			}
+
+			.bbp-reply-ip {
+				display: none !important;
+			}
+		}
+	}
+
+	.bbp-meta {
+		font-size: 1.3rem;
+		color: $cloudy !important;
+	}
+
+	.bbp-admin-links {
+		a {
+			font-size: 1.3rem;
+			color: $cloudy !important;
+		}
+	}
+}

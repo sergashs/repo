@@ -1,0 +1,36 @@
+.social-links {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	margin: 0 0 2rem 0;
+	padding: 0;
+	list-style: none;
+}
+.social-links li:not(:last-child) {
+	margin-right: 3.5rem;
+}
+.social-links li a {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	opacity: 0.9;
+}
+.social-links li a:hover {
+	opacity: 1;
+	-webkit-transform: scale(1.2);
+	        transform: scale(1.2);
+}
+.social-links .icon-holder {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 4rem;
+}
+.social-links .icon-holder img {
+	width: 100%;
+	height: auto;
+}
+/*# sourceMappingURL=social-links.css.map */

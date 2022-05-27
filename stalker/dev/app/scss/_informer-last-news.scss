@@ -17,7 +17,7 @@
 			display: flex;
 			margin-bottom: 2rem;
 
-			@include media-breakpoint-down(md) {
+			@include media-breakpoint-down(lg) {
 				flex-direction: column;
 			}
 
@@ -26,12 +26,12 @@
 				width: 100%;
 				min-height: 170px;
 
-				@include media-breakpoint-up(md) {
+				@include media-breakpoint-up(lg) {
 					max-width: 30rem;
 					margin-right: 1.5rem;
 				}
 
-				@include media-breakpoint-down(md) {
+				@include media-breakpoint-down(lg) {
 					margin-bottom: 1.5rem;
 				}
 
@@ -46,6 +46,7 @@
 			}
 
 			figcaption {
+				flex: 1;
 				color: $cloudy;
 			}
 		}

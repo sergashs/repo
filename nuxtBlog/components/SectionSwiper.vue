@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 
 export default {
@@ -45,14 +45,12 @@ export default {
     Swiper,
     SwiperSlide,
   },
-  directives: {
-    swiper: directive,
-  },
+
   data() {
     return {
       swiperOptions: {
         loop: true,
-        speed: 600,
+        speed: 1600,
         breakpoints: {
           320: {
             slidesPerView: 1,
