@@ -164,13 +164,17 @@
 	}
 
 	.comment-list {
+		margin: 0 0 2rem 0;
 		padding-left: 0;
 		list-style: none;
 
 		.comment {
-			margin-bottom: 2rem;
 			padding: 1.5rem;
 			background: $tuatara;
+
+			&:not(:last-child) {
+				margin-bottom: 2rem;
+			}
 		}
 
 		.says {
@@ -208,6 +212,13 @@
 				display: inline-block;
 				transform: translateY(-50%);
 				border-radius: 50%;
+			}
+		}
+
+		ol {
+			&.children {
+				padding: 0;
+				list-style: none;
 			}
 		}
 	}

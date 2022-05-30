@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	openUserProfileInHeader();
 	scrollVideoCats();
 	mobileMenu();
-	// initSliderSocials()
+	initSliderBuyGames()
 });
 
 window.addEventListener('resize', () => {
@@ -114,20 +114,25 @@ function mobileMenu() {
 };
 
 
-// function initSliderSocials() {
-// 	const swiper = new Swiper('.swiper-socials', {
-// 		speed: 900,
-// 		loop: true,
-// 		slidesPerView: 1,
-// 		spaceBetween: 10,
-// 		lazy: {
-// 			loadPrevNext: true,
-// 		},
-// 		autoplay: {
-// 			delay: 2000,
-// 		},
-// 	})
-// }
+function initSliderBuyGames() {
+	const swiper = new Swiper('.swiper-buy-game', {
+		speed: 900,
+		loop: true,
+		effect: "fade",
+		slidesPerView: 1,
+		spaceBetween: 10,
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		lazy: {
+			loadPrevNext: true,
+		},
+		autoplay: {
+			delay: 2000,
+		},
+	})
+}
 
 
 
