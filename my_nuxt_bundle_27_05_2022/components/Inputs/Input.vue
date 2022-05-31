@@ -144,6 +144,7 @@ export default {
 	}
 
 	.error-message {
+		position: absolute;
 		font-size: 1.6rem;
 		color: $red;
 

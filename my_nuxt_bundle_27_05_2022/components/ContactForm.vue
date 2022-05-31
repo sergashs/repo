@@ -13,7 +13,7 @@
 						</template>
 					</Input>
 					<Input v-model="form.message" placeholder="Write us about your project in general..." input-type="textarea" :error-showing="$v.form.message.$error" />
-					<button class="btn btn-primary">submit</button>
+					<button class="btn btn-primary" @click="submitForm">submit</button>
 				</div>
 			</div>
 		</form>
@@ -57,6 +57,15 @@ export default {
 			} else if (Vmodel === "email") {
 				const x = this.form[Vmodel].replace(/[&/\\#,+()$~%^'":*?<>{ }]/g, "");
 				this.form[Vmodel] = x.substring(0, 100);
+			}
+		},
+		submitForm() {
+			this.$v.form.$touch();
+
+			if (this.$v.form.$invalid) {
+				return console.log("some erorr");
+			} else {
+				console.log("all good");
 			}
 		}
 	}
