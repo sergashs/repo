@@ -4,6 +4,16 @@
 			<div class="row justify-content-center">
 				<div class="col-md-6">
 					<Input v-model="form.name" :error-showing="$v.form.name.$error" placeholder="Name" @input="formatInput('name')" />
+					<PhoneInput ref="telInput" v-model="form.phone" :error-showing="$v.form.phone.$error" @update="onPhoneInput">
+						<template #error>
+							<span v-if="$v.form.phoneIsValid.$dirty && $v.form.phoneIsValid.$invalid && !$v.form.phone.$error" class="error-message">
+								<span v-if="$v.form.phoneIsValid.$error">Incorrect number</span>
+							</span>
+							<span v-if="$v.form.phone.$dirty && $v.form.phone.$invalid" class="error-message">
+								<span v-if="$v.form.phone.$error">Requred filed</span>
+							</span>
+						</template>
+					</PhoneInput>
 					<Input v-model="form.email" :error-showing="$v.form.email.$error" placeholder="Email" @input="formatInput('email')">
 						<template #error>
 							<span v-if="$v.form.email.$dirty && $v.form.email.$invalid" class="error-message">
@@ -22,13 +32,15 @@
 
 <script>
 import { validationMixin } from "vuelidate";
-import { required, email } from "vuelidate/lib/validators";
+import { required, email, sameAs } from "vuelidate/lib/validators";
 import Input from "@/components/Inputs/Input";
+import PhoneInput from "@/components/Inputs/PhoneInput";
 
 export default {
 	name: "ContactForm",
 	components: {
-		Input
+		Input,
+		PhoneInput
 	},
 	mixins: [validationMixin],
 	data() {
@@ -36,7 +48,10 @@ export default {
 			form: {
 				name: "",
 				email: "",
-				message: ""
+				message: "",
+				phone: "",
+				phoneIsValid: "",
+				phoneData: {}
 			}
 		};
 	},
@@ -45,11 +60,21 @@ export default {
 			form: {
 				name: { required },
 				email: { required, email },
-				message: { required }
+				message: { required },
+				phone: { required },
+				phoneIsValid: {
+					sameAs: sameAs(() => true)
+				}
 			}
 		};
 	},
 	methods: {
+		onPhoneInput() {
+			console.log(this.$refs.telInput.results);
+			this.form.phoneData = this.$refs.telInput.results;
+
+			this.form.phoneIsValid = this.form.phoneData.isValid;
+		},
 		formatInput(Vmodel) {
 			if (Vmodel === "name") {
 				const x = this.form[Vmodel].replace(/[&/\\#,+()$~%@!'":*?+=<>{}0-9]/g, "");
