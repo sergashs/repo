@@ -14,6 +14,7 @@
 							</span>
 						</template>
 					</PhoneInput>
+					{{ form.phone }}
 					<Input v-model="form.email" :error-showing="$v.form.email.$error" placeholder="Email" @input="formatInput('email')">
 						<template #error>
 							<span v-if="$v.form.email.$dirty && $v.form.email.$invalid" class="error-message">
@@ -50,8 +51,7 @@ export default {
 				email: "",
 				message: "",
 				phone: "",
-				phoneIsValid: "",
-				phoneData: {}
+				phoneIsValid: ""
 			}
 		};
 	},
@@ -70,10 +70,10 @@ export default {
 	},
 	methods: {
 		onPhoneInput() {
+			// console.log(this.$refs.telInput.results);
 			console.log(this.$refs.telInput.results);
-			this.form.phoneData = this.$refs.telInput.results;
 
-			this.form.phoneIsValid = this.form.phoneData.isValid;
+			this.form.phoneIsValid = this.$refs.telInput.results.isValid;
 		},
 		formatInput(Vmodel) {
 			if (Vmodel === "name") {
