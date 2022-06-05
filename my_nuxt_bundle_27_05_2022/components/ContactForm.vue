@@ -51,7 +51,7 @@ export default {
 				email: "",
 				message: "",
 				phone: "",
-				phoneIsValid: ""
+				phoneIsValid: {}
 			}
 		};
 	},
@@ -91,6 +91,11 @@ export default {
 				return console.log("some erorr");
 			} else {
 				console.log("all good");
+				this.$v.$reset();
+				this.form.name = "";
+				this.form.email = "";
+				this.form.message = "";
+				this.form.phone = "";
 			}
 		}
 	}
