@@ -9,5 +9,5 @@ module.exports = {
       },
     },
   },
-  publicPath: '/repo/todotest/',
+  publicPath: '/repo/todotestdp/',
 };
