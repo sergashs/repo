@@ -76,7 +76,6 @@ export default {
 		this.userAuth = JSON.parse(userAuth);
 
 		if (!this.userAuth) {
-			console.log(this.userAuth);
 			this.$router.push("/");
 		}
 	},

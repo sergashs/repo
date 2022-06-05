@@ -52,8 +52,6 @@ export default {
 	},
 	methods: {
 		login() {
-			// this.login = true;
-
 			if (this.form.name !== this.users[0].name) {
 				this.valid.name = "Wrong username";
 			}
