@@ -9,7 +9,7 @@ export default {
 	created() {
 		WebFontLoader.load({
 			google: {
-				families: ["Roboto:300,400,500"]
+				families: ["Roboto:300,400,500,700"]
 			},
 			// custom: {
 			// 	families: ["Rubik:n4,n5,n7"],

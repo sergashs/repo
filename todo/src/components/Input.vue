@@ -3,11 +3,9 @@
 		<label v-if="inputType === 'input'">
 			<span v-if="label" class="label">{{ label }}</span>
 			<input class="form-control" :type="type" :placeholder="placeholder" :value="modelValue" @input="onInput" />
-			<slot name="error">
-				<span v-if="errorShowing" class="error-message"
-					><span>{{ errorMessage }}</span></span
-				>
-			</slot>
+			<span class="error-message">
+				<slot name="error"></slot>
+			</span>
 		</label>
 		<label v-if="inputType === 'textarea'">
 			<span v-if="label" class="label">{{ label }}</span>
@@ -84,7 +82,7 @@ export default {
 	margin-bottom: 4rem;
 
 	@include screen($md, "max") {
-		margin-bottom: 2rem;
+		margin-bottom: 3rem;
 	}
 
 	label {
@@ -111,6 +109,7 @@ export default {
 		border-radius: 0;
 
 		@include screen($md, "max") {
+			padding: 1.1rem 1rem;
 			font-size: 1.6rem;
 		}
 
@@ -144,8 +143,10 @@ export default {
 
 	.error-message {
 		position: absolute;
+		left: 0;
+		bottom: -2.3rem;
 		font-size: 1.6rem;
-		color: $red;
+		color: $guardsman-red;
 	}
 }
 </style>

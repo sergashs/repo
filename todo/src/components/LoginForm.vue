@@ -2,22 +2,14 @@
 	<div class="login-form">
 		<div class="inputs-holder">
 			<Input label="Name" v-model="form.name">
-				<!-- <template v-slot:error>
-				:error-showing="$v.form.email.$error"
-				<span v-if="$v.form.email.$dirty && $v.form.email.$invalid" class="error-message">
-					<span v-if="!$v.form.email.email">Incorrect email</span>
-					<span v-if="!$v.form.email.required">Requred filed</span>
-				</span>
-			</template> -->
+				<template v-slot:error>
+					<span v-if="valid.name">{{ valid.name }}</span>
+				</template>
 			</Input>
-			<Input label="Password" v-model="form.password">
-				<!-- <template v-slot:error>
-				:error-showing="$v.form.email.$error"
-				<span v-if="$v.form.email.$dirty && $v.form.email.$invalid" class="error-message">
-					<span v-if="!$v.form.email.email">Incorrect email</span>
-					<span v-if="!$v.form.email.required">Requred filed</span>
-				</span>
-			</template> -->
+			<Input label="Password" v-model="form.password" type="password">
+				<template v-slot:error>
+					<span v-if="valid.password">{{ valid.password }}</span>
+				</template>
 			</Input>
 
 			<Button title="LOGIN" @click="login" />
@@ -46,6 +38,10 @@ export default {
 				name: "",
 				password: ""
 			},
+			valid: {
+				name: "",
+				password: ""
+			},
 			users: [
 				{
 					name: "Admin",
@@ -57,15 +53,28 @@ export default {
 	methods: {
 		login() {
 			// this.login = true;
-			if (this.password === this.users[0].password && this.name === this.users[0].name) {
-				this.$router.push("Todo").then(() => window.scrollTo(0, 0));
-				// localStorage.isAuthorized = true;
-				// localStorage.username = this.username;
 
-				// my
-				//   localStorage.setItem("contacts", JSON.stringify(this.form));
-				//  localStorage.removeItem("projectType");
-				//  const form = localStorage.getItem("contacts");
+			if (this.form.name !== this.users[0].name) {
+				this.valid.name = "Wrong username";
+			}
+
+			if (this.form.name.length <= 0) {
+				this.valid.name = "Required field";
+			}
+
+			if (this.form.password !== this.users[0].password) {
+				this.valid.password = "Wrong password";
+			}
+
+			if (this.form.name.length <= 0) {
+				this.valid.password = "Required field";
+			}
+
+			console.log("before");
+
+			if (this.form.password === this.users[0].password && this.form.name == this.users[0].name) {
+				this.$router.push("Todo");
+				localStorage.setItem("userAuth", JSON.stringify({ auth: true, userName: this.form.name }));
 			}
 		}
 	}
