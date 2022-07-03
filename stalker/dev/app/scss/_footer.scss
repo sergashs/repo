@@ -43,6 +43,21 @@
 
 	.container-fluid {
 		position: relative;
+
+		@include media-breakpoint-up(md) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
 		z-index: 1;
+	}
+
+	.counter-holder {
+		opacity: 0.1;
+		transition: $transition;
+
+		&:hover {
+			opacity: 1;
+		}
 	}
 }

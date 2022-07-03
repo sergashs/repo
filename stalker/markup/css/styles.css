@@ -13058,6 +13058,27 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	position: relative;
 	z-index: 1;
 }
+@media (min-width: 768px) {
+	.site-footer .container-fluid, .site-footer .container-sm, .site-footer .container-md, .site-footer .container-lg, .site-footer .container-xl {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+	}
+}
+.site-footer .counter-holder {
+	opacity: 0.1;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.site-footer .counter-holder:hover {
+	opacity: 1;
+}
 
 .informer-last-news .item {
 	margin-bottom: 2rem;
@@ -13633,7 +13654,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	border-top: solid 0.1rem #181818;
 }
 .single-post .wp-block-embed__wrapper iframe {
-	width: 100%;
+	width: 100% !important;
 }
 .single-post .post-navigation {
 	margin-bottom: 3rem;
@@ -14191,5 +14212,34 @@ body.buddypress #page #primary {
 .informer-buy-game .swiper-button-next:hover {
 	-webkit-filter: brightness(1.4);
 	        filter: brightness(1.4);
+}
+
+.buddypress-wrap #item-header-avatar .avatar {
+	border-color: #989898 !important;
+}
+.buddypress-wrap .bp-wrap .bp-navs {
+	border-bottom: solid 0.1rem #989898 !important;
+	border-top: solid 0.1rem #989898 !important;
+	-webkit-box-shadow: none !important;
+	        box-shadow: none !important;
+}
+.buddypress-wrap .bp-wrap .bp-personal-tab.selected a {
+	background: #e4e4e4 !important;
+}
+.buddypress-wrap .bp-wrap .bp-personal-tab a:hover {
+	background: #b1b1b1 !important;
+}
+.buddypress-wrap .bp-wrap .select-wrap select {
+	color: #e2e2e2 !important;
+	border: solid 0.1rem #989898 !important;
+}
+.buddypress-wrap .bp-wrap .activity-list {
+	padding: 2rem;
+}
+.buddypress-wrap .bp-wrap .single-user {
+	background: red;
+}
+.buddypress-wrap .bp-wrap .single-user .activity-list.bp-list {
+	background: #181818 !important;
 }
 /*# sourceMappingURL=styles.css.map */
