@@ -1,5 +1,12 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+
+  mode: 'static',
+  router: {
+    base: '/nuxt-deploy/'
+  },
+
+
   head: {
     title: 'test',
     meta: [
@@ -11,10 +18,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  target: 'static',
-  router: {
-    base: '/repo/nuxt-deploy-blog/'
-  },
+
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
