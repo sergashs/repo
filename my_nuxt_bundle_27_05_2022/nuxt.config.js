@@ -1,5 +1,12 @@
+
+const isProd = process.env.NODE_ENV === 'prod';
+const API_URL = isProd ? process.env.API_URL_PROD : process.env.API_URL_DEV;
+
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  publicRuntimeConfig: {
+    apiURL: API_URL,
+  },
+
   head: {
     title: "test bundle",
     meta: [
