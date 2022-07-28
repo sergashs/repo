@@ -25,6 +25,7 @@
     "vue": "^2.6.14",
     "vue-awesome-swiper": "^4.1.1",
     "vue-dynamic-marquee": "^0.1.7",
+    "vue-phone-number-input": "^1.1.12",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
     "vuelidate": "^0.7.7",
