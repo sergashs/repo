@@ -1,0 +1,24 @@
+.users-list {
+	margin-bottom: 3rem;
+	background: $white;
+	border: 0.1rem solid $athens-gray;
+	border-radius: 0.8rem;
+
+	.header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 3.2rem 3.2rem 4.8rem 3.2rem;
+	}
+
+	.sort-btn {
+		display: flex;
+		font-weight: 600;
+		font-size: 1.4rem;
+		color: $fiord;
+
+		.icon-holder {
+			margin-right: 0.9rem;
+		}
+	}
+}
