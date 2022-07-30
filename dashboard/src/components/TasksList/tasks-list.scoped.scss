@@ -1,4 +1,4 @@
-.tickets-list {
+.tasks-list {
 	background: $white;
 	border: 0.1rem solid $athens-gray;
 	border-radius: 0.8rem;
@@ -52,6 +52,21 @@
 
 			span {
 				color: $santas-gray-100;
+			}
+
+			&.create-task {
+				color: $french-gray;
+
+				span {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 2.4rem;
+					height: 2.4rem;
+					background: $whishper;
+					border-radius: 0.8rem;
+					cursor: pointer;
+				}
 			}
 		}
 	}

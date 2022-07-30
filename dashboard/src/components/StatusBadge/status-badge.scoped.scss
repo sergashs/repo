@@ -1,0 +1,26 @@
+.status-badge {
+	padding: 0.5rem 1.2rem;
+	font-weight: 700;
+	font-size: 1.1rem;
+	color: $white;
+	letter-spacing: 0.05rem;
+	text-transform: uppercase;
+	border-radius: 0.8rem;
+
+	&.default {
+		color: $santas-gray-100;
+		background: $whishper;
+	}
+
+	&.warning {
+		background: $amber;
+	}
+
+	&.success {
+		background: $shamrok;
+	}
+
+	&.danger {
+		background: $pomegranate;
+	}
+}

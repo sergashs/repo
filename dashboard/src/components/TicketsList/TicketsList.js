@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './tickets-list.scoped.scss';
 
-class TicketsList extends Component {
-	render() {
-		return <div className="tickets-list">
+function TicketsList() {
+	return (
+		<div className="tickets-list">
 			<div className='header'>
 				<div className='row'>
 					<h3>Unresolved tickets</h3>
@@ -18,7 +18,7 @@ class TicketsList extends Component {
 				<li>Pending <span>281</span></li>
 			</ul>
 		</div>
-	}
+	);
 }
 
 export default TicketsList;
