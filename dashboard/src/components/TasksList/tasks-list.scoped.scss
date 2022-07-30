@@ -54,6 +54,11 @@
 				color: $santas-gray-100;
 			}
 
+			.info-holder {
+				display: flex;
+				align-items: center;
+			}
+
 			&.create-task {
 				color: $french-gray;
 
@@ -67,6 +72,10 @@
 					border-radius: 0.8rem;
 					cursor: pointer;
 				}
+			}
+
+			.checkbox {
+				margin-right: 1.6rem;
 			}
 		}
 	}

@@ -77,6 +77,10 @@ button {
 	border: none;
 }
 
+p {
+	margin-top: 0;
+}
+
 h1,
 h2,
 h3,
@@ -88,4 +92,31 @@ h4 {
 h1,
 h2 {
 	font-weight: 700;
+}
+
+.checkbox {
+	cursor: pointer;
+
+	input {
+		position: absolute;
+		opacity: 0;
+		z-index: -1;
+
+		&:checked {
+			& ~ .control-indicator {
+				background: url("data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L3.92929 7.92929C3.96834 7.96834 4.03166 7.96834 4.07071 7.92929L11 1' stroke='white' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E%0A") no-repeat $blue-ribbon;
+				background-position: center;
+				border-color: $blue-ribbon;
+			}
+		}
+	}
+
+	.control-indicator {
+		display: block;
+		width: 2rem;
+		height: 2rem;
+		border: 2px solid $french-gray;
+		border-radius: 50%;
+		user-select: none;
+	}
 }

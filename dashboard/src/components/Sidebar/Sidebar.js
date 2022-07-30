@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Routes, Route, NavLink } from "react-router-dom";
 import './sidebar.scoped.scss';
 
 class Sidebar extends Component {
@@ -11,18 +12,18 @@ class Sidebar extends Component {
 			<nav>
 				<ul className='menu'>
 					<li>
-						<a href="#">
+						<NavLink to="/">
 							<span className='icon-holder'>
 								<img src="/images/icon-01.svg" alt="icon Overview" />
 							</span>
-							Overview</a>
+							Overview</NavLink>
 					</li>
 					<li>
-						<a href="#">
+						<NavLink to="/users">
 							<span className='icon-holder'>
 								<img src="/images/icon-02.svg" alt="icon Users" />
 							</span>
-							Users</a>
+							Users</NavLink>
 					</li>
 					<li>
 						<a href="#">

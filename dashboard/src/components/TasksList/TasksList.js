@@ -14,9 +14,34 @@ function TasksList() {
 			</div>
 			<ul>
 				<li className='create-task'>Create new task <span><img src="/images/icon-013.svg" alt="icon plus" /></span></li>
-				<li>Finish ticket update <StatusBadge class="warning" title="Urgent" /></li>
-				<li>Create new ticket example <StatusBadge class="success" title="New" /></li>
-				<li>Update ticket report <StatusBadge class="default" title="default" /></li>
+				<li>
+					<div className='info-holder'>
+						<label className="control checkbox">
+							<input type="checkbox" />
+							<span className="control-indicator"></span>
+						</label>
+						Finish ticket update
+					</div>
+					<StatusBadge className="warning" title="Urgent" /></li>
+				<li>
+					<div className='info-holder'>
+						<label className="control checkbox">
+							<input type="checkbox" />
+							<span className="control-indicator"></span>
+						</label>
+						Create new ticket example
+					</div>
+
+					<StatusBadge className="success" title="New" /></li>
+				<li>
+					<div className='info-holder'>
+						<label className="control checkbox">
+							<input type="checkbox" />
+							<span className="control-indicator"></span>
+						</label>
+						Update ticket report
+					</div>
+					<StatusBadge className="default" title="default" /></li>
 			</ul>
 		</div >
 	);

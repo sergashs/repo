@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useState, useEffect } from "react";
 import './users-list.scoped.scss';
 import StatusBadge from "../StatusBadge/StatusBadge"
+import { Link, Outlet } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 
 
 export function UsersList() {
 	const [data, setData] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
+
+
+
 
 	useEffect(() => {
 		const getData = async () => {
@@ -32,6 +38,7 @@ export function UsersList() {
 		}
 		getData()
 	}, [])
+
 
 	return <div className='users-list'>
 		<div className='header'>
@@ -67,8 +74,14 @@ export function UsersList() {
 				{data &&
 					data.map(({ id, username, name, company, email, website }) => (
 
-						<tr key={id}>
-							<td >
+						<tr key={id} >
+							<td>
+								<Link
+									to={`/user/${id}`}
+									key={id}
+									className="link-to-user"
+								>
+								</Link>
 								<div className='user-profile'>
 									<div className='avatar-holder'>
 										<img src="images/img-02.jpg" alt="user avatar" />
@@ -84,15 +97,16 @@ export function UsersList() {
 								<span className='txt-2'>{company.bs}</span>
 							</td>
 							<td>
-								<span className='txt-1'>{email}</span>
-								<span className='txt-2'>{website}</span>
+								<span className='txt-1'><a href={'mailto:' + email}>{email}</a></span>
+								<span className='txt-2'><a href={'http://' + website} target="_blank">{website}</a></span>
 							</td>
-							<td><StatusBadge class="danger" title="hight" /></td>
+							<td><StatusBadge className="danger" title="hight" /></td>
 							<td><button><img src="/images/icon-014.svg" alt="user avatar" /></button></td>
 						</tr>
 					))}
 			</tbody>
 		</table>
+		<Outlet />
 	</div >;
 
 }

@@ -65,7 +65,8 @@
 				transition: $transition;
 			}
 
-			&:hover {
+			&:hover,
+			&.active {
 				background: rgba($santas-gray-100, 0.08);
 
 				&::before {

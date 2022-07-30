@@ -6,7 +6,7 @@ class Header extends Component {
 		return <header className='header'>
 			<div className='container'>
 				<div className='left'>
-					<h1>Users</h1>
+					<h2>Users</h2>
 				</div>
 				<div className='right'>
 					<ul className='menu'>

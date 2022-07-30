@@ -1,27 +1,6 @@
 //fonts
 $mulish: "Mulish", sans-serif;
 
-// bootstrap grid
-$grid-columns: 12;
-$grid-gutter-width: 30px;
-$grid-gutter-width-mobile: $grid-gutter-width;
-
-$grid-breakpoints: (
-	xs: 0,
-	sm: 576px,
-	md: 768px,
-	lg: 992px,
-	xl: 1200px,
-	xxl: 1400px
-);
-
-$container-max-widths: (
-	sm: 540px,
-	md: 720px,
-	lg: 960px,
-	xl: 1302px
-);
-
 // colors
 $white: #fff;
 $black: #000;
@@ -39,6 +18,7 @@ $whishper: #f0f1f7;
 $amber: #fec400;
 $shamrok: #29cc97;
 $pomegranate: #f12b2c;
+$jumbo: #797a84;
 
 // // base vars
 $text-color-base: $charade;
