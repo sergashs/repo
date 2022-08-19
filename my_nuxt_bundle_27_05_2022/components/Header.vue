@@ -37,6 +37,10 @@ export default {
 					to: "/contact"
 				},
 				{
+					title: "accordion",
+					to: "/accordion"
+				},
+				{
 					title: "breakpoints",
 					to: "/breakpoints"
 				}
