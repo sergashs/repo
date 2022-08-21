@@ -13814,6 +13814,68 @@ body.buddypress #page #primary {
 	margin-right: 0.3rem;
 }
 
+.widget_post_views_counter_list_widget ol {
+	margin: 0 0 1.5rem 0;
+	padding: 0;
+	list-style: none;
+}
+.widget_post_views_counter_list_widget ol li {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+.widget_post_views_counter_list_widget ol li:not(:last-child) {
+	padding-bottom: 1.5rem;
+	margin-bottom: 1.5rem;
+	border-bottom: solid 0.1rem #1d1d1d;
+}
+.widget_post_views_counter_list_widget .post-thumbnail {
+	display: block;
+	margin-bottom: 1.5rem;
+	-webkit-box-ordinal-group: 3;
+	    -ms-flex-order: 2;
+	        order: 2;
+}
+.widget_post_views_counter_list_widget .post-thumbnail img {
+	width: 100%;
+	height: auto;
+}
+.widget_post_views_counter_list_widget .post-title {
+	display: block;
+	font-weight: 600;
+	font-size: 1.4rem;
+	margin-bottom: 1.5rem;
+	-webkit-box-ordinal-group: 2;
+	    -ms-flex-order: 1;
+	        order: 1;
+}
+.widget_post_views_counter_list_widget .post-excerpt {
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	font-size: 1.3rem;
+	-webkit-box-ordinal-group: 4;
+	    -ms-flex-order: 3;
+	        order: 3;
+}
+.widget_post_views_counter_list_widget .count {
+	display: block;
+	padding-top: 0.5rem;
+	font-size: 1.3rem;
+	-webkit-box-ordinal-group: 5;
+	    -ms-flex-order: 4;
+	        order: 4;
+}
+.widget_post_views_counter_list_widget .count::before {
+	content: "Переглядів: ";
+}
+
 .search-form {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -14110,6 +14172,31 @@ body.buddypress #page #primary {
 #bbpress-forums .bbp-admin-links a {
 	font-size: 1.3rem;
 	color: #afaeac !important;
+}
+#bbpress-forums .bbp-the-content-wrapper {
+	background: #252525 !important;
+	border-bottom: solid 0.1rem #323232 !important;
+}
+#bbpress-forums .bbp-the-content-wrapper .mce-toolbar .mce-ico {
+	color: #afaeac !important;
+}
+#bbpress-forums .bbp-the-content-wrapper .mce-toolbar .mce-btn:hover {
+	background: #323232 !important;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+}
+#bbpress-forums .bbp-the-content-wrapper .mce-panel {
+	background: #252525 !important;
+	border-bottom: solid 0.1rem #323232 !important;
+}
+#bbpress-forums .bbp-the-content-wrapper .mce-statusbar {
+	border-bottom: none !important;
+	border-top: none !important;
+}
+#bbpress-forums .bbp-the-content-wrapper .wp-switch-editor {
+	color: #afaeac;
+	background: #0b0b0b;
+	border: solid 0.1rem #181818;
 }
 
 .social-links {

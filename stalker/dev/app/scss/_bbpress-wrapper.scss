@@ -262,4 +262,38 @@
 			color: $cloudy !important;
 		}
 	}
+
+	.bbp-the-content-wrapper {
+		background: #252525 !important;
+		border-bottom: solid 0.1rem #323232 !important;
+
+		.mce-toolbar {
+			.mce-ico {
+				color: #afaeac !important;
+			}
+
+			.mce-btn {
+				&:hover {
+					background: #323232 !important;
+					box-shadow: none;
+				}
+			}
+		}
+
+		.mce-panel {
+			background: #252525 !important;
+			border-bottom: solid 0.1rem #323232 !important;
+		}
+
+		.mce-statusbar {
+			border-bottom: none !important;
+			border-top: none !important;
+		}
+
+		.wp-switch-editor {
+			color: #afaeac;
+			background: #0b0b0b;
+			border: solid 0.1rem #181818;
+		}
+	}
 }
