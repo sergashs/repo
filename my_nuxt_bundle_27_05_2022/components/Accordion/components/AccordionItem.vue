@@ -60,6 +60,7 @@ export default {
 <style lang="scss" scoped>
 .accordion-item {
 	border-top: solid 0.1rem;
+	transition: 0.3s linear;
 
 	.item-header {
 		position: relative;
