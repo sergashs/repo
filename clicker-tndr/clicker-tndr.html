@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<button data-testid="gamepadLike">Like</button>
+	<div class="age">22</div>
+	<script>
+
+		const btn = document.querySelector('[data-testid="gamepadLike"]');
+		let likes = 0;
+		let dislikes = 0;
+
+		const age = document.querySelector('.age').innerHTML;
+
+		console.log(age)
+
+
+		btn.addEventListener('click', () => {
+
+
+			// console.log('like' + ' ' + counter)
+
+			if (age < 22) {
+				console.log('age < 22 (dislike) ' + likes)
+				dislikes += 1;
+
+			} else {
+				console.log('age > 22 (like) ' + dislikes)
+				likes += 1;
+			}
+
+		})
+
+		setInterval(() => {
+
+			btn.click()
+
+
+		}, 4000);
+
+
+
+
+
+		// const btn = document.querySelector('[data-testid="gamepadLike"]');
+		// console.log(btn)
+
+
+
+
+
+
+	</script>
+</body>
+
+</html>

@@ -81,6 +81,7 @@ export default {
 	border: solid 0.2rem $black;
 	opacity: 0;
 	mix-blend-mode: difference;
+	background: red;
 	pointer-events: none;
 	transform: translate3d(-50%, -50%, 0);
 }

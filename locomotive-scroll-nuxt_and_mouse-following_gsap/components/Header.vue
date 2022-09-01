@@ -1,5 +1,5 @@
 <template>
-	<header class="header">
+	<header class="header" data-scroll-section>
 		<div class="container">
 			<strong class="logo">
 				<nuxt-link to="/">Logo</nuxt-link>

@@ -1,6 +1,6 @@
 .informer-last-news {
 	.item {
-		margin-bottom: 2rem;
+		margin-bottom: 2.5rem;
 
 		h3 {
 			font-family: $fira-sans-condensed;
@@ -28,11 +28,11 @@
 
 				@include media-breakpoint-up(lg) {
 					max-width: 30rem;
-					margin-right: 1.5rem;
+					margin-right: 2rem;
 				}
 
 				@include media-breakpoint-down(lg) {
-					margin-bottom: 1.5rem;
+					margin-bottom: 2rem;
 				}
 
 				img {
@@ -49,6 +49,10 @@
 				flex: 1;
 				color: $cloudy;
 			}
+		}
+
+		.more-link {
+			font-style: italic;
 		}
 	}
 }

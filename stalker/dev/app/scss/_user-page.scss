@@ -7,21 +7,23 @@
 
 	.bp-wrap {
 		.bp-navs {
-			border-bottom: solid 0.1rem lighten($tuatara, 50) !important;
-			border-top: solid 0.1rem lighten($tuatara, 50) !important;
+			border-bottom: solid 0.1rem lighten($tuatara, 30) !important;
+			border-top: solid 0.1rem lighten($tuatara, 30) !important;
 			box-shadow: none !important;
 		}
 
 		.bp-personal-tab {
 			&.selected {
 				a {
-					background: lighten($tuatara, 80) !important;
+					color: lighten($tuatara, 80) !important;
+					background: lighten($tuatara, 10) !important;
 				}
 			}
 
 			a {
 				&:hover {
-					background: lighten($tuatara, 60) !important;
+					color: lighten($tuatara, 70) !important;
+					background: lighten($tuatara, 30) !important;
 				}
 			}
 		}

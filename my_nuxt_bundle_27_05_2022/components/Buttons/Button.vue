@@ -111,34 +111,34 @@ export default {
 
 	&.btn-primary {
 		color: $white;
-		background: $purple;
-		border-color: $purple;
+		// background: $purple;
+		// border-color: $purple;
 
 		&:hover {
-			background: lighten($purple, 10);
-			border-color: lighten($purple, 10);
+			// background: lighten($purple, 10);
+			// border-color: lighten($purple, 10);
 		}
 	}
 
 	&.btn-outline-primary {
 		color: $black;
 		background: transparent;
-		border: solid 0.2rem $purple;
+		// border: solid 0.2rem $purple;
 
 		&:hover {
 			color: $white;
-			background: $purple;
+			// background: $purple;
 		}
 	}
 
 	&.btn-warning {
 		color: $black;
-		background: $candlelight;
-		border-color: $candlelight;
+		// background: $candlelight;
+		// border-color: $candlelight;
 
 		&:hover {
-			background: lighten($candlelight, 10);
-			border-color: lighten($candlelight, 10);
+			// background: lighten($candlelight, 10);
+			// border-color: lighten($candlelight, 10);
 		}
 	}
 
@@ -158,12 +158,12 @@ export default {
 
 	&.btn-danger {
 		color: $white;
-		background: $torch-red;
-		border-color: $torch-red;
+		// background: $torch-red;
+		// border-color: $torch-red;
 
 		&:hover {
-			background: lighten($torch-red, 10);
-			border-color: lighten($torch-red, 10);
+			// background: lighten($torch-red, 10);
+			// border-color: lighten($torch-red, 10);
 		}
 	}
 

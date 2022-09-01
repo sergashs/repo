@@ -1,5 +1,5 @@
 <template>
-	<footer class="footer">
+	<footer class="footer" data-scroll-section>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
@@ -10,14 +10,14 @@
 					</address>
 				</div>
 				<div class="col-md-6">
-					<!-- <div class="group">
+					<div class="group">
 						<h3>title group</h3>
 						<ul>
 							<li>
-								<a href="#"><link rel="stylesheet" href="" /></a>
+								<a href="#"><link rel="stylesheet" href="" />sss</a>
 							</li>
 						</ul>
-					</div> -->
+					</div>
 				</div>
 			</div>
 		</div>

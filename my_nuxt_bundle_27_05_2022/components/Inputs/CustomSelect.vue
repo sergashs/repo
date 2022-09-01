@@ -152,7 +152,7 @@ export default {
 		transition: $transition;
 
 		&:hover {
-			background: $seashell;
+			// background: $seashell;
 		}
 	}
 

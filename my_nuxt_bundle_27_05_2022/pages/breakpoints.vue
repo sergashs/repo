@@ -12,6 +12,15 @@ import getterBreakpoints from "@/mixins/getterBreakpoints";
 
 export default {
 	name: "Breakpoints",
-	mixins: [getterBreakpoints]
+	mixins: [getterBreakpoints],
+	mounted() {
+		// this.$nextTick(function () {
+		// 	console.log(this.up_md);
+		// });
+
+		window.addEventListener("resize", () => {
+			console.log(this.up_md);
+		});
+	}
 };
 </script>

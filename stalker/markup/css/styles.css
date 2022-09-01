@@ -12541,6 +12541,11 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	margin-right: 3rem;
 	line-height: 1;
 }
+@media (max-width: 767.98px) {
+	.meta-info li {
+		margin-bottom: 1rem;
+	}
+}
 .meta-info li i {
 	margin-right: 0.5rem;
 }
@@ -12681,7 +12686,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	min-height: 4.1rem;
+	min-height: 4.5rem;
 	margin-bottom: 15rem;
 	background: #101010;
 	border-bottom: solid 0.1rem #181818;
@@ -12701,6 +12706,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 }
 .header .user-profile {
 	position: relative;
+	display: none;
 }
 .header .user-profile .open-profile-dropdown {
 	display: -webkit-box;
@@ -12852,8 +12858,9 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 @media (max-width: 991.98px) {
 	.header .dropdown-menu-wrapper .main-navigation {
 		position: absolute;
-		top: 4.2rem;
+		top: 4.6rem;
 		left: 0;
+		min-width: 20rem;
 		background: #101010;
 		border-right: solid 0.1rem #181818;
 		border-left: solid 0.1rem #181818;
@@ -13081,7 +13088,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 }
 
 .informer-last-news .item {
-	margin-bottom: 2rem;
+	margin-bottom: 2.5rem;
 }
 .informer-last-news .item h3, .informer-last-news .item .h3 {
 	font-family: "Fira Sans Condensed", sans-serif;
@@ -13114,12 +13121,12 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 @media (min-width: 992px) {
 	.informer-last-news .item figure .img-holder {
 		max-width: 30rem;
-		margin-right: 1.5rem;
+		margin-right: 2rem;
 	}
 }
 @media (max-width: 991.98px) {
 	.informer-last-news .item figure .img-holder {
-		margin-bottom: 1.5rem;
+		margin-bottom: 2rem;
 	}
 }
 .informer-last-news .item figure .img-holder img {
@@ -13136,6 +13143,9 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	    -ms-flex: 1;
 	        flex: 1;
 	color: #afaeac;
+}
+.informer-last-news .item .more-link {
+	font-style: italic;
 }
 
 .informer-last-forum {
@@ -13784,7 +13794,7 @@ body.buddypress #page #primary {
 }
 
 .widget_display_topics .bbp-topics-widget {
-	margin: 0 0 1.5rem 0;
+	margin: 0 0 2.5rem 0;
 	padding: 0;
 	list-style: none;
 }
@@ -13798,6 +13808,11 @@ body.buddypress #page #primary {
 	padding: 1rem;
 	background: #1d1d1d;
 	border-radius: 0.5rem;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.widget_display_topics .bbp-topics-widget li:hover {
+	background: #2a2a2a;
 }
 .widget_display_topics .bbp-topics-widget li:not(:last-child) {
 	margin-bottom: 1rem;
@@ -13814,8 +13829,12 @@ body.buddypress #page #primary {
 	margin-right: 0.3rem;
 }
 
+.widget_block .wp-block-latest-comments {
+	margin-bottom: 2.5rem;
+}
+
 .widget_post_views_counter_list_widget ol {
-	margin: 0 0 1.5rem 0;
+	margin: 0 0 2.5rem 0;
 	padding: 0;
 	list-style: none;
 }
@@ -13874,6 +13893,10 @@ body.buddypress #page #primary {
 }
 .widget_post_views_counter_list_widget .count::before {
 	content: "Переглядів: ";
+}
+
+.widget_display_stats dl {
+	margin-bottom: 2.5rem;
 }
 
 .search-form {
@@ -14206,7 +14229,7 @@ body.buddypress #page #primary {
 	-webkit-box-pack: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
-	margin: 0 0 2rem 0;
+	margin: 0 0 2.5rem 0;
 	padding: 0;
 	list-style: none;
 }
@@ -14236,7 +14259,7 @@ body.buddypress #page #primary {
 }
 
 .informer-buy-game {
-	margin-bottom: 2rem;
+	margin-bottom: 2.5rem;
 }
 .informer-buy-game .swiper-slide figure {
 	margin-bottom: 0;
@@ -14305,16 +14328,18 @@ body.buddypress #page #primary {
 	border-color: #989898 !important;
 }
 .buddypress-wrap .bp-wrap .bp-navs {
-	border-bottom: solid 0.1rem #989898 !important;
-	border-top: solid 0.1rem #989898 !important;
+	border-bottom: solid 0.1rem #656565 !important;
+	border-top: solid 0.1rem #656565 !important;
 	-webkit-box-shadow: none !important;
 	        box-shadow: none !important;
 }
 .buddypress-wrap .bp-wrap .bp-personal-tab.selected a {
-	background: #e4e4e4 !important;
+	color: #e4e4e4 !important;
+	background: #323232 !important;
 }
 .buddypress-wrap .bp-wrap .bp-personal-tab a:hover {
-	background: #b1b1b1 !important;
+	color: #cbcbcb !important;
+	background: #656565 !important;
 }
 .buddypress-wrap .bp-wrap .select-wrap select {
 	color: #e2e2e2 !important;
