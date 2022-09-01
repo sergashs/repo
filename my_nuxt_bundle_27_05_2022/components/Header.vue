@@ -43,6 +43,10 @@ export default {
 				{
 					title: "breakpoints",
 					to: "/breakpoints"
+				},
+				{
+					title: "modals",
+					to: "/modals"
 				}
 			]
 		};
