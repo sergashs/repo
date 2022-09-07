@@ -22,7 +22,7 @@ function loadFonts() {
 			urls: ['/css/fonts.css']
 		},
 		google: {
-			families: ['Roboto Condensed:n5', 'Oswald:400', 'Fira Sans Condensed:400']
+			families: ['Roboto Condensed:n5', 'Oswald:400', 'Fira Sans Condensed:400,500']
 		}
 	});
 }

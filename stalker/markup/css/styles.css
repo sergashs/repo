@@ -11187,6 +11187,11 @@ h3, .h3 {
 	color: #e2e2e2;
 }
 
+strong,
+b {
+	font-weight: 600;
+}
+
 .not-selectable {
 	-moz-user-select: none;
 	-webkit-user-select: none;
