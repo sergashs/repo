@@ -1,6 +1,7 @@
 <template>
 	<transition>
 		<div class="wrapper">
+			<Header />
 			<main class="main">
 				<nuxt />
 			</main>
@@ -10,9 +11,12 @@
 
 <script>
 import globalBreakpoints from "@/mixins/globalBreakpoints";
+import Header from "@/components/Header";
 
 export default {
-	components: {},
+	components: {
+		Header
+	},
 	mixins: [globalBreakpoints]
 };
 </script>
