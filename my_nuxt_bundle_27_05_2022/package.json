@@ -19,7 +19,6 @@
     "core-js": "^3.19.3",
     "cross-env": "^7.0.3",
     "nuxt": "^2.15.8",
-    "nuxt-webfontloader": "^1.1.0",
     "smoothscroll-polyfill": "^0.4.4",
     "swiper": "^5.4.5",
     "vue": "^2.6.14",

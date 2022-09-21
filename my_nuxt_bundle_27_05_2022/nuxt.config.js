@@ -25,11 +25,17 @@ export default {
     scss: ["./assets/scss/_vars.scss", "./assets/scss/_mixins.scss", "./bootstrap/scss/_mixins.scss"],
   },
 
-  webfontloader: {
-    google: {
-      families: ["Oswald:300,400,500,700", "Chakra Petch:400"],
-    },
-  },
+
+
+  // fontLoader: {
+  // fontLoader: {
+  //   url: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap',
+
+  //   prefetch: true,
+  //   preconnect: true
+  // }
+  //   url: '/fonts/stylesheet.css'
+  // },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -41,12 +47,12 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     "@nuxtjs/eslint-module",
+    'nuxt-font-loader'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/pwa
-    "nuxt-webfontloader",
     "@nuxtjs/pwa",
     "@nuxtjs/style-resources",
   ],
