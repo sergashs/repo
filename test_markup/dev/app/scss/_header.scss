@@ -1,0 +1,67 @@
+/* header */
+#header {
+	border-bottom: 0.1rem solid #e0e3e3;
+
+	.promo-line {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.55rem 0;
+		background: #cbdcff;
+
+		.text-holder {
+			font-size: 1.6rem;
+			line-height: 1.5;
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.open-menu {
+	position: relative;
+	width: 3rem;
+	height: 3rem;
+	border: 0.3rem solid transparent;
+	display: block;
+	font-size: 0;
+	line-height: 0;
+
+	span {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		transform: translate(-50%, -50%);
+		border-bottom: 0.1rem solid;
+		height: 0;
+
+		@for $i from 1 through 3 {
+			&:nth-child(#{$i}) {
+				@if ($i == 1) {
+					margin-top: -1rem;
+				}
+				@if ($i == 3) {
+					margin-top: 1rem;
+				}
+			}
+		}
+
+		.menu-opened & {
+			@for $i from 1 through 3 {
+				&:nth-child(#{$i}) {
+					@if ($i == 1) {
+						margin-top: 0;
+						transform: translate(-50%, -50%) rotate(45deg);
+					}
+					@if ($i == 3) {
+						margin-top: 0;
+						transform: translate(-50%, -50%) rotate(-45deg);
+					}
+				}
+			}
+		}
+	}
+}
