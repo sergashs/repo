@@ -1,3 +1,41 @@
 /* footer */
 #footer {
+	padding-top: 7.2rem;
+	padding-bottom: 3.8rem;
+	background: #eff1f1;
+
+	.footer-menu {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: 1.4rem;
+
+		@include media-breakpoint-down(lg) {
+			margin-bottom: 4rem;
+		}
+
+		.menu-item {
+			&:not(:last-child) {
+				margin-bottom: 1.2rem;
+			}
+		}
+	}
+
+	.footer-bottom {
+		padding-top: 7.2rem;
+
+		@include media-breakpoint-down(lg) {
+			padding-top: 2rem;
+		}
+
+		.text-holder {
+			padding-top: 3.8rem;
+			font-size: 1.2rem;
+			border-top: 0.1rem solid #c4c7c7;
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
 }

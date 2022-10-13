@@ -1,19 +1,15 @@
 /* buttons */
 .btn {
 	white-space: normal;
-	.fa {
-		margin-left: 5px;
-	}
+	padding: 1rem 2rem;
+	font-size: 1.2rem;
+	border-radius: 0.4rem;
 
-	&-block {
-		
-	}
+	&.btn-dark {
+		background: #2d3132;
 
-	&-sm {
-		
-	}
-
-	&-lg {
-		
+		&:hover {
+			background: lighten(#2d3132, 10);
+		}
 	}
 }

@@ -7,7 +7,7 @@ body {
 	min-width: 320px;
 	background: $body-bg;
 	color: $body-color;
-	font: $font-weight-base #{$font-size-base}/$line-height-base $font-family-base;
+	font: $font-weight-base #{$font-size-base}/ $line-height-base $font-family-base;
 	font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -23,6 +23,7 @@ a {
 }
 
 a:hover {
+	color: #2d3132;
 	text-decoration: underline;
 }
 
@@ -54,6 +55,9 @@ input[type="submit"]::-moz-focus-inner {
 #main {
 	flex-grow: 1;
 }
-// dev2
-// dev3
-// dev4
+
+.container {
+	max-width: 132rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
