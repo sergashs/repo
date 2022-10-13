@@ -10696,6 +10696,11 @@ input[type=submit]::-moz-focus-inner {
 	padding-top: 3.1rem;
 }
 
+@media (max-width: 991.98px) {
+	.catalog-filters {
+		margin-bottom: 3rem;
+	}
+}
 .catalog-filters .accordion-item {
 	border: solid 0.1rem #eff1f1;
 }
@@ -10869,6 +10874,7 @@ input[type=submit]::-moz-focus-inner {
 	border-radius: 0.4rem;
 }
 .catalog-card .card-body {
+	position: relative;
 	padding: 3.6rem 0 0 0;
 }
 .catalog-card .favorite {
@@ -10880,7 +10886,6 @@ input[type=submit]::-moz-focus-inner {
 	border: none;
 }
 .catalog-card .img-holder {
-	position: relative;
 	max-width: 20.7rem;
 	margin: auto;
 }
@@ -10897,8 +10902,8 @@ input[type=submit]::-moz-focus-inner {
 }
 .catalog-card .card-top-badge {
 	position: absolute;
-	left: -2.8rem;
-	bottom: -2rem;
+	top: 0;
+	left: 0;
 	display: inline-block;
 	padding: 0.4rem 0.8rem;
 	font-size: 1rem;

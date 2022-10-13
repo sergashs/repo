@@ -7,6 +7,7 @@
 	border-radius: 0.4rem;
 
 	.card-body {
+		position: relative;
 		padding: 3.6rem 0 0 0;
 	}
 
@@ -20,7 +21,6 @@
 	}
 
 	.img-holder {
-		position: relative;
 		max-width: 20.7rem;
 		margin: auto;
 	}
@@ -39,8 +39,8 @@
 
 	.card-top-badge {
 		position: absolute;
-		left: -2.8rem;
-		bottom: -2rem;
+		top: 0;
+		left: 0;
 		display: inline-block;
 		padding: 0.4rem 0.8rem;
 		font-size: 1rem;

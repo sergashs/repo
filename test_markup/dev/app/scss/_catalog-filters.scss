@@ -1,4 +1,8 @@
 .catalog-filters {
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 3rem;
+	}
+
 	.accordion-item {
 		border: solid 0.1rem #eff1f1;
 
