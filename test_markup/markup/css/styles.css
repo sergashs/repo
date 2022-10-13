@@ -10331,10 +10331,29 @@ input[type=submit]::-moz-focus-inner {
 	padding: 0.55rem 0;
 	background: #cbdcff;
 }
+@media (max-width: 575.98px) {
+	#header .promo-line {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+	}
+}
+@media (max-width: 575.98px) {
+	#header .promo-line .icons-holder {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+	}
+}
 #header .promo-line .text-holder {
-	margin-left: 1.1rem;
 	font-size: 1.6rem;
 	line-height: 1.5;
+}
+@media (min-width: 576px) {
+	#header .promo-line .text-holder {
+		margin-left: 1.1rem;
+	}
 }
 #header .promo-line .text-holder p {
 	margin-bottom: 0;

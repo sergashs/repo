@@ -10,10 +10,23 @@
 		padding: 0.55rem 0;
 		background: #cbdcff;
 
+		@include media-breakpoint-down(sm) {
+			flex-direction: column;
+		}
+
+		.icons-holder {
+			@include media-breakpoint-down(sm) {
+				display: flex;
+			}
+		}
+
 		.text-holder {
-			margin-left: 1.1rem;
 			font-size: 1.6rem;
 			line-height: 1.5;
+
+			@include media-breakpoint-up(sm) {
+				margin-left: 1.1rem;
+			}
 
 			p {
 				margin-bottom: 0;
