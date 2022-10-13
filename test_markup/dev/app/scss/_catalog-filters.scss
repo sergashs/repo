@@ -1,6 +1,10 @@
 .catalog-filters {
 	.accordion-item {
-		border: none;
+		border: solid 0.1rem #eff1f1;
+
+		&:not(:last-child) {
+			margin-bottom: 0.2rem;
+		}
 
 		.accordion-button {
 			padding: 1.6rem 2.4rem;
@@ -17,8 +21,47 @@
 			}
 		}
 
-		.accordion-collapse {
-			border: solid 0.1rem #eff1f1;
+		.accordion-body {
+		}
+	}
+
+	.price-inner {
+		.ranges-wrapper {
+			display: flex;
+			margin-bottom: 2.5rem;
+		}
+
+		.form-range {
+			&::-webkit-slider-runnable-track {
+				background: #c4c7c7;
+				border-radius: 0;
+			}
+
+			&::-webkit-slider-thumb {
+				width: 1.6rem;
+				height: 1.6rem;
+				background: #5c5f60;
+				border-radius: 0.4rem;
+				box-shadow: none;
+				border: none;
+				transform: translateY(-0.3rem);
+			}
+		}
+
+		.ranges-forms {
+			display: flex;
+		}
+
+		.form-group {
+			&:not(:last-child) {
+				margin-right: 2.4rem;
+			}
+		}
+
+		.form-label {
+			margin-bottom: 0.8rem;
+			font-size: 1rem;
+			color: #747778;
 		}
 	}
 }
