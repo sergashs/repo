@@ -3,6 +3,10 @@
 	font-size: 1.2rem;
 
 	.breadcrumb-item {
+		& + .breadcrumb-item {
+			padding-left: 1rem;
+		}
+
 		&.active {
 			color: #747778;
 		}
