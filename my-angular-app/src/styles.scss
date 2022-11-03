@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+.app {
+  font-family: "SF UI Display";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
