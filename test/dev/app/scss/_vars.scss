@@ -1,0 +1,39 @@
+// vars
+
+// fonts
+$main-font: "Noto Sans", sans-serif;
+
+// bootstrap grid
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+$grid-gutter-width-mobile: $grid-gutter-width;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1340px
+);
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1302px
+);
+
+// base vars
+$text-color-base: #484848;
+$body-bg: #faf0d7;
+$font-family-base: $main-font;
+$font-size-base: 1.8rem;
+$font-weight-base: 400;
+$line-height-base: 1.6666666667;
+$links-color-base: inherit;
+
+$transition: all 0.3s ease;
+
+// dev2
+// dev3
+// dev4
