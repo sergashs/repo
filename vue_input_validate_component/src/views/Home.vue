@@ -20,26 +20,26 @@
 				<div class="card">
 					<h5 class="text-center">Register</h5>
 					<form @submit.prevent="handleSubmit(!v$.$invalid)" class="p-fluid">
-						<div class="field">
-							<div class="p-float-label">
-								<InputText id="name" v-model="v$.name.$model" :class="{ 'p-invalid': v$.name.$invalid && submitted }" />
-								<label for="name" :class="{ 'p-error': v$.name.$invalid && submitted }">Name*</label>
-							</div>
-							<small v-if="(v$.name.$invalid && submitted) || v$.name.$pending.$response" class="p-error">{{ v$.name.required.$message.replace("Value", "Name") }}</small>
-						</div>
-						<div class="field">
-							<div class="p-float-label p-input-icon-right">
-								<i class="pi pi-envelope" />
-								<InputText id="email" v-model="v$.email.$model" :class="{ 'p-invalid': v$.email.$invalid && submitted }" aria-describedby="email-error" />
-								<label for="email" :class="{ 'p-error': v$.email.$invalid && submitted }">Email*</label>
-							</div>
-							<span v-if="v$.email.$error && submitted">
-								<span id="email-error" v-for="(error, index) of v$.email.$errors" :key="index">
-									<small class="p-error">{{ error.$message }}</small>
-								</span>
-							</span>
-							<small v-else-if="(v$.email.$invalid && submitted) || v$.email.$pending.$response" class="p-error">{{ v$.email.required.$message.replace("Value", "Email") }}</small>
-						</div>
+						<Input
+							:v-object="v$.name"
+							label="Name"
+							:error="{
+								invalid: v$.name.$invalid,
+								submitted: submitted,
+								pending: v$.name.$pending.$response
+							}"
+						/>
+
+						<Input
+							:v-object="v$.email"
+							label="Email"
+							:error="{
+								invalid: v$.email.$invalid,
+								submitted: submitted,
+								pending: v$.email.$pending.$response,
+								error: v$.email.$error
+							}"
+						/>
 
 						<Button type="submit" label="Submit" class="mt-2" />
 					</form>
@@ -52,9 +52,13 @@
 <script>
 import { email, required } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
+import Input from "@/components/Input";
 
 export default {
 	setup: () => ({ v$: useVuelidate() }),
+	components: {
+		Input
+	},
 	data() {
 		return {
 			name: "",
@@ -80,7 +84,6 @@ export default {
 			}
 		};
 	},
-
 	methods: {
 		handleSubmit(isFormValid) {
 			this.submitted = true;
