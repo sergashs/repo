@@ -1,10 +1,8 @@
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
-
-  // mode: 'static',
-  // router: {
-  //   base: '/nuxt-deploy/'
-  // },
+  mode: 'static',
+  router: {
+    base: '/nuxt-deploy/'
+  },
 
 
   head: {
