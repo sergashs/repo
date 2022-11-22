@@ -1,159 +1,59 @@
 <template>
 	<div class="home">
-		<span class="p-input-icon-left">
+		<span class="p-input-icon-left input-holder">
 			<i class="pi pi-search" />
 			<InputText v-model="search" @input="onInput" placeholder="Пошук" />
 		</span>
 
-		<ul class="result-list">
-			<li v-for="(item, index) in searchResut" :key="index">
-				<small
-					>{{ item.street }}, номери будинків (<template v-for="(houseItem, i) in item.houseNumbers" :key="i">{{ houseItem }}, </template>), index: {{ item.index }}</small
-				>
-			</li>
-		</ul>
-
-		<!-- searchResut: {{ searchResut }} -->
-		<!-- <table>
-			<tbody>
-				<tr>
-					<th>Вулиця</th>
-					<th>Будинок</th>
-					<th>Індекс</th>
-				</tr>
-				<tr>
-					<td>вулиця Абхазька</td>
-					<td>1, 1А, 4, 5, 6, 7, 9</td>
-					<td><a href="https://postindex.pp.ua/uk/index/79037.html">79037</a></td>
-				</tr>
-			</tbody>
-		</table> -->
-		<!-- <div class="form-demo">
-			<Dialog v-model:visible="showMessage" :breakpoints="{ '960px': '80vw' }" :style="{ width: '30vw' }" position="top">
-				<div class="flex align-items-center flex-column pt-6 px-3">
-					<i class="pi pi-check-circle" :style="{ fontSize: '5rem', color: 'var(--green-500)' }"></i>
-					<h5>Registration Successful!</h5>
-					<p :style="{ lineHeight: 1.5, textIndent: '1rem' }">
-						Your account is registered under name <b>{{ name }}</b> ; it'll be valid next 30 days without activation. Please check <b>{{ email }}</b> for activation instructions.
-					</p>
-				</div>
-				<template #footer>
-					<div class="flex justify-content-center">
-						<Button label="OK" @click="toggleDialog" class="p-button-text" />
-					</div>
-				</template>
-			</Dialog>
-
-			<div class="flex justify-content-center">
-				<div class="card">
-					<h5 class="text-center">Register</h5>
-					<form @submit.prevent="handleSubmit(!v$.$invalid)" class="p-fluid">
-						<Input
-							:v-object="v$.name"
-							label="Name"
-							:error="{
-								invalid: v$.name.$invalid,
-								submitted: submitted,
-								pending: v$.name.$pending.$response
-							}"
-						/>
-
-						<Input
-							:v-object="v$.email"
-							label="Email"
-							:error="{
-								invalid: v$.email.$invalid,
-								submitted: submitted,
-								pending: v$.email.$pending.$response,
-								error: v$.email.$error
-							}"
-						/>
-
-						<Button type="submit" label="Submit" class="mt-2" />
-					</form>
-				</div>
-			</div>
-		</div> -->
+		<div class="result">
+			<table>
+				<thead>
+					<tr>
+						<th width="155">Вулиця</th>
+						<th>Номери будинків</th>
+						<th>Індекс</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="(item, index) in searchResut" :key="index">
+						<td class="text-center">{{ item.street }}</td>
+						<td>
+							<template v-for="(houseItem, i) in item.houseNumbers" :key="i">{{ houseItem }}, </template>
+						</td>
+						<td>{{ item.index }}</td>
+					</tr>
+					<tr v-if="searchResut.length <= 0">
+						<td colspan="4" style="text-align: center">співпадінь не знайдено</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 </template>
 
 <script>
-// import { email, required } from "@vuelidate/validators";
-// import { useVuelidate } from "@vuelidate/core";
-// import Input from "@/components/Input";
 import Lviv from "@/data/lviv.json";
 
 export default {
-	// setup: () => ({ v$: useVuelidate() }),
-	// components: {
-	// 	Input
-	// },
-	// data() {
-	// 	return {
-	// 		name: "",
-	// 		email: "",
-	// 		password: "",
-	// 		date: null,
-	// 		country: null,
-	// 		accept: null,
-	// 		submitted: false,
-	// 		countries: null,
-	// 		showMessage: false
-	// 	};
-	// },
-	// countryService: null,
-	// validations() {
-	// 	return {
-	// 		name: {
-	// 			required
-	// 		},
-	// 		email: {
-	// 			required,
-	// 			email
-	// 		}
-	// 	};
-	// },
-	// methods: {
-	// 	handleSubmit(isFormValid) {
-	// 		this.submitted = true;
-	// 		if (!isFormValid) {
-	// 			return;
-	// 		}
-	// 		this.toggleDialog();
-	// 	},
-	// 	toggleDialog() {
-	// 		this.showMessage = !this.showMessage;
-	// 		if (!this.showMessage) {
-	// 			this.resetForm();
-	// 		}
-	// 	},
-	// 	resetForm() {
-	// 		this.name = "";
-	// 		this.email = "";
-	// 		this.submitted = false;
-	// 	}
-	// }
 	data() {
 		return {
 			search: "",
-			searchResut: ""
+			searchResut: "",
+			cars: [
+				{ id: "1000", street: "f230fh0g3", name: "Bamboo Watch", description: "Product Description", image: "bamboo-watch.jpg", price: 65, category: "Accessories", quantity: 24, inventoryStatus: "INSTOCK", rating: 5 },
+				{ id: "1001", street: "nvklal433", name: "Black Watch", description: "Product Description", image: "black-watch.jpg", price: 72, category: "Accessories", quantity: 61, inventoryStatus: "INSTOCK", rating: 4 },
+				{ id: "1002", street: "zz21cz3c1", name: "Blue Band", description: "Product Description", image: "blue-band.jpg", price: 79, category: "Fitness", quantity: 2, inventoryStatus: "LOWSTOCK", rating: 3 },
+				{ id: "1003", street: "244wgerg2", name: "Blue T-Shirt", description: "Product Description", image: "blue-t-shirt.jpg", price: 29, category: "Clothing", quantity: 25, inventoryStatus: "INSTOCK", rating: 5 },
+				{ id: "1004", street: "h456wer53", name: "Bracelet", description: "Product Description", image: "bracelet.jpg", price: 15, category: "Accessories", quantity: 73, inventoryStatus: "INSTOCK", rating: 4 },
+				{ id: "1005", street: "av2231fwg", name: "Brown Purse", description: "Product Description", image: "brown-purse.jpg", price: 120, category: "Accessories", quantity: 0, inventoryStatus: "OUTOFSTOCK", rating: 4 },
+				{ id: "1006", street: "bib36pfvm", name: "Chakra Bracelet", description: "Product Description", image: "chakra-bracelet.jpg", price: 32, category: "Accessories", quantity: 5, inventoryStatus: "LOWSTOCK", rating: 3 },
+				{ id: "1007", street: "mbvjkgip5", name: "Galaxy Earrings", description: "Product Description", image: "galaxy-earrings.jpg", price: 34, category: "Accessories", quantity: 23, inventoryStatus: "INSTOCK", rating: 5 },
+				{ id: "1008", street: "vbb124btr", name: "Game Controller", description: "Product Description", image: "game-controller.jpg", price: 99, category: "Electronics", quantity: 2, inventoryStatus: "LOWSTOCK", rating: 4 },
+				{ id: "1009", street: "cm230f032", name: "Gaming Set", description: "Product Description", image: "gaming-set.jpg", price: 299, category: "Electronics", quantity: 63, inventoryStatus: "INSTOCK", rating: 3 }
+			]
 		};
 	},
 	mounted() {
-		// const elTable = document.querySelectorAll("table tr");
-		// let compeltedArray = [];
-		// elTable.forEach((el) => {
-		// 	const houseNumbersFormatted = el.children[1].innerHTML.split(",").map((item) => {
-		// 		return item.replace(" ", "");
-		// 	});
-		// 	compeltedArray.push({
-		// 		street: el.children[0].innerHTML.replace("вулиця ", ""),
-		// 		houseNumbers: houseNumbersFormatted,
-		// 		index: el.children[2].children[0] && el.children[2].children[0].innerHTML
-		// 	});
-		// });
-		// console.log(compeltedArray);
-
 		const array = ["повітряна", "Озерна", "Папоротна", "Широка"];
 
 		array.forEach((el) => {
@@ -164,15 +64,9 @@ export default {
 	},
 	methods: {
 		onInput(event) {
-			// console.log(event.target.value);
-
 			let result = Lviv.filter((el) => {
-				// return event.target.value.toLowerCase() == el.street.toLowerCase() ? el : null;
-				// return el.street.toLowerCase().match(event.target.value.toLowerCase());
 				return el.street.toLowerCase().match(event.target.value.toLowerCase()) && el.street.toLowerCase().match(event.target.value.toLowerCase())[0].length >= 3;
 			});
-
-			console.log(result);
 
 			this.searchResut = result;
 		}
@@ -185,35 +79,49 @@ export default {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	padding-top: 100px;
 
-	.result-list {
-		margin: 0;
-		padding: 0;
-		list-style: none;
+	.result {
+		width: 100%;
+		max-width: 600px;
+		margin: auto;
 
-		li {
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			font-size: 14px;
+			border: solid 1px #e9ecef;
+			text-align: left;
+
+			thead {
+				th {
+					padding: 10px 15px;
+					font-weight: 400;
+					background: #f8f9fa;
+					border-bottom: solid 1px #e9ecef;
+
+					&:not(:last-child) {
+						border-right: solid 1px #e9ecef;
+					}
+				}
+			}
+
+			tbody {
+				td {
+					padding: 10px 15px;
+					border-bottom: solid 1px #e9ecef;
+
+					&:not(:last-child) {
+						border-right: solid 1px #e9ecef;
+					}
+				}
+			}
 		}
 	}
+
+	.input-holder {
+		margin-bottom: 50px;
+	}
 }
-
-// .form-demo {
-// 	.card {
-// 		min-width: 450px;
-
-// 		form {
-// 			margin-top: 2rem;
-// 		}
-
-// 		.field {
-// 			margin-bottom: 1.5rem;
-// 		}
-// 	}
-
-// 	@media screen and (max-width: 960px) {
-// 		.card {
-// 			width: 80%;
-// 		}
-// 	}
-// }
 </style>
