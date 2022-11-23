@@ -20,17 +20,30 @@
 				<div class="card">
 					<h5 class="text-center">Register</h5>
 					<form @submit.prevent="handleSubmit(!v$.$invalid)" class="p-fluid">
-						<Input
+						<ValidateInput
 							:v-object="v$.name"
 							label="Name"
+							:custom-props="{ placeholder: 'Name', mode: 'decimal' }"
 							:error="{
 								invalid: v$.name.$invalid,
 								submitted: submitted,
 								pending: v$.name.$pending.$response
 							}"
 						/>
+						{{ phone }}
+						<ValidateInput
+							component-tag="InputMask"
+							:custom-props="{ mask: '99-999999' }"
+							:v-object="v$.phone"
+							label="Phone"
+							:error="{
+								invalid: v$.phone.$invalid,
+								submitted: submitted,
+								pending: v$.phone.$pending.$response
+							}"
+						/>
 
-						<Input
+						<ValidateInput
 							:v-object="v$.email"
 							label="Email"
 							:error="{
@@ -38,6 +51,44 @@
 								submitted: submitted,
 								pending: v$.email.$pending.$response,
 								error: v$.email.$error
+							}"
+						/>
+
+						{{ confirm }}
+						<ValidateInput
+							component-tag="InputSwitch"
+							:v-object="v$.confirm"
+							:error="{
+								invalid: v$.confirm.$invalid,
+								submitted: submitted,
+								pending: v$.confirm.$pending.$response,
+								error: v$.confirm.$error
+							}"
+						/>
+
+						{{ dropdown }}
+						<ValidateInput
+							:custom-props="{ options: cities, optionLabel: 'name', placeholder: 'Select a City' }"
+							component-tag="Dropdown"
+							:v-object="v$.dropdown"
+							:error="{
+								invalid: v$.dropdown.$invalid,
+								submitted: submitted,
+								pending: v$.dropdown.$pending.$response,
+								error: v$.dropdown.$error
+							}"
+						/>
+
+						{{ multiselect }}
+						<ValidateInput
+							:custom-props="{ options: cities, optionLabel: 'name', placeholder: 'Select a City' }"
+							component-tag="MultiSelect"
+							:v-object="v$.multiselect"
+							:error="{
+								invalid: v$.multiselect.$invalid,
+								submitted: submitted,
+								pending: v$.multiselect.$pending.$response,
+								error: v$.multiselect.$error
 							}"
 						/>
 
@@ -52,24 +103,35 @@
 <script>
 import { email, required } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
-import Input from "@/components/Input";
+import ValidateInput from "@/components/ValidateInput";
 
 export default {
 	setup: () => ({ v$: useVuelidate() }),
 	components: {
-		Input
+		ValidateInput
 	},
 	data() {
 		return {
 			name: "",
 			email: "",
 			password: "",
+			phone: "",
+			dropdown: "",
+			confirm: null,
 			date: null,
 			country: null,
 			accept: null,
 			submitted: false,
 			countries: null,
-			showMessage: false
+			showMessage: false,
+			multiselect: null,
+			cities: [
+				{ name: "New York", code: "NY" },
+				{ name: "Rome", code: "RM" },
+				{ name: "London", code: "LDN" },
+				{ name: "Istanbul", code: "IST" },
+				{ name: "Paris", code: "PRS" }
+			]
 		};
 	},
 	countryService: null,
@@ -81,6 +143,18 @@ export default {
 			email: {
 				required,
 				email
+			},
+			phone: {
+				required
+			},
+			confirm: {
+				required
+			},
+			dropdown: {
+				required
+			},
+			multiselect: {
+				required
 			}
 		};
 	},
@@ -102,9 +176,6 @@ export default {
 			}
 		},
 		resetForm() {
-			this.name = "";
-			this.email = "";
-
 			this.submitted = false;
 		}
 	}

@@ -1,8 +1,8 @@
 <template>
 	<div class="field">
-		<div class="p-float-label">
-			<InputText :id="label.toLowerCase()" v-model="vObject.$model" :class="{ 'p-invalid': error.invalid && error.submitted }" />
-			<label for="name" :class="{ 'p-error': error.invalid && error.submitted }">{{ label }}*</label>
+		<div class="field">
+			<label v-if="label" for="name" :class="{ 'p-error': error.invalid && error.submitted }">{{ label }}*</label>
+			<component :is="componentTag" v-bind="currentProperties" :class="{ 'p-invalid': error.invalid && error.submitted }" v-model="vObject.$model"> </component>
 		</div>
 		<span v-if="error.error && error.submitted">
 			<span :id="`${label.toLowerCase()}-error`" v-for="(error, index) of vObject.$errors" :key="index">
@@ -20,7 +20,7 @@ export default {
 	props: {
 		label: {
 			type: String,
-			default: "labelName"
+			default: ""
 		},
 		vObject: {
 			type: Object,
@@ -29,6 +29,23 @@ export default {
 		error: {
 			type: Object,
 			default: () => {}
+		},
+		componentTag: {
+			type: String,
+			default: "InputText"
+		},
+		customProps: {
+			type: Object,
+			default: () => {}
+		},
+		value: {
+			type: String,
+			default: ""
+		}
+	},
+	computed: {
+		currentProperties() {
+			return this.customProps;
 		}
 	}
 };

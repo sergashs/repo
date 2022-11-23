@@ -12,6 +12,11 @@ import Divider from 'primevue/divider';
 import Calendar from 'primevue/calendar';
 import Dropdown from 'primevue/dropdown';
 import Checkbox from 'primevue/checkbox';
+import InputMask from 'primevue/inputmask';
+import InputNumber from 'primevue/inputnumber';
+import InputSwitch from 'primevue/inputswitch';
+import MultiSelect from 'primevue/multiselect';
+
 
 
 import 'primevue/resources/themes/saga-blue/theme.css';
@@ -34,3 +39,7 @@ app.component('Divider', Divider);
 app.component('Calendar', Calendar);
 app.component('Dropdown', Dropdown);
 app.component('Checkbox', Checkbox);
+app.component('InputMask', InputMask);
+app.component('InputNumber', InputNumber);
+app.component('InputSwitch', InputSwitch);
+app.component('MultiSelect', MultiSelect);
