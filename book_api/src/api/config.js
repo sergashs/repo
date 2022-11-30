@@ -1,6 +1,6 @@
 const config = function () {
 	return {
-		baseURL: 'https://openlibrary.org/',
+		baseURL: 'https://www.googleapis.com/',
 		headers: {
 			Accept: 'application/json',
 		},

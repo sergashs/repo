@@ -11,11 +11,13 @@
 					<div class="col col-4" v-for="item in searchResults" :key="item.key">
 						<Card>
 							<template #header>
-								<h3 class="card-title">{{ item.title }}</h3>
+								<h3 class="card-title">{{ item.volumeInfo.title }}</h3>
 							</template>
 							<template #content>
-								{{ item.title }}
-								{{ item.author_name }}
+								<!-- {{ item }} -->
+
+								<!-- {{ item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail }} -->
+								<img :src="`http://books.google.com/books/content?id=${item.id}&printsec=frontcover&img=1&zoom=5&source=gbs_api`" />
 							</template>
 						</Card>
 					</div>
@@ -43,7 +45,7 @@ export default {
 				.then((response) => {
 					if (response) {
 						this.isLoading = false;
-						this.searchResults = response.docs;
+						this.searchResults = response.items;
 						console.log(response);
 					}
 				})
