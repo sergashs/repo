@@ -1,12 +1,12 @@
 <template>
-  <div class="time-page page">
-    <div class="container"></div>
-  </div>
+    <div class="time-page page">
+        <div class="container mx-auto px-4">s</div>
+    </div>
 </template>
 
 <script>
 export default {
-  name: "Home",
+    name: 'Home',
 };
 </script>
 

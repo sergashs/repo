@@ -10,13 +10,16 @@
   "dependencies": {
     "@vuelidate/core": "^2.0.0",
     "@vuelidate/validators": "^2.0.0",
+    "autoprefixer": "^9.8.8",
     "axios": "^0.27.2",
     "core-js": "^3.6.5",
     "cors": "^2.8.5",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "normalize.css": "^8.0.1",
+    "postcss": "^7.0.39",
     "sass": "^1.56.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
     "v-calendar": "^2.4.1",
     "vant": "^2.12.49",
     "vue": "^2.6.11",
@@ -40,7 +43,8 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
     "node-sass": "^7.0.3",
-    "sass-loader": "^10.3.1"
+    "sass-loader": "^10.3.1",
+    "vue-cli-plugin-tailwind": "~3.0.0"
   },
   "eslintConfig": {
     "root": true,
