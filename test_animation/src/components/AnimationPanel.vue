@@ -6,16 +6,115 @@
                     <div class="icon-holder">
                         <img src="@/assets/images/icon-dance.svg" alt="..." />
                     </div>
-                    <h3 class="item-title">Dances</h3>
+                    <h3 class="item-title">Танцы</h3>
                 </li>
             </ul>
             <div class="panel-content">
                 <div class="input-search-holder">
                     <InputSearch placeholder="Поиск по названию" />
                 </div>
-                <div class="content-block">
+                <div class="content-block block-animations">
                     <h3 class="block-title">Анимации</h3>
-                    <div class="block-content"></div>
+                    <div class="block-content">
+                        <ScrollBar
+                            :scroll-settings="{
+                                suppressScrollY: false,
+                                suppressScrollX: true,
+                                wheelPropagation: false,
+                            }"
+                            height="410">
+                            <div class="animations-list">
+                                <draggable
+                                    class="row draggable"
+                                    :list="animations"
+                                    :group="{ name: 'animations', pull: 'clone' }"
+                                    :sort="false">
+                                    <div v-for="item in animations" :key="item.id" class="col">
+                                        <div class="list-item">
+                                            <div class="icon-holder">
+                                                <img
+                                                    :src="require(`@/assets/images/${item.icon}`)"
+                                                    :alt="`icon ${item.title}`" />
+                                            </div>
+                                            <h3 class="item-title">
+                                                {{ item.category }} {{ item.id }}
+                                            </h3>
+                                            <div class="text-holder">
+                                                <p>{{ item.title }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </draggable>
+                            </div>
+                        </ScrollBar>
+                    </div>
+                </div>
+                <div class="content-block block-access">
+                    <h3 class="block-title">Быстрый доступ</h3>
+                    <div class="text-holder">
+                        <p>
+                            Для добавления анимации в быстрый доступ - зажмите ЛКМ и перетащите
+                            анимацию в нужную ячейку
+                        </p>
+                    </div>
+                    <div class="block-content">
+                        <div class="animations-list">
+                            <div class="row">
+                                <div
+                                    v-for="(item, index) in choosedAnimations"
+                                    :key="index"
+                                    class="col">
+                                    <div class="slot-item">
+                                        <div
+                                            class="slot-item"
+                                            :class="
+                                                choosedAnimations[index].length > 0
+                                                    ? 'no-drag'
+                                                    : null
+                                            ">
+                                            <button
+                                                v-if="choosedAnimations[index].length == 1"
+                                                class="btn-delete"
+                                                @click="clearSlot(index)"></button>
+                                            <span class="item-number">{{ index }}</span>
+                                            <draggable
+                                                class="draggable"
+                                                :class="
+                                                    choosedAnimations[index].length > 0
+                                                        ? 'no-drag'
+                                                        : null
+                                                "
+                                                :list="choosedAnimations[index]"
+                                                group="animations"
+                                                item-key="id">
+                                                <div
+                                                    v-for="item in choosedAnimations[index]"
+                                                    :key="item.id"
+                                                    class="list-item">
+                                                    <div class="icon-holder">
+                                                        <img
+                                                            :src="
+                                                                require(`@/assets/images/${item.icon}`)
+                                                            "
+                                                            :alt="`icon ${item.title}`" />
+                                                    </div>
+                                                    <h3 class="item-title">
+                                                        {{ item.category }} {{ item.id }}
+                                                    </h3>
+                                                    <div class="text-holder">
+                                                        <p>{{ item.title }}</p>
+                                                    </div>
+                                                </div>
+                                            </draggable>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-text">
+                    <p><span>ESC</span> - Закрыть окно</p>
                 </div>
             </div>
         </div>
@@ -24,10 +123,14 @@
 
 <script>
 import InputSearch from '@/components/InputSearch';
+import ScrollBar from '@/components/ScrollBar';
+import draggable from 'vuedraggable';
 
 export default {
     components: {
         InputSearch,
+        ScrollBar,
+        draggable,
     },
     data() {
         return {
@@ -36,41 +139,108 @@ export default {
                 {
                     id: 1,
                     icon: 'icon-dance.svg',
-                    name: 'Робот',
+                    title: 'Робот',
                     category: 'Танец',
                 },
                 {
                     id: 2,
                     icon: 'icon-dance.svg',
-                    name: 'Робот',
+                    title: 'Робот',
                     category: 'Танец',
                 },
                 {
                     id: 3,
                     icon: 'icon-dance.svg',
-                    name: 'Робот',
+                    title: 'Робот',
                     category: 'Танец',
                 },
                 {
                     id: 4,
                     icon: 'icon-dance.svg',
-                    name: 'Робот',
+                    title: 'Робот',
                     category: 'Танец',
                 },
                 {
                     id: 5,
                     icon: 'icon-dance.svg',
-                    name: 'Робот',
+                    title: 'Робот',
                     category: 'Танец',
                 },
                 {
                     id: 6,
                     icon: 'icon-dance.svg',
-                    name: 'Робот',
+                    title: 'Робот',
+                    category: 'Танец',
+                },
+                {
+                    id: 7,
+                    icon: 'icon-dance.svg',
+                    title: 'Робот',
+                    category: 'Танец',
+                },
+                {
+                    id: 8,
+                    icon: 'icon-dance.svg',
+                    title: 'Робот',
+                    category: 'Танец',
+                },
+                {
+                    id: 9,
+                    icon: 'icon-dance.svg',
+                    title: 'Робот',
+                    category: 'Танец',
+                },
+                {
+                    id: 10,
+                    icon: 'icon-dance.svg',
+                    title: 'Робот',
+                    category: 'Танец',
+                },
+                {
+                    id: 11,
+                    icon: 'icon-dance.svg',
+                    title: 'Робот',
+                    category: 'Танец',
+                },
+                {
+                    id: 12,
+                    icon: 'icon-dance.svg',
+                    title: 'Робот',
+                    category: 'Танец',
+                },
+                {
+                    id: 13,
+                    icon: 'icon-dance.svg',
+                    title: 'Робот',
+                    category: 'Танец',
+                },
+                {
+                    id: 14,
+                    icon: 'icon-dance.svg',
+                    title: 'Робот',
+                    category: 'Танец',
+                },
+                {
+                    id: 15,
+                    icon: 'icon-dance.svg',
+                    title: 'Робот',
                     category: 'Танец',
                 },
             ],
+            choosedAnimations: {
+                1: [],
+                2: [],
+                3: [],
+                4: [],
+                5: [],
+                6: [],
+            },
         };
+    },
+    methods: {
+        clearSlot(index) {
+            this.choosedAnimations[index] = [];
+        },
     },
 };
 </script>
@@ -105,11 +275,11 @@ export default {
 
     .category-list {
         margin: 0;
-        padding: 45px 0 45px 0;
+        padding: 39px 0 45px 0;
         list-style: none;
 
         .list-item {
-            width: 150px;
+            width: 130px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -138,6 +308,7 @@ export default {
         }
 
         .item-title {
+            margin-top: -2px;
             font-weight: 500;
             font-size: 12px;
             color: rgba(229, 255, 255, 0.4);
@@ -154,9 +325,10 @@ export default {
     .panel-content {
         position: relative;
         width: 100%;
-        max-width: 326px;
-        padding-top: 18px;
+        max-width: 303px;
+        padding-top: 16px;
         padding-left: 20px;
+        padding-right: 7px;
 
         &::before {
             content: '';
@@ -177,7 +349,7 @@ export default {
 
     .input-search-holder {
         margin-bottom: 11px;
-        padding-right: 20px;
+        padding-right: 15px;
     }
 
     .content-block {
@@ -187,6 +359,163 @@ export default {
             line-height: 17px;
             text-align: center;
             color: #e5ffff;
+        }
+
+        > .text-holder {
+            max-width: 279px;
+            margin: auto auto 14px auto;
+            font-size: 12px;
+            line-height: 15px;
+            text-align: center;
+            color: rgba(229, 255, 255, 0.2);
+        }
+
+        .block-content {
+            .scroll-area {
+                padding-right: 13px;
+            }
+        }
+
+        &.block-animations {
+            margin-bottom: 11px;
+
+            .block-title {
+                margin-bottom: 10px;
+            }
+        }
+
+        &.block-access {
+            padding-right: 20px;
+
+            .block-title {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .animations-list {
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -15px;
+            margin-right: -15px;
+
+            .col {
+                flex: 0 0 auto;
+                width: 33.33333333%;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        .slot-item {
+            position: relative;
+            width: 76px;
+            height: 76px;
+            margin-bottom: 37px;
+            background: url('~@/assets/images/borders.svg') no-repeat;
+            background-size: cover;
+
+            &.no-drag {
+                background: transparent;
+            }
+
+            .btn-delete {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                width: 8px;
+                height: 8px;
+                background: url('~@/assets/images/icon-close.svg') no-repeat;
+                background-position: center;
+                background-size: 8px;
+                cursor: pointer;
+                z-index: 3;
+                border: none;
+                opacity: 0.15;
+            }
+
+            .item-number {
+                position: absolute;
+                right: 12px;
+                bottom: 8px;
+                font-style: italic;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 22px;
+                color: rgba(229, 255, 255, 0.15);
+                pointer-events: none;
+                user-select: none;
+            }
+        }
+
+        .list-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 9px;
+            cursor: pointer;
+
+            .icon-holder {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 76px;
+                height: 76px;
+                margin-bottom: 5px;
+                background: rgba(19, 26, 27, 0.7);
+
+                img {
+                    opacity: 0.15;
+                }
+            }
+
+            .item-title {
+                margin-bottom: -2px;
+                font-weight: 600;
+                font-size: 10px;
+                line-height: 12px;
+                text-align: center;
+                color: #e5ffff;
+            }
+
+            .text-holder {
+                font-size: 8px;
+                line-height: 10px;
+                text-align: center;
+                color: rgba(229, 255, 255, 0.4);
+
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .draggable {
+        &.no-drag {
+            .list-item {
+                pointer-events: none;
+            }
+        }
+    }
+
+    .bottom-text {
+        display: flex;
+        justify-content: center;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: flex-end;
+        color: rgba(229, 255, 255, 0.2);
+
+        span {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
         }
     }
 }

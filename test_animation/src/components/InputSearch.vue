@@ -29,7 +29,7 @@ export default {
 
         .input {
             width: 100%;
-            padding: 10px 35px 10px 9px;
+            padding: 10px 35px 10px 7px;
             font-size: 13px;
             line-height: 16px;
             color: rgba(229, 255, 255, 1);
@@ -50,7 +50,7 @@ export default {
         .btn-search {
             position: absolute;
             top: 50%;
-            right: 9px;
+            right: 6px;
             padding: 0;
             transform: translateY(-50%);
             background: transparent;

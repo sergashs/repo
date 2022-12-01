@@ -10,5 +10,5 @@ export default {
 
 <style lang="scss">
 @import './assets/styles/normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;1,600&display=swap');
 </style>
