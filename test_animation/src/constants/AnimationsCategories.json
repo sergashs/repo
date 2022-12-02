@@ -2,11 +2,13 @@
 	{
 		"id": 1,
 		"title": "Танцы",
-		"icon": "icon-dance.svg"
+		"icon": "icon-dance.svg",
+		"category_id": 1
 	},
 	{
 		"id": 2,
 		"title": "Стиль походки",
-		"icon": "icon-walking-style.svg"
+		"icon": "icon-walking-style.svg",
+		"category_id": 2
 	}
 ]

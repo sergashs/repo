@@ -3,180 +3,210 @@
 		"id": 1,
 		"icon": "icon-dance.svg",
 		"title": "Робот",
-		"category": "Танец"
+		"category": "Танец",
+		"category_id": 1
 	},
 	{
 		"id": 2,
 		"icon": "icon-dance.svg",
 		"title": "Робот",
-		"category": "Танец"
+		"category": "Танец",
+		"category_id": 1
 	},
 	{
 		"id": 3,
 		"icon": "icon-dance.svg",
 		"title": "Робот",
-		"category": "Танец"
+		"category": "Танец",
+		"category_id": 1
 	},
 	{
 		"id": 4,
 		"icon": "icon-dance.svg",
 		"title": "Робот",
-		"category": "Танец"
+		"category": "Танец",
+		"category_id": 1
 	},
 	{
 		"id": 5,
 		"icon": "icon-dance.svg",
 		"title": "Робот",
-		"category": "Танец"
+		"category": "Танец",
+		"category_id": 1
 	},
 	{
 		"id": 6,
 		"icon": "icon-dance.svg",
 		"title": "Робот",
-		"category": "Танец"
+		"category": "Танец",
+		"category_id": 1
 	},
 	{
 		"id": 7,
 		"icon": "icon-dance.svg",
 		"title": "Робот",
-		"category": "Танец"
+		"category": "Танец",
+		"category_id": 1
 	},
 	{
 		"id": 8,
 		"icon": "icon-dance.svg",
 		"title": "Робот",
-		"category": "Танец"
+		"category": "Танец",
+		"category_id": 1
 	},
 	{
 		"id": 9,
 		"icon": "icon-dance.svg",
 		"title": "Робот",
-		"category": "Танец"
+		"category": "Танец",
+		"category_id": 1
 	},
 	{
 		"id": 10,
 		"icon": "icon-dance.svg",
 		"title": "Робот",
-		"category": "Танец"
+		"category": "Танец",
+		"category_id": 1
 	},
 	{
 		"id": 11,
 		"icon": "icon-dance.svg",
 		"title": "Робот",
-		"category": "Танец"
+		"category": "Танец",
+		"category_id": 1
 	},
 	{
 		"id": 12,
 		"icon": "icon-dance.svg",
 		"title": "Робот",
-		"category": "Танец"
+		"category": "Танец",
+		"category_id": 1
 	},
 	{
 		"id": 13,
 		"icon": "icon-dance.svg",
 		"title": "Робот",
-		"category": "Танец"
+		"category": "Танец",
+		"category_id": 1
 	},
 	{
 		"id": 14,
 		"icon": "icon-dance.svg",
 		"title": "Робот",
-		"category": "Танец"
+		"category": "Танец",
+		"category_id": 1
 	},
 	{
 		"id": 15,
 		"icon": "icon-dance.svg",
 		"title": "Робот",
-		"category": "Танец"
+		"category": "Танец",
+		"category_id": 1
 	},
 	{
 		"id": 16,
 		"icon": "icon-walking-style.svg",
 		"title": "Старик",
-		"category": "Стиль походки"
+		"category": "Стиль походки",
+		"category_id": 2
 	},
 	{
 		"id": 17,
 		"icon": "icon-walking-style.svg",
 		"title": "Старик",
-		"category": "Стиль походки"
+		"category": "Стиль походки",
+		"category_id": 2
 	},
 	{
 		"id": 18,
 		"icon": "icon-walking-style.svg",
 		"title": "Старик",
-		"category": "Стиль походки"
+		"category": "Стиль походки",
+		"category_id": 2
 	},
 	{
 		"id": 19,
 		"icon": "icon-walking-style.svg",
 		"title": "Старик",
-		"category": "Стиль походки"
+		"category": "Стиль походки",
+		"category_id": 2
 	},
 	{
 		"id": 20,
 		"icon": "icon-walking-style.svg",
 		"title": "Старик",
-		"category": "Стиль походки"
+		"category": "Стиль походки",
+		"category_id": 2
 	},
 	{
 		"id": 21,
 		"icon": "icon-walking-style.svg",
 		"title": "Старик",
-		"category": "Стиль походки"
+		"category": "Стиль походки",
+		"category_id": 2
 	},
 	{
 		"id": 22,
 		"icon": "icon-walking-style.svg",
 		"title": "Старик",
-		"category": "Стиль походки"
+		"category": "Стиль походки",
+		"category_id": 2
 	},
 	{
 		"id": 23,
 		"icon": "icon-walking-style.svg",
 		"title": "Старик",
-		"category": "Стиль походки"
+		"category": "Стиль походки",
+		"category_id": 2
 	},
 	{
 		"id": 25,
 		"icon": "icon-walking-style.svg",
 		"title": "Старик",
-		"category": "Стиль походки"
+		"category": "Стиль походки",
+		"category_id": 2
 	},
 	{
 		"id": 26,
 		"icon": "icon-walking-style.svg",
 		"title": "Старик",
-		"category": "Стиль походки"
+		"category": "Стиль походки",
+		"category_id": 2
 	},
 	{
 		"id": 27,
 		"icon": "icon-walking-style.svg",
 		"title": "Старик",
-		"category": "Стиль походки"
+		"category": "Стиль походки",
+		"category_id": 2
 	},
 	{
 		"id": 28,
 		"icon": "icon-walking-style.svg",
 		"title": "Старик",
-		"category": "Стиль походки"
+		"category": "Стиль походки",
+		"category_id": 2
 	},
 	{
 		"id": 29,
 		"icon": "icon-walking-style.svg",
 		"title": "Старик",
-		"category": "Стиль походки"
+		"category": "Стиль походки",
+		"category_id": 2
 	},
 	{
 		"id": 30,
 		"icon": "icon-walking-style.svg",
 		"title": "Старик",
-		"category": "Стиль походки"
+		"category": "Стиль походки",
+		"category_id": 2
 	},
 	{
 		"id": 31,
 		"icon": "icon-walking-style.svg",
 		"title": "Старик",
-		"category": "Стиль походки"
+		"category": "Стиль походки",
+		"category_id": 2
 	}
 ]

@@ -1,14 +1,7 @@
 <template>
     <div class="animation-panel">
         <div class="inner-holder">
-            <ul class="category-list">
-                <li v-for="item in animationsCategories" :key="item.id" class="list-item">
-                    <div class="icon-holder">
-                        <img :src="require(`@/assets/images/${item.icon}`)" :alt="item.title" />
-                    </div>
-                    <h3 class="item-title">{{ item.title }}</h3>
-                </li>
-            </ul>
+            <CategoriesList @onFilter="filterByCategory(value)" />
             <div class="panel-content">
                 <div class="input-search-holder">
                     <InputSearch placeholder="Поиск по названию" />
@@ -26,10 +19,10 @@
                             <div class="animations-list">
                                 <draggable
                                     class="row draggable"
-                                    :list="animations"
+                                    :list="filteredArray"
                                     :group="{ name: 'animations', pull: 'clone' }"
                                     :sort="false">
-                                    <div v-for="item in animations" :key="item.id" class="col">
+                                    <div v-for="item in filteredArray" :key="item.id" class="col">
                                         <div class="list-item">
                                             <div class="icon-holder">
                                                 <img
@@ -126,13 +119,14 @@ import { mapGetters } from 'vuex';
 import InputSearch from '@/components/InputSearch';
 import ScrollBar from '@/components/ScrollBar';
 import draggable from 'vuedraggable';
-import AnimationsCategories from '@/constants/AnimationsCategories';
+import CategoriesList from '@/components/CategoriesList';
 
 export default {
     components: {
         InputSearch,
         ScrollBar,
         draggable,
+        CategoriesList,
     },
     data() {
         return {
@@ -145,14 +139,35 @@ export default {
                 5: [],
                 6: [],
             },
-            animationsCategories: AnimationsCategories,
+
+            filteredArray: [],
         };
+    },
+    mounted() {
+        this.filteredArray = this.animations;
     },
     methods: {
         clearSlot(index) {
             this.choosedAnimations[index] = [];
         },
+        filterByCategory(value) {
+            // let result = this.animations.filter((el) => {
+            //     return (
+            //         el.category.toLowerCase().match(value.toLowerCase()) &&
+            //         el.category.toLowerCase().match(value.toLowerCase())[0].length >= 3
+            //     );
+            // });
+
+            let result = this.animations.filter((el) => {
+                return el.category_id == value;
+            });
+
+            this.filteredArray = result;
+
+            console.log(this.filteredArray);
+        },
     },
+
     computed: {
         ...mapGetters('Animations', ['animations']),
     },
