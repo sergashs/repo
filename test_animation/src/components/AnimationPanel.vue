@@ -2,11 +2,11 @@
     <div class="animation-panel">
         <div class="inner-holder">
             <ul class="category-list">
-                <li class="list-item">
+                <li v-for="item in animationsCategories" :key="item.id" class="list-item">
                     <div class="icon-holder">
-                        <img src="@/assets/images/icon-dance.svg" alt="..." />
+                        <img :src="require(`@/assets/images/${item.icon}`)" :alt="item.title" />
                     </div>
-                    <h3 class="item-title">Танцы</h3>
+                    <h3 class="item-title">{{ item.title }}</h3>
                 </li>
             </ul>
             <div class="panel-content">
@@ -126,6 +126,7 @@ import { mapGetters } from 'vuex';
 import InputSearch from '@/components/InputSearch';
 import ScrollBar from '@/components/ScrollBar';
 import draggable from 'vuedraggable';
+import AnimationsCategories from '@/constants/AnimationsCategories';
 
 export default {
     components: {
@@ -144,6 +145,7 @@ export default {
                 5: [],
                 6: [],
             },
+            animationsCategories: AnimationsCategories,
         };
     },
     methods: {
@@ -151,12 +153,8 @@ export default {
             this.choosedAnimations[index] = [];
         },
     },
-    mounted() {
-        console.log(this.animations);
-    },
     computed: {
         ...mapGetters('Animations', ['animations']),
-        // Другие вычисляемые свойства
     },
 };
 </script>
@@ -393,6 +391,11 @@ export default {
                 line-height: 12px;
                 text-align: center;
                 color: #e5ffff;
+
+                text-overflow: ellipsis;
+                width: 68px;
+                white-space: nowrap;
+                overflow: hidden;
             }
 
             .text-holder {

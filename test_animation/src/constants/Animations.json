@@ -88,5 +88,95 @@
 		"icon": "icon-dance.svg",
 		"title": "Робот",
 		"category": "Танец"
+	},
+	{
+		"id": 16,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки"
+	},
+	{
+		"id": 17,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки"
+	},
+	{
+		"id": 18,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки"
+	},
+	{
+		"id": 19,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки"
+	},
+	{
+		"id": 20,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки"
+	},
+	{
+		"id": 21,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки"
+	},
+	{
+		"id": 22,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки"
+	},
+	{
+		"id": 23,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки"
+	},
+	{
+		"id": 25,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки"
+	},
+	{
+		"id": 26,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки"
+	},
+	{
+		"id": 27,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки"
+	},
+	{
+		"id": 28,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки"
+	},
+	{
+		"id": 29,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки"
+	},
+	{
+		"id": 30,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки"
+	},
+	{
+		"id": 31,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки"
 	}
 ]

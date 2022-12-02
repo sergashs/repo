@@ -1,0 +1,12 @@
+[
+	{
+		"id": 1,
+		"title": "Танцы",
+		"icon": "icon-dance.svg"
+	},
+	{
+		"id": 2,
+		"title": "Стиль походки",
+		"icon": "icon-walking-style.svg"
+	}
+]
