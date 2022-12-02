@@ -2,13 +2,21 @@
 	{
 		"id": 1,
 		"title": "Танцы",
-		"icon": "icon-dance.svg",
-		"category_id": 1
+		"icon": "icon-dance.svg"
 	},
 	{
 		"id": 2,
 		"title": "Стиль походки",
-		"icon": "icon-walking-style.svg",
-		"category_id": 2
+		"icon": "icon-walking-style.svg"
+	},
+	{
+		"id": 3,
+		"title": "Физ.упражнения",
+		"icon": "icon-physical-exercise.svg"
+	},
+	{
+		"id": 4,
+		"title": "Социальные",
+		"icon": "icon-social.svg"
 	}
 ]

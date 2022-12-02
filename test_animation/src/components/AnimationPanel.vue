@@ -4,7 +4,7 @@
             <CategoriesList @onFilter="filterByCategory" />
             <div class="panel-content">
                 <div class="input-search-holder">
-                    <InputSearch placeholder="Поиск по названию" />
+                    <InputSearch placeholder="Поиск по названию" @onSearch="search" />
                 </div>
                 <div class="content-block block-animations">
                     <h3 class="block-title">Анимации</h3>
@@ -30,7 +30,7 @@
                                                     :alt="`icon ${item.title}`" />
                                             </div>
                                             <h3 class="item-title">
-                                                {{ item.category }} {{ item.id }}
+                                                {{ item.category }}
                                             </h3>
                                             <div class="text-holder">
                                                 <p>{{ item.title }}</p>
@@ -92,7 +92,7 @@
                                                             :alt="`icon ${item.title}`" />
                                                     </div>
                                                     <h3 class="item-title">
-                                                        {{ item.category }} {{ item.id }}
+                                                        {{ item.category }}
                                                     </h3>
                                                     <div class="text-holder">
                                                         <p>{{ item.title }}</p>
@@ -119,7 +119,7 @@ import { mapGetters } from 'vuex';
 import InputSearch from '@/components/InputSearch';
 import ScrollBar from '@/components/ScrollBar';
 import draggable from 'vuedraggable';
-import CategoriesList from '@/components/CategoriesList';
+import CategoriesList from '@/components/CategoriesList/Index';
 
 export default {
     components: {
@@ -151,22 +151,27 @@ export default {
             this.choosedAnimations[index] = [];
         },
         filterByCategory(value) {
-            console.log(value);
+            if (value == null) {
+                this.filteredArray = this.animations;
+            } else {
+                let result = this.animations.filter((el) => {
+                    return el.category_id == value;
+                });
 
-            // let result = this.animations.filter((el) => {
-            //     return (
-            //         el.category.toLowerCase().match(value.toLowerCase()) &&
-            //         el.category.toLowerCase().match(value.toLowerCase())[0].length >= 3
-            //     );
-            // });
+                this.filteredArray = result;
+            }
+        },
+        search(value) {
+            if (value) {
+                let result = this.animations.filter((el) => {
+                    return (
+                        el.title.toLowerCase().match(value.toLowerCase()) &&
+                        el.title.toLowerCase().match(value.toLowerCase())[0].length >= 3
+                    );
+                });
 
-            let result = this.animations.filter((el) => {
-                return el.category_id == value;
-            });
-
-            this.filteredArray = result;
-
-            console.log(this.filteredArray);
+                this.filteredArray = result;
+            }
         },
     },
 

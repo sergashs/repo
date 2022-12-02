@@ -1,8 +1,8 @@
 <template>
     <div class="input-search">
         <div class="input-holder">
-            <input type="text" class="input" :placeholder="placeholder" />
-            <button class="btn-search">
+            <input type="text" v-model="value" class="input" :placeholder="placeholder" />
+            <button class="btn-search" @click="onClick">
                 <div class="icon-holder">
                     <img src="@/assets/images/icon-search.svg" alt="..." />
                 </div>
@@ -17,6 +17,16 @@ export default {
         placeholder: {
             type: String,
             default: '',
+        },
+    },
+    data() {
+        return {
+            value: null,
+        };
+    },
+    methods: {
+        onClick() {
+            this.$emit('onSearch', this.value);
         },
     },
 };
@@ -55,6 +65,7 @@ export default {
             transform: translateY(-50%);
             background: transparent;
             border: none;
+            cursor: pointer;
 
             .icon-holder {
                 display: flex;

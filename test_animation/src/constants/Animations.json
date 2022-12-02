@@ -208,5 +208,33 @@
 		"title": "Старик",
 		"category": "Стиль походки",
 		"category_id": 2
+	},
+	{
+		"id": 32,
+		"icon": "icon-physical-exercise.svg",
+		"title": "упражнение",
+		"category": "Физ.упражнение",
+		"category_id": 3
+	},
+	{
+		"id": 33,
+		"icon": "icon-physical-exercise.svg",
+		"title": "упражнение",
+		"category": "Физ.упражнение",
+		"category_id": 3
+	},
+	{
+		"id": 34,
+		"icon": "icon-physical-exercise.svg",
+		"title": "упражнение",
+		"category": "Физ.упражнение",
+		"category_id": 3
+	},
+	{
+		"id": 34,
+		"icon": "icon-social.svg",
+		"title": "Отдать честь",
+		"category": "Социальное",
+		"category_id": 4
 	}
 ]
