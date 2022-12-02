@@ -5,7 +5,7 @@
             :key="item.id"
             class="list-item"
             :class="activeId == item.id ? 'active' : null"
-            @click="onClick">
+            @click="setActive(item.id)">
             <div class="icon-holder">
                 <img :src="require(`@/assets/images/${item.icon}`)" :alt="item.title" />
             </div>
@@ -25,10 +25,10 @@ export default {
         };
     },
     methods: {
-        onClick() {
-            this.$emit('onFilter');
+        setActive(id) {
+            this.activeId = id;
+            this.$emit('onFilter', this.activeId);
         },
-        setActive() {},
     },
 };
 </script>
@@ -51,6 +51,14 @@ export default {
 
         &.active {
             background: linear-gradient(270.04deg, #131a1b 0.03%, rgba(229, 255, 255, 0) 99.97%);
+
+            .item-title {
+                color: rgba(229, 255, 255, 1);
+            }
+
+            .icon-holder {
+                opacity: 1;
+            }
         }
 
         &:hover {
@@ -65,6 +73,7 @@ export default {
     }
 
     .item-title {
+        margin-bottom: 0;
         margin-top: -2px;
         font-weight: 500;
         font-size: 12px;

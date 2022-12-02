@@ -1,7 +1,7 @@
 <template>
     <div class="animation-panel">
         <div class="inner-holder">
-            <CategoriesList @onFilter="filterByCategory(value)" />
+            <CategoriesList @onFilter="filterByCategory" />
             <div class="panel-content">
                 <div class="input-search-holder">
                     <InputSearch placeholder="Поиск по названию" />
@@ -151,6 +151,8 @@ export default {
             this.choosedAnimations[index] = [];
         },
         filterByCategory(value) {
+            console.log(value);
+
             // let result = this.animations.filter((el) => {
             //     return (
             //         el.category.toLowerCase().match(value.toLowerCase()) &&
