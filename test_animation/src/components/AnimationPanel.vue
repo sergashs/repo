@@ -122,6 +122,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import InputSearch from '@/components/InputSearch';
 import ScrollBar from '@/components/ScrollBar';
 import draggable from 'vuedraggable';
@@ -135,98 +136,6 @@ export default {
     data() {
         return {
             searchValue: '',
-            animations: [
-                {
-                    id: 1,
-                    icon: 'icon-dance.svg',
-                    title: 'Робот',
-                    category: 'Танец',
-                },
-                {
-                    id: 2,
-                    icon: 'icon-dance.svg',
-                    title: 'Робот',
-                    category: 'Танец',
-                },
-                {
-                    id: 3,
-                    icon: 'icon-dance.svg',
-                    title: 'Робот',
-                    category: 'Танец',
-                },
-                {
-                    id: 4,
-                    icon: 'icon-dance.svg',
-                    title: 'Робот',
-                    category: 'Танец',
-                },
-                {
-                    id: 5,
-                    icon: 'icon-dance.svg',
-                    title: 'Робот',
-                    category: 'Танец',
-                },
-                {
-                    id: 6,
-                    icon: 'icon-dance.svg',
-                    title: 'Робот',
-                    category: 'Танец',
-                },
-                {
-                    id: 7,
-                    icon: 'icon-dance.svg',
-                    title: 'Робот',
-                    category: 'Танец',
-                },
-                {
-                    id: 8,
-                    icon: 'icon-dance.svg',
-                    title: 'Робот',
-                    category: 'Танец',
-                },
-                {
-                    id: 9,
-                    icon: 'icon-dance.svg',
-                    title: 'Робот',
-                    category: 'Танец',
-                },
-                {
-                    id: 10,
-                    icon: 'icon-dance.svg',
-                    title: 'Робот',
-                    category: 'Танец',
-                },
-                {
-                    id: 11,
-                    icon: 'icon-dance.svg',
-                    title: 'Робот',
-                    category: 'Танец',
-                },
-                {
-                    id: 12,
-                    icon: 'icon-dance.svg',
-                    title: 'Робот',
-                    category: 'Танец',
-                },
-                {
-                    id: 13,
-                    icon: 'icon-dance.svg',
-                    title: 'Робот',
-                    category: 'Танец',
-                },
-                {
-                    id: 14,
-                    icon: 'icon-dance.svg',
-                    title: 'Робот',
-                    category: 'Танец',
-                },
-                {
-                    id: 15,
-                    icon: 'icon-dance.svg',
-                    title: 'Робот',
-                    category: 'Танец',
-                },
-            ],
             choosedAnimations: {
                 1: [],
                 2: [],
@@ -241,6 +150,13 @@ export default {
         clearSlot(index) {
             this.choosedAnimations[index] = [];
         },
+    },
+    mounted() {
+        console.log(this.animations);
+    },
+    computed: {
+        ...mapGetters('Animations', ['animations']),
+        // Другие вычисляемые свойства
     },
 };
 </script>
