@@ -253,21 +253,21 @@
 	},
 	{
 		"id": 38,
-		"icon": "icon-actions.svg",
+		"icon": "icon-emotion.svg",
 		"title": "Грустить",
 		"category": "Эмоции",
 		"category_id": 5
 	},
 	{
 		"id": 39,
-		"icon": "icon-actions.svg",
+		"icon": "icon-emotion.svg",
 		"title": "Грустить",
 		"category": "Эмоции",
 		"category_id": 5
 	},
 	{
 		"id": 40,
-		"icon": "icon-actions.svg",
+		"icon": "icon-emotion.svg",
 		"title": "Грустить",
 		"category": "Эмоции",
 		"category_id": 5

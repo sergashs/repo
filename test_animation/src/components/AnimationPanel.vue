@@ -23,7 +23,10 @@
                                     :group="{ name: 'animations', pull: 'clone' }"
                                     :sort="false">
                                     <div v-for="item in filteredArray" :key="item.id" class="col">
-                                        <div class="list-item">
+                                        <div
+                                            class="list-item"
+                                            :class="choosedId == item.id ? 'active' : null"
+                                            @click="chooseAnimation(item.id)">
                                             <div class="icon-holder">
                                                 <img
                                                     :src="require(`@/assets/images/${item.icon}`)"
@@ -133,6 +136,7 @@ export default {
         return {
             searchValue: '',
             filteredArray: [],
+            choosedId: null,
         };
     },
     mounted() {
@@ -171,6 +175,9 @@ export default {
         onChange() {
             this.setAnimations(this.choosedAnimations);
         },
+        chooseAnimation(id) {
+            this.choosedId = id;
+        },
     },
     computed: {
         ...mapGetters('Animations', ['animations']),
@@ -207,59 +214,10 @@ export default {
         height: 100%;
     }
 
-    .category-list {
-        margin: 0;
-        padding: 39px 0 45px 0;
-        list-style: none;
-
-        .list-item {
-            width: 130px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            cursor: pointer;
-            transition: all 0.3s linear;
-
-            &.active {
-                background: linear-gradient(
-                    270.04deg,
-                    #131a1b 0.03%,
-                    rgba(229, 255, 255, 0) 99.97%
-                );
-            }
-
-            &:hover {
-                .item-title {
-                    color: rgba(229, 255, 255, 1);
-                }
-
-                .icon-holder {
-                    opacity: 1;
-                }
-            }
-        }
-
-        .item-title {
-            margin-top: -2px;
-            font-weight: 500;
-            font-size: 12px;
-            color: rgba(229, 255, 255, 0.4);
-            line-height: 1.21;
-            transition: inherit;
-        }
-
-        .icon-holder {
-            opacity: 0.4;
-            transition: inherit;
-        }
-    }
-
     .panel-content {
         position: relative;
         width: 100%;
-        max-width: 303px;
+        max-width: 328px;
         padding-top: 16px;
         padding-left: 20px;
         padding-right: 7px;
@@ -400,6 +358,7 @@ export default {
                 background: rgba(19, 26, 27, 0.7);
 
                 img {
+                    transition: all 0.3s linear;
                     opacity: 0.15;
                 }
             }
@@ -426,6 +385,20 @@ export default {
 
                 p {
                     margin-bottom: 0;
+                }
+            }
+
+            &.active {
+                .icon-holder {
+                    background: url('~@/assets/images/active-bg.svg') no-repeat;
+                    background-position: center;
+                    background-size: 76px;
+
+                    img {
+                        opacity: 1;
+                        filter: invert(9%) sepia(47%) saturate(665%) hue-rotate(128deg)
+                            brightness(97%) contrast(90%);
+                    }
                 }
             }
         }
