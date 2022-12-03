@@ -39,7 +39,7 @@ export default {
     .ps__rail-y {
         opacity: 1;
         width: 2px;
-        background: rgba(229, 255, 255, 0.07);
+        background: rgba(229, 255, 255, 0.07) !important;
 
         .ps__thumb-y {
             right: 0;
