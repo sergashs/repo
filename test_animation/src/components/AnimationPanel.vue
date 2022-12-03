@@ -212,6 +212,7 @@ export default {
         display: flex;
         justify-content: flex-end;
         height: 100%;
+        overflow: auto;
     }
 
     .panel-content {
