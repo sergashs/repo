@@ -33,5 +33,10 @@
 		"id": 7,
 		"title": "Стойки",
 		"icon": "icon-racks.svg"
+	},
+	{
+		"id": 8,
+		"title": "Неприличные",
+		"icon": "icon-indecent.svg"
 	}
 ]

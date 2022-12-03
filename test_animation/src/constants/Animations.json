@@ -313,5 +313,26 @@
 		"title": "Стойка 3",
 		"category": "Стойки",
 		"category_id": 7
+	},
+	{
+		"id": 47,
+		"icon": "icon-racks.svg",
+		"title": "Средний палец",
+		"category": "Неприличные",
+		"category_id": 8
+	},
+	{
+		"id": 48,
+		"icon": "icon-racks.svg",
+		"title": "Средний палец",
+		"category": "Неприличные",
+		"category_id": 8
+	},
+	{
+		"id": 49,
+		"icon": "icon-racks.svg",
+		"title": "Средний палец",
+		"category": "Неприличные",
+		"category_id": 8
 	}
 ]
