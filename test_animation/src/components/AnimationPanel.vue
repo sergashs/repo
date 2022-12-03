@@ -79,7 +79,8 @@
                                                 "
                                                 :list="choosedAnimations[index]"
                                                 group="animations"
-                                                item-key="id">
+                                                item-key="id"
+                                                @change="onChange">
                                                 <div
                                                     v-for="item in choosedAnimations[index]"
                                                     :key="item.id"
@@ -115,7 +116,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import InputSearch from '@/components/InputSearch';
 import ScrollBar from '@/components/ScrollBar';
 import draggable from 'vuedraggable';
@@ -131,15 +132,6 @@ export default {
     data() {
         return {
             searchValue: '',
-            choosedAnimations: {
-                1: [],
-                2: [],
-                3: [],
-                4: [],
-                5: [],
-                6: [],
-            },
-
             filteredArray: [],
         };
     },
@@ -147,6 +139,7 @@ export default {
         this.filteredArray = this.animations;
     },
     methods: {
+        ...mapActions('Animations', ['setAnimations']),
         clearSlot(index) {
             this.choosedAnimations[index] = [];
         },
@@ -173,10 +166,13 @@ export default {
                 this.filteredArray = result;
             }
         },
+        onChange() {
+            this.setAnimations(this.choosedAnimations);
+        },
     },
-
     computed: {
         ...mapGetters('Animations', ['animations']),
+        ...mapGetters('Animations', ['choosedAnimations']),
     },
 };
 </script>

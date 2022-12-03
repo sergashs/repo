@@ -29,13 +29,6 @@ export default {
         toggleState(id) {
             this.activeId = id;
             this.$emit('onFilter', this.activeId);
-
-            // if (this.click <= 1) {
-            //     this.click++;
-            // } else if (this.click >= 2) {
-            //     this.$emit('onFilter', null);
-            //     this.click--;
-            // }
         },
     },
 };
@@ -46,5 +39,11 @@ export default {
     margin: 0;
     padding: 39px 0 45px 0;
     list-style: none;
+
+    .list-item {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
 }
 </style>

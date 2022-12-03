@@ -18,5 +18,20 @@
 		"id": 4,
 		"title": "Социальные",
 		"icon": "icon-social.svg"
+	},
+	{
+		"id": 5,
+		"title": "Эмоции",
+		"icon": "icon-emotion.svg"
+	},
+	{
+		"id": 6,
+		"title": "Действия",
+		"icon": "icon-actions.svg"
+	},
+	{
+		"id": 7,
+		"title": "Стойки",
+		"icon": "icon-racks.svg"
 	}
 ]

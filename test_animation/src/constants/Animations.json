@@ -231,10 +231,66 @@
 		"category_id": 3
 	},
 	{
-		"id": 34,
+		"id": 35,
 		"icon": "icon-social.svg",
 		"title": "Отдать честь",
 		"category": "Социальное",
 		"category_id": 4
+	},
+	{
+		"id": 36,
+		"icon": "icon-social.svg",
+		"title": "Отдать честь",
+		"category": "Социальное",
+		"category_id": 4
+	},
+	{
+		"id": 37,
+		"icon": "icon-social.svg",
+		"title": "Отдать честь",
+		"category": "Социальное",
+		"category_id": 4
+	},
+	{
+		"id": 38,
+		"icon": "icon-actions.svg",
+		"title": "Грустить",
+		"category": "Эмоции",
+		"category_id": 5
+	},
+	{
+		"id": 39,
+		"icon": "icon-actions.svg",
+		"title": "Грустить",
+		"category": "Эмоции",
+		"category_id": 5
+	},
+	{
+		"id": 40,
+		"icon": "icon-actions.svg",
+		"title": "Грустить",
+		"category": "Эмоции",
+		"category_id": 5
+	},
+	{
+		"id": 41,
+		"icon": "icon-actions.svg",
+		"title": "Действие 1",
+		"category": "Действия",
+		"category_id": 6
+	},
+	{
+		"id": 42,
+		"icon": "icon-actions.svg",
+		"title": "Действие 2",
+		"category": "Действия",
+		"category_id": 6
+	},
+	{
+		"id": 43,
+		"icon": "icon-actions.svg",
+		"title": "Действие 3",
+		"category": "Действия",
+		"category_id": 6
 	}
 ]
