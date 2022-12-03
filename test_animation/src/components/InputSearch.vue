@@ -1,7 +1,12 @@
 <template>
     <div class="input-search">
         <div class="input-holder">
-            <input type="text" v-model="value" class="input" :placeholder="placeholder" />
+            <input
+                type="text"
+                v-model="value"
+                class="input"
+                :placeholder="placeholder"
+                @input="onClick" />
             <button class="btn-search" @click="onClick">
                 <div class="icon-holder">
                     <img src="@/assets/images/icon-search.svg" alt="..." />

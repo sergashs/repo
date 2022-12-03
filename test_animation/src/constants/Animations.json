@@ -234,21 +234,21 @@
 		"id": 35,
 		"icon": "icon-social.svg",
 		"title": "Отдать честь",
-		"category": "Социальное",
+		"category": "Социальные",
 		"category_id": 4
 	},
 	{
 		"id": 36,
 		"icon": "icon-social.svg",
 		"title": "Отдать честь",
-		"category": "Социальное",
+		"category": "Социальные",
 		"category_id": 4
 	},
 	{
 		"id": 37,
 		"icon": "icon-social.svg",
 		"title": "Отдать честь",
-		"category": "Социальное",
+		"category": "Социальные",
 		"category_id": 4
 	},
 	{
@@ -292,5 +292,26 @@
 		"title": "Действие 3",
 		"category": "Действия",
 		"category_id": 6
+	},
+	{
+		"id": 44,
+		"icon": "icon-racks.svg",
+		"title": "Стойка 1",
+		"category": "Стойки",
+		"category_id": 7
+	},
+	{
+		"id": 45,
+		"icon": "icon-racks.svg",
+		"title": "Стойка 2",
+		"category": "Стойки",
+		"category_id": 7
+	},
+	{
+		"id": 46,
+		"icon": "icon-racks.svg",
+		"title": "Стойка 3",
+		"category": "Стойки",
+		"category_id": 7
 	}
 ]

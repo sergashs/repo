@@ -164,6 +164,8 @@ export default {
                 });
 
                 this.filteredArray = result;
+            } else {
+                this.filteredArray = this.animations;
             }
         },
         onChange() {
