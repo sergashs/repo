@@ -1,0 +1,49 @@
+// vars
+$images: "../images/";
+
+// fonts
+$bebas: "Bebas Neue", cursive;
+$source-sans-pro: "Source Sans Pro", sans-serif;
+
+// breakpoints
+$breakpoints: (
+	phone: 374px,
+	tablet: 767px,
+	desktop: 991px,
+	lgdesktop: 1199px,
+);
+
+// @include media("<tablet") {
+// 	padding: 9rem 2rem 3rem 2rem;
+// }
+
+// colors
+$white: #fff;
+$black: #000;
+$gray: #707070;
+$gray-100: #e9e9e9;
+$gray-150: #ccc;
+$grey-650: #3d3d3d;
+$gray-400: #999;
+$gray-600: #555;
+$grey-700: #333;
+$blue-300: #034da1;
+$blue-400: #23527c;
+$green: #6d9c0f;
+$red: #ed282f;
+$orange: #f7a937;
+
+// base vars
+$text-color-base: $gray;
+$body-bg: $white;
+$font-family-base: $source-sans-pro;
+$font-size-base: 1.4rem;
+$font-weight-base: 100;
+$line-height-base: 1.42857143;
+$links-color-base: inherit;
+$headings-font-weight: 400;
+$transition: all 0.3s ease;
+
+// dev2
+// dev3
+// dev4

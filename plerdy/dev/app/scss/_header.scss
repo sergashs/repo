@@ -1,0 +1,22 @@
+/* header */
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 0;
+	background: rgba(black, 0.4);
+	z-index: 100;
+
+	.logo {
+		display: inline-flex;
+		width: 14.4rem;
+		max-width: 100%;
+
+		img {
+			width: 100%;
+			height: auto;
+			vertical-align: auto;
+		}
+	}
+}
