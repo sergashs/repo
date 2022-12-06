@@ -6,8 +6,8 @@ body {
 	margin: 0;
 	min-width: 320px;
 	background: $body-bg;
-	color: $black;
-	font: $font-weight-base #{$font-size-base}/$line-height-base $font-family-base;
+	color: $text-color-base;
+	font: $font-weight-base #{$font-size-base}/ $line-height-base $font-family-base;
 	font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -57,27 +57,9 @@ input[type="submit"]::-moz-focus-inner {
 	flex-grow: 1;
 }
 
-figure {
-	margin: 0;
+.container {
+	max-width: 125.5rem;
+	margin: auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
-
-h1 {
-	margin: 0 0 1rem 0;
-	font-family: $bebas;
-	font-weight: 400;
-	font-size: 6.6rem;
-	color: $white;
-	text-shadow: 0 0.1rem 0.2rem rgba($black, 0.6);
-}
-
-h2 {
-	margin: 0 0 1rem 0;
-	font-family: $bebas;
-	font-weight: 400;
-	font-size: 3.6rem;
-	color: $grey-650;
-}
-
-// dev2
-// dev3
-// dev4
