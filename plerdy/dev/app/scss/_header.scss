@@ -15,7 +15,7 @@
 		width: 100%;
 		max-width: 14rem;
 
-		@include media(">lg") {
+		@include media(">=lg") {
 			margin-right: 6.1rem;
 		}
 
@@ -68,7 +68,7 @@
 		}
 
 		.inner-holder {
-			@include media(">lg") {
+			@include media(">=lg") {
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
@@ -89,7 +89,7 @@
 			font-size: 1.8rem;
 			color: #7d7d7d;
 
-			@include media(">lg") {
+			@include media(">=lg") {
 				display: flex;
 				flex-wrap: wrap;
 				margin: auto;
@@ -103,7 +103,7 @@
 
 			.menu-item {
 				&:not(:last-child) {
-					@include media(">lg") {
+					@include media(">=lg") {
 						margin-right: 3rem;
 					}
 				}
@@ -133,7 +133,7 @@
 
 		.btn {
 			&:first-child {
-				@include media(">lg") {
+				@include media(">=lg") {
 					margin-right: 2.2rem;
 				}
 
@@ -152,7 +152,7 @@
 		font-size: 0;
 		line-height: 0;
 
-		@include media(">lg") {
+		@include media(">=lg") {
 			display: none;
 		}
 

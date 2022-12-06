@@ -1,11 +1,10 @@
-let objectFitPoly = false;
-let loadLazyLoadScript = false;
+
 
 document.addEventListener('DOMContentLoaded', () => {
 	loadFonts();
-	correctVh();
 	lazyLoad();
 	mobileMenu();
+	initSwiper();
 });
 
 window.addEventListener('resize', () => {
@@ -18,7 +17,7 @@ function loadFonts() {
 		custom: {
 		},
 		google: {
-			families: ['Roboto:400,500,700']
+			families: ['Roboto:400,500,700,900']
 		}
 	});
 }
@@ -77,35 +76,10 @@ function lazyLoad() {
 	}
 }
 
-// replaseInlineSvg
-function replaseInlineSvg(el) {
-	const imgID = el.getAttribute('id');
-	const imgClass = el.getAttribute('class');
-	const imgURL = el.getAttribute('src');
+function initSwiper() {
+	const swiper = new Swiper(".mySwiper", {
 
-	fetch(imgURL)
-		.then(data => data.text())
-		.then(response => {
-			const parser = new DOMParser();
-			const xmlDoc = parser.parseFromString(response, 'text/html');
-			let svg = xmlDoc.querySelector('svg');
-
-			if (typeof imgID !== 'undefined') {
-				svg.setAttribute('id', imgID);
-			}
-
-			if (typeof imgClass !== 'undefined') {
-				svg.setAttribute('class', imgClass + ' replaced-svg');
-			}
-
-			svg.removeAttribute('xmlns:a');
-
-			el.parentNode.replaceChild(svg, el);
-		});
-}
-
-// correctVh
-function correctVh() {
-	let vh = window.innerHeight * 0.01;
-	document.documentElement.style.setProperty('--vh', vh + 'px');
+		slidesPerView: 4.2,
+		spaceBetween: 17,
+	});
 }
