@@ -41,6 +41,16 @@
 
 	.h1 {
 		max-width: 61.1rem;
+		margin-bottom: 1.7rem;
+		font-weight: 600;
+		font-size: 4rem;
+		line-height: 1.2;
+		letter-spacing: 0.02em;
+
+		@include media("<md") {
+			margin-bottom: 2rem;
+			font-size: 3.2rem;
+		}
 	}
 
 	.text-holder {
@@ -52,12 +62,20 @@
 
 		@include media("<md") {
 			margin-bottom: 1rem;
+			font-size: 1.2rem;
 		}
 
 		&.silver-text {
 			margin-bottom: 1.4rem;
-			font-size: 1.4rem;
 			color: #919191;
+
+			@include media(">=md") {
+				font-size: 1.4rem;
+			}
+
+			@include media("<md") {
+				margin-bottom: 2rem;
+			}
 		}
 
 		p {
@@ -65,8 +83,14 @@
 		}
 	}
 
-	.btn {
+	.btn-holder {
 		margin-bottom: 5.9rem;
+
+		@include media("<md") {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 2rem;
+		}
 	}
 
 	.partners {
