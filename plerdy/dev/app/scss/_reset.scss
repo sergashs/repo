@@ -2,6 +2,12 @@ html {
 	font-size: 10px;
 }
 
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
 body {
 	margin: 0;
 	min-width: 320px;
@@ -57,9 +63,44 @@ input[type="submit"]::-moz-focus-inner {
 	flex-grow: 1;
 }
 
+p {
+	margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin-top: 0;
+}
+
 .container {
 	max-width: 125.5rem;
 	margin: auto;
 	padding-left: 1rem;
 	padding-right: 1rem;
+}
+
+.sr-only {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+.home-page {
+	padding-top: 11.7rem;
+}
+
+.h1 {
+	font-weight: 600;
+	font-size: 4rem;
+	line-height: 1.2;
+	letter-spacing: 0.02em;
 }

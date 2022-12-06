@@ -1,0 +1,148 @@
+.intro-section {
+	.row {
+		@include media(">lg") {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.col {
+			&:first-child {
+				@include media(">lg") {
+					width: 80%;
+					padding-top: 2.7rem;
+				}
+			}
+
+			&:last-child {
+				display: flex;
+
+				@include media(">lg") {
+					max-width: 41rem;
+					width: 100%;
+					align-items: center;
+				}
+
+				@include media("<lg") {
+					justify-content: center;
+				}
+			}
+		}
+	}
+
+	.inner-holder {
+		padding: 5.3rem 6.4rem 3.5rem 5.1rem;
+		background: #e2f2ff;
+		border-radius: 1rem;
+	}
+
+	.h1 {
+		max-width: 61.1rem;
+	}
+
+	.text-holder {
+		margin-bottom: 0.6rem;
+		max-width: 66.5rem;
+		font-size: 1.6rem;
+		line-height: 1.5;
+		letter-spacing: 0.005em;
+
+		&.silver-text {
+			margin-bottom: 1.6rem;
+			font-size: 1.4rem;
+			color: #919191;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+	.btn {
+		margin-bottom: 5.9rem;
+	}
+
+	.partners {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		@include media("<lg") {
+			margin-bottom: 3.3rem;
+		}
+
+		.list-item {
+			margin-bottom: 1rem;
+
+			&:not(:last-child) {
+				margin-right: 2.4rem;
+			}
+		}
+
+		.list-link {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	.img-holder {
+		position: relative;
+		max-width: 37rem;
+		width: 100%;
+
+		@include media(">lg") {
+			margin-left: auto;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		> img {
+			border-radius: 1.8rem;
+		}
+
+		.chart {
+			position: absolute;
+
+			&.chart-1 {
+				top: -7%;
+				left: -15%;
+				width: 52%;
+				transform: rotate(-1.2deg);
+
+				img {
+					box-shadow: 0px 3.59414px 17.9707px rgba(0, 0, 0, 0.08);
+					border-radius: 0.8rem;
+				}
+			}
+
+			&.chart-2 {
+				top: 12%;
+				right: -16%;
+				width: 44%;
+				transform: rotate(5.6deg);
+
+				img {
+					border-radius: 0.3rem;
+					box-shadow: 0px 3.87995px 19.3997px rgba(0, 0, 0, 0.12);
+				}
+			}
+
+			&.chart-3 {
+				bottom: 27%;
+				left: -26%;
+				width: 45%;
+				transform: rotate(-6.7deg);
+
+				img {
+					border-radius: 0.63rem;
+					box-shadow: 0px 4.91924px 24.5962px rgba(0, 0, 0, 0.12);
+				}
+			}
+		}
+	}
+}
