@@ -1,5 +1,6 @@
 .btn {
-	display: inline-block;
+	display: inline-flex;
+	justify-content: center;
 	font-weight: 400;
 	font-size: 1.8rem;
 	line-height: 1;
@@ -23,5 +24,11 @@
 			background: lighten($btn-primary-bg, 5);
 			text-decoration: none;
 		}
+	}
+
+	&:disabled,
+	&[disabled] {
+		background: #aed1ff;
+		pointer-events: none;
 	}
 }

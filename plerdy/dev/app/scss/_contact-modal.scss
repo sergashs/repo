@@ -1,0 +1,85 @@
+.contact-modal {
+	max-width: 80rem;
+	overflow: hidden;
+
+	.row {
+		display: flex;
+
+		.col {
+			position: relative;
+			width: 100%;
+		}
+	}
+
+	.img-holder {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.inner-holder {
+		padding: 2.7rem 4.2rem 1.5rem 4.2rem;
+	}
+
+	.h3 {
+		margin-bottom: 2.4rem;
+		font-weight: 400;
+		font-size: 3.4rem;
+		line-height: 1.2;
+		letter-spacing: 0.02em;
+		text-align: center;
+	}
+
+	.text-holder {
+		margin-bottom: 2.4rem;
+		font-size: 1.4rem;
+		text-align: center;
+		letter-spacing: 0.0025em;
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+	.btns-holder {
+		display: flex;
+		margin-bottom: 3.4rem;
+		padding-top: 2.6rem;
+
+		.btn {
+			width: 100%;
+
+			&:first-child {
+				margin-right: 1rem;
+			}
+		}
+	}
+
+	.powered-by {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.text {
+			font-size: 1.3rem;
+			line-height: 1.12;
+			color: #919191;
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+
+		.icon-holder {
+			margin-right: 0.8rem;
+		}
+	}
+}

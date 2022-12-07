@@ -249,6 +249,10 @@ a:hover {
 	text-decoration: underline;
 }
 
+input {
+	outline: none;
+}
+
 button,
 input[type=search],
 input[type=button],
@@ -326,6 +330,52 @@ h5 {
 
 .home-page {
 	padding-top: 11.7rem;
+}
+
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	z-index: 100;
+}
+.modal-overlay .modal {
+	width: 100%;
+	background: #ffffff;
+	-webkit-box-shadow: 0 1rem 2rem rgba(93, 120, 255, 0.05);
+	        box-shadow: 0 1rem 2rem rgba(93, 120, 255, 0.05);
+	border-radius: 1.5rem;
+}
+.modal-overlay .modal .modal-body {
+	position: relative;
+}
+.modal-overlay .modal .btn-close {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	width: 3rem;
+	height: 3rem;
+	background-color: #f3f4f6;
+	background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.1875 11.6875L0.3125 10.8125L5.125 6L0.3125 1.1875L1.1875 0.3125L6 5.125L10.8125 0.3125L11.6875 1.1875L6.875 6L11.6875 10.8125L10.8125 11.6875L6 6.875L1.1875 11.6875Z' fill='%23001E41'/%3E%3C/svg%3E%0A");
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 50%;
+	border: none;
+	z-index: 2;
+	cursor: pointer;
+}
+.modal-overlay .modal .btn-close:hover {
+	background-color: #e4e7eb;
 }
 
 /* header */
@@ -580,7 +630,12 @@ h5 {
 }
 
 .btn {
-	display: inline-block;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	font-weight: 400;
 	font-size: 1.8rem;
 	line-height: 1;
@@ -603,6 +658,10 @@ h5 {
 .btn-primary:hover {
 	background: #778dff;
 	text-decoration: none;
+}
+.btn:disabled, .btn[disabled] {
+	background: #aed1ff;
+	pointer-events: none;
 }
 
 @media (min-width: 768px) {
@@ -1123,5 +1182,171 @@ h5 {
 }
 .reasons-section .section-footer .text-holder p {
 	margin-bottom: 0;
+}
+
+.contact-modal {
+	max-width: 80rem;
+	overflow: hidden;
+}
+.contact-modal .row {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.contact-modal .row .col {
+	position: relative;
+	width: 100%;
+}
+.contact-modal .img-holder {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.contact-modal .img-holder img {
+	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	   object-fit: cover;
+}
+.contact-modal .inner-holder {
+	padding: 2.7rem 4.2rem 1.5rem 4.2rem;
+}
+.contact-modal .h3 {
+	margin-bottom: 2.4rem;
+	font-weight: 400;
+	font-size: 3.4rem;
+	line-height: 1.2;
+	letter-spacing: 0.02em;
+	text-align: center;
+}
+.contact-modal .text-holder {
+	margin-bottom: 2.4rem;
+	font-size: 1.4rem;
+	text-align: center;
+	letter-spacing: 0.0025em;
+}
+.contact-modal .text-holder p {
+	margin-bottom: 0;
+}
+.contact-modal .btns-holder {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin-bottom: 3.4rem;
+	padding-top: 2.6rem;
+}
+.contact-modal .btns-holder .btn {
+	width: 100%;
+}
+.contact-modal .btns-holder .btn:first-child {
+	margin-right: 1rem;
+}
+.contact-modal .powered-by {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.contact-modal .powered-by .text {
+	font-size: 1.3rem;
+	line-height: 1.12;
+	color: #919191;
+}
+.contact-modal .powered-by .text p {
+	margin-bottom: 0;
+}
+.contact-modal .powered-by .icon-holder {
+	margin-right: 0.8rem;
+}
+
+.form-group .form-label {
+	display: block;
+	margin-bottom: 0.4rem;
+	font-weight: 600;
+	font-size: 1.2rem;
+	letter-spacing: 0.0025em;
+	color: #919191;
+}
+.form-group .form-control {
+	width: 100%;
+	margin-bottom: 0.8rem;
+	padding: 0.8rem 1.2rem;
+	font-weight: 400;
+	font-size: 14px;
+	letter-spacing: 0.0025em;
+	background: #ffffff;
+	border: 0.1rem solid #d5d5d6;
+	border-radius: 0.8rem;
+}
+.form-group .form-control::-webkit-input-placeholder {
+	color: #bdbdbd;
+}
+.form-group .form-control::-moz-placeholder {
+	color: #bdbdbd;
+}
+.form-group .form-control:-ms-input-placeholder {
+	color: #bdbdbd;
+}
+.form-group .form-control::-ms-input-placeholder {
+	color: #bdbdbd;
+}
+.form-group .form-control::placeholder {
+	color: #bdbdbd;
+}
+
+.control-checkbox {
+	position: relative;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	font-size: 1.3rem;
+	line-height: 1.15;
+	color: #919191;
+	cursor: pointer;
+}
+.control-checkbox input {
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+}
+.control-checkbox input:checked ~ .control-indicator {
+	border-color: #5d78ff;
+	background-color: #5d78ff;
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.control-checkbox .control-indicator {
+	display: block;
+	min-width: 1.3rem;
+	width: 1.3rem;
+	height: 1.3rem;
+	margin-right: 0.8rem;
+	background-color: #ffffff;
+	border: 0.1rem solid #d5d5d6;
+	border-radius: 0.4rem;
+	background-size: 0.9rem;
+	background-position: center center;
+	background-repeat: no-repeat;
+	pointer-events: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.control-checkbox a {
+	color: #5d78ff;
 }
 /*# sourceMappingURL=styles.css.map */
