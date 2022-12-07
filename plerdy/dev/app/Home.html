@@ -18,7 +18,7 @@
 										<p>Thus, you'll compile a list of flaws in your website interface, navigation, and conversion path that can eventually affect its micro and macro conversion rates.</p>
 									</div>
 									<div class="btn-holder">
-										<a href="#" class="btn btn-primary">Run the Plerdy tool</a>
+										<a href="modal-1" class="btn btn-primary btn-open-modal">Run the Plerdy tool</a>
 									</div>
 									<div class="text-holder">
 										<p>Trusted by some of the world's largest enterprises</p>
@@ -166,7 +166,7 @@
 							<div class="swiper-pagination"></div>
 						</div>
 						<div class="section-footer">
-							<a href="#" class="btn btn-primary">Boost my website conversion</a>
+							<a href="modal-1" class="btn btn-primary btn-open-modal">Boost my website conversion</a>
 							<div class="text-holder">
 								<p>So, it’s high time for you to stop losing 99% of potential clients due to being unaware of your website users’ behavior patterns and needs.</p>
 							</div>
@@ -177,7 +177,7 @@
 			<div class="modal-overlay">
 				<div class="modal contact-modal" id="modal-1">
 					<div class="modal-body">
-						<button class="btn-close"></button>
+						<button class="btn-close btn-modal-close"></button>
 						<div class="row">
 							<div class="col">
 								<div class="img-holder">
@@ -194,11 +194,19 @@
 										<span class="form-label">
 											Name
 										</span>
-										<input type="text" placeholder="Boris Johnson" class="form-control">
+										<input type="text" placeholder="Boris Johnson" id="input_name" class="form-control">
+										<span class="error-message">Required filed</span>
+									</label>
+									<label class="form-group">
+										<span class="form-label">
+											Phone
+										</span>
+										<input type="tel" id="input_phone" class="form-control">
+										<span class="error-message">Required filed</span>
 									</label>
 									<div class="btns-holder">
 										<a href="#" class="btn btn-primary" disabled>Support</a>
-										<a href="#" class="btn btn-primary">Contact sales</a>
+										<a href="#" class="btn btn-primary btn-validate-form">Contact sales</a>
 									</div>
 									<label class="control-checkbox">
 										<input type="checkbox">

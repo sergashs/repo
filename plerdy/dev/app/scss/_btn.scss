@@ -7,6 +7,7 @@
 	padding: 1.2rem 1.9rem;
 
 	@include media("<md") {
+		padding: 1.2rem 1rem;
 		font-size: 1.4rem;
 	}
 

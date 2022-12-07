@@ -20,6 +20,11 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	display: flex;
 	flex-direction: column;
+
+	&.overflow-disabled,
+	&.menu-opened {
+		overflow: hidden;
+	}
 }
 
 a {

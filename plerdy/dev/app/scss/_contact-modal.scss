@@ -1,9 +1,10 @@
 .contact-modal {
 	max-width: 80rem;
-	overflow: hidden;
 
 	.row {
-		display: flex;
+		@include media(">=md") {
+			display: flex;
+		}
 
 		.col {
 			position: relative;
@@ -17,6 +18,9 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
+		border-top-left-radius: 1.5rem;
+		border-bottom-left-radius: 1.5rem;
+		overflow: hidden;
 
 		img {
 			width: 100%;
@@ -27,6 +31,10 @@
 
 	.inner-holder {
 		padding: 2.7rem 4.2rem 1.5rem 4.2rem;
+
+		@include media("<md") {
+			padding: 3.8rem 3rem 1rem 3rem;
+		}
 	}
 
 	.h3 {
@@ -36,6 +44,12 @@
 		line-height: 1.2;
 		letter-spacing: 0.02em;
 		text-align: center;
+
+		@include media("<md") {
+			max-width: 23.7rem;
+			font-size: 1.8rem;
+			margin: auto auto 1.8rem auto;
+		}
 	}
 
 	.text-holder {
@@ -43,6 +57,11 @@
 		font-size: 1.4rem;
 		text-align: center;
 		letter-spacing: 0.0025em;
+
+		@include media("<md") {
+			margin-bottom: 1.8rem;
+			font-size: 1.2rem;
+		}
 
 		p {
 			margin-bottom: 0;
@@ -54,12 +73,23 @@
 		margin-bottom: 3.4rem;
 		padding-top: 2.6rem;
 
+		@include media("<md") {
+			margin-bottom: 2.5rem;
+			padding-top: 2.5rem;
+		}
+
 		.btn {
 			width: 100%;
 
 			&:first-child {
 				margin-right: 1rem;
 			}
+		}
+	}
+
+	.control-checkbox {
+		@include media("<md") {
+			margin-bottom: 1.3rem;
 		}
 	}
 
@@ -72,6 +102,18 @@
 			font-size: 1.3rem;
 			line-height: 1.12;
 			color: #919191;
+
+			@include media("<md") {
+				font-size: 0.9rem;
+			}
+
+			a {
+				text-decoration: underline;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
 
 			p {
 				margin-bottom: 0;

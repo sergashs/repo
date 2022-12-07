@@ -7,6 +7,10 @@
 	color: #919191;
 	cursor: pointer;
 
+	@include media("<md") {
+		font-size: 0.975rem;
+	}
+
 	input {
 		position: absolute;
 		opacity: 0;
@@ -35,6 +39,14 @@
 		pointer-events: none;
 		user-select: none;
 		transition: $transition;
+
+		@include media("<md") {
+			min-width: 0.975rem;
+			width: 0.975rem;
+			height: 0.975rem;
+			background-size: 0.55rem;
+			border-radius: 0.3rem;
+		}
 	}
 
 	a {
