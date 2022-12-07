@@ -1,0 +1,91 @@
+.container {
+	max-width: 127.5rem;
+	margin: auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.sr-only {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+.home-page {
+	padding-top: 11.7rem;
+
+	@include media("<md") {
+		padding-top: 5.9rem;
+	}
+}
+
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	pointer-events: none;
+
+	.modal {
+		width: 100%;
+		background: #ffffff;
+		box-shadow: 0 1rem 2rem rgba(93, 120, 255, 0.05);
+		border-radius: 1.5rem;
+		pointer-events: none;
+		visibility: hidden;
+		opacity: 0;
+		transition: $transition;
+
+		@include media("<md") {
+			border-radius: 1.125rem;
+		}
+
+		.modal-body {
+			position: relative;
+		}
+
+		.btn-close {
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			width: 3rem;
+			height: 3rem;
+			background-color: #f3f4f6;
+			background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.1875 11.6875L0.3125 10.8125L5.125 6L0.3125 1.1875L1.1875 0.3125L6 5.125L10.8125 0.3125L11.6875 1.1875L6.875 6L11.6875 10.8125L10.8125 11.6875L6 6.875L1.1875 11.6875Z' fill='%23001E41'/%3E%3C/svg%3E%0A");
+			background-repeat: no-repeat;
+			background-position: center;
+			border-radius: 50%;
+			border: none;
+			z-index: 2;
+			cursor: pointer;
+
+			@include media("<md") {
+				width: 2.2rem;
+				height: 2.2rem;
+				background-size: 1rem;
+			}
+
+			&:hover {
+				background-color: darken(#f3f4f6, 5);
+			}
+		}
+
+		&.show {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+		}
+	}
+}
