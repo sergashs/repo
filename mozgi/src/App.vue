@@ -1,5 +1,9 @@
 <template>
-	<router-view />
+	<router-view v-slot="{ Component }">
+		<transition>
+			<component :is="Component" />
+		</transition>
+	</router-view>
 </template>
 
 <script>
@@ -16,10 +20,7 @@ export default {
 };
 </script>
 
-<style scoped>
-@import "/fonts/style.css";
-</style>
-
 <style lang="scss">
+@import "/fonts/style.css";
 @import "@/assets/scss/main.scss";
 </style>

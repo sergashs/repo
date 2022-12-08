@@ -32,6 +32,14 @@ export default {
 	-webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: #373737;
 	opacity: 0.1;
+
+	@media (max-width: 1024px) {
+		font-size: 42px;
+	}
+
+	@media (max-width: 575px) {
+		font-size: 28px;
+	}
 }
 </style>
 

@@ -3,6 +3,7 @@
 		<div class="content">
 			<h1 class="h1" ref="title">FULL-CYCLE EVENT AGENCY</h1>
 		</div>
+		<slot />
 	</div>
 </template>
 
@@ -28,6 +29,21 @@ export default {
 <style lang="scss" scoped>
 .title {
 	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 578px;
+	min-height: 578px;
+
+	@media (max-width: 1024px) {
+		min-width: 482px;
+		min-height: 482px;
+	}
+
+	@media (max-width: 575px) {
+		min-width: 294px;
+		min-height: 294px;
+	}
 
 	&::after {
 		content: "";
@@ -40,6 +56,16 @@ export default {
 		background: #ffcb46;
 		filter: blur(38px);
 		border-radius: 50%;
+
+		@media (max-width: 1024px) {
+			width: 482px;
+			height: 482px;
+		}
+
+		@media (max-width: 575px) {
+			width: 294px;
+			height: 294px;
+		}
 	}
 
 	.content {
@@ -55,6 +81,14 @@ export default {
 		font-size: 82px;
 		line-height: 1.09;
 		text-align: center;
+
+		@media (max-width: 1024px) {
+			font-size: 58px;
+		}
+
+		@media (max-width: 575px) {
+			font-size: 34px;
+		}
 	}
 }
 </style>
