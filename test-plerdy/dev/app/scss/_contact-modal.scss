@@ -81,6 +81,11 @@
 		.btn {
 			width: 100%;
 
+			@include media("<md") {
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+
 			&:first-child {
 				margin-right: 1rem;
 			}

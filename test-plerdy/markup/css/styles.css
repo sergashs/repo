@@ -1875,9 +1875,8 @@ h5 {
 	left: 0;
 	width: 100%;
 	background: #001e41;
-	border: 0.15rem solid;
 	border-radius: 0.2rem;
-	height: 0;
+	height: 0.2rem;
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
@@ -1920,7 +1919,7 @@ h5 {
 }
 @media (max-width: 767px) {
 	.btn {
-		padding: 1.2rem 1rem;
+		padding: 1.2rem 3rem;
 		font-size: 1.4rem;
 	}
 }
@@ -2074,7 +2073,7 @@ h5 {
 }
 @media (max-width: 767px) {
 	.intro-section .partners .list-item {
-		margin-bottom: 1.7rem;
+		margin-bottom: 1.5rem;
 	}
 }
 @media (max-width: 575px) {
@@ -2547,6 +2546,12 @@ h5 {
 .contact-modal .btns-holder .btn {
 	width: 100%;
 }
+@media (max-width: 767px) {
+	.contact-modal .btns-holder .btn {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
 .contact-modal .btns-holder .btn:first-child {
 	margin-right: 1rem;
 }
@@ -2604,6 +2609,7 @@ h5 {
 }
 @media (max-width: 767px) {
 	.form-group .form-label {
+		margin-bottom: 0.3rem;
 		font-size: 0.9rem;
 	}
 }

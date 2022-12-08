@@ -171,9 +171,10 @@
 			left: 0;
 			width: 100%;
 			background: $text-color-base;
-			border: 0.15rem solid;
+			// border: 0.15rem solid;
 			border-radius: 0.2rem;
-			height: 0;
+			// height: 0;
+			height: 0.2rem;
 			transition: $transition;
 
 			@for $i from 1 through 3 {
