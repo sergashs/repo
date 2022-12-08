@@ -1,4 +1,4 @@
-# f1_logistic
+# Mozgi
 
 ## Project setup
 ```
