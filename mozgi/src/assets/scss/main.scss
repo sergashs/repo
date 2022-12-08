@@ -11,3 +11,47 @@ body {
 	color: #373737;
 	background: #bebebe;
 }
+
+.fade-enter-active,
+.fade-leave-active {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: 1.5s ease-out;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vh;
+		height: 100vh;
+		background: #2e5bdc;
+		z-index: 100;
+		animation: slideAnim 1.5s both;
+	}
+}
+
+.fade-enter,
+.fade-leave-to {
+	opacity: 0;
+	transition: 0.3s ease-out;
+}
+
+@keyframes slideAnim {
+	0% {
+		transform: translateX(-100%);
+		width: 0;
+	}
+	50% {
+		transform: translateX(0);
+		width: 100%;
+	}
+	100% {
+		transform: translateX(100%);
+		width: 100%;
+	}
+}

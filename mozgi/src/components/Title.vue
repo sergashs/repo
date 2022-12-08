@@ -14,14 +14,22 @@ export default {
 	},
 	methods: {
 		onMouseMove() {
-			addEventListener("mousemove", (event) => {
+			document.body.addEventListener("mousemove", (event) => {
 				const title = this.$refs.title;
-				const x = (event.clientX * 3) / window.innerWidth + "%";
-				const y = (event.clientY * 3) / window.innerHeight + "%";
 
-				title.style.transform = `translate(${x},${y})`;
+				if (title) {
+					const x = (event.clientX * 3) / window.innerWidth + "%";
+					const y = (event.clientY * 5) / window.innerHeight + "%";
+
+					title.style.transform = `translate(${x},${y})`;
+				}
 			});
 		}
+	},
+	beforeDestroy() {
+		document.body.removeEventListener("click", () => {
+			this.onMouseMove();
+		});
 	}
 };
 </script>
