@@ -88,6 +88,7 @@ export default {
 
 	.link {
 		position: absolute;
+		z-index: 5;
 
 		@media (max-width: 768px) {
 			display: none;

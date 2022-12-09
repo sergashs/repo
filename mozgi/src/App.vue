@@ -10,9 +10,14 @@
 export default {
 	mounted() {
 		this.correctVh();
+
+		window.addEventListener("resize", () => {
+			this.correctVh();
+		});
 	},
 	methods: {
 		correctVh() {
+			console.log("resize");
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty("--vh", vh + "px");
 		}
