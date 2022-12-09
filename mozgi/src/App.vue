@@ -17,7 +17,6 @@ export default {
 	},
 	methods: {
 		correctVh() {
-			console.log("resize");
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty("--vh", vh + "px");
 		}
@@ -26,6 +25,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "/fonts/style.css";
 @import "@/assets/scss/main.scss";
 </style>
