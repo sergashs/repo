@@ -1,17 +1,17 @@
 import axios from 'axios';
 import config from './config';
 
-const url = new URL(window.location.href);
-const token = url.searchParams.get("token")
+// const url = new URL(window.location.href);
+// const token = url.searchParams.get("token")
 
 
 export const customAxios = axios.create(config());
 customAxios.interceptors.request.use(function (config) {
     // customAxios.defaults.params = { token: token }
-    config.params = { token }
+    // config.params = { token }
 
 
-    config.headers['Access-Token'] = token;
+    // config.headers['Access-Token'] = token;
 
     return config;
 }, function (err) {

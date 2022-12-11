@@ -1,6 +1,6 @@
 const config = function () {
   return {
-    baseURL: 'https://hm.tgapp.live/',
+    baseURL: 'https://graphqlzero.almansi.me/api',
     headers: {
       Accept: 'application/json',
     },

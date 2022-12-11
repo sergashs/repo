@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 
 
-import './assets/tailwind.css'
+// import './assets/tailwind.css'
 
 new Vue({
     el: "#app",
