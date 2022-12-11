@@ -34,16 +34,22 @@ export default {};
 	left: 0;
 	width: 100%;
 	padding: 24px;
+	z-index: 100;
 
 	.container {
 		display: flex;
 		justify-content: center;
 	}
 
-	// .logo {
-	// 	.stop {
-	// 		stop-color: red;
-	// 	}
-	// }
+	.logo {
+		@media (max-width: 575px) {
+			max-width: 45px;
+		}
+
+		svg {
+			width: 100%;
+			height: auto;
+		}
+	}
 }
 </style>

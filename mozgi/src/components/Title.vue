@@ -91,6 +91,7 @@ export default {
 		text-align: center;
 
 		@media (max-width: 1024px) {
+			max-width: 724px;
 			font-size: 58px;
 		}
 

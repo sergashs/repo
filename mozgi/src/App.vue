@@ -10,6 +10,10 @@
 export default {
 	mounted() {
 		this.correctVh();
+
+		window.addEventListener("resize", () => {
+			this.correctVh();
+		});
 	},
 	methods: {
 		correctVh() {
@@ -21,6 +25,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "/fonts/style.css";
 @import "@/assets/scss/main.scss";
 </style>
