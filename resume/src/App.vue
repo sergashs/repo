@@ -9,6 +9,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import './assets/scss/styles.scss';
 @import './assets/normalize.css';
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
@@ -18,11 +19,8 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 14px;
-    line-height: 18px;
-    height: 100%;
-    min-height: 100vh;
+    line-height: 1.2;
     display: flex;
-    align-items: center;
     justify-content: center;
     background: #ebecf0;
 }
