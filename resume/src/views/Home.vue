@@ -1,6 +1,6 @@
 <template>
     <div class="resume-page">
-        <div class="resume">
+        <div class="resume" id="resume">
             <aside class="aside">
                 <div class="avatar-holder">
                     <img src="@/assets/images/avatar.jpg" alt="serhii avatar" />
@@ -118,52 +118,19 @@
                 </div>
             </main>
         </div>
-        <!-- <div class="convert-btn-holder">
-            <button class="btn" @click="convertToPDF">convert</button>
-        </div> -->
     </div>
 </template>
 
 <script>
-// import html2pdf from '/node_modules/html2pdf.js/src/index.js';
-
-import { jsPDF } from 'jspdf';
-
 export default {
     name: 'Home',
     data() {
         return {};
     },
-    mounted() {},
-    methods: {
-        convertToPDF() {
-            const doc = new jsPDF({
-                orientation: 'landscape',
-                unit: 'in',
-            });
-
-            doc.save('two-by-four.pdf');
-
-            // var element = document.querySelector('.resume');
-            //html2pdf(element);
-
-            // var opt = {
-            //     filename: 'test.pdf',
-            //     image: { type: 'jpeg', quality: 0.98 },
-            //     html2canvas: { scale: 2 },
-            //     jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-            // };
-
-            // New Promise-based usage:
-            // html2pdf().set(opt).from(element).save();
-
-            // window.print();
-        },
-    },
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .resume-page {
     width: 100%;
     max-width: 850px;
@@ -314,20 +281,6 @@ export default {
                     margin-bottom: 0;
                 }
             }
-        }
-    }
-
-    .convert-btn-holder {
-        display: flex;
-        justify-content: center;
-        padding-top: 40px;
-
-        .btn {
-            padding: 10px 20px;
-            font-size: 16px;
-            color: white;
-            background: #0c486d;
-            border: none;
         }
     }
 }
