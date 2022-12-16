@@ -10458,4 +10458,26 @@ input[type=submit]::-moz-focus-inner {
 .futures-section .lead {
 	font-size: 1.6rem;
 }
+
+.brands-section {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	color: #d79494;
+}
+
+.contact-section {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, var(--bs-light)), to(var(--bs-white)));
+	background-image: linear-gradient(to bottom, var(--bs-light) 0, var(--bs-white) 100%);
+}
+.contact-section .form-holder {
+	border: none;
+	border-radius: 0.4rem;
+	-webkit-box-shadow: 0 1.5rem 4rem rgba(22, 28, 45, 0.05);
+	        box-shadow: 0 1.5rem 4rem rgba(22, 28, 45, 0.05);
+}
+.contact-section .form-holder .card-body {
+	padding: 3rem 4rem;
+}
 /*# sourceMappingURL=styles.css.map */

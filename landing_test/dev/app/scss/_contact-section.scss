@@ -1,0 +1,18 @@
+.contact-section {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+	background-image: linear-gradient(to bottom, var(--bs-light) 0, var(--bs-white) 100%);
+
+	.form-holder {
+		border: none;
+		border-radius: 0.4rem;
+		box-shadow: 0 1.5rem 4rem rgba(22, 28, 45, 0.05);
+
+		.card {
+		}
+
+		.card-body {
+			padding: 3rem 4rem;
+		}
+	}
+}
