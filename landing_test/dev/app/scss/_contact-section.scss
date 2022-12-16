@@ -15,4 +15,31 @@
 			padding: 3rem 4rem;
 		}
 	}
+
+	.form-floating {
+		margin-bottom: 2rem;
+
+		label {
+			padding-left: 0;
+		}
+	}
+
+	.form-control {
+		padding: 1rem 1rem 1rem 0;
+		border: none;
+		border-bottom: 1px solid #f8f1f1;
+		border-radius: 0;
+		box-shadow: none;
+
+		&:focus {
+			border-color: #ea3333;
+		}
+	}
+
+	.form-floating > .form-control:focus ~ label,
+	.form-floating > .form-control:not(:placeholder-shown) ~ label,
+	.form-floating > .form-select ~ label {
+		opacity: 0.65;
+		transform: scale(0.85) translateY(-1.5rem) translateX(0.15rem);
+	}
 }
