@@ -119,14 +119,14 @@ function sendRequest() {
 		fetch("https://leadpushka.ru/api/lead", {
 			method: "POST",
 			headers: { "content-type": "application/json" },
-			body: {
-				name: 'userName',
-				phone: '+380332323',
-				message: 'text message',
-				page: 'page1',
-				region: 'region',
-				test: 1
-			}
+			// body: {
+			name: "userName",
+			phone: "+380332323",
+			message: "text message",
+			page: "page1",
+			region: "region",
+			// test: 1
+			// }
 
 		}).then((response) => {
 			console.log(response)
