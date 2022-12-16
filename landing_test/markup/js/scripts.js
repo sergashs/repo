@@ -122,10 +122,17 @@ function sendRequest() {
 			body: {
 				name: 'userName',
 				phone: '+380332323',
-				message: 'text message'
+				message: 'text message',
+				page: 'page1',
+				region: 'region',
+				test: 1
 			}
 
-		}).then(res => res.json()).then(console.log)
+		}).then((response) => {
+			console.log(response)
+		}).catch((response) => {
+			console.log(response)
+		})
 
 
 
