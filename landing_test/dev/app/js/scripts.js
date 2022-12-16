@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	loadFonts();
 	correctVh();
 	lazyLoad();
+	sendRequest();
 });
 
 window.addEventListener('resize', () => {
@@ -107,6 +108,17 @@ function mobileMenu() {
 		}
 	});
 };
+
+
+function sendRequest() {
+	const btn = documen.querySelector('#send-request')
+
+
+	btn.addEventListener('click', () => {
+		console.log('click')
+	})
+
+}
 
 // jQuery
 (function ($) {
