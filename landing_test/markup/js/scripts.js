@@ -111,11 +111,24 @@ function mobileMenu() {
 
 
 function sendRequest() {
-	const btn = documen.querySelector('#send-request')
+	const btn = document.querySelector('#send-request')
 
 
 	btn.addEventListener('click', () => {
-		console.log('click')
+
+		fetch("https://leadpushka.ru/api/lead", {
+			method: "POST",
+			headers: { "content-type": "application/json" },
+			body: {
+				name: 'userName',
+				phone: '+380332323',
+				message: 'text message'
+			}
+
+		}).then(res => res.json()).then(console.log)
+
+
+
 	})
 
 }
