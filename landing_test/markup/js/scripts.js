@@ -113,20 +113,26 @@ function mobileMenu() {
 function sendRequest() {
 	const btn = document.querySelector('#send-request')
 
+	const formData = {
+		key: "iCzSetzgGJ",
+		username: "userName",
+		phone: "+380332323",
+		message: "text message",
+		page: "page1",
+		region: "region",
+		ip: "192.158.1.38."
+	}
+
 
 	btn.addEventListener('click', () => {
 
+
+
 		fetch("https://leadpushka.ru/api/lead", {
 			method: "POST",
-			headers: { "content-type": "application/json" },
-			// body: {
-			name: "userName",
-			phone: "+380332323",
-			message: "text message",
-			page: "page1",
-			region: "region",
-			// test: 1
-			// }
+			headers: { "content-type": "application/x-www-form-urlencoded" },
+			body: JSON.stringify(formData)
+
 
 		}).then((response) => {
 			console.log(response)
