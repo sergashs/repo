@@ -114,7 +114,7 @@ function sendRequest() {
 	const btn = document.querySelector('#send-request')
 
 	const formData = {
-		key: "iCzSetzgGJ",
+		key: "FbVtnSix9T",
 		username: "userName",
 		phone: "+380332323",
 		message: "text message",
@@ -123,25 +123,17 @@ function sendRequest() {
 		ip: "192.158.1.38."
 	}
 
-
 	btn.addEventListener('click', () => {
-
-
-
 		fetch("https://leadpushka.ru/api/lead", {
 			method: "POST",
 			headers: { "content-type": "application/x-www-form-urlencoded" },
 			body: JSON.stringify(formData)
-
 
 		}).then((response) => {
 			console.log(response)
 		}).catch((response) => {
 			console.log(response)
 		})
-
-
-
 	})
 
 }
