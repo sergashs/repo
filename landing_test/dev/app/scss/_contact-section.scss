@@ -22,6 +22,11 @@
 		label {
 			padding-left: 0;
 		}
+
+		textarea {
+			min-height: 80px;
+			resize: none;
+		}
 	}
 
 	.form-control {

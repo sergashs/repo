@@ -10486,6 +10486,10 @@ input[type=submit]::-moz-focus-inner {
 .contact-section .form-floating label {
 	padding-left: 0;
 }
+.contact-section .form-floating textarea {
+	min-height: 80px;
+	resize: none;
+}
 .contact-section .form-control {
 	padding: 1rem 1rem 1rem 0;
 	border: none;

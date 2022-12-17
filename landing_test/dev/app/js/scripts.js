@@ -111,28 +111,41 @@ function mobileMenu() {
 
 
 function sendRequest() {
-	const btn = document.querySelector('#send-request')
+	const btn = document.querySelector('#send-request');
+	const dataFromDOM = {
+		username: document.querySelector("#inputName"),
+		phone: document.querySelector("#inputPhone"),
+		message: document.querySelector("#inputTextarea")
+	}
 
-	const formData = {
+	let formData = {
 		key: "FbVtnSix9T",
-		username: "userName",
-		phone: "+380332323",
-		message: "text message",
+		username: dataFromDOM.message.value,
+		phone: dataFromDOM.phone.value,
+		message: dataFromDOM.message.value,
 		page: "page1",
 		region: "region",
 		ip: "192.158.1.38."
 	}
 
+
 	btn.addEventListener('click', () => {
+		formData.username = dataFromDOM.message.value;
+		formData.phone = dataFromDOM.phone.value;
+		formData.message = dataFromDOM.message.value;
+
+		console.log(formData)
+
+
 		fetch("https://leadpushka.ru/api/lead", {
 			method: "POST",
 			headers: { "content-type": "application/x-www-form-urlencoded" },
 			body: JSON.stringify(formData)
 
 		}).then((response) => {
-			console.log(response)
+			console.log(response);
 		}).catch((response) => {
-			console.log(response)
+			console.log(response);
 		})
 	})
 
