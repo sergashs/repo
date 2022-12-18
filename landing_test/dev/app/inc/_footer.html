@@ -170,6 +170,9 @@
 <script src="js/webfontloader.js"></script>
 <script src="js/scripts.js"></script>
 <script>
+	document.addEventListener('DOMContentLoaded', () => {
+		sendRequest()
+	});
 
 	function sendRequest() {
 		const btn = document.querySelector('#send-request');
@@ -180,7 +183,7 @@
 		}
 
 		let formData = {
-			key: $key,
+			key: '$key',
 			username: dataFromDOM.username.value,
 			phone: dataFromDOM.phone.value,
 			message: dataFromDOM.message.value,
@@ -191,7 +194,7 @@
 
 
 		btn.addEventListener('click', () => {
-			formData.key = $key;
+			formData.key = '$key';
 			formData.username = dataFromDOM.username.value;
 			formData.phone = dataFromDOM.phone.value;
 			formData.message = dataFromDOM.message.value;
