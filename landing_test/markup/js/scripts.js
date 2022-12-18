@@ -3,8 +3,7 @@ let loadLazyLoadScript = false;
 document.addEventListener('DOMContentLoaded', () => {
 	loadFonts();
 	correctVh();
-	lazyLoad();
-	sendRequest();
+	//lazyLoad();
 });
 
 window.addEventListener('resize', () => {
@@ -62,32 +61,7 @@ function lazyLoad() {
 	}
 }
 
-// replaseInlineSvg
-function replaseInlineSvg(el) {
-	const imgID = el.getAttribute('id');
-	const imgClass = el.getAttribute('class');
-	const imgURL = el.getAttribute('src');
 
-	fetch(imgURL)
-		.then(data => data.text())
-		.then(response => {
-			const parser = new DOMParser();
-			const xmlDoc = parser.parseFromString(response, 'text/html');
-			const svg = xmlDoc.querySelector('svg');
-
-			if (typeof imgID !== 'undefined') {
-				svg.setAttribute('id', imgID);
-			}
-
-			if (typeof imgClass !== 'undefined') {
-				svg.setAttribute('class', imgClass + ' replaced-svg');
-			}
-
-			svg.removeAttribute('xmlns:a');
-
-			el.parentNode.replaceChild(svg, el);
-		});
-}
 
 // correctVh
 function correctVh() {
@@ -110,46 +84,6 @@ function mobileMenu() {
 };
 
 
-function sendRequest() {
-	const btn = document.querySelector('#send-request');
-	const dataFromDOM = {
-		username: document.querySelector("#inputName"),
-		phone: document.querySelector("#inputPhone"),
-		message: document.querySelector("#inputTextarea")
-	}
-
-	let formData = {
-		key: "FbVtnSix9T",
-		username: dataFromDOM.message.value,
-		phone: dataFromDOM.phone.value,
-		message: dataFromDOM.message.value,
-		page: "page1",
-		region: "region",
-		ip: "192.158.1.38."
-	}
-
-
-	btn.addEventListener('click', () => {
-		formData.username = dataFromDOM.message.value;
-		formData.phone = dataFromDOM.phone.value;
-		formData.message = dataFromDOM.message.value;
-
-		console.log(formData)
-
-
-		fetch("https://leadpushka.ru/api/lead", {
-			method: "POST",
-			headers: { "content-type": "application/x-www-form-urlencoded" },
-			body: JSON.stringify(formData)
-
-		}).then((response) => {
-			console.log(response);
-		}).catch((response) => {
-			console.log(response);
-		})
-	})
-
-}
 
 // jQuery
 (function ($) {
