@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+	<meta charset="utf-8" />
+</head>
+<style>
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	canvas {
+		display: block;
+	}
+</style>
+
+<body>
+	<main>
+	</main>
+	<script>
+
+		// let array = [1, 2, 3, 4, 5, 6, 2, 3, 4, 5, 6, 2, 3, 4, 5, 6];
+
+		// let step = 0;
+
+		// function every_nth(arr) {
+
+		// 	// return arr.filter((e, i) => i % nth === nth - 1)
+
+		// 	for (let i = 0; i < arr.length; i++) {
+		// 		step++;
+		// 		console.log(i);
+
+		// 		if (step == 5) {
+
+		// 			console.log('step', i)
+		// 			step = 0;
+		// 		}
+
+		// 	}
+
+		// };
+
+
+
+
+		// every_nth(array);
+
+
+
+		const arrDates = [
+			"2022-12-01",
+			"2022-12-02",
+			"2022-12-03",
+			"2022-12-04",
+			"2022-12-05",
+			"2022-12-06",
+			"2022-12-07",
+			"2022-12-08",
+			"2022-12-09",
+			"2022-12-10",
+			"2022-12-11",
+			"2022-12-12",
+			"2022-12-13",
+			"2022-12-14",
+			"2022-12-15",
+			"2022-12-16",
+			"2022-12-17",
+			"2022-12-18",
+			"2022-12-19",
+			"2022-12-20",
+			"2022-12-21",
+			"2022-12-22",
+			"2022-12-23",
+			"2022-12-24",
+			"2022-12-25",
+			"2022-12-26",
+			"2022-12-27",
+			"2022-12-28",
+			"2022-12-29"
+		]
+
+
+		let weekDates = []
+
+
+		arrDates.forEach(el => {
+			if (weekDates.length < 7) {
+				weekDates.push(el)
+			}
+		});
+
+
+		console.log(weekDates)
+
+	</script>
+</body>
+
+</html>
