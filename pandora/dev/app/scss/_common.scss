@@ -1,0 +1,44 @@
+.container {
+	max-width: 136.5rem;
+	margin: auto;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+.sr-only {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+.home-page {
+	// @include media("<md") {
+	// 	padding-top: 5.9rem;
+	// }
+}
+
+.btn-feedback {
+	position: fixed;
+	top: 50%;
+	right: -4.6rem;
+	padding: 1.1rem 2.2rem;
+	font-weight: 400;
+	font-size: 1.4rem;
+	line-height: 1.21;
+	letter-spacing: 0.155em;
+	text-transform: uppercase;
+	transform: rotate(90deg);
+	border: 0.1rem solid #b4b4b4;
+	border-radius: 0 0 0.3rem 0.3rem;
+
+	&:hover {
+		background: darken(white, 5);
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,28 @@
+$fonts: "../fonts/";
+
+// fonts
+$main-font: "Pan Display";
+
+// breakpoints
+$breakpoints: (
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+);
+
+// base vars
+$main-color: #ffcad4;
+$text-color-base: #27251f;
+$body-bg: white;
+$font-family-base: $main-font;
+$font-size-base: 1.4rem;
+$font-weight-base: 400;
+$line-height-base: 1.28;
+$links-color-base: inherit;
+$headings-font-weight: 400;
+$transition: all 0.3s ease;
+
+// dev2
+// dev3
+// dev4
