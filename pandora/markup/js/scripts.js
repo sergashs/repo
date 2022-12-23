@@ -2,10 +2,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 	loadFonts();
-	mobileMenu();
-	//initSwiper();
-
+	initSwiper();
+	initPoll();
 });
+
 
 
 // load fonts
@@ -18,53 +18,84 @@ function loadFonts() {
 	});
 }
 
+function initPoll() {
+	const pollBlocks = document.querySelectorAll('.poll-block');
+	const btns = document.querySelectorAll('.poll-block .btn');
+	// let form = [];
+	let step = 1;
+	const stepEl = document.querySelector('.poll-quantity-counter');
 
-// mobile menu
-function mobileMenu() {
-	const openBtn = document.querySelector('.open-menu');
+	btns.forEach(el => {
+		el.addEventListener('click', () => {
 
-	openBtn.addEventListener('click', function (event) {
-		event.preventDefault();
-		if (document.body.classList.contains('menu-opened')) {
-			document.body.classList.remove('menu-opened');
-		} else {
-			document.body.classList.add('menu-opened');
-		}
+			// if (form.length <= pollBlocks.length - 1) {
+			// 	form.push({
+			// 		[`question_${step}`]: el.parentNode.parentNode.parentNode.children[0].innerHTML,
+			// 		[`answer_${step}`]: el.innerHTML
+			// 	});
+			// }
+
+			if (step <= 2) {
+				showNextStep();
+				step++;
+				stepEl.innerHTML = step;
+			}
+
+
+		})
 	});
-};
 
 
+	function showNextStep() {
+		pollBlocks.forEach((el, i) => {
+			if (i == step) {
+				el.classList.add('active');
+			} else {
+				el.classList.remove('active');
+			}
+		});
+	}
+}
 
 function initSwiper() {
-	const swiper = new Swiper(".mySwiper", {
+	(function () {
+		'use strict';
 
-		slidesPerView: 1,
-		spaceBetween: 17,
-		autoHeight: true,
-		navigation: {
-			nextEl: ".swiper-button-next",
-			prevEl: ".swiper-button-prev",
-		},
-		pagination: {
-			el: ".swiper-pagination",
-			clickable: true
-		},
+		const breakpoint = window.matchMedia('(min-width:768px)');
 
-		breakpoints: {
-			575: {
-				slidesPerView: 2.1,
-			},
-			768: {
-				slidesPerView: 2.5,
-			},
-			992: {
-				slidesPerView: 3.2,
-			},
-			1200: {
-				slidesPerView: 4.2,
+		let mySwiper;
+
+		const breakpointChecker = function () {
+			if (breakpoint.matches === true) {
+
+				if (mySwiper !== undefined) mySwiper.destroy(true, true);
+				return;
+
+			} else if (breakpoint.matches === false) {
+				return enableSwiper();
 			}
-		}
-	});
+		};
+
+
+		const enableSwiper = function () {
+			mySwiper = new Swiper(".swiper-gallery", {
+				slidesPerView: 1,
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true
+				},
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+			});
+		};
+
+		breakpoint.addListener(breakpointChecker);
+
+		breakpointChecker();
+
+	})();
 }
 
 
