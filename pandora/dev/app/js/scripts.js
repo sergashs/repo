@@ -1,12 +1,8 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
 	loadFonts();
 	initSwiper();
 	initPoll();
 });
-
-
 
 // load fonts
 function loadFonts() {
@@ -21,30 +17,18 @@ function loadFonts() {
 function initPoll() {
 	const pollBlocks = document.querySelectorAll('.poll-block');
 	const btns = document.querySelectorAll('.poll-block .btn');
-	// let form = [];
 	let step = 1;
 	const stepEl = document.querySelector('.poll-quantity-counter');
 
 	btns.forEach(el => {
 		el.addEventListener('click', () => {
-
-			// if (form.length <= pollBlocks.length - 1) {
-			// 	form.push({
-			// 		[`question_${step}`]: el.parentNode.parentNode.parentNode.children[0].innerHTML,
-			// 		[`answer_${step}`]: el.innerHTML
-			// 	});
-			// }
-
 			if (step <= 2) {
 				showNextStep();
 				step++;
 				stepEl.innerHTML = step;
 			}
-
-
 		})
 	});
-
 
 	function showNextStep() {
 		pollBlocks.forEach((el, i) => {
@@ -67,15 +51,12 @@ function initSwiper() {
 
 		const breakpointChecker = function () {
 			if (breakpoint.matches === true) {
-
 				if (mySwiper !== undefined) mySwiper.destroy(true, true);
 				return;
-
 			} else if (breakpoint.matches === false) {
 				return enableSwiper();
 			}
 		};
-
 
 		const enableSwiper = function () {
 			mySwiper = new Swiper(".swiper-gallery", {

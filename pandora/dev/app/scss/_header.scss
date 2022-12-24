@@ -4,6 +4,11 @@
 	padding-bottom: 1.1rem;
 	border-bottom: 0.5rem solid $main-color;
 
+	@include media("<md") {
+		padding-top: 1.5rem;
+		padding-bottom: 1.4rem;
+	}
+
 	.row {
 		display: flex;
 		align-items: center;
@@ -11,6 +16,9 @@
 
 		.col {
 			&:first-child {
+				display: flex;
+				align-items: center;
+
 				@include media(">=md") {
 					display: none;
 				}
@@ -37,6 +45,7 @@
 
 		@include media("<md") {
 			max-width: 12.2rem;
+			transform: translate(0.5rem, -0.5rem);
 		}
 
 		img {
@@ -50,6 +59,10 @@
 		margin-right: 2rem;
 		max-width: 24.1rem;
 		width: 100%;
+
+		@include media("<md") {
+			display: none;
+		}
 
 		.btn-search {
 			position: absolute;
@@ -72,6 +85,7 @@
 			&::placeholder {
 				color: #b4b4b4;
 				text-transform: uppercase;
+				letter-spacing: 0.155em;
 			}
 
 			&:focus {
@@ -95,8 +109,25 @@
 		list-style: none;
 
 		.menu-item {
+			&:first-child {
+				@include media(">=md") {
+					display: none;
+				}
+			}
+
+			&:nth-child(2),
+			&:nth-child(3) {
+				@include media("<md") {
+					display: none;
+				}
+			}
+
 			&:not(:last-child) {
 				margin-right: 2rem;
+
+				@include media("<md") {
+					margin-right: 2.2rem;
+				}
 			}
 		}
 
@@ -109,6 +140,7 @@
 		position: relative;
 		width: 2.2rem;
 		height: 2.2rem;
+		margin-right: 1.6rem;
 		display: block;
 		font-size: 0;
 		line-height: 0;
@@ -132,13 +164,13 @@
 			@for $i from 1 through 3 {
 				&:nth-child(#{$i}) {
 					@if ($i == 1) {
-						margin-top: -0.7rem;
+						margin-top: -0.8rem;
 					}
 					@if ($i == 2) {
 						margin-top: -0.2rem;
 					}
 					@if ($i == 3) {
-						margin-top: 0.3rem;
+						margin-top: 0.4rem;
 					}
 				}
 			}

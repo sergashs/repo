@@ -24,9 +24,9 @@
 
 .btn-feedback {
 	position: fixed;
-	top: 50%;
+	top: 34.4%;
 	right: -4.6rem;
-	padding: 1.1rem 2.2rem;
+	padding: 1.2rem 2rem;
 	font-weight: 400;
 	font-size: 1.4rem;
 	line-height: 1.21;
@@ -38,6 +38,11 @@
 	border-radius: 0 0 0.3rem 0.3rem;
 	z-index: 10;
 
+	@include media("<md") {
+		top: 45.9%;
+		padding: 2.3rem 0.9rem 0.7rem 0.9rem;
+	}
+
 	&:hover {
 		background: darken(white, 5);
 		text-decoration: none;
@@ -47,7 +52,7 @@
 .swiper {
 	.swiper-pagination {
 		position: absolute;
-		bottom: 1.2rem;
+		bottom: 1.5rem;
 		left: 50%;
 		display: flex;
 		transform: translateX(-50%);
@@ -61,7 +66,7 @@
 			cursor: pointer;
 
 			&:not(:last-child) {
-				margin-right: 0.5rem;
+				margin-right: 0.2rem;
 			}
 
 			&::before {
