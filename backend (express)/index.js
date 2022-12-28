@@ -9,6 +9,7 @@ const DB_URL = `mongodb+srv://user:user@cluster0.ozbtwe9.mongodb.net/?retryWrite
 const app = express();
 
 app.use(express.json());
+app.use(express.static('static'));
 app.use(fileUpload({}));
 app.use('/api', router);
 
