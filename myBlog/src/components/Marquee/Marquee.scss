@@ -1,0 +1,25 @@
+.vue3-marquee {
+	font-family: $syncopate;
+	font-size: 7.2rem;
+
+	@include media-breakpoint-down(md) {
+		font-size: 3.15rem;
+	}
+
+	.marquee {
+		color: $white;
+		text-shadow: -1px 0 $black, 0 1px $black, 1px 0 $black, 0 -1px $black;
+
+		p {
+			margin-bottom: 0;
+		}
+
+		span {
+			padding: 0 2.25rem;
+		}
+
+		strong {
+			color: $black;
+		}
+	}
+}

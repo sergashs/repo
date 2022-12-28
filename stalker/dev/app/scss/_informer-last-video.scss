@@ -1,0 +1,27 @@
+.informer-last-video {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	#allEntries {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -1.7rem;
+
+		> div {
+			width: 24.933333%;
+
+			@include media-breakpoint-down(lg) {
+				width: 33.333333%;
+			}
+
+			@include media-breakpoint-down(md) {
+				width: 100%;
+			}
+		}
+
+		.item-video {
+			margin: 0 1.7rem 3rem 1.7rem;
+		}
+	}
+}

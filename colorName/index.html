@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Get color Name and lightness</title>
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="flex items-center justify-center h-screen bg-gray-600">
+	<div class="max-w-xl w-full bg-white p-6">
+		<div class="flex justify-between text-sm">
+			<div><span class="font-medium">Simple name:</span> <span id="colorName">Red</span>-<span id="lightness">620</span></div>
+			<div><span class="font-medium">Alternative name:</span> <span id="alternativeName">Alizarin</span></div>
+		</div>
+		<div class="w-full h-14" id="colorBlock" style="background-color: #E32636;"></div>
+		<input class="w-full p-3 text-sm bg-gray-50 focus:outline-none border border-gray-200 text-gray-600" id="colorInput" type="text" placeholder="Color in HEX" value="#E32636">
+	</div>
+	<script src="js/ntc.js"></script>
+	<script src="js/scripts.js"></script>
+</body>
+
+</html>

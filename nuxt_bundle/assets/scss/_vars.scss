@@ -1,0 +1,39 @@
+//fonts
+$oswald: "Oswald";
+$chakra-petch: "Chakra Petch";
+
+// bootstrap grid
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+$grid-gutter-width-mobile: $grid-gutter-width;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px
+);
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1302px
+);
+
+// colors
+$white: #fff;
+$black: #000;
+$red: red;
+
+// // base vars
+$text-color-base: $black;
+$body-bg: $white;
+$font-family-base: $chakra-petch;
+$font-size-base: 1.8rem;
+$font-weight-base: 400;
+$line-height-base: 1.75;
+$links-color-base: inherit;
+$transition: all 0.3s ease;

@@ -1,0 +1,338 @@
+[
+	{
+		"id": 1,
+		"icon": "icon-dance.svg",
+		"title": "Робот",
+		"category": "Танец",
+		"category_id": 1
+	},
+	{
+		"id": 2,
+		"icon": "icon-dance.svg",
+		"title": "Робот",
+		"category": "Танец",
+		"category_id": 1
+	},
+	{
+		"id": 3,
+		"icon": "icon-dance.svg",
+		"title": "Робот",
+		"category": "Танец",
+		"category_id": 1
+	},
+	{
+		"id": 4,
+		"icon": "icon-dance.svg",
+		"title": "Робот",
+		"category": "Танец",
+		"category_id": 1
+	},
+	{
+		"id": 5,
+		"icon": "icon-dance.svg",
+		"title": "Робот",
+		"category": "Танец",
+		"category_id": 1
+	},
+	{
+		"id": 6,
+		"icon": "icon-dance.svg",
+		"title": "Робот",
+		"category": "Танец",
+		"category_id": 1
+	},
+	{
+		"id": 7,
+		"icon": "icon-dance.svg",
+		"title": "Робот",
+		"category": "Танец",
+		"category_id": 1
+	},
+	{
+		"id": 8,
+		"icon": "icon-dance.svg",
+		"title": "Робот",
+		"category": "Танец",
+		"category_id": 1
+	},
+	{
+		"id": 9,
+		"icon": "icon-dance.svg",
+		"title": "Робот",
+		"category": "Танец",
+		"category_id": 1
+	},
+	{
+		"id": 10,
+		"icon": "icon-dance.svg",
+		"title": "Робот",
+		"category": "Танец",
+		"category_id": 1
+	},
+	{
+		"id": 11,
+		"icon": "icon-dance.svg",
+		"title": "Робот",
+		"category": "Танец",
+		"category_id": 1
+	},
+	{
+		"id": 12,
+		"icon": "icon-dance.svg",
+		"title": "Робот",
+		"category": "Танец",
+		"category_id": 1
+	},
+	{
+		"id": 13,
+		"icon": "icon-dance.svg",
+		"title": "Робот",
+		"category": "Танец",
+		"category_id": 1
+	},
+	{
+		"id": 14,
+		"icon": "icon-dance.svg",
+		"title": "Робот",
+		"category": "Танец",
+		"category_id": 1
+	},
+	{
+		"id": 15,
+		"icon": "icon-dance.svg",
+		"title": "Робот",
+		"category": "Танец",
+		"category_id": 1
+	},
+	{
+		"id": 16,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки",
+		"category_id": 2
+	},
+	{
+		"id": 17,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки",
+		"category_id": 2
+	},
+	{
+		"id": 18,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки",
+		"category_id": 2
+	},
+	{
+		"id": 19,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки",
+		"category_id": 2
+	},
+	{
+		"id": 20,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки",
+		"category_id": 2
+	},
+	{
+		"id": 21,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки",
+		"category_id": 2
+	},
+	{
+		"id": 22,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки",
+		"category_id": 2
+	},
+	{
+		"id": 23,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки",
+		"category_id": 2
+	},
+	{
+		"id": 25,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки",
+		"category_id": 2
+	},
+	{
+		"id": 26,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки",
+		"category_id": 2
+	},
+	{
+		"id": 27,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки",
+		"category_id": 2
+	},
+	{
+		"id": 28,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки",
+		"category_id": 2
+	},
+	{
+		"id": 29,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки",
+		"category_id": 2
+	},
+	{
+		"id": 30,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки",
+		"category_id": 2
+	},
+	{
+		"id": 31,
+		"icon": "icon-walking-style.svg",
+		"title": "Старик",
+		"category": "Стиль походки",
+		"category_id": 2
+	},
+	{
+		"id": 32,
+		"icon": "icon-physical-exercise.svg",
+		"title": "упражнение",
+		"category": "Физ.упражнение",
+		"category_id": 3
+	},
+	{
+		"id": 33,
+		"icon": "icon-physical-exercise.svg",
+		"title": "упражнение",
+		"category": "Физ.упражнение",
+		"category_id": 3
+	},
+	{
+		"id": 34,
+		"icon": "icon-physical-exercise.svg",
+		"title": "упражнение",
+		"category": "Физ.упражнение",
+		"category_id": 3
+	},
+	{
+		"id": 35,
+		"icon": "icon-social.svg",
+		"title": "Отдать честь",
+		"category": "Социальные",
+		"category_id": 4
+	},
+	{
+		"id": 36,
+		"icon": "icon-social.svg",
+		"title": "Отдать честь",
+		"category": "Социальные",
+		"category_id": 4
+	},
+	{
+		"id": 37,
+		"icon": "icon-social.svg",
+		"title": "Отдать честь",
+		"category": "Социальные",
+		"category_id": 4
+	},
+	{
+		"id": 38,
+		"icon": "icon-emotion.svg",
+		"title": "Грустить",
+		"category": "Эмоции",
+		"category_id": 5
+	},
+	{
+		"id": 39,
+		"icon": "icon-emotion.svg",
+		"title": "Грустить",
+		"category": "Эмоции",
+		"category_id": 5
+	},
+	{
+		"id": 40,
+		"icon": "icon-emotion.svg",
+		"title": "Грустить",
+		"category": "Эмоции",
+		"category_id": 5
+	},
+	{
+		"id": 41,
+		"icon": "icon-actions.svg",
+		"title": "Действие 1",
+		"category": "Действия",
+		"category_id": 6
+	},
+	{
+		"id": 42,
+		"icon": "icon-actions.svg",
+		"title": "Действие 2",
+		"category": "Действия",
+		"category_id": 6
+	},
+	{
+		"id": 43,
+		"icon": "icon-actions.svg",
+		"title": "Действие 3",
+		"category": "Действия",
+		"category_id": 6
+	},
+	{
+		"id": 44,
+		"icon": "icon-racks.svg",
+		"title": "Стойка 1",
+		"category": "Стойки",
+		"category_id": 7
+	},
+	{
+		"id": 45,
+		"icon": "icon-racks.svg",
+		"title": "Стойка 2",
+		"category": "Стойки",
+		"category_id": 7
+	},
+	{
+		"id": 46,
+		"icon": "icon-racks.svg",
+		"title": "Стойка 3",
+		"category": "Стойки",
+		"category_id": 7
+	},
+	{
+		"id": 47,
+		"icon": "icon-racks.svg",
+		"title": "Средний палец",
+		"category": "Неприличные",
+		"category_id": 8
+	},
+	{
+		"id": 48,
+		"icon": "icon-racks.svg",
+		"title": "Средний палец",
+		"category": "Неприличные",
+		"category_id": 8
+	},
+	{
+		"id": 49,
+		"icon": "icon-racks.svg",
+		"title": "Средний палец",
+		"category": "Неприличные",
+		"category_id": 8
+	}
+]

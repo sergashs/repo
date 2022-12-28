@@ -1,0 +1,51 @@
+.buddypress-wrap {
+	#item-header-avatar {
+		.avatar {
+			border-color: lighten($tuatara, 50) !important;
+		}
+	}
+
+	.bp-wrap {
+		.bp-navs {
+			border-bottom: solid 0.1rem lighten($tuatara, 30) !important;
+			border-top: solid 0.1rem lighten($tuatara, 30) !important;
+			box-shadow: none !important;
+		}
+
+		.bp-personal-tab {
+			&.selected {
+				a {
+					color: lighten($tuatara, 80) !important;
+					background: lighten($tuatara, 10) !important;
+				}
+			}
+
+			a {
+				&:hover {
+					color: lighten($tuatara, 70) !important;
+					background: lighten($tuatara, 30) !important;
+				}
+			}
+		}
+
+		.select-wrap {
+			select {
+				color: $mercury !important;
+				border: solid 0.1rem lighten($tuatara, 50) !important;
+			}
+		}
+
+		.activity-list {
+			padding: 2rem;
+		}
+
+		.single-user {
+			background: red;
+			.activity-list {
+				&.bp-list {
+					background: $tuatara !important;
+				}
+			}
+		}
+	}
+}
