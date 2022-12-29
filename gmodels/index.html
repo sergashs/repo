@@ -1,25 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
+	{{$yandex}}
+	{{$google}}
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<!-- <meta name="description" content="Ежедневные или ежемесячные выплаты на карту. Комфортная студия в Спб и Испании. Зарплата от 2000$ в мес." />
-	<script type="text/javascript" data-skip-moving="true">(function (w, d) { var v = w.frameCacheVars = { 'CACHE_MODE': 'HTMLCACHE', 'storageBlocks': [], 'dynamicBlocks': [], 'AUTO_UPDATE': true, 'AUTO_UPDATE_TTL': '120', 'version': '2' }; var inv = false; if (v.AUTO_UPDATE === false) { if (v.AUTO_UPDATE_TTL && v.AUTO_UPDATE_TTL > 0) { var lm = Date.parse(d.lastModified); if (!isNaN(lm)) { var td = new Date().getTime(); if ((lm + v.AUTO_UPDATE_TTL * 1000) >= td) { w.frameRequestStart = false; w.preventAutoUpdate = true; return; } inv = true; } } else { w.frameRequestStart = false; w.preventAutoUpdate = true; return; } } var r = w.XMLHttpRequest ? new XMLHttpRequest() : (w.ActiveXObject ? new w.ActiveXObject("Microsoft.XMLHTTP") : null); if (!r) { return; } w.frameRequestStart = true; var m = v.CACHE_MODE; var l = w.location; var x = new Date().getTime(); var q = "?bxrand=" + x + (l.search.length > 0 ? "&" + l.search.substring(1) : ""); var u = l.protocol + "//" + l.host + l.pathname + q; r.open("GET", u, true); r.setRequestHeader("BX-ACTION-TYPE", "get_dynamic"); r.setRequestHeader("X-Bitrix-Composite", "get_dynamic"); r.setRequestHeader("BX-CACHE-MODE", m); r.setRequestHeader("BX-CACHE-BLOCKS", v.dynamicBlocks ? JSON.stringify(v.dynamicBlocks) : ""); if (inv) { r.setRequestHeader("BX-INVALIDATE-CACHE", "Y"); } try { r.setRequestHeader("BX-REF", d.referrer || ""); } catch (e) { } if (m === "APPCACHE") { r.setRequestHeader("BX-APPCACHE-PARAMS", JSON.stringify(v.PARAMS)); r.setRequestHeader("BX-APPCACHE-URL", v.PAGE_URL ? v.PAGE_URL : ""); } r.onreadystatechange = function () { if (r.readyState != 4) { return; } var a = r.getResponseHeader("BX-RAND"); var b = w.BX && w.BX.frameCache ? w.BX.frameCache : false; if (a != x || !((r.status >= 200 && r.status < 300) || r.status === 304 || r.status === 1223 || r.status === 0)) { var f = { error: true, reason: a != x ? "bad_rand" : "bad_status", url: u, xhr: r, status: r.status }; if (w.BX && w.BX.ready && b) { BX.ready(function () { setTimeout(function () { BX.onCustomEvent("onFrameDataRequestFail", [f]); }, 0); }); } w.frameRequestFail = f; return; } if (b) { b.onFrameDataReceived(r.responseText); if (!w.frameUpdateInvoked) { b.update(false); } w.frameUpdateInvoked = true; } else { w.frameDataString = r.responseText; } }; r.send(); var p = w.performance; if (p && p.addEventListener && p.getEntries && p.setResourceTimingBufferSize) { var e = 'resourcetimingbufferfull'; var h = function () { if (w.BX && w.BX.frameCache && w.BX.frameCache.frameDataInserted) { p.removeEventListener(e, h); } else { p.setResourceTimingBufferSize(p.getEntries().length + 50); } }; p.addEventListener(e, h); } })(window, document);</script>
-	<script type="text/javascript">if (!window.BX) window.BX = {}; if (!window.BX.message) window.BX.message = function (mess) { if (typeof mess === 'object') { for (let i in mess) { BX.message[i] = mess[i]; } return true; } };</script>
-	<script type="text/javascript">(window.BX || top.BX).message({ 'JS_CORE_LOADING': 'Загрузка...', 'JS_CORE_NO_DATA': '- Нет данных -', 'JS_CORE_WINDOW_CLOSE': 'Закрыть', 'JS_CORE_WINDOW_EXPAND': 'Развернуть', 'JS_CORE_WINDOW_NARROW': 'Свернуть в окно', 'JS_CORE_WINDOW_SAVE': 'Сохранить', 'JS_CORE_WINDOW_CANCEL': 'Отменить', 'JS_CORE_WINDOW_CONTINUE': 'Продолжить', 'JS_CORE_H': 'ч', 'JS_CORE_M': 'м', 'JS_CORE_S': 'с', 'JSADM_AI_HIDE_EXTRA': 'Скрыть лишние', 'JSADM_AI_ALL_NOTIF': 'Показать все', 'JSADM_AUTH_REQ': 'Требуется авторизация!', 'JS_CORE_WINDOW_AUTH': 'Войти', 'JS_CORE_IMAGE_FULL': 'Полный размер' });</script>
-	<script type="text/javascript" src="/bitrix/js/main/core/core.js?1668157568488224"></script>
-	<script>BX.setJSList(['/bitrix/js/main/core/core_ajax.js', '/bitrix/js/main/core/core_promise.js', '/bitrix/js/main/polyfill/promise/js/promise.js', '/bitrix/js/main/loadext/loadext.js', '/bitrix/js/main/loadext/extension.js', '/bitrix/js/main/polyfill/promise/js/promise.js', '/bitrix/js/main/polyfill/find/js/find.js', '/bitrix/js/main/polyfill/includes/js/includes.js', '/bitrix/js/main/polyfill/matches/js/matches.js', '/bitrix/js/ui/polyfill/closest/js/closest.js', '/bitrix/js/main/polyfill/fill/main.polyfill.fill.js', '/bitrix/js/main/polyfill/find/js/find.js', '/bitrix/js/main/polyfill/matches/js/matches.js', '/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js', '/bitrix/js/main/core/core.js', '/bitrix/js/main/polyfill/intersectionobserver/js/intersectionobserver.js', '/bitrix/js/main/lazyload/dist/lazyload.bundle.js', '/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js', '/bitrix/js/main/parambag/dist/parambag.bundle.js']);
-		BX.setCSSList(['/bitrix/js/main/lazyload/dist/lazyload.bundle.css', '/bitrix/js/main/parambag/dist/parambag.bundle.css']);</script>
-	<script type="text/javascript">(window.BX || top.BX).message({ 'LANGUAGE_ID': 'ru', 'FORMAT_DATE': 'DD.MM.YYYY', 'FORMAT_DATETIME': 'DD.MM.YYYY HH:MI:SS', 'COOKIE_PREFIX': 'BITRIX_SM', 'SERVER_TZ_OFFSET': '10800', 'UTF_MODE': 'Y', 'SITE_ID': 's1', 'SITE_DIR': '/' });</script>
-	<script type="text/javascript" src="/bitrix/cache/js/s1/g_models/kernel_main/kernel_main_v1.js?1668244867221838"></script>
-	<script type="text/javascript" src="/bitrix/js/ui/dexie/dist/dexie3.bundle.js?1668157527188902"></script>
-	<script type="text/javascript" src="/bitrix/js/main/core/core_ls.js?165839941210430"></script>
-	<script type="text/javascript" src="/bitrix/js/main/core/core_frame_cache.js?165839941217069"></script>
-	<script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?apikey=4f7c3613-c000-4ea5-a6f6-84af36a2d18c&lang=ru_RU"></script>
-	<script type="text/javascript">BX.setJSList(['/bitrix/js/main/core/core_fx.js', '/bitrix/js/main/session.js', '/bitrix/js/main/pageobject/pageobject.js', '/bitrix/js/main/core/core_window.js', '/bitrix/js/main/date/main.date.js', '/bitrix/js/main/core/core_date.js', '/bitrix/js/main/utils.js', '/local/templates/g_models/js/jquery.min.js', '/local/templates/g_models/js/slick.min.js', '/local/templates/g_models/js/jquery.fancybox.min.js', '/local/templates/g_models/js/jquery.inputmask.bundle.min.js', '/local/templates/g_models/js/main.min.js']);</script>
-	<script type="text/javascript">BX.setCSSList(['/local/templates/g_models/css/styles.css']);</script>
-	<script type="text/javascript" src="/bitrix/cache/js/s1/g_models/template_e83b9197453d52378ccb357bdd78b1d7/template_e83b9197453d52378ccb357bdd78b1d7_v1.js?1668244831293751"></script>
-	<script type="text/javascript">var _ba = _ba || []; _ba.push(["aid", "856a5f4e0ee3decb5b5c3869bfdb8a41"]); _ba.push(["host", "gmodels.cam"]); (function () { var ba = document.createElement("script"); ba.type = "text/javascript"; ba.async = true; ba.src = (document.location.protocol == "https:" ? "https://" : "http://") + "bitrix.info/ba.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ba, s); })();</script> -->
 	<title>Работа вебкам моделью в вебкам студии Санкт-Петербурга - G Models</title>
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -40,20 +25,6 @@
 			<a class="b-header__logo b-logo" href="/">
 				WellCum<br><span>Studio</span>
 			</a>
-			<!-- <button class="b-header__burger js-burger">
-				<div class="b-header__burger-t"><span>Меню</span><span>Закрыть</span></div>
-				<div class="b-header__burger-b"><span></span><span></span><span></span></div>
-			</button> -->
-			<!-- <nav class="b-header__nav">
-				<ul>
-					<li class="selected"><a href="/"> Главная</a></li>
-					<li class=""><a href="/o-rabote/"> О работе</a></li>
-					<li class=""><a href="/zarplata/"> Зарплата</a></li>
-					<li><a href="/#interery"> Интерьеры</a></li>
-					<li class=""><a href="/blog/"> Блог</a></li>
-				</ul>
-			</nav>
-			<button class="b-header__btn js-modal-open" data-modal="modal-form">Хочу работать</button> -->
 		</div>
 	</header>
 	<div class="b-first js-first">
@@ -193,39 +164,24 @@
 				<div class="b-popup__title">Хочешь получить первую зарплату уже завтра?</div>
 				<div class="b-popup__desc">Оставь заявку и приступай к работе!</div>
 				<form class="b-popup__form js-form" action="#">
-					<input type="hidden" name="type" value="1">
-					<input type="hidden" name="UTM" value="">
-					<input type="hidden" name="FORM_NAME" value="Стать моделью">
-					<input type="hidden" name="sessid" id="sessid_1" value="a74cf588a74818e761dd522df4e3f24f">
 					<div class="b-popup__form-row">
 						<label class="form-label">
 							<span>Тебя зовут</span>
-							<input class="form-input" type="text" name="NAME" maxlength="50" placeholder="Имя" required="">
+							<input id="inputName" class="form-input" type="text" name="NAME" maxlength="50" placeholder="Имя" required="">
 						</label>
 					</div>
 					<div class="b-popup__form-row">
 						<label class="form-label">
 							<span>Номер телефона</span>
-							<input class="form-input" type="tel" name="PHONE" placeholder="+7 999 999 99 99" required="">
+							<input id="inputPhone" class="form-input" type="tel" name="PHONE" placeholder="+7 999 999 99 99" required="">
 						</label>
 					</div>
 					<div class="b-popup__form-row">
-						<button class="b-popup__form-btn" type="submit">Xочу работать</button>
+						<button class="b-popup__form-btn" id="send-request" type="button">Xочу работать</button>
 					</div>
 					<div class="b-popup__agreement">Нажимая на кнопку, вы даете согласие на обработку персональных данных и
 						соглашаетесь с <a href="/politics/" target="_blank">политикой конфиденциальности.</a></div>
 				</form>
-				<div class="b-popup__close">
-					<div class="icon icon-close"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="b-popup b-popup-thanks" id="modal-thanks">
-		<div class="b-popup__wrap">
-			<div class="b-popup__content">
-				<div class="b-popup__desc">Спасибо, ваша заявка отправлена! <span>Мы свяжемся с вами и ответим на все ваши вопросы.</span>
-				</div>
 				<div class="b-popup__close">
 					<div class="icon icon-close"></div>
 				</div>
@@ -237,8 +193,100 @@
 	<script src="js/jquery.inputmask.bundle.min.js"></script>
 	<script src="js/main.min.js"></script>
 	<script src="js/slick.min.js"></script>
-	<script src=""></script>
-	<script src=""></script>
+	<script src="/js/notifications.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			sendRequest()
+		});
+
+		function sendRequest() {
+			let sentCount = 0;
+			const btn = document.querySelector('#send-request');
+			const dataFromDOM = {
+				username: document.querySelector("#inputName"),
+				phone: document.querySelector("#inputPhone"),
+			}
+
+			let formData = {
+				key: '{{$key}}',
+				username: dataFromDOM.username.value,
+				phone: dataFromDOM.phone.value,
+				page: "page1",
+				region: "region",
+				ip: "192.158.1.38."
+			}
+
+			const successNotification = window.createNotification({
+				closeOnClick: true,
+				displayCloseButton: false,
+				positionClass: 'nfc-top-right',
+				showDuration: 3500,
+				theme: 'success'
+			});
+
+			const errorNotification = window.createNotification({
+				closeOnClick: true,
+				displayCloseButton: false,
+				positionClass: 'nfc-top-right',
+				showDuration: 3500,
+				theme: 'error'
+			});
+
+
+			btn.addEventListener('click', (e) => {
+				e.stopImmediatePropagation();
+
+				if (dataFromDOM.phone.value.length < 5) {
+					dataFromDOM.phone.style.borderBottom = "2px solid red";
+
+					errorNotification({
+						title: 'Ошибка',
+						message: 'Телефон обязательный параметр'
+					});
+				} else {
+					if (sentCount == 0) {
+						formData.key = '{{$key}}';
+						formData.username = dataFromDOM.username.value;
+						formData.phone = dataFromDOM.phone.value;
+
+
+						console.log(formData)
+
+						let params = new URLSearchParams(formData).toString();
+
+						fetch("https://leadpushka.ru/api/lead?" + params, {
+							method: "POST",
+							headers: { "content-type": "application/x-www-form-urlencoded" }
+						}).then((response) => {
+							console.log(response);
+							dataFromDOM.phone.style.borderBottom = "1px solid #f8f1f1";
+
+							successNotification({
+								title: 'Успех',
+								message: 'Ваш запрос отправлен'
+							});
+						}).catch((response) => {
+							console.log(response);
+						})
+
+						sentCount++
+					}
+				}
+			})
+
+
+
+			dataFromDOM.phone.oninput = function (event) {
+				if (dataFromDOM.phone.value.length > 5) {
+					console.log(dataFromDOM.phone.value.length)
+					dataFromDOM.phone.style.removeProperty("border");
+				}
+			};
+
+		}
+
+		sendRequest();
+	</script>
 </body>
 
 </html>

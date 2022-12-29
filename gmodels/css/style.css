@@ -5221,7 +5221,7 @@ ul {
 	letter-spacing: 0.02em;
 	text-transform: uppercase;
 	color: #fff;
-	background-color: #d78076;
+	background-color: #f90087;
 	border-radius: 8px;
 	padding: 28px 18px;
 	width: 100%;
@@ -5229,8 +5229,8 @@ ul {
 	transition: 0.2s ease all;
 }
 .b-popup__form-btn:hover {
-	background-color: #ffe6e6;
-	color: #d78076;
+	background-color: rgba(249, 0, 135, 0.1);
+	color: #f90087;
 }
 .b-popup__agreement {
 	margin-top: 16px;
