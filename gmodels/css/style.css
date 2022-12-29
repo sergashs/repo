@@ -1422,11 +1422,11 @@ ul {
 .form-label span {
 	display: block;
 	font-weight: 500;
-	font-size: 18px;
+	font-size: 14px;
 	line-height: 1.5;
 	letter-spacing: 0.02em;
 	text-transform: uppercase;
-	margin-bottom: 15px;
+	margin-bottom: 5px;
 }
 @media screen and (max-width: 640px) {
 	.form-label span {
@@ -1452,7 +1452,7 @@ ul {
 	background-color: transparent;
 	border-bottom: 1px solid #fff;
 	font-weight: 300;
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 1.56;
 	color: #fff;
 	transition: 0.2s ease color;
@@ -5082,7 +5082,7 @@ ul {
 	border-radius: 8px;
 	position: relative;
 	margin: 0 auto;
-	padding: 45px 80px;
+	padding: 50px 45px 50px 45px;
 	transform: translateX(20%);
 	opacity: 0;
 	color: #333;
@@ -5099,7 +5099,7 @@ ul {
 }
 .b-popup__title {
 	font-family: "Noto Sans", Helvetica, sans-serif;
-	font-size: 36px;
+	font-size: 26px;
 	line-height: 1.333;
 	font-weight: 600;
 	letter-spacing: 0.8px;
@@ -5121,7 +5121,7 @@ ul {
 }
 .b-popup__desc {
 	font-weight: 400;
-	font-size: 22px;
+	font-size: 16px;
 	line-height: 1.3;
 	text-align: center;
 	color: #333;
@@ -5141,9 +5141,9 @@ ul {
 }
 .b-popup__close {
 	position: absolute;
-	top: 24px;
-	right: 28px;
-	font-size: 36px;
+	top: 14px;
+	right: 18px;
+	font-size: 22px;
 	color: #333;
 	cursor: pointer;
 	transition: 0.2s ease opacity;
@@ -5194,7 +5194,7 @@ ul {
 	}
 }
 .b-popup__form-row {
-	margin-top: 50px;
+	margin-top: 30px;
 }
 .b-popup__form-row:first-child {
 	margin-top: 0;
