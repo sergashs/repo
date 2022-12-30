@@ -8,6 +8,13 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "3.0.0"
+    "nuxt": "3.0.0",
+    "nuxt-font-loader": "^2.2.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "nuxt-swiper": "^0.1.6",
+    "sass": "^1.57.1",
+    "vue-slick-carousel": "^1.0.6"
   }
 }
