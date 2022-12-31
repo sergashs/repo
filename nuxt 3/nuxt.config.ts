@@ -25,6 +25,11 @@ export default defineNuxtConfig({
 				family: "Onest"
 			},
 			{
+				src: "/fonts/Onest/Onest-Bold.woff2",
+				weight: "700",
+				family: "Onest"
+			},
+			{
 				src: "/fonts/Onest/Onest-Black.woff2",
 				weight: "900",
 				family: "Onest"

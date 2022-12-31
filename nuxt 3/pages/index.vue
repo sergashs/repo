@@ -41,12 +41,10 @@ export default {
 							<span class="badge">з вітамінами А і D3</span>
 						</div>
 						<TabsWrapper>
-							<TabItem title="Tab 1">Content from Tab 1</TabItem>
-							<TabItem title="Tab 2">Content from Tab 2 Lorem ipsum dolor sit amet.</TabItem>
-							<TabItem title="Tab 3">Content from Tab 3 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates, ipsa.</TabItem>
-							<TabItem title="Tab 4">Content from Tab 4 Lorem ipsum dolor sit amet.</TabItem>
-							<TabItem title="Tab 5">Content from Tab 5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora maiores ab minima. Facere mollitia tempora soluta, commodi beatae sit. Distinctio.</TabItem>
-							<TabItem title="Tab 6">Content from Tab 6</TabItem>
+							<TabItem title="ОПИС">ОПИС</TabItem>
+							<TabItem title="КОРИСТЬ">КОРИСТЬ</TabItem>
+							<TabItem title="ІНГРЕДІЄНТИ">ІНГРЕДІЄНТИ</TabItem>
+							<TabItem title="СПОСІБ ЗАСТОСУВАННЯ">СПОСІБ ЗАСТОСУВАННЯ</TabItem>
 						</TabsWrapper>
 						<div class="product-details">
 							<div class="details-text"></div>
@@ -61,7 +59,7 @@ export default {
 						</div>
 					</div>
 					<div class="col-md-6">
-						<Swiper :modules="[SwiperAutoplay, SwiperEffectCreative, SwiperNavigation]" :navigation="true" :slides-per-view="1" :loop="false" :autoplay="false">
+						<Swiper :modules="[SwiperNavigation]" :navigation="true" :slides-per-view="1" :loop="false" :autoplay="false">
 							<SwiperSlide v-for="slide in slides" :key="slide.id">
 								<div class="img-holder">
 									<img :src="`./assets/images/${slide.img}`" alt="..." />
@@ -103,6 +101,33 @@ export default {
 		padding-top: 9.6rem;
 		background: transparent;
 		border: none;
+
+		.title-holder {
+			display: flex;
+			align-items: center;
+			margin-bottom: 3.6rem;
+
+			.badge {
+				width: 100%;
+				max-width: 29rem;
+				font-weight: 500;
+				font-size: 2.2rem;
+				color: #00284f;
+				padding: 0.8rem 2rem;
+				background: #ffffff;
+				border-radius: 5rem;
+			}
+		}
+
+		.card-title {
+			margin-right: 2.4rem;
+			font-size: 4rem;
+			line-height: 1.42;
+
+			span {
+				font-weight: 700;
+			}
+		}
 	}
 }
 </style>
