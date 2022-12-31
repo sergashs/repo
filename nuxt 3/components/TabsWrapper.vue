@@ -9,11 +9,10 @@ provide("selectedTitle", selectedTitle);
 <template>
 	<div class="tabs">
 		<ul class="tabs-list">
-			<li v-for="title in tabTitles" :key="title" class="tabs-item" :class="{ selected: selectedTitle === title }" @click="selectedTitle = title">
+			<li v-for="title in tabTitles" :key="title" class="list-item" :class="{ selected: selectedTitle === title }" @click="selectedTitle = title">
 				{{ title }}
 			</li>
 		</ul>
-
 		<slot />
 	</div>
 </template>
@@ -21,21 +20,21 @@ provide("selectedTitle", selectedTitle);
 <style lang="scss" scoped>
 .tabs {
 	.tabs-list {
-		margin: 0;
+		margin: 0 0 2.2rem 0;
 		padding: 0;
 		list-style: none;
-		display: flex;
+		display: inline-flex;
+		font-weight: 700;
+		font-size: 1.7rem;
+		color: rgba(#00284f, 0.4);
 		border-bottom: 0.2rem solid rgba(0, 40, 79, 0.3);
 
-		.tabs-item {
+		.list-item {
 			position: relative;
 			padding-bottom: 0.8rem;
-			font-weight: 700;
-			font-size: 1.7rem;
-			color: rgba(#00284f, 0.4);
 			text-transform: uppercase;
 			cursor: pointer;
-			transition: 0.3s linear;
+			transition: 0.3s;
 
 			&:not(:last-child) {
 				margin-right: 4rem;
@@ -47,13 +46,16 @@ provide("selectedTitle", selectedTitle);
 				left: 0;
 				bottom: -0.2rem;
 				width: 100%;
+				opacity: 0;
+				transition: 0.3s;
+				border-bottom: 0.2rem solid rgba(0, 40, 79, 1);
 			}
 
 			&.selected {
 				color: #00284f;
 
 				&::after {
-					border-bottom: 0.2rem solid rgba(0, 40, 79, 1);
+					opacity: 1;
 				}
 			}
 		}
