@@ -6,8 +6,12 @@ const routes = [
     path: '/',
     name: 'home',
     component: () => import('@/views/Home'),
-
   },
+  {
+    path: '/test',
+    naem: 'test',
+    component: () => import('@/views/Test')
+  }
 
 ]
 
