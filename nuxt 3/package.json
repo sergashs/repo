@@ -12,6 +12,7 @@
     "nuxt-font-loader": "^2.2.2"
   },
   "dependencies": {
+    "@nuxtjs/composition-api": "^0.33.1",
     "bootstrap": "^5.2.3",
     "nuxt-swiper": "^0.1.6",
     "sass": "^1.57.1",

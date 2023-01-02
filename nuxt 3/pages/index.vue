@@ -23,7 +23,6 @@ export default {
 				img: "img-05.png"
 			}
 		];
-		//Whatever code
 
 		return { slides };
 	}
@@ -34,7 +33,7 @@ export default {
 	<div class="product-page">
 		<div class="card">
 			<div class="container">
-				<div class="row">
+				<div class="row g-0">
 					<div class="col-md-6">
 						<div class="title-holder">
 							<h1 class="card-title"><span>Омега-3</span> <em>Тріска</em></h1>
@@ -122,8 +121,8 @@ export default {
 							</div>
 						</div>
 						<div class="card-footer">
-							<div class="product-quantity"></div>
-							<Button>button</Button>
+							<ProductQuantity />
+							<Button class="btn-success">До кошика</Button>
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -165,6 +164,8 @@ export default {
 
 <style lang="scss" scoped>
 .product-page {
+	padding-bottom: 9rem;
+
 	.card {
 		padding-top: 9.6rem;
 		background: transparent;
@@ -308,6 +309,35 @@ export default {
 					border-bottom: 0.2rem solid #00284f;
 					transform: rotate(11deg);
 				}
+			}
+		}
+	}
+
+	.card-footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 12rem;
+		padding: 0;
+		border-top: none;
+		background: transparent;
+
+		.btn {
+			width: 100%;
+			max-width: 41.6rem;
+		}
+	}
+
+	.swiper-slide {
+		display: flex;
+		justify-content: center;
+
+		.img-holder {
+			max-width: 64rem;
+
+			img {
+				width: 100%;
+				height: auto;
 			}
 		}
 	}
