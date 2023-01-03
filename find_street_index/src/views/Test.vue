@@ -40,13 +40,7 @@ export default {
 			}
 
 			this.date.month--;
-		},
-		range(arr, nth) {
-			return arr.filter((e, i) => i % nth === nth - 1);
 		}
-	},
-	mounted() {
-		console.log(this.range(this.dates, 2));
 	}
 };
 </script>
