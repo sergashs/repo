@@ -7,6 +7,7 @@
 			</div>
 			<a-input-number v-model:value="postId" :controls="false" placeholder="search in title of post" @change="getAllCommentsForPost" />
 			<button @click="getAllCommentsForPost"></button>
+
 			<Chart :prop-data="commentsForChoosedPost" />
 			<a-empty v-if="loading" :description="loading.description" />
 			<a-row :gutter="16" v-else>
@@ -81,8 +82,9 @@ export default {
 		async getAllCommentsForPost() {
 			try {
 				await apiPost.getCommentsForOnePost(this.postId).then((response) => {
-					this.commentsForChoosedPost = response;
-					//console.log(response);
+					this.commentsForChoosedPost = ["s", "d"];
+
+					console.log(response);
 				});
 			} catch (error) {
 				console.log(error);

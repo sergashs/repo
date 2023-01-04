@@ -1,16 +1,15 @@
 // Api post
 import API from '.';
 
-
+const path = (path) => {
+	return `/posts/${path ? path : ''}`
+}
 
 export default {
 	getAllPosts: () => {
-		return API.get('/posts/');
+		return API.get(path());
 	},
-	// getCommentsForOnePost: (params) => {
-	// 	return API.get(path(`${params.id}/comments`));
-	// },
 	getCommentsForOnePost: (id) => {
-		return API.get(`/posts/${id}/comments`)
+		return API.get(`${path()}${id}/comments`)
 	}
 }
