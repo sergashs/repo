@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-import { Card, Col, Row, Empty, Input, InputNumber, Pagination } from 'ant-design-vue';
+import { Card, Col, Row, Empty, Input, InputNumber, Pagination, Button } from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
 
 const app = createApp(App);
@@ -15,4 +15,5 @@ app.use(Empty);
 app.use(Input);
 app.use(InputNumber);
 app.use(Pagination);
+app.use(Button);
 app.mount('#app');

@@ -1,14 +1,11 @@
 <template>
 	<div class="home-page">
 		<div class="container">
+			<ChartWrapper />
 			<div class="page-navbar">
 				<a-input v-model:value="search" placeholder="search in title of post" />
 				<a-pagination v-model:current="paginationCurrent" :total="posts.length" v-model:page-size="paginationPageSize" show-less-items />
 			</div>
-			<a-input-number v-model:value="postId" :controls="false" placeholder="search in title of post" @change="getAllCommentsForPost" />
-			<button @click="getAllCommentsForPost"></button>
-
-			<Chart :prop-data="commentsForChoosedPost" />
 			<a-empty v-if="loading" :description="loading.description" />
 			<a-row :gutter="16" v-else>
 				<a-col v-for="post in filteredList" :key="post.id" :sm="12" :md="8" :lg="6">
@@ -25,12 +22,9 @@
 <script>
 import apiPost from "@/api/post";
 import apiComment from "@/api/comment";
-import Chart from "@/components/Chart";
+import ChartWrapper from "./components/ChartWrapper";
 
 export default {
-	components: {
-		Chart
-	},
 	data() {
 		return {
 			posts: [],
@@ -41,17 +35,17 @@ export default {
 			search: "",
 			searchResuts: [],
 			paginationCurrent: 1,
-			paginationPageSize: 10,
-			postId: 1,
-			commentsForChoosedPost: []
+			paginationPageSize: 10
 		};
 	},
+	components: {
+		ChartWrapper
+	},
+
 	created() {
 		this.getPosts();
 	},
-	mounted() {
-		this.getAllCommentsForPost();
-	},
+
 	methods: {
 		async getPosts() {
 			try {
@@ -77,17 +71,6 @@ export default {
 				this.loading.description = error;
 			} finally {
 				this.loading = false;
-			}
-		},
-		async getAllCommentsForPost() {
-			try {
-				await apiPost.getCommentsForOnePost(this.postId).then((response) => {
-					this.commentsForChoosedPost = ["s", "d"];
-
-					console.log(response);
-				});
-			} catch (error) {
-				console.log(error);
 			}
 		}
 	},
@@ -123,11 +106,6 @@ export default {
 			max-width: 400px;
 			margin-bottom: 20px;
 		}
-	}
-
-	.chart-holder {
-		max-width: 600px;
-		margin: auto;
 	}
 }
 </style>

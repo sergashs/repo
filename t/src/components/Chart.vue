@@ -1,13 +1,18 @@
 <template>
-	<div class="chart-holder">
-		<canvas id="myChart" height="300"></canvas>
-	</div>
+	<LineChart :options="chartOptions" :chart-data="chartData" />
 </template>
 
 <script>
-import Chart from "chart.js/auto";
+import { Chart, registerables } from "chart.js";
+import { LineChart } from "vue-chart-3";
+
+Chart.register(...registerables);
 
 export default {
+	name: "App",
+	components: {
+		LineChart
+	},
 	props: {
 		propData: {
 			type: Array,
@@ -16,118 +21,54 @@ export default {
 	},
 	data() {
 		return {
-			ctx: null,
-			chart: null,
-			labels: []
-		};
-	},
-	mounted() {
-		this.ctx = document.getElementById("myChart").getContext("2d");
-
-		this.chart = new Chart(this.ctx, {
-			type: "line",
-			data: {
-				labels: [],
-				datasets: []
-			},
-			options: {
+			labels: [],
+			datasets: [],
+			chartOptions: {
 				maintainAspectRatio: false,
 				plugins: {
+					htmlLegend: {
+						containerID: "legend-container"
+					},
 					legend: {
 						display: false
 					}
-				},
-				layout: {
-					padding: {
-						top: 20,
-						left: 20,
-						right: 25,
-						bottom: -20
-					}
-				},
-				responsive: true,
-				scales: {
-					x: {
-						title: {
-							display: true,
-							font: {
-								size: 20
-							}
-						},
-						grid: {
-							display: true
-						},
-						ticks: {
-							autoSkip: true,
-							maxTicksLimit: 7
-						}
-					},
-					y: {
-						title: {
-							display: true
-						},
-						ticks: {
-							display: true,
-							maxTicksLimit: 100,
-							stepSize: 10
-						},
-						grid: {
-							drawBorder: true,
-							color: function () {
-								return "#D8D8D8";
-							}
-						},
-						suggestedMin: 0,
-						suggestedMax: 100
-					}
 				}
 			}
-		});
+		};
 	},
-
-	methods: {},
+	computed: {
+		chartData() {
+			return {
+				labels: this.labels,
+				datasets: [
+					{
+						data: this.datasets
+					}
+				]
+			};
+		}
+	},
 	watch: {
-		//	propData() {
-		// let data = [];
-		// data = toRaw(this.propData);
-		// toRaw(data).forEach((el) => {
-		// 	this.labels.push(el.email);
-		// });
-		// console.log();
-		//this.chart.data.labels = toRaw(this.labels);
-		// this.chart.data.labels = ["s", "2", "3"];
-		// this.chart.update();
-		// this.labels = this.propData.map((el) => {
-		// 	return el;
-		// });
-		//this.chart.update();
-		// this.convertedLabels = this.propData.data.date.map((el) => {
-		// 	const day = moment(el).format("D");
-		// 	return day >= 10 ? day : "0" + day;
-		// });
-		// this.chart.data.labels = this.convertedLabels;
-		// this.values = [];
-		// for (let el in this.propData.data) {
-		// 	if (el !== "date") {
-		// 		const datasets = this.propData.data[el].map((item) => {
-		// 			if (item == -1) {
-		// 				return null;
-		// 			} else {
-		// 				return this.returnNewPercentValue(el, item);
-		// 			}
-		// 		});
-		// 		const color = this.getColorById(this.colors, el);
-		// 		this.values.push({
-		// 			label: this.$t(`charts.${el}`),
-		// 			data: datasets,
-		// 			backgroundColor: el == "mood" ? this.moodGradient() : color,
-		// 			borderColor: el == "mood" ? this.moodGradient() : color
-		// 		});
-		// 	}
-		// }
-		// this.chart.data.datasets = this.values;
-		// this.chart.update();
-		//}
+		propData() {
+			this.labels = this.propData.map((el) => {
+				return el.email;
+			});
+
+			this.datasets = this.propData.map((el) => {
+				return el.email.length;
+			});
+		}
 	}
 };
 </script>
+
+<style>
+#app {
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #2c3e50;
+	margin-top: 60px;
+}
+</style>
