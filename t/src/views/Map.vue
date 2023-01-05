@@ -1,8 +1,12 @@
 <template>
 	<div class="map-page">
-		map page
-
-		<div id="mapContainer" @click="clickOnMap"></div>
+		{{ markers }}
+		<div id="mapContainer"></div>
+		<a-modal v-model:visible="visible" title="Create new marker" @cancel="removeMarker(marker)" @ok="modalOnSave">
+			<a-input v-model:value="marker.title" placeholder="marker title" />
+			<a-input v-model:value="marker.lat" placeholder="marker alt" :disabled="true" />
+			<a-input v-model:value="marker.lng" placeholder="marker alt" :disabled="true" />
+		</a-modal>
 	</div>
 </template>
 
@@ -13,9 +17,14 @@ import L from "leaflet";
 export default {
 	data() {
 		return {
+			visible: false,
 			map: null,
-			marker: null,
-			markers: [["49.6676", "23.9502"]]
+			marker: {},
+			markers: [{ title: "x", lat: 49.19, lng: 30.84705106258729 }],
+			latlng: {},
+			currentMarker: {
+				title: ""
+			}
 		};
 	},
 	mounted() {
@@ -30,24 +39,63 @@ export default {
 			attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 		}).addTo(this.map);
 
-		this.marker = L.marker([50.4501, 30.5234], { alt: "Kyiv" })
-			.addTo(this.map) // "Kyiv" is the accessible name of this marker
-			.bindPopup("Kyiv, Ukraine is the birthplace of Leaflet!");
+		// this.marker = L.marker([50.4501, 30.5234], { alt: "Kyiv" })
+		// 	.addTo(this.map) // "Kyiv" is the accessible name of this marker
+		// 	.bindPopup("Kyiv, Ukraine is the birthplace of Leaflet!");
 
-		this.markers.forEach((el) => {
-			L.marker([el[0], el[1]], { alt: "Kyiv" })
-				.addTo(this.map) // "Kyiv" is the accessible name of this marker
-				.bindPopup("Kyiv, Ukraine is the birthplace of Leaflet!");
+		this.drawSavedMarkers();
+
+		this.map.on("click", (e) => {
+			this.addMarker(e);
 		});
+
+		console.log(localStorage.getItem("markers"));
 	},
 	methods: {
-		clickOnMap() {
-			this.map.on("click", function (e) {
-				var coord = e.latlng;
-				var lat = coord.lat.toFixed(4);
-				var lng = coord.lng.toFixed(4);
-				console.log("You clicked the map at latitude: " + lat + " and longitude: " + lng);
+		addMarker(e) {
+			this.visible = true;
+
+			this.marker.lat = e.latlng.lat;
+			this.marker.lng = e.latlng.lng;
+
+			console.log(e.target);
+
+			this.marker.o = new L.marker([e.latlng.lat, e.latlng.lng], {
+				draggable: false
+			}).addTo(this.map);
+			// .bindPopup(this.marker.alt);
+		},
+		modalOnSave() {
+			this.visible = false;
+
+			delete this.marker.o._events;
+
+			this.removeMarker(this.marker.o);
+
+			new L.marker([this.marker.lat, this.marker.lng], {
+				title: this.marker.title
+			})
+				.addTo(this.map)
+				.bindPopup(this.marker.alt);
+
+			console.log(this.marker);
+
+			this.markers.push(this.marker.o);
+
+			localStorage.setItem("markers", JSON.stringify(this.markers));
+
+			this.marker.title = "";
+		},
+		drawSavedMarkers() {
+			this.markers.map((el) => {
+				// new L.marker([el[0], el[1]], { alt: el.alt }).addTo(this.map).bindPopup(el.alt);
+				L.marker([el.lat, el.lng], { title: el.title })
+					.addTo(this.map) // "Kyiv" is the accessible name of this marker
+					.bindPopup(el.title);
 			});
+		},
+		removeMarker(marker) {
+			this.map.removeLayer(marker);
 		}
 	}
 };
