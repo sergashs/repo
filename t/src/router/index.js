@@ -1,16 +1,23 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
+import Default from "@/layouts/Default.vue"
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import('@/views/Home/index.vue')
+    component: () => import('@/views/Home/index.vue'),
+    meta: {
+      layout: Default
+    }
   },
   {
     path: '/map',
     name: 'map',
-    component: () => import('@/views/Map.vue')
+    component: () => import('@/views/Map.vue'),
+    meta: {
+      layout: Default
+    }
   }
 
 ]

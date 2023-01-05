@@ -93,8 +93,6 @@ export default {
 
 <style lang="scss" scoped>
 .home-page {
-	padding-top: 20px;
-
 	.page-navbar {
 		display: flex;
 		flex-direction: column;

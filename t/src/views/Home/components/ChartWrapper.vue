@@ -43,6 +43,7 @@ export default {
 <style lang="scss" scoped>
 .chart-wrapper {
 	margin-bottom: 50px;
+	text-align: center;
 
 	.input-holder {
 		display: flex;
