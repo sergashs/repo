@@ -43,6 +43,19 @@
 			align-items: center;
 			justify-content: space-between;
 		}
+
+		.main-nav {
+			width: unset;
+			margin: unset;
+
+			@include media-breakpoint-down(xl) {
+				display: none;
+			}
+
+			ul {
+				margin-left: 0;
+			}
+		}
 	}
 
 	.user-profile {
@@ -239,7 +252,7 @@
 						}
 
 						&::after {
-							@include media-breakpoint-up(md) {
+							@include media-breakpoint-up(lg) {
 								content: "";
 								position: absolute;
 								top: 50%;
@@ -255,14 +268,14 @@
 						}
 
 						ul {
-							@include media-breakpoint-down(md) {
+							@include media-breakpoint-down(lg) {
 								display: none;
 							}
 						}
 
 						&:hover {
 							.sub-menu {
-								@include media-breakpoint-up(md) {
+								@include media-breakpoint-up(lg) {
 									opacity: 1;
 									visibility: visible;
 									pointer-events: all;
@@ -270,14 +283,14 @@
 							}
 
 							&::after {
-								@include media-breakpoint-up(md) {
+								@include media-breakpoint-up(lg) {
 									transform: translateY(-50%) rotate(180deg);
 								}
 							}
 						}
 
 						> .sub-menu {
-							@include media-breakpoint-up(md) {
+							@include media-breakpoint-up(lg) {
 								position: absolute;
 								left: 1.5rem;
 								display: block;
@@ -292,7 +305,7 @@
 							}
 
 							a {
-								@include media-breakpoint-up(md) {
+								@include media-breakpoint-up(lg) {
 									display: block;
 									border-left: solid 0.1rem $tuatara;
 									border-bottom: solid 0.1rem $tuatara;
@@ -302,12 +315,12 @@
 
 						.menu-item-has-children {
 							&::after {
-								transform: rotate(-90deg);
+								transform: translateY(-50%) rotate(-90deg);
 							}
 
 							&:hover {
 								> .sub-menu {
-									@include media-breakpoint-up(md) {
+									@include media-breakpoint-up(lg) {
 										opacity: 1;
 										visibility: visible;
 										pointer-events: all;
@@ -315,12 +328,12 @@
 								}
 
 								&::after {
-									transform: rotate(-90deg);
+									transform: translateY(-50%) rotate(-90deg);
 								}
 							}
 
 							.sub-menu {
-								@include media-breakpoint-up(md) {
+								@include media-breakpoint-up(lg) {
 									position: absolute;
 									top: 0;
 									left: calc(100% + 1.6rem);
@@ -336,7 +349,7 @@
 								}
 
 								a {
-									@include media-breakpoint-up(md) {
+									@include media-breakpoint-up(lg) {
 										display: block;
 										border-left: solid 0.1rem $tuatara;
 										border-bottom: solid 0.1rem $tuatara;

@@ -1,0 +1,8 @@
+@font-face {
+	font-family: "Stalker-font";
+	src: url("../fonts/AmazSTALKERv30.woff2") format("woff2"), url("../fonts/AmazSTALKERv30.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+/*# sourceMappingURL=fonts.css.map */
