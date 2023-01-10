@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import postsRouter from "./src/Routes/posts.routes.js";
+import authRouter from "./src/Routes/auth.routes.js";
 import fileUpload from 'express-fileupload';
 
 const PORT = 5000;
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(express.static('static'));
 app.use(fileUpload({}));
 app.use('/api', postsRouter);
+app.use('/auth', authRouter);
 
 
 

@@ -1,4 +1,3 @@
-import Post from "../Models/post.js";
 import PostService from "../Services/post.service.js";
 
 class PostController {
