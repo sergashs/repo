@@ -1,0 +1,29 @@
+$fonts: "../fonts/";
+
+// fonts
+$main-font: "Mulish", sans-serif;
+$second-font: "Marcellus", serif;
+
+// breakpoints
+$breakpoints: (
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1440px
+);
+
+// base vars
+$text-color-base: #c2c2c2;
+$body-bg: #000000;
+$font-family-base: $main-font;
+$font-size-base: 1.8rem;
+$font-weight-base: 400;
+$line-height-base: 1.11;
+$links-color-base: inherit;
+$headings-font-weight: 400;
+$transition: all 0.3s ease;
+
+// dev2
+// dev3
+// dev4
