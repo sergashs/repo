@@ -460,8 +460,6 @@ h5 {
 .movies-section {
 	padding-top: 6.8rem;
 	padding-bottom: 6rem;
-}
-.movies-section .container {
 	overflow: hidden;
 }
 .movies-section .row {
