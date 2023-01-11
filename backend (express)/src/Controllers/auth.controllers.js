@@ -58,11 +58,39 @@ class authController {
 
 	async getUsers(req, res) {
 		try {
-
+			const users = await User.find();
+			res.json(users);
 		} catch (e) {
-
+			console.log(e);
 		}
 	}
+
+	async getUser(req, res) {
+		try {
+			const userID = req.params.user_id;
+			const user = await User.findById(userID);
+			res.json(user);
+		} catch (e) {
+			console.log(e);
+		}
+	}
+
+	async updateBookMarks(req, res) {
+		try {
+			const { username } = req.body;
+
+			if (!username) {
+				throw new Error('id not specified');
+			}
+
+			const updatedUser = await User.findOneAndUpdate(username, { bookmarks: req.body.bookmarks }, { new: true });
+			return res.json(updatedUser);
+
+		} catch (e) {
+			res.status(500).json(e.message);
+		}
+	}
+
 }
 
 export default new authController();
