@@ -4,6 +4,7 @@ import postsRouter from "./src/Routes/posts.routes.js";
 import authRouter from "./src/Routes/auth.routes.js";
 import fileUpload from 'express-fileupload';
 
+
 const PORT = 5000;
 const DB_URL = `mongodb+srv://user:user@cluster0.ozbtwe9.mongodb.net/?retryWrites=true&w=majority`;
 
