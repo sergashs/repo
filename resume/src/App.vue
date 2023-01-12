@@ -17,8 +17,8 @@ export default {
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 14px;
+    font-weight: 400;
+    font-size: 15px;
     line-height: 1.2;
     display: flex;
     justify-content: center;

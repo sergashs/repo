@@ -23,7 +23,7 @@
                     </div>
                 </div>
 
-                <div class="list-wrapper">
+                <!-- <div class="list-wrapper">
                     <h3 class="h3">HOBBIES AND INTERESTS</h3>
                     <ul class="list">
                         <li class="list-item">- bicycling</li>
@@ -31,7 +31,7 @@
                         <li class="list-item">- PC building</li>
                         <li class="list-item">- mobile technologies</li>
                     </ul>
-                </div>
+                </div> -->
 
                 <div class="list-wrapper">
                     <h3 class="h3">CONTACT INFORMATION</h3>
@@ -54,16 +54,13 @@
                     <h3 class="block-title">SKILLS</h3>
                     <h4 class="sub-title">Programming Skills:</h4>
                     <ul class="list">
-                        <li class="list-item">HTML</li>
-                        <li class="list-item">CSS (SCSS/SaSS)</li>
-                        <div class="list-item">CSS Frameworks: BOOTSTRAP, Tailwind</div>
-                        <li class="list-item">CSS animation;</li>
-                        <li class="list-item">Gsap</li>
-                        <li class="list-item">Canvas</li>
-                        <li class="list-item">Gulp</li>
-                        <li class="list-item">JavaScript</li>
-                        <li class="list-item">Vue.JS (2,3), Nuxt</li>
-                        <li class="list-item">GIT</li>
+                        <li class="list-item">HTML, Canvas</li>
+                        <li class="list-item">
+                            CSS (SCSS/SaSS), Frameworks: BOOTSTRAP, Tailwind; CSS animations;
+                        </li>
+                        <li class="list-item">JavaScript, Vue.JS (2,3), Nuxt</li>
+                        <li class="list-item">Gsap, ChartJs, Vuelidate</li>
+                        <li class="list-item">GIT, Gulp, Npm packages</li>
                         <li class="list-item">Rest API, GraphQL</li>
                     </ul>
                     <h4 class="sub-title">Other Skills:</h4>
@@ -79,7 +76,10 @@
                         <span class="job-company">nta</span>
                         <div class="job-dates">January 2022 - december 2022</div>
                         <div class="text-holder">
-                            <p>working with vuejs, nuxt.</p>
+                            <p>
+                                Developing user-facing applications using Vue.js, building modular
+                                and reusable components and libraries.
+                            </p>
                         </div>
                     </div>
                     <div class="job-block">
@@ -133,7 +133,7 @@ export default {
 <style lang="scss" scoped>
 .resume-page {
     width: 100%;
-    max-width: 850px;
+    max-width: 970px;
 
     .resume {
         display: flex;
@@ -272,6 +272,7 @@ export default {
             .job-dates {
                 font-style: italic;
                 text-transform: uppercase;
+                font-size: 14px;
             }
 
             .text-holder {
