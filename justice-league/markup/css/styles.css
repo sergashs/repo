@@ -259,6 +259,7 @@ h5 {
 	background: linear-gradient(316.53deg, #26fff2 13.2%, #326cff 71.54%);
 	border-radius: 5rem;
 	opacity: 0;
+	pointer-events: none;
 }
 #header .main-menu .menu-link::after {
 	content: attr(data-text);
