@@ -12,7 +12,7 @@ router.post('/registration',
 	controller.registration);
 router.post('/login', controller.login);
 router.get('/users', controller.getUsers);
-router.get('/users/:user_id', controller.getUser);
+router.get('/user/', controller.getUser);
 router.put('/bookmark', controller.updateBookMarks);
 
 

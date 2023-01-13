@@ -67,11 +67,17 @@ class authController {
 
 	async getUser(req, res) {
 		try {
-			const userID = req.params.user_id;
-			const user = await User.findById(userID);
-			res.json(user);
+			let authorization = req.headers.authorization;
+			let decoded;
+			decoded = jwt.verify(authorization, "SECRET_KEY_RANDOM");
+			var userId = decoded.id;
+			// Fetch the user by id 
+			User.findById(userId).then(function (user) {
+				// Do something with the user
+				return res.json(user);
+			});
 		} catch (e) {
-			console.log(e);
+			return res.status(401).send('user not found');
 		}
 	}
 
