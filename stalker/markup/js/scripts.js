@@ -17,10 +17,6 @@ window.addEventListener('resize', () => {
 // load fonts
 function loadFonts() {
 	WebFont.load({
-		custom: {
-			families: ['Graffiti1CTT', 'Stalker-font', 'Font Awesome 5 Brands'],
-			urls: ['/css/fonts.css']
-		},
 		google: {
 			families: ['Roboto Condensed:n5', 'Oswald:400', 'Fira Sans Condensed:400,500']
 		}

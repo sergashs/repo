@@ -13245,7 +13245,6 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	margin: auto;
 	padding: 1.7rem 0;
 	color: #707070;
-	background: url(../images/bg.jpg);
 	background-position: 20% 70%;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -13268,7 +13267,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	z-index: 1;
 	border-radius: 1rem;
 }
-.site-footer figure .footer-bg {
+.site-footer .footer-bg {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -13277,6 +13276,12 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	-o-object-fit: cover;
 	   object-fit: cover;
 	border-radius: 1rem;
+}
+.site-footer .footer-bg img {
+	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	   object-fit: cover;
 }
 .site-footer .container-fluid, .site-footer .container-sm, .site-footer .container-md, .site-footer .container-lg, .site-footer .container-xl {
 	position: relative;
