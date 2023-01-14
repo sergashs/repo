@@ -1,8 +1,2 @@
-@font-face {
-	font-family: "Stalker-font";
-	src: url("../fonts/AmazSTALKERv30.woff2") format("woff2"), url("../fonts/AmazSTALKERv30.woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;600&family=Oswald&family=Roboto+Condensed&display=swap");
 /*# sourceMappingURL=fonts.css.map */

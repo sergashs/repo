@@ -1,7 +1,7 @@
 let loadLazyLoadScript = false;
 
 document.addEventListener('DOMContentLoaded', () => {
-	loadFonts();
+	// loadFonts();
 	correctVh();
 	lazyLoad();
 	openUserProfileInHeader();
