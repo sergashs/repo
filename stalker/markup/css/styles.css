@@ -14138,6 +14138,9 @@ body.buddypress #page #primary {
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
 }
+.cbxuseronline-class .cbxuseronline_memberlist_widget .cbxuseronline_memberlist_item:not(:last-child) {
+	margin-right: 0.3rem;
+}
 .cbxuseronline-class .cbxuseronline_memberlist_widget .cbxuseronline_memberlist_item:not(:last-child)::after {
 	content: ",";
 }
@@ -14599,10 +14602,28 @@ body.buddypress #page #primary {
 .buddypress-wrap .bp-wrap .activity-list {
 	padding: 2rem;
 }
-.buddypress-wrap .bp-wrap .single-user {
-	background: red;
+.buddypress-wrap .bp-wrap .activity-list .load-more {
+	background: #181818 !important;
+	border: 1px solid #656565 !important;
 }
 .buddypress-wrap .bp-wrap .single-user .activity-list.bp-list {
 	background: #181818 !important;
+	border: solid 0.1rem #656565 !important;
+}
+.buddypress-wrap .bp-wrap .single-user .activity-list .activity-item {
+	background: #181818 !important;
+	border: solid 0.1rem #656565 !important;
+	-webkit-box-shadow: none !important;
+	        box-shadow: none !important;
+}
+.buddypress-wrap .bp-wrap .single-user .activity-list .activity-item .activity-inner {
+	background: transparent;
+	border: none !important;
+}
+.buddypress-wrap .bp-wrap .single-user .activity-list .activity-item .activity-meta {
+	background: transparent !important;
+}
+.buddypress-wrap .bp-wrap .single-user .activity-list .activity-item .bp-secondary-action {
+	color: #e2e2e2;
 }
 /*# sourceMappingURL=styles.css.map */

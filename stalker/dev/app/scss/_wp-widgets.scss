@@ -150,6 +150,8 @@
 
 		.cbxuseronline_memberlist_item {
 			&:not(:last-child) {
+				margin-right: 0.3rem;
+
 				&::after {
 					content: ",";
 				}

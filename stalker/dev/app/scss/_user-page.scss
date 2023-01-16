@@ -37,13 +37,39 @@
 
 		.activity-list {
 			padding: 2rem;
+
+			.load-more {
+				background: #181818 !important;
+				border: 1px solid #656565 !important;
+			}
 		}
 
 		.single-user {
-			background: red;
+			//background: red;
+
 			.activity-list {
 				&.bp-list {
 					background: $tuatara !important;
+					border: solid 0.1rem #656565 !important;
+				}
+
+				.activity-item {
+					background: $tuatara !important;
+					border: solid 0.1rem #656565 !important;
+					box-shadow: none !important;
+
+					.activity-inner {
+						background: transparent;
+						border: none !important;
+					}
+
+					.activity-meta {
+						background: transparent !important;
+					}
+
+					.bp-secondary-action {
+						color: $mercury;
+					}
 				}
 			}
 		}
