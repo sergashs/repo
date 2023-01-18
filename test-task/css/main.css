@@ -2049,9 +2049,6 @@ img {
 }
 
 .input-group .error-message {
-	/* position: absolute;
-	left: 0;
-	bottom: 0; */
 	display: block;
 	text-align: left;
 	font-size: 0;
@@ -2891,10 +2888,10 @@ html.add-scroll {
 	color: rgba(255, 255, 255, 0.5);
 }
 .iframe-form {
-	/* height: 0;
+	height: 0;
 	opacity: 0;
 	overflow: hidden;
-	pointer-events: none; */
+	pointer-events: none;
 }
 .iframe-form.show {
 	pointer-events: all;
