@@ -339,7 +339,7 @@ function scrollDown() {
 
 function updateFormData(formKey, keyValue) {
   form[formKey] = keyValue;
-  console.log(form);
+  // console.log(form);
 }
 
 function addEventToScrollButton() {
@@ -355,6 +355,7 @@ function showAllComments() {
   const comments = document.querySelectorAll(".comment-item")
 
   btn.addEventListener("click", () => {
+    btn.style.display = "none";
     for (const comment of comments) {
       comment.classList.add("comment-item-show");
     }
