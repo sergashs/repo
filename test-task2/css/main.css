@@ -1342,16 +1342,20 @@ img {
 .about__footer p span {
 	display: block;
 }
-.content {
+.content-wrapper {
+	position: relative;
 	width: 1018px;
 	display: inline-block;
 	vertical-align: top;
 	margin-left: 30px;
-	border-radius: 10px 0 0 10px;
 	height: 100%;
-	overflow-y: scroll;
+	border-radius: 10px 0 0 10px;
 	background: url(../images/background-of-medical-f59.arb.jpg) center no-repeat;
 	background-size: cover;
+}
+.content {
+	height: 100%;
+	overflow-y: scroll;
 }
 .content::-webkit-scrollbar {
 	width: 3px;
@@ -2043,8 +2047,10 @@ img {
 	.about__info > ul > li > ul > li:last-child {
 		display: none;
 	}
-	.content {
+	.content-wrapper {
 		width: 800px;
+	}
+	.content {
 	}
 	.chat__form {
 		width: auto;
@@ -2118,7 +2124,7 @@ img {
 	.about {
 		display: none;
 	}
-	.content {
+	.content-wrapper {
 		width: 100%;
 		margin-left: 0;
 	}
@@ -2209,8 +2215,8 @@ img {
 	.about {
 		display: none;
 	}
-	.content {
-		width: 580px;
+	.content-wrapper {
+		max-width: 580px;
 		display: block;
 		margin: 0;
 	}
@@ -2734,7 +2740,6 @@ html.add-scroll {
 		border-top: none !important;
 	}
 	.scroll-me {
-		position: fixed;
 		right: 3px;
 		bottom: 100px;
 	}
