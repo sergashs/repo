@@ -2039,6 +2039,39 @@ img {
 .popup__btn button:hover {
 	background: #428222;
 }
+.input-group {
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.input-group .input-roulette {
+	margin-bottom: 3px;
+}
+
+.input-group .error-message {
+	/* position: absolute;
+	left: 0;
+	bottom: 0; */
+	display: block;
+	text-align: left;
+	font-size: 0;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.input-group.error .input-roulette {
+	border-color: #ff1919;
+}
+
+.input-group.error .error-message {
+	color: #ff1919;
+	opacity: 1;
+	visibility: visible;
+	pointer-events: all;
+	font-size: 13px;
+}
+
 @media (max-width: 1390px) {
 	.body {
 		width: 1180px;
@@ -2858,10 +2891,10 @@ html.add-scroll {
 	color: rgba(255, 255, 255, 0.5);
 }
 .iframe-form {
-	height: 0;
+	/* height: 0;
 	opacity: 0;
 	overflow: hidden;
-	pointer-events: none;
+	pointer-events: none; */
 }
 .iframe-form.show {
 	pointer-events: all;

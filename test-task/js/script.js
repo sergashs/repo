@@ -373,7 +373,7 @@ function phoneInputMask() {
       val = e.target.value.replace(/\D/g, "");
     if (clearVal !== 'false' && e.type === 'blur') {
       if (val.length < matrix.match(/([\_\d])/g).length) {
-        e.target.value = '';
+        // e.target.value = '';
         return;
       }
     }
@@ -391,35 +391,78 @@ function phoneInputMask() {
   }
 }
 
+
+
+
+function validate() {
+
+}
+
 function sendForm() {
   const btn = document.querySelector(".submit-roulette");
   const name = document.getElementById("input-name");
   const phone = document.getElementById("input-phone");
 
+  function requiredError(variable) {
+    if (!variable.value) {
+      variable.parentNode.classList.add('error');
+      return false;
+    } else {
+      variable.parentNode.classList.remove('error');
+      return true;
+    }
+  }
+
+  function lengthError(variable) {
+    if (variable.value.length < 18) {
+      variable.parentNode.classList.add('error');
+      return false;
+    } else {
+      variable.parentNode.classList.remove('error');
+      return true;
+    }
+  }
+
+  name.addEventListener("input", () => {
+    requiredError(name);
+  });
+
+  phone.addEventListener("input", () => {
+    lengthError(phone);
+  });
+
   btn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    form.name = name.value;
-    form.phone = phone.value;
+    requiredError(name);
+    lengthError(phone);
 
+    console.log(requiredError(name), lengthError(phone))
 
-    // fetch("url" + params, {
-    //   method: "POST",
-    //   headers: { "content-type": "application/x-www-form-urlencoded" }
-    // }).then((response) => {
-    //   console.log(response);
-    // }).catch((err) => {
-    //   console.log(err);
-    // })
-    //   .finally(() => {
-    //     console.log(form)
-    //     name.value = "";
-    //     phone.value = "";
-    //   });
+    if (requiredError(name) == true && lengthError(phone) == true) {
+      form.name = name.value;
+      form.phone = phone.value;
 
-    console.log(form);
-    name.value = "";
-    phone.value = "";
+      // fetch("url" + params, {
+      //   method: "POST",
+      //   headers: { "content-type": "application/x-www-form-urlencoded" }
+      // }).then((response) => {
+      //   console.log(response);
+      // }).catch((err) => {
+      //   console.log(err);
+      // })
+      //   .finally(() => {
+      //     console.log(form)
+      //     name.value = "";
+      //     phone.value = "";
+      //   });
+
+      console.log(form);
+      // name.value = "";
+      // phone.value = "";
+    } else {
+      console.log("validate error")
+    }
 
   })
 

@@ -70,8 +70,14 @@
                             <div class="frame-container" style="padding: 30px;">
                                 <div class="row-form">
                                     <form id="order_form" action="#">
-                                        <input type="text" id="input-name" name="name" required="required" class="input-roulette" placeholder="Ваше имя">
-                                        <input type="text" id="input-phone" name="phone" required="required" class="input-roulette" placeholder="Ваш телефон" data-phone-pattern>
+                                        <div class="input-group">
+                                            <input type="text" id="input-name" name="name" required="required" class="input-roulette" placeholder="Ваше имя">
+                                            <span class="error-message">Обязательное поле</span>
+                                        </div>
+                                        <div class="input-group">
+                                            <input type="text" id="input-phone" name="phone" required="required" class="input-roulette" placeholder="Ваш телефон" data-phone-pattern>
+                                            <span class="error-message">Некорректная длина</span>
+                                        </div>
                                         <button class="submit-roulette">ПОЛУЧИТЬ БЕСПЛАТНО</button>
                                     </form>
                                 </div>
