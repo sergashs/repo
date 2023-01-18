@@ -2853,10 +2853,10 @@ html.add-scroll {
 	color: rgba(255, 255, 255, 0.5);
 }
 .iframe-form {
-	/* height: 0;
+	height: 0;
 	opacity: 0;
 	overflow: hidden;
-	pointer-events: none; */
+	pointer-events: none;
 }
 .iframe-form.show {
 	pointer-events: all;
@@ -3260,7 +3260,7 @@ input {
 	outline: 0;
 	color: #757575;
 }
-#order button {
+/* #order button {
 	border-radius: 21px;
 	-moz-border-radius: 21px;
 	-ms-border-radius: 21px;
@@ -3278,7 +3278,7 @@ input {
 	width: 90%;
 	outline: 0;
 	cursor: pointer;
-}
+} */
 #order h2,
 #order h3 {
 	color: #fff;
@@ -3525,8 +3525,7 @@ button img {
 	transform: translateY(2px);
 	box-shadow: none;
 }
-.submit-roulette,
-input[value="Получить бесплатно"] {
+.submit-roulette {
 	text-transform: uppercase;
 	padding: 10px 15px;
 	margin: 15px 0;
@@ -3541,11 +3540,11 @@ input[value="Получить бесплатно"] {
 	cursor: pointer;
 	transition: background 0.3s;
 }
-input[value="Получить бесплатно"]:hover {
+.submit-roulette:hover {
 	background: #b00 !important;
 	transition: background 0.3s;
 }
-input[value="Получить бесплатно"]:active {
+.submit-roulette:active {
 	transform: translateY(2px);
 	box-shadow: none !important;
 }
