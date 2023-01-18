@@ -363,20 +363,50 @@ function showAllComments() {
 function phoneInputMask() {
   const input = document.getElementById("input-phone");
 
-
-  input.setAttribute("maxlength", "13");
+  input.setAttribute("maxlength", "17");
   input.addEventListener("input", function () {
-    //normalize string and remove all unnecessary characters
-    input = input.replace(/[^\d]/g, "");
+    // var x = this.value.replace(/\D/g, "");
+    // var y = x.match(/(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+    // this.value = "+380 (" + y[1] + ") " + y[2] + "-" + y[3] + y[4];
 
-    //check if number length equals to 10
-    if (input.length == 10) {
-      //reformat and return phone number
-      return input.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
-    }
-
-
+    var cleaned = ("" + input.value).replace(/\D/g, "");
+    var match = cleaned.match(/^(1|)?(\d{0,3})?(\d{0,3})?(\d{0,4})?$/);
+    var intlCode = match[1] ? "+1 " : "";
+    this.value = [
+      intlCode,
+      match[2] ? "(" : "",
+      match[2],
+      match[3] ? ") " : "",
+      match[3],
+      match[4] ? "-" : "",
+      match[4],
+    ].join("");
   });
+
+  // function autoFormatPhoneNumber(phoneNumberString) {
+  //   try {
+  //     var cleaned = ("" + phoneNumberString).replace(/\D/g, "");
+  //     var match = cleaned.match(/^(1|)?(\d{0,3})?(\d{0,3})?(\d{0,4})?$/);
+  //     var intlCode = match[1] ? "+1 " : "";
+  //     return [
+  //       intlCode,
+  //       match[2] ? "(" : "",
+  //       match[2],
+  //       match[3] ? ") " : "",
+  //       match[3],
+  //       match[4] ? "-" : "",
+  //       match[4],
+  //     ].join("");
+  //   } catch (err) {
+  //     return "";
+  //   }
+  // }
+
+  // input.oninput = () => {
+
+  //   input.value = autoFormatPhoneNumber(input.value);
+
+  // }
 
 }
 
