@@ -5,8 +5,4 @@
 	</div>
 </template>
 
-<script>
-export default {
-	layout: "layouts/defalut"
-};
-</script>
+<script></script>

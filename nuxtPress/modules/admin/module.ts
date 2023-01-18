@@ -29,11 +29,10 @@ export default defineNuxtModule({
 
 		nuxt.hook('layouts:dirs': (dirs) => {
 			dirs.push({
-			  path: join(__dirname, 'layouts'),
+			  path: join(__dirname, './layouts'),
 		  });
 		});
 
-	
 		// Pinia store modules are auto imported
-	}
+	}	
 });
