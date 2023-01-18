@@ -339,7 +339,7 @@ function scrollDown() {
 
 function updateFormData(formKey, keyValue) {
   form[formKey] = keyValue;
-  console.log(form);
+  // console.log(form);
 }
 
 function addEventToScrollButton() {
@@ -355,6 +355,7 @@ function showAllComments() {
   const comments = document.querySelectorAll(".comment-item")
 
   btn.addEventListener("click", () => {
+    btn.style.display = "none";
     for (const comment of comments) {
       comment.classList.add("comment-item-show");
     }
@@ -402,24 +403,29 @@ function sendForm() {
     form.name = name.value;
     form.phone = phone.value;
 
+    if (name.value.length > 0 && phone.value.length >= 13) {
+      // fetch("url" + params, {
+      //   method: "POST",
+      //   headers: { "content-type": "application/x-www-form-urlencoded" }
+      // }).then((response) => {
+      //   console.log(response);
+      // }).catch((err) => {
+      //   console.log(err);
+      // })
+      //   .finally(() => {
+      //     console.log(form)
+      //     name.value = "";
+      //     phone.value = "";
+      //   });
 
-    // fetch("url" + params, {
-    //   method: "POST",
-    //   headers: { "content-type": "application/x-www-form-urlencoded" }
-    // }).then((response) => {
-    //   console.log(response);
-    // }).catch((err) => {
-    //   console.log(err);
-    // })
-    //   .finally(() => {
-    //     console.log(form)
-    //     name.value = "";
-    //     phone.value = "";
-    //   });
+      console.log(form);
+      name.value = "";
+      phone.value = "";
+    }
 
-    console.log(form);
-    name.value = "";
-    phone.value = "";
+
+
+
 
   })
 
