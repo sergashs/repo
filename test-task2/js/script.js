@@ -403,19 +403,19 @@ function sendForm() {
     form.phone = phone.value;
 
 
-    fetch("url" + params, {
-      method: "POST",
-      headers: { "content-type": "application/x-www-form-urlencoded" }
-    }).then((response) => {
-      console.log(response);
-    }).catch((err) => {
-      console.log(err);
-    })
-      .finally(() => {
-        console.log(form)
-        name.value = "";
-        phone.value = "";
-      });
+    // fetch("url" + params, {
+    //   method: "POST",
+    //   headers: { "content-type": "application/x-www-form-urlencoded" }
+    // }).then((response) => {
+    //   console.log(response);
+    // }).catch((err) => {
+    //   console.log(err);
+    // })
+    //   .finally(() => {
+    //     console.log(form)
+    //     name.value = "";
+    //     phone.value = "";
+    //   });
 
     console.log(form);
     name.value = "";
