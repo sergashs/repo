@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	modules: [
-		// Load Blog module locally
-		"~/modules/admin/module.ts"
-	]
+	css: ["primevue/resources/themes/saga-blue/theme.css", "primevue/resources/primevue.css", "~/assets/scss/style.scss"],
+	build: {
+		transpile: ["primevue"]
+	},
+	plugins: ["~/plugins/primevue.js"]
 });

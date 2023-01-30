@@ -70,7 +70,7 @@ class authController {
 			let authorization = req.headers.authorization;
 			let decoded;
 			decoded = jwt.verify(authorization, "SECRET_KEY_RANDOM");
-			var userId = decoded.id;
+			let userId = decoded.id;
 			// Fetch the user by id 
 			User.findById(userId).then(function (user) {
 				// Do something with the user

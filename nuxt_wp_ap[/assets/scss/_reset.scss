@@ -1,0 +1,113 @@
+html {
+	font-size: 10px;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	// background: $body-bg;
+	background: url("https://stalker2-fenomen.info/wp-content/themes/stalker-by-serhii-d/assets/images/bg3.jpg") no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	color: $text-color-base;
+	font: $font-weight-base #{$font-size-base}/ $line-height-base $font-family-base;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: flex;
+	flex-direction: column;
+}
+
+a {
+	text-decoration: none;
+	color: $links-color-base;
+	transition: $transition;
+}
+
+a:hover {
+	color: $links-color-base;
+	text-decoration: underline;
+}
+
+input {
+	&:-webkit-autofill {
+		box-shadow: 0 0 0 1000px lighten($black, 30) inset !important;
+	}
+	&:focus,
+	&:focus-visible {
+		outline: 0;
+		box-shadow: none;
+	}
+}
+
+button,
+input[type="search"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: none;
+	cursor: pointer;
+	transition: $transition;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+	border: none;
+	padding: 0;
+}
+
+.wrapper {
+	position: relative;
+	min-height: 100vh;
+	min-height: calc(var(--vh, 1vh) * 100);
+	display: flex;
+	flex-direction: column;
+}
+
+.site-main {
+	position: relative;
+	z-index: 5;
+	flex-grow: 1;
+	max-width: 125rem;
+	width: 100%;
+	margin: auto;
+	padding-top: 1.7rem;
+	background: $cod-gray;
+	border: solid 0.1rem $tuatara;
+	box-shadow: 0.4rem 0 3rem rgba($black, 0.65);
+}
+
+h1 {
+	font-family: $roboto-condensed;
+	margin-bottom: 1rem;
+	font-size: 2.6rem;
+	font-weight: 400;
+	color: $mercury;
+}
+
+h2 {
+	margin: 0 0 1.5rem 0;
+	font-family: $roboto-condensed;
+	font-weight: 400;
+	font-size: 2rem;
+	color: $mercury;
+	text-transform: uppercase;
+	border-bottom: 0.1rem solid $tuatara;
+	padding-bottom: 1.5rem;
+}
+
+h3 {
+	font-family: $roboto-condensed;
+	margin-bottom: 1.5rem;
+	font-size: 1.6rem;
+	font-weight: 400;
+	color: $mercury;
+}
+
+strong,
+b {
+	font-weight: 600;
+}
