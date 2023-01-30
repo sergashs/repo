@@ -1,0 +1,219 @@
+html {
+	font-size: 10px;
+}
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	background: white;
+	color: black;
+	font: 400 1.7rem/1.5 "SF Pro Display";
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+body.overflow-disabled, body.menu-opened {
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+input {
+	outline: none;
+}
+
+button,
+input[type=search],
+input[type=button],
+input[type=reset],
+input[type=submit] {
+	-webkit-appearance: none;
+	cursor: pointer;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+button::-moz-focus-inner,
+input[type=reset]::-moz-focus-inner,
+input[type=button]::-moz-focus-inner,
+input[type=submit]::-moz-focus-inner {
+	border: none;
+	padding: 0;
+}
+
+.wrapper {
+	min-height: 100vh;
+	min-height: calc(var(--vh, 1vh) * 100);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+
+#main {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-flex: 1;
+	    -ms-flex-positive: 1;
+	        flex-grow: 1;
+}
+
+p {
+	margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin-top: 0;
+}
+
+.container {
+	max-width: 130rem;
+	width: 100%;
+	margin: auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.sr-only {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+/* header */
+.landing-page .header-page {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	padding-top: 11.3rem;
+	padding-bottom: 5.6rem;
+}
+.landing-page .header-page .logo {
+	max-width: 26.8rem;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+}
+.landing-page .text-holder {
+	font-weight: 600;
+	font-size: 7.112rem;
+	line-height: 1.23;
+}
+.landing-page .text-holder p {
+	margin-bottom: 0;
+}
+.landing-page .text-holder.txt-center {
+	text-align: center;
+}
+.landing-page .text-holder.txt-1 {
+	padding-top: 1.7rem;
+}
+.landing-page .text-holder.txt-2 {
+	max-width: 105rem;
+	margin: auto auto 14.2rem;
+}
+.landing-page .text-holder.txt-3 {
+	margin-bottom: 3.2rem;
+}
+.landing-page .img-block {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.landing-page .img-block .holder-1 {
+	max-width: 97rem;
+	margin-bottom: 1.7rem;
+}
+.landing-page .img-block .holder-2 {
+	max-width: 120rem;
+	margin-bottom: 16rem;
+}
+.landing-page .img-block .holder-3 {
+	max-width: 120rem;
+	margin-bottom: 11rem;
+}
+.landing-page .img-block .holder-4 {
+	max-width: 120rem;
+	margin-bottom: 11.2rem;
+}
+.landing-page img {
+	width: 100%;
+	height: auto;
+}
+.landing-page .list-block .row {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.landing-page .list-block .row .col {
+	width: 100%;
+}
+.landing-page .list-block ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 2.4rem;
+}
+@font-face {
+	font-family: "SF Pro Display";
+	src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "SF Pro Display";
+	src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+/*# sourceMappingURL=styles.css.map */
