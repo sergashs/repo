@@ -11,7 +11,7 @@
 				</ul>
 			</nav>
 		</div>
-		<Button label="plus" @click="counter++" />
+		<!-- <Button label="plus" @click="counter++" /> -->
 	</header>
 </template>
 
@@ -26,8 +26,8 @@ const menu = ref([
 		url: "/posts"
 	},
 	{
-		title: "About",
-		url: "/about"
+		title: "Add Post",
+		url: "/posts/add"
 	}
 ]);
 </script>

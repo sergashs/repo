@@ -11279,9 +11279,7 @@ html {
 body {
 	margin: 0;
 	min-width: 320px;
-	background: url(../images/bg3.jpg) no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
+	background: black;
 	color: #afaeac;
 	font: 300 1.6rem/1.3 "Fira Sans Condensed", sans-serif;
 	font-smoothing: antialiased;
@@ -12843,6 +12841,16 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	z-index: 1000000;
 }
 
+.bg-site {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	   object-fit: cover;
+}
+
 /* buttons */
 .btn {
 	white-space: normal;
@@ -13827,6 +13835,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 }
 .single-post .item figure figcaption {
 	color: #afaeac;
+	line-height: 1.5;
 }
 .single-post .item strong {
 	font-weight: 500;
@@ -13943,11 +13952,29 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	list-style: none;
 }
 .single-post .comment-list .comment {
+	position: relative;
 	padding: 1.5rem;
 	background: #181818;
 }
 .single-post .comment-list .comment:not(:last-child) {
 	margin-bottom: 2rem;
+}
+.single-post .comment-list .comment .comment-content {
+	line-height: 1.5;
+}
+.single-post .comment-list .comment .cld-like-dislike-wrap {
+	position: absolute;
+	right: 1.5rem;
+	bottom: 1.5rem;
+	margin-bottom: 0;
+}
+.single-post .comment-list .comment .cld-like-dislike-wrap .cld-common-wrap {
+	min-width: unset;
+	margin-right: 0;
+	margin-left: 2rem;
+}
+.single-post .comment-list .comment .reply {
+	padding-top: 1rem;
 }
 .single-post .comment-list .says {
 	display: none;

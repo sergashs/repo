@@ -5,10 +5,7 @@ html {
 body {
 	margin: 0;
 	min-width: 320px;
-	// background: $body-bg;
-	background: url(#{$images}bg3.jpg) no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
+	background: black;
 	color: $text-color-base;
 	font: $font-weight-base #{$font-size-base}/ $line-height-base $font-family-base;
 	font-smoothing: antialiased;

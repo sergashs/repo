@@ -1,11 +1,8 @@
 let loadLazyLoadScript = false;
 
 document.addEventListener('DOMContentLoaded', () => {
-	// loadFonts();
 	correctVh();
 	lazyLoad();
-	openUserProfileInHeader();
-	scrollVideoCats();
 	mobileMenu();
 	initSliderBuyGames()
 });
@@ -14,14 +11,6 @@ window.addEventListener('resize', () => {
 	correctVh();
 });
 
-// load fonts
-function loadFonts() {
-	WebFont.load({
-		google: {
-			families: ['Roboto Condensed:n5', 'Oswald:400', 'Fira Sans Condensed:400,500']
-		}
-	});
-}
 
 // lazyLoad Images
 function lazyLoad() {
@@ -130,8 +119,6 @@ function initSliderBuyGames() {
 	})
 }
 
-
-
 function openUserProfileInHeader() {
 	const btnOpen = document.querySelector('.user-profile');
 
@@ -148,56 +135,6 @@ function openUserProfileInHeader() {
 			}
 		});
 	}
-}
-
-
-
-
-
-
-function scrollVideoCats() {
-	var container = document.querySelector('.catsTable');
-	let btnPrev = document.querySelector('.btn-prev');
-	let btnNext = document.querySelector('.btn-next');
-	let btnPrevHolder = document.querySelector('.btn-prev-holder');
-	let btnNextHolder = document.querySelector('.btn-next-holder');
-
-
-	function scrollContainer(direction, scrollWidth) {
-		container.scrollBy({
-			left: direction + scrollWidth,
-			behavior: 'smooth'
-		})
-	}
-
-	if (btnNextHolder) {
-		btnNext.addEventListener('click', function (evt) {
-			evt.preventDefault();
-
-			if (container.scrollLeft + 300 >= container.scrollWidth - container.offsetWidth) {
-				btnNextHolder.classList.add('hide');
-			}
-
-			scrollContainer('+', 300);
-
-			btnPrevHolder.classList.remove('hide');
-		});
-	}
-
-	if (btnPrevHolder) {
-		btnPrev.addEventListener('click', function (evt) {
-			evt.preventDefault();
-
-			if (container.scrollLeft - 300 <= 0) {
-				btnPrevHolder.classList.add('hide');
-			}
-
-			scrollContainer('-', 300);
-
-			btnNextHolder.classList.remove('hide');
-		});
-	}
-
 }
 
 
