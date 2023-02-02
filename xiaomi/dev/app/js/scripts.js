@@ -45,6 +45,10 @@ function initSwiper() {
 			el: ".swiper-pagination",
 			clickable: true
 		},
+		autoplay: {
+			delay: 1500,
+			disableOnInteraction: false,
+		},
 	});
 
 	const swiper2 = new Swiper(".swiper-products", {
@@ -59,6 +63,10 @@ function initSwiper() {
 			768: {
 				slidesPerView: 3,
 			},
+		},
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
 		},
 	});
 
