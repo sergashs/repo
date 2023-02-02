@@ -1,23 +1,10 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-	loadFonts();
 	initSwiper();
 	initModal();
-
 });
 
-
-// load fonts
-function loadFonts() {
-	WebFont.load({
-		custom: {
-		},
-		google: {
-			families: ['Roboto:400,500,700,900']
-		}
-	});
-}
 
 
 // mobile menu
@@ -47,7 +34,7 @@ function initSwiper() {
 		},
 		autoplay: {
 			delay: 1500,
-			disableOnInteraction: false,
+			disableOnInteraction: true
 		},
 	});
 
@@ -66,7 +53,7 @@ function initSwiper() {
 		},
 		autoplay: {
 			delay: 2500,
-			disableOnInteraction: false,
+			disableOnInteraction: true
 		},
 	});
 

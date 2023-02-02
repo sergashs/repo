@@ -1681,9 +1681,9 @@ h5 {
 }
 @media (max-width: 767px) {
 	.modal-overlay .modal .btn-close {
-		width: 2.2rem;
-		height: 2.2rem;
-		background-size: 1rem;
+		width: 2.5rem;
+		height: 2.5rem;
+		background-size: 1.5rem;
 	}
 }
 .modal-overlay .modal .btn-close:hover {
