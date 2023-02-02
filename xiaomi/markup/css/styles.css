@@ -1697,6 +1697,10 @@ h5 {
 	pointer-events: all;
 }
 
+[click-slide] {
+	cursor: pointer;
+}
+
 @font-face {
 	font-display: swap;
 	font-family: "Xiaomi Brand";
