@@ -1909,6 +1909,9 @@ h5 {
 	min-height: 193px;
 	background: #fff;
 }
+.deal-section .mi-flash-sale-content {
+	padding-left: 1.5rem;
+}
 .deal-section .mi-flash-sale {
 	position: relative;
 	padding-bottom: 0.5rem;
