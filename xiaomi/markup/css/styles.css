@@ -1698,11 +1698,7 @@ h5 {
 }
 
 [click-slide] {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
 	cursor: pointer;
-	text-decoration: none;
 }
 
 @font-face {
