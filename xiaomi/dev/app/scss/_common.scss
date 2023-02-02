@@ -36,6 +36,7 @@
 
 	.overflow-disabled & {
 		opacity: 1;
+		pointer-events: all;
 	}
 
 	.modal {
