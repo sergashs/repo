@@ -1639,16 +1639,10 @@ h5 {
 }
 .modal-overlay .modal .modal-body .control-checkbox {
 	margin-bottom: 2rem;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
 }
 .modal-overlay .modal .modal-body .img-holder {
 	max-width: 14.4rem;
-	margin: auto;
+	margin: auto auto 1rem;
 }
 .modal-overlay .modal .modal-body .img-holder img {
 	width: 100%;
@@ -2169,11 +2163,6 @@ h5 {
 	font-size: 1.3rem;
 	line-height: 1.15;
 	cursor: pointer;
-}
-@media (max-width: 767px) {
-	.control-checkbox {
-		font-size: 1.1rem;
-	}
 }
 .control-checkbox input {
 	margin-right: 0.65rem;
