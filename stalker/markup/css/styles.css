@@ -13951,27 +13951,36 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	padding-left: 0;
 	list-style: none;
 }
+.single-post .comment-list .thread-even:not(:last-child) {
+	margin-bottom: 2rem;
+}
+.single-post .comment-list .comment-body:not(:last-child) {
+	margin-bottom: 2.5rem;
+}
 .single-post .comment-list .comment {
 	position: relative;
 	padding: 1.5rem;
 	background: #181818;
 }
-.single-post .comment-list .comment:not(:last-child) {
-	margin-bottom: 2rem;
+.single-post .comment-list .comment .comment-reply-login {
+	font-size: 1.4rem;
+}
+.single-post .comment-list .comment .comment {
+	margin-bottom: 1.5rem;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 1rem;
 }
 .single-post .comment-list .comment .comment-content {
 	line-height: 1.5;
 }
 .single-post .comment-list .comment .cld-like-dislike-wrap {
-	position: absolute;
-	right: 1.5rem;
-	bottom: 1.5rem;
 	margin-bottom: 0;
 }
 .single-post .comment-list .comment .cld-like-dislike-wrap .cld-common-wrap {
 	min-width: unset;
-	margin-right: 0;
-	margin-left: 2rem;
+	margin-right: 2rem;
 }
 .single-post .comment-list .comment .reply {
 	padding-top: 1rem;
