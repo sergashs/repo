@@ -13930,12 +13930,15 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 	outline: none;
 	resize: none;
 }
-.single-post .comments-area .comment-form-comment label {
-	display: block;
+.single-post .comments-area .comment-form-comment > label {
+	display: none;
 	margin-bottom: 1rem;
 }
 .single-post .comments-area .comment-reply-title {
 	text-transform: uppercase;
+}
+.single-post .comments-area .logged-in-as {
+	display: none;
 }
 .single-post .comments-area .submit {
 	padding: 1rem;

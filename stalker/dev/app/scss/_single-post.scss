@@ -142,14 +142,18 @@
 		}
 
 		.comment-form-comment {
-			label {
-				display: block;
+			> label {
+				display: none;
 				margin-bottom: 1rem;
 			}
 		}
 
 		.comment-reply-title {
 			text-transform: uppercase;
+		}
+
+		.logged-in-as {
+			display: none;
 		}
 
 		.submit {
