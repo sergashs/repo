@@ -3,7 +3,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-8 col-lg-9 informer-row-border">
-					<div v-if="loading">loading</div>
+					<div v-if="loading.post">loading</div>
 					<div v-else class="item">
 						<h1 v-html="post.title.rendered"></h1>
 						<figure>
@@ -12,6 +12,12 @@
 								<p v-html="post.content.rendered"></p>
 							</figcaption>
 						</figure>
+					</div>
+					<div class="comments">
+						<h2 v-if="post.title.rendered" class="comments-title" v-html="`комментарі до ${post.title.rendered}`"></h2>
+						<div v-for="(item, index) in comments" :key="index">
+							{{ item }}
+						</div>
 					</div>
 				</div>
 				<div class="col-md-4 col-lg-3">site sidebar</div>
@@ -25,21 +31,32 @@ export default {
 	data() {
 		return {
 			post: {},
-			loading: true
+			comments: [],
+			loading: {
+				post: true,
+				comment: true
+			}
 		};
 	},
 	async fetch() {
 		try {
-			await fetch(`https://stalker2-fenomen.info/wp-json/wp/v2/posts/${this.$route.params.slug}?_embed`)
+			await fetch(`https://stalker2-fenomen.info/wp-json/wp/v2/posts/${this.$route.params.slug}`)
 				.then((response) => response.json())
 				.then((data) => {
 					this.post = data;
-					console.log(data);
+					// console.log(data);
+				});
+			await fetch(`https://stalker2-fenomen.info/wp-json/wp/v2/comments?post=${this.$route.params.slug}`)
+				.then((response) => response.json())
+				.then((data) => {
+					this.comments = data;
+					// console.log(data);
 				});
 		} catch (e) {
 			console.log(e);
 		} finally {
-			this.loading = false;
+			this.loading.post = false;
+			this.loading.comment = false;
 		}
 	}
 };

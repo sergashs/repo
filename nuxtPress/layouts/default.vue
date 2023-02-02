@@ -1,11 +1,16 @@
 <template>
 	<div>
 		<Header />
-		Some default layout shared across all pages <br />
 		<slot />
 	</div>
 </template>
 
-<script setup>
+<script>
 import Header from "@/components/layout/Header";
+
+export default {
+	components: {
+		Header
+	}
+};
 </script>

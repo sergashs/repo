@@ -26,6 +26,7 @@
 
 			figcaption {
 				color: $cloudy;
+				line-height: 1.5;
 			}
 		}
 
@@ -169,11 +170,33 @@
 		list-style: none;
 
 		.comment {
+			position: relative;
 			padding: 1.5rem;
 			background: $tuatara;
 
 			&:not(:last-child) {
 				margin-bottom: 2rem;
+			}
+
+			.comment-content {
+				line-height: 1.5;
+			}
+
+			.cld-like-dislike-wrap {
+				position: absolute;
+				right: 1.5rem;
+				bottom: 1.5rem;
+				margin-bottom: 0;
+
+				.cld-common-wrap {
+					min-width: unset;
+					margin-right: 0;
+					margin-left: 2rem;
+				}
+			}
+
+			.reply {
+				padding-top: 1rem;
 			}
 		}
 

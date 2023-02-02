@@ -3,8 +3,8 @@ import PostService from "../Services/post.service.js";
 class PostController {
 	async create(req, res) {
 		try {
-			console.log(res.files)
-			const post = await PostService.create(req.body, req.files.img);
+			//console.log(res.files && res.files)
+			const post = await PostService.create(req.body, req.files && req.files.img);
 			res.json(post);
 		} catch (e) {
 			res.status(500).json(e);
