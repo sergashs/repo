@@ -1,5 +1,5 @@
 .container {
-	max-width: 127.5rem;
+	max-width: 76.8rem;
 	margin: auto;
 	padding-left: 1rem;
 	padding-right: 1rem;
@@ -17,14 +17,6 @@
 	border: 0 !important;
 }
 
-.home-page {
-	padding-top: 11.7rem;
-
-	@include media("<md") {
-		padding-top: 5.9rem;
-	}
-}
-
 .modal-overlay {
 	position: fixed;
 	top: 0;
@@ -37,9 +29,19 @@
 	justify-content: center;
 	z-index: 100;
 	pointer-events: none;
+	background: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(10px);
+	opacity: 0;
+	transition: 0.3s;
+
+	.overflow-disabled & {
+		opacity: 1;
+	}
 
 	.modal {
+		position: absolute;
 		width: 100%;
+		max-width: 33.2rem;
 		background: #ffffff;
 		box-shadow: 0 1rem 2rem rgba(93, 120, 255, 0.05);
 		border-radius: 1.5rem;
@@ -47,6 +49,7 @@
 		visibility: hidden;
 		opacity: 0;
 		transition: $transition;
+		filter: unset;
 
 		@include media("<md") {
 			border-radius: 1.125rem;
@@ -54,6 +57,46 @@
 
 		.modal-body {
 			position: relative;
+			padding: 9rem 2rem 5rem 2rem;
+			text-align: center;
+
+			.modal-title {
+				margin-bottom: 0.5rem;
+				font-size: 3rem;
+				line-height: 1.1;
+			}
+
+			.text-holder {
+				font-size: 1.6rem;
+			}
+
+			.control-checkbox {
+				margin-bottom: 2rem;
+				display: flex;
+				justify-content: center;
+			}
+
+			.img-holder {
+				max-width: 14.4rem;
+				margin: auto;
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+
+			.btn-get-gift {
+				padding: 1rem 2rem;
+				font-size: 1.6rem;
+				background: #f7c00d;
+				border-radius: 0.5rem;
+				border: none;
+
+				&:hover {
+					background: lighten(#f7c00d, 10);
+				}
+			}
 		}
 
 		.btn-close {
@@ -62,14 +105,15 @@
 			right: 1rem;
 			width: 3rem;
 			height: 3rem;
-			background-color: #f3f4f6;
+			background-color: transparent;
 			background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.1875 11.6875L0.3125 10.8125L5.125 6L0.3125 1.1875L1.1875 0.3125L6 5.125L10.8125 0.3125L11.6875 1.1875L6.875 6L11.6875 10.8125L10.8125 11.6875L6 6.875L1.1875 11.6875Z' fill='%23001E41'/%3E%3C/svg%3E%0A");
+			background-size: 2rem;
 			background-repeat: no-repeat;
 			background-position: center;
-			border-radius: 50%;
 			border: none;
 			z-index: 2;
 			cursor: pointer;
+			opacity: 0.5;
 
 			@include media("<md") {
 				width: 2.2rem;
@@ -78,11 +122,12 @@
 			}
 
 			&:hover {
-				background-color: darken(#f3f4f6, 5);
+				opacity: 0.8;
 			}
 		}
 
 		&.show {
+			position: relative;
 			opacity: 1;
 			visibility: visible;
 			pointer-events: all;

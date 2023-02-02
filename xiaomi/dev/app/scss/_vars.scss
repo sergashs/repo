@@ -1,5 +1,8 @@
+$fonts: "../fonts/";
+
 // fonts
-$main-font: "Roboto", sans-serif;
+$main-font: "Camphor Pro";
+$headings-font-1: "Xiaomi Brand";
 
 // breakpoints
 $breakpoints: (
@@ -11,8 +14,8 @@ $breakpoints: (
 
 // base vars
 $btn-primary-bg: #5d78ff;
-$text-color-base: #001e41;
-$body-bg: white;
+$text-color-base: #000000;
+$body-bg: #fafafa;
 $font-family-base: $main-font;
 $font-size-base: 1.4rem;
 $font-weight-base: 400;
