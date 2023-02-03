@@ -2055,17 +2055,15 @@ h5 {
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	font-weight: 600;
 	padding: 0.5rem 2rem;
-	font-size: 1.2rem;
-	color: #ff9208;
-	background: #fff;
+	font-size: 1.5rem;
+	color: white;
 	border-radius: 0.2rem;
-	-webkit-box-shadow: 0 0.2rem 0.4rem 0 rgba(255, 138, 8, 0.8);
-	        box-shadow: 0 0.2rem 0.4rem 0 rgba(255, 138, 8, 0.8);
 }
 .deal-section .mi-flash-sale-counter .tick {
 	margin-right: 1rem;
+	font-weight: 600;
+	font-size: 1.5rem;
 }
 .deal-section .tick-flip-panel {
 	color: #ff9208;
