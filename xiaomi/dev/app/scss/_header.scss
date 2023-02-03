@@ -7,6 +7,10 @@
 		align-items: center;
 		padding: 1rem 0;
 		background: white;
+
+		@include media(">md") {
+			padding: 1rem 1rem;
+		}
 	}
 
 	.logo {

@@ -3,8 +3,43 @@
 document.addEventListener('DOMContentLoaded', () => {
 	initSwiper();
 	initModal();
+	addRemoveClass();
 });
 
+
+
+function addRemoveClass() {
+	const element = document.querySelector('.mi-flash-sale-counter');
+
+	function startAnim() {
+		const interval = setInterval(() => {
+			element.classList.remove('hide');
+			element.classList.add('show');
+
+			clearInterval(interval);
+
+			setTimeout(() => {
+				element.classList.remove('show');
+				element.classList.add('hide');
+				startAnim();
+			}, 2500);
+		}, 2000);
+	}
+
+	startAnim();
+}
+
+// function saleCounterAnim() {
+// 	const el = document.querySelector('.mi-flash-sale-counter');
+
+// 	setTimeout(() => {
+// 		el.classList.add('show')
+
+
+// 	}, 2000)
+
+
+// }
 
 
 // mobile menu

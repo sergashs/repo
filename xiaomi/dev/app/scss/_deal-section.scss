@@ -9,7 +9,6 @@
 
 	.mi-flash-sale-wrapper {
 		width: 100%;
-		min-height: 193px;
 		background: #fff;
 	}
 
@@ -24,7 +23,9 @@
 	}
 
 	.mi-flash-sale-header {
-		height: 6.3rem;
+		display: flex;
+		align-items: center;
+		padding: 1.25rem 0;
 		background-image: linear-gradient(to left, #ffc63b, #ffaa02);
 		position: relative;
 		padding-left: 5.2rem;
@@ -44,65 +45,8 @@
 			top: 0;
 			left: 0;
 			background: url("data:image/svg+xml,%3Csvg width='100px' height='100px' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' fill='white' class='bi bi-lightning-fill'%3E%3Cpath d='M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641l2.5-8.5z'/%3E%3C/svg%3E") no-repeat;
-			background-size: 45px;
+			background-size: 25px;
 			background-position: center center;
-		}
-	}
-
-	.mi-flash-sale-label {
-		text-shadow: 0 1px 0 #ff8a08;
-		font-size: 1.4rem;
-		font-weight: 700;
-		line-height: 17px;
-		letter-spacing: 0.21px;
-		color: #fff;
-		text-transform: uppercase;
-		padding-top: 10px;
-	}
-
-	.flip-clock-wrapper {
-		display: flex;
-		text-align: center;
-		position: relative;
-		width: 100%;
-	}
-
-	.flip-clock-divider {
-		width: 10px;
-		height: 22px;
-
-		&::before {
-			content: ":";
-			color: #fff;
-			width: 100%;
-			line-height: 22px;
-			font-size: 1.6rem;
-			font-weight: 700;
-		}
-	}
-
-	ul {
-		list-style: none;
-		pointer-events: none;
-
-		&.flip {
-			margin: 0 1px;
-			padding: 0;
-			width: 16px;
-			height: 22px;
-			line-height: 22px;
-			font-size: 1.2rem;
-			background: #fff;
-			border-radius: 2px;
-			box-shadow: 0 2px 4px 0 rgb(255 138 8 / 80%);
-			overflow: hidden;
-		}
-
-		li {
-			a {
-				color: #ff9208;
-				text-decoration: none;
-			}
 		}
 	}
 
@@ -120,10 +64,14 @@
 
 	.mi-flash-sale-image {
 		position: absolute;
-		top: 38px;
-		right: 10px;
-		width: 160px;
-		height: 160px;
+		top: 1.8rem;
+		right: 1rem;
+		width: 13rem;
+		height: 13rem;
+
+		@include media("<sm") {
+			top: 3.8rem;
+		}
 
 		img {
 			display: block;
@@ -170,5 +118,60 @@
 		font-size: 10px;
 		font-weight: 300;
 		color: #b0b0b0;
+	}
+
+	.mi-flash-sale-label {
+		// margin-left: 5.5rem;
+		margin-right: 1rem;
+		text-shadow: 0 1px 0 #ff8a08;
+		font-size: 1.4rem;
+		font-weight: 700;
+		line-height: 17px;
+		letter-spacing: 0.21px;
+		color: #fff;
+		text-transform: uppercase;
+	}
+
+	.mi-flash-sale-counter {
+		// position: absolute;
+		// top: 50%;
+		// left: 5rem;
+		// transform: translateY(-50%);
+		padding: 0.3rem 0.5rem;
+		font-size: 1.2rem;
+		background: #fff;
+		border-radius: 0.2rem;
+		box-shadow: 0 0.2rem 0.4rem 0 rgba(255, 138, 8, 0.8);
+		opacity: 0;
+
+		&.show {
+			animation: anim-show 0.3s both;
+		}
+
+		&.hide {
+			animation: anim-hide 0.3s;
+		}
+
+		@keyframes anim-show {
+			from {
+				transform: translateY(1rem);
+				opacity: 0;
+			}
+			to {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+
+		@keyframes anim-hide {
+			from {
+				transform: translateY(0);
+				opacity: 1;
+			}
+			to {
+				opacity: 0;
+				transform: translateY(-1rem);
+			}
+		}
 	}
 }
