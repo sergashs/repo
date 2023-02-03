@@ -7,6 +7,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Plerdy</title>
 	<link rel="stylesheet" href="css/styles.css">
+	<link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="images/favicon.webp">
 </head>
 
 <body>
@@ -102,7 +104,12 @@
 								<div class="mi-flash-sale-header">
 									<div class="mi-flash-sale-label">Koniec promocji za</div>
 									<div class="mi-flash-sale-counter">
-										-1 tovar
+										<div class="tick" data-value="1234" data-did-init="setupFlip">
+											<div data-repeat="true" aria-hidden="true">
+												<span data-view="flip"></span>
+											</div>
+										</div>
+										tovar
 									</div>
 								</div>
 								<div class="mi-flash-sale-content">
@@ -194,7 +201,7 @@
 								<span class="control-indicator"></span>
 								<span>I understood everything</span>
 							</label>
-							<button class="btn btn-get-gift">pick up a gift</button>
+							<a href="#" class="btn btn-get-gift">pick up a gift</a>
 						</div>
 					</div>
 				</div>
@@ -217,7 +224,7 @@
 								<span class="control-indicator"></span>
 								<span>I understood everything</span>
 							</label>
-							<button class="btn btn-get-gift">pick up a gift</button>
+							<a href="#" class="btn btn-get-gift">pick up a gift</a>
 						</div>
 					</div>
 				</div>
@@ -240,7 +247,7 @@
 								<span class="control-indicator"></span>
 								<span>I understood everything</span>
 							</label>
-							<button class="btn btn-get-gift">pick up a gift</button>
+							<a href="#" class="btn btn-get-gift">pick up a gift</a>
 						</div>
 					</div>
 				</div>
@@ -263,7 +270,7 @@
 								<span class="control-indicator"></span>
 								<span>I understood everything</span>
 							</label>
-							<button class="btn btn-get-gift">pick up a gift</button>
+							<a href="#" class="btn btn-get-gift">pick up a gift</a>
 						</div>
 					</div>
 				</div>
@@ -286,7 +293,7 @@
 								<span class="control-indicator"></span>
 								<span>I understood everything</span>
 							</label>
-							<button class="btn btn-get-gift">pick up a gift</button>
+							<a href="#" class="btn btn-get-gift">pick up a gift</a>
 						</div>
 					</div>
 				</div>
@@ -309,7 +316,7 @@
 								<span class="control-indicator"></span>
 								<span>I understood everything</span>
 							</label>
-							<button class="btn btn-get-gift">pick up a gift</button>
+							<a href="#" class="btn btn-get-gift">pick up a gift</a>
 						</div>
 					</div>
 				</div>
@@ -332,7 +339,7 @@
 								<span class="control-indicator"></span>
 								<span>I understood everything</span>
 							</label>
-							<button class="btn btn-get-gift">pick up a gift</button>
+							<a href="#" class="btn btn-get-gift">pick up a gift</a>
 						</div>
 					</div>
 				</div>
@@ -341,6 +348,7 @@
 		<!-- / footer -->
 		<!-- script -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
 		<script src="js/swiper-bundle.min.js"></script>
 		<script src="js/scripts.js"></script>
 		<!-- /script -->

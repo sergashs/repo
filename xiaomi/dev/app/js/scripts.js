@@ -3,43 +3,78 @@
 document.addEventListener('DOMContentLoaded', () => {
 	initSwiper();
 	initModal();
-	addRemoveClass();
+	changeGiftLink();
 });
 
 
+function setupFlip(tick) {
+	const tickEl = document.querySelector('.tick');
+	let balance = Math.floor(Math.random() * (70 - 50 + 1) + 50);
+	tickEl.setAttribute('data-value', balance);
 
-function addRemoveClass() {
-	const element = document.querySelector('.mi-flash-sale-counter');
-
-	function startAnim() {
-		const interval = setInterval(() => {
-			element.classList.remove('hide');
-			element.classList.add('show');
-
-			clearInterval(interval);
-
-			setTimeout(() => {
-				element.classList.remove('show');
-				element.classList.add('hide');
-				startAnim();
-			}, 2500);
-		}, 2000);
-	}
-
-	startAnim();
+	Tick.helper.interval(function () {
+		if (!balance == 0) {
+			tick.value--;
+			balance--;
+			tick.root.setAttribute(
+				'aria-label',
+				tick.value
+			);
+		}
+	}, 3000);
 }
 
-// function saleCounterAnim() {
-// 	const el = document.querySelector('.mi-flash-sale-counter');
 
-// 	setTimeout(() => {
-// 		el.classList.add('show')
-
-
-// 	}, 2000)
+function changeGiftLink() {
+	const links = document.querySelectorAll('.btn-get-gift');
+	const url = 'http://google.com';
 
 
-// }
+	links.forEach((link) => {
+		link.addEventListener('click', (event) => {
+			event.preventDefault();
+			window.open(url, '_blank')
+		})
+
+	});
+}
+
+
+function addRemoveClass() {
+	// const element = document.querySelector('.mi-flash-sale-counter');
+
+	// function startAnim() {
+	// 	const interval = setInterval(() => {
+	// 		element.classList.remove('hide');
+	// 		element.classList.add('show');
+
+	// 		clearInterval(interval);
+
+	// 		setTimeout(() => {
+	// 			element.classList.remove('show');
+	// 			element.classList.add('hide');
+	// 			startAnim();
+	// 		}, 2500);
+	// 	}, 2000);
+	// }
+
+	// startAnim();
+
+
+	// const el = document.querySelector('.mi-flash-sale-counter-digits');
+	// let balance = Math.floor(Math.random() * (70 - 50 + 1) + 50);
+
+	// el.innerHTML = balance;
+
+	// setInterval(() => {
+	// 	if (balance > 0) {
+	// 		el.innerHTML = balance--;
+
+	// 		console.log('e')
+	// 	}
+
+	// }, 100);
+}
 
 
 // mobile menu
@@ -63,12 +98,13 @@ function initSwiper() {
 		slidesPerView: 1,
 		spaceBetween: 0,
 		autoHeight: true,
+		speed: 1000,
 		pagination: {
 			el: ".swiper-pagination",
 			clickable: true
 		},
 		autoplay: {
-			delay: 1500,
+			delay: 5000,
 			disableOnInteraction: true
 		},
 	});

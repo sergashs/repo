@@ -1649,6 +1649,12 @@ h5 {
 	height: auto;
 }
 .modal-overlay .modal .modal-body .btn-get-gift {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	padding: 1rem 2rem;
 	font-size: 1.6rem;
 	background: #f7c00d;
@@ -2043,69 +2049,38 @@ h5 {
 	text-transform: uppercase;
 }
 .deal-section .mi-flash-sale-counter {
-	padding: 0.3rem 0.5rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	font-weight: 600;
+	padding: 0.5rem 2rem;
 	font-size: 1.2rem;
+	color: #ff9208;
 	background: #fff;
 	border-radius: 0.2rem;
 	-webkit-box-shadow: 0 0.2rem 0.4rem 0 rgba(255, 138, 8, 0.8);
 	        box-shadow: 0 0.2rem 0.4rem 0 rgba(255, 138, 8, 0.8);
-	opacity: 0;
 }
-.deal-section .mi-flash-sale-counter.show {
-	-webkit-animation: anim-show 0.3s both;
-	        animation: anim-show 0.3s both;
+.deal-section .mi-flash-sale-counter .tick {
+	margin-right: 1rem;
 }
-.deal-section .mi-flash-sale-counter.hide {
-	-webkit-animation: anim-hide 0.3s;
-	        animation: anim-hide 0.3s;
+.deal-section .tick-flip-panel {
+	color: #ff9208;
+	background: #fff;
 }
-@-webkit-keyframes anim-show {
-	from {
-		-webkit-transform: translateY(1rem);
-		        transform: translateY(1rem);
-		opacity: 0;
-	}
-	to {
-		-webkit-transform: translateY(0);
-		        transform: translateY(0);
-		opacity: 1;
-	}
+.deal-section .tick-flip-panel-back::after {
+	display: none;
 }
-@keyframes anim-show {
-	from {
-		-webkit-transform: translateY(1rem);
-		        transform: translateY(1rem);
-		opacity: 0;
-	}
-	to {
-		-webkit-transform: translateY(0);
-		        transform: translateY(0);
-		opacity: 1;
-	}
+.deal-section .tick-flip-panel-back-shadow {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.5)));
+	background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5));
 }
-@-webkit-keyframes anim-hide {
-	from {
-		-webkit-transform: translateY(0);
-		        transform: translateY(0);
-		opacity: 1;
-	}
-	to {
-		opacity: 0;
-		-webkit-transform: translateY(-1rem);
-		        transform: translateY(-1rem);
-	}
-}
-@keyframes anim-hide {
-	from {
-		-webkit-transform: translateY(0);
-		        transform: translateY(0);
-		opacity: 1;
-	}
-	to {
-		opacity: 0;
-		-webkit-transform: translateY(-1rem);
-		        transform: translateY(-1rem);
-	}
+.deal-section .tick-flip-panel-front-shadow {
+	background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.3)));
+	background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
 }
 
 .control-checkbox {
