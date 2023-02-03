@@ -1,0 +1,54 @@
+.control-checkbox {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	font-size: 1.3rem;
+	line-height: 1.15;
+	cursor: pointer;
+
+	input {
+		margin-right: 0.65rem;
+
+		// position: absolute;
+		// opacity: 0;
+		// z-index: -1;
+
+		// &:checked ~ .control-indicator {
+		// 	border-color: #2196f3;
+		// 	background-color: transparent;
+		// 	background-image: url("data:image/svg+xml,%3Csvg width='10' height='9' viewBox='0 0 10 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.08781C1.36025 3.12811 1.98233 4.02091 2.15775 4.20905C2.90893 5.01467 3.67234 5.81887 4.30864 6.72216C4.60143 7.1378 4.88374 7.55945 5.22497 7.93729C5.5115 8.25456 5.6996 7.27488 5.77366 7.07565C6.46408 5.21855 7.1773 3.31727 8.39095 1.72908C8.56242 1.50468 8.87977 1.24206 9 1' stroke='%232196F3' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+		// 	transition: $transition;
+		// }
+	}
+
+	.control-indicator {
+		// display: block;
+		// min-width: 1.3rem;
+		// width: 1.4rem;
+		// height: 1.4rem;
+		// margin-right: 0.6rem;
+		// background-color: #ffffff;
+		// border: 0.1rem solid #2196f3;
+		// border-radius: 0.2rem;
+		// background-size: 0.9rem;
+		// background-position: center center;
+		// background-repeat: no-repeat;
+		// pointer-events: none;
+		// user-select: none;
+		// transition: $transition;
+
+		// @include media("<md") {
+		// 	min-width: 0.975rem;
+		// 	width: 0.975rem;
+		// 	height: 0.975rem;
+		// 	background-size: 0.55rem;
+		// 	border-radius: 0.3rem;
+		// }
+
+		display: none;
+	}
+
+	a {
+		color: $btn-primary-bg;
+	}
+}
