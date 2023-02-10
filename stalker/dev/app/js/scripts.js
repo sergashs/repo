@@ -118,26 +118,3 @@ function initSliderBuyGames() {
 		},
 	})
 }
-
-function openUserProfileInHeader() {
-	const btnOpen = document.querySelector('.user-profile');
-
-	if (btnOpen) {
-		btnOpen.children[0].addEventListener('click', event => {
-			event.preventDefault();
-			btnOpen.classList.toggle("open");
-		});
-
-		document.addEventListener('click', function (evt) {
-			const isClickedOutside = !btnOpen.contains(evt.target);
-			if (isClickedOutside) {
-				btnOpen.classList.remove("open");
-			}
-		});
-	}
-}
-
-
-
-
-
