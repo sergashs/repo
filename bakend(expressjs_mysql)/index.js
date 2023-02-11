@@ -1,10 +1,12 @@
 import express from 'express';
+import cors from 'cors';
 import postsRouter from "./src/Routes/posts.routes.js";
 import dataBase from "./src/database.js";
 
 const PORT = 5000;
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use('/api', postsRouter)
 
