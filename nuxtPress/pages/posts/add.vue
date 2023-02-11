@@ -3,28 +3,32 @@
 		<div class="container">
 			<div class="form-group">
 				<p>title</p>
-				<InputText type="text" v-model="form.title" />
+
+				<a-input v-model:value="form.title" placeholder="title" />
 			</div>
-			<div class="form-group">
-				<p>author name</p>
-				<InputText type="text" v-model="form.author" />
-			</div>
+
 			<div class="form-group">
 				<p>content</p>
-				<InputText type="text" v-model="form.content" />
+				<a-input v-model:value="form.content" placeholder="content" />
 			</div>
-			<Button label="send" @click="addNewPost(form)" />
+
 			{{ form }}
+
+			<a-button type="primary" :loading="loading" @click="addNewPost(form)">Add post</a-button>
 		</div>
 	</div>
 </template>
 
 <script setup>
-const form = ref({});
+import { message } from "ant-design-vue";
 
-const { data: posts, pending } = await useAsyncData("posts", () => $fetch("http://localhost:5000/api/posts"));
+let form = ref({});
+
+let loading = ref(false);
 
 async function addNewPost(form) {
+	loading.value = true;
+
 	const response = await fetch("http://localhost:5000/api/posts", {
 		method: "POST",
 		headers: {
@@ -33,12 +37,24 @@ async function addNewPost(form) {
 		},
 		body: JSON.stringify({
 			title: form.title,
-			author: form.author,
 			content: form.content
 		})
-	});
-	const data = await response.json();
-	console.log(data);
+	})
+		.then((response) => {
+			if (response) {
+				message.success("Success, post has been added");
+			} else {
+				message.error("something wrong");
+			}
+		})
+		.catch(() => {
+			message.error("something wrong");
+		})
+		.finally(() => {
+			loading.value = false;
+		});
+
+	// message.success("Success, post has been added");
 }
 </script>
 

@@ -4,17 +4,12 @@
 			<div class="row">
 				<div v-for="item in data" :key="item._id" class="col">
 					<div>
-						<Card>
-							<template #header> </template>
-							<template #title>
-								<h3>{{ item.title }}</h3></template
-							>
-							<template #content> {{ item.content }}</template>
-							<template #footer>
-								<img v-if="item.img" :src="`http://localhost:5000/${item.img}`" alt="..." />
-								<Button label="Delete" class="p-button-danger" @click="deletePost(item._id)" />
+						<a-card :title="item.title">
+							<template #extra>
+								<a-button type="danger" :loading="loading" @click="deletePost(item.id)">delete post</a-button>
 							</template>
-						</Card>
+							<p>{{ item.content }}</p>
+						</a-card>
 					</div>
 				</div>
 			</div>
@@ -23,6 +18,7 @@
 </template>
 
 <script setup>
+import { message } from "ant-design-vue";
 import { ref, onMounted } from "vue";
 
 const data = ref([]);
@@ -53,9 +49,16 @@ async function deletePost(id) {
 		// 	author: form.author,
 		// 	content: form.content
 		// })
+	}).then((response) => {
+		if (response) {
+			message.success("Success, post has been deleted");
+		} else {
+			message.error("something wrong");
+		}
 	});
-	const data = await response.json();
-	console.log(data);
+
+	// const data = await response.json();
+	// console.log(data);
 
 	getPosts();
 }

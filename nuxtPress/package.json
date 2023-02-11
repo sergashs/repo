@@ -11,6 +11,8 @@
     "nuxt": "^3.0.0"
   },
   "dependencies": {
-    "primevue": "^3.22.3"
+    "ant-design-vue": "^3.2.15",
+    "primevue": "^3.22.3",
+    "sass": "^1.58.0"
   }
 }
