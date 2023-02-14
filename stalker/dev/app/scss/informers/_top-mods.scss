@@ -17,6 +17,17 @@
 
 		.img-holder {
 			margin-right: 1.5rem;
+
+			@include media-breakpoint-down(md) {
+				margin-bottom: 1.5rem;
+			}
+
+			img {
+				@include media-breakpoint-down(sm) {
+					width: 100%;
+					height: auto;
+				}
+			}
 		}
 
 		h2 {
@@ -32,6 +43,11 @@
 			font-size: 2rem;
 			font-family: $oswald;
 			min-width: 2.8rem;
+
+			@include media-breakpoint-down(md) {
+				margin-bottom: 1.5rem;
+				font-size: 1.5rem;
+			}
 		}
 
 		.item-meta {
@@ -42,6 +58,7 @@
 
 			li {
 				display: flex;
+				align-items: center;
 
 				.icon-holder {
 					display: flex;
@@ -52,6 +69,15 @@
 					margin-right: 2rem;
 				}
 			}
+		}
+
+		.item-votes {
+			margin-left: 0.2rem;
+			vertical-align: sub;
+			font-size: smaller;
+			align-self: flex-end;
+			opacity: 0.9;
+			font-style: italic;
 		}
 	}
 }
