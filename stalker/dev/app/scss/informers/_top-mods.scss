@@ -16,16 +16,26 @@
 		}
 
 		.img-holder {
-			margin-right: 1.5rem;
+			min-width: 25rem;
+
+			@include media-breakpoint-up(md) {
+				width: 25rem;
+				height: 15rem;
+				margin-right: 1.5rem;
+			}
 
 			@include media-breakpoint-down(md) {
 				margin-bottom: 1.5rem;
 			}
 
 			img {
-				@include media-breakpoint-down(sm) {
-					width: 100%;
-					height: auto;
+				width: 100%;
+				height: auto;
+				border-radius: 0.5rem;
+
+				@include media-breakpoint-up(md) {
+					height: 100%;
+					object-fit: cover;
 				}
 			}
 		}
@@ -37,7 +47,7 @@
 
 		&::before {
 			counter-increment: section;
-			content: counter(section) ".";
+			content: counter(section);
 			margin-right: 1.5rem;
 			font-weight: 600;
 			font-size: 2rem;
@@ -59,6 +69,7 @@
 			li {
 				display: flex;
 				align-items: center;
+				line-height: 1;
 
 				.icon-holder {
 					display: flex;
