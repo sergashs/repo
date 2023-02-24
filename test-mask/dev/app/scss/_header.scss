@@ -76,9 +76,6 @@
 			margin: 0;
 			padding: 0;
 			list-style: none;
-			font-weight: 500;
-			font-size: 1.8rem;
-			color: #7d7d7d;
 
 			@include media(">=lg") {
 				display: flex;
@@ -93,7 +90,7 @@
 
 			.menu-item {
 				@include media(">=lg") {
-					margin-right: 4.5rem;
+					margin-right: 4.6rem;
 				}
 
 				@include media("<lg") {

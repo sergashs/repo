@@ -22,7 +22,7 @@
 	}
 
 	.articles-item {
-		margin-bottom: 8rem;
+		margin-bottom: 7.8rem;
 
 		@include media("<md") {
 			margin-bottom: 4rem;
@@ -31,6 +31,34 @@
 		&:last-child {
 			.row {
 				flex-direction: row-reverse;
+			}
+
+			.content-holder {
+				@include media(">=lg") {
+					padding-top: 1rem;
+					padding-right: 2.5rem;
+				}
+			}
+
+			.img-holder {
+				@include media(">=lg") {
+					margin-left: -2.2rem;
+				}
+			}
+		}
+
+		&:first-child {
+			.content-holder {
+				@include media(">=lg") {
+					padding-top: 1rem;
+					padding-left: 2.5rem;
+				}
+			}
+
+			.img-holder {
+				@include media(">=lg") {
+					margin-right: -2.7rem;
+				}
 			}
 		}
 
@@ -50,6 +78,18 @@
 		.h2 {
 			@include media("<md") {
 				margin-bottom: 1rem;
+			}
+		}
+
+		.text-holder {
+			line-height: 1.875;
+
+			P {
+				margin-bottom: 0;
+
+				&:not(:last-child) {
+					margin-bottom: 3rem;
+				}
 			}
 		}
 	}

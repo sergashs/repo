@@ -1,5 +1,5 @@
 .intro-section {
-	padding-top: 15.3rem;
+	padding-top: 14.7rem;
 	overflow: hidden;
 
 	@include media("<lg") {
@@ -33,7 +33,9 @@
 
 	.before-title {
 		display: block;
-		margin-bottom: 3rem;
+		margin-bottom: 2rem;
+		font-family: $secondary-font;
+		font-weight: 500;
 		color: $accent-color;
 		font-size: 1.4rem;
 
@@ -43,7 +45,7 @@
 	}
 
 	.h1 {
-		margin-bottom: 4rem;
+		margin-bottom: 2.3rem;
 
 		@include media("<md") {
 			margin-bottom: 2rem;
@@ -51,7 +53,7 @@
 	}
 
 	.text-holder {
-		margin-bottom: 5.2rem;
+		margin-bottom: 5.5rem;
 		font-size: 1.6rem;
 		line-height: 1.5;
 
@@ -79,7 +81,7 @@
 		top: -15.3rem;
 		right: -35rem;
 		opacity: 0.15;
-		width: 94rem;
+		width: 90.7rem;
 		height: 91.4rem;
 
 		@include media("<md") {
@@ -93,7 +95,10 @@
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			border-radius: 0 0 0 15rem;
+
+			@include media(">=md") {
+				border-radius: 0 0 0 15rem;
+			}
 		}
 	}
 
