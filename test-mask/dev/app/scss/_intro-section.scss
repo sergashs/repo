@@ -2,17 +2,33 @@
 	padding-top: 15.3rem;
 	overflow: hidden;
 
-	@include media(">=md") {
+	@include media("<lg") {
+		padding-top: 10.3rem;
+	}
+
+	@include media("<md") {
+		position: relative;
+		padding-top: 7rem;
+		padding-bottom: 3rem;
 	}
 
 	.container {
-		position: relative;
+		@include media(">=md") {
+			position: relative;
+		}
 	}
 
 	.content-holder {
 		position: relative;
 		max-width: 55.5rem;
 		z-index: 2;
+
+		.before-title,
+		.h1 {
+			@include media("<md") {
+				display: none;
+			}
+		}
 	}
 
 	.before-title {
@@ -20,16 +36,28 @@
 		margin-bottom: 3rem;
 		color: $accent-color;
 		font-size: 1.4rem;
+
+		@include media("<md") {
+			margin-bottom: 1.5rem;
+		}
 	}
 
 	.h1 {
 		margin-bottom: 4rem;
+
+		@include media("<md") {
+			margin-bottom: 2rem;
+		}
 	}
 
 	.text-holder {
 		margin-bottom: 5.2rem;
 		font-size: 1.6rem;
 		line-height: 1.5;
+
+		@include media("<md") {
+			margin-bottom: 2rem;
+		}
 	}
 
 	.btns-holder {
@@ -51,28 +79,81 @@
 		top: -15.3rem;
 		right: -35rem;
 		opacity: 0.15;
+		width: 94rem;
+		height: 91.4rem;
+
+		@include media("<md") {
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
 
 		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 			border-radius: 0 0 0 15rem;
 		}
 	}
 
 	.img-holder {
+		// position: relative;
+		// width: 100%;
+		// max-width: 49.6rem;
+		// min-height: 74rem;
+		// z-index: 2;
+		// background-size: cover;
+		// background-repeat: no-repeat;
+		// background-position: 65% -2%;
+
+		// @include media(">=md") {
+		// 	margin-left: auto;
+		// }
+
+		// @include media("<lg") {
+		// 	min-height: 65rem;
+		// }
+
+		// @include media("<md") {
+		// 	padding-bottom: 105%;
+		// 	min-height: unset;
+		// 	margin: auto auto 2rem auto;
+		// }
+
+		// img {
+		// 	width: 100%;
+		// 	height: 100%;
+		// }
+
 		position: relative;
-		width: 100%;
+		display: flex;
 		max-width: 49.6rem;
-		min-height: 74rem;
 		z-index: 2;
-		object-fit: cover;
-		background-repeat: no-repeat;
+
+		@include media(">=md") {
+			margin-left: auto;
+		}
+
+		@include media("<md") {
+			margin: auto auto 2rem auto;
+		}
 
 		img {
 			width: 100%;
-			height: 100%;
+			height: auto;
 		}
 	}
 
 	.row {
+		@include media(">=md") {
+			align-items: center;
+		}
+
+		@include media("<md") {
+			flex-direction: column-reverse;
+		}
+
 		.col {
 			width: 100%;
 
@@ -80,6 +161,16 @@
 				max-width: 100%;
 				flex: 1 0 0%;
 			}
+		}
+	}
+
+	.tablet-content {
+		@include media(">=md") {
+			display: none;
+		}
+
+		@include media("<md") {
+			display: block;
 		}
 	}
 }

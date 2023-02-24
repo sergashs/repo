@@ -1,0 +1,136 @@
+.section-mosaic {
+	padding-bottom: 3rem;
+
+	.mosaic-holder {
+		display: flex;
+		min-height: 60rem;
+		border-radius: 0 2rem 2rem 0;
+		overflow: hidden;
+	}
+
+	.left-side,
+	.right-side {
+		width: 100%;
+	}
+
+	.left-side {
+		position: relative;
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+
+		.img-holder {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 90%;
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.mosaic-block {
+			position: relative;
+			z-index: 2;
+			padding: 6rem 3rem 5rem 3rem;
+		}
+	}
+
+	.right-side {
+		.two-cols {
+			display: flex;
+		}
+
+		.mosaic-block {
+			padding: 8rem 3rem 13rem 3rem;
+		}
+
+		.text-holder {
+			margin-bottom: 2.8rem;
+		}
+	}
+
+	.text-holder {
+		font-size: 1.5rem;
+		line-height: 1.6;
+	}
+
+	.mosaic-block {
+		width: 100%;
+		max-width: 28.5rem;
+
+		.h3 {
+			margin-bottom: 0.5rem;
+			font-family: $secondary-font;
+			font-weight: 700;
+		}
+
+		&.blue {
+			color: white;
+			background: $main-color;
+		}
+
+		&.white {
+			background: white;
+		}
+
+		&.yellow {
+			max-width: 100%;
+			padding: 4.5rem 3.8rem 4.9rem 3.8rem;
+			color: #000000;
+			background: $accent-color;
+		}
+	}
+
+	.block-footer {
+		display: flex;
+		align-items: center;
+	}
+
+	.contact-us-holder {
+		margin-left: 4rem;
+		padding-left: 4rem;
+		border-left: solid 0.1rem white;
+	}
+
+	.contact-us {
+		display: inline-flex;
+		align-items: center;
+		font-weight: 600;
+		text-decoration: none;
+
+		&:hover {
+			opacity: 0.8;
+		}
+
+		.contact-us-title {
+			display: block;
+			font-size: 14px;
+			line-height: 1.1;
+			color: $main-color;
+		}
+
+		.contact-us-number {
+			font-size: 2.4rem;
+			line-height: 1;
+		}
+
+		.btn-rounded-full {
+			width: 4.6rem;
+			height: 4.6rem;
+			margin-right: 1.3rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: $main-color;
+			border-radius: 50%;
+
+			img {
+				width: 2rem;
+			}
+		}
+	}
+}

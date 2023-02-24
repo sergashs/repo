@@ -1,0 +1,56 @@
+.articles-section {
+	position: relative;
+	padding-top: 8rem;
+	overflow: hidden;
+	z-index: 2;
+
+	@include media("<md") {
+		padding-top: 5rem;
+	}
+
+	.row {
+		@include set-gutter(4.7rem);
+
+		.col {
+			width: 100%;
+
+			@include media(">=md") {
+				max-width: 100%;
+				flex: 1 0 0%;
+			}
+		}
+	}
+
+	.articles-item {
+		margin-bottom: 8rem;
+
+		@include media("<md") {
+			margin-bottom: 4rem;
+		}
+
+		&:last-child {
+			.row {
+				flex-direction: row-reverse;
+			}
+		}
+
+		.img-holder {
+			display: flex;
+
+			@include media("<md") {
+				margin-bottom: 2rem;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		.h2 {
+			@include media("<md") {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
