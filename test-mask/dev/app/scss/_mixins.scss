@@ -1,0 +1,9 @@
+@mixin set-gutter($gutter) {
+	margin-left: -$gutter;
+	margin-right: -$gutter;
+
+	.col {
+		padding-left: $gutter;
+		padding-right: $gutter;
+	}
+}

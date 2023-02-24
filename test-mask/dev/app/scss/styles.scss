@@ -1,13 +1,9 @@
+@import "_fonts";
 @import "include-media";
-@import "./swiper/swiper";
-@import "./tel-input/intlTelInput";
 @import "vars";
+@import "_mixins";
 @import "reset";
 @import "_common";
 @import "_header";
 @import "_btn";
 @import "_intro-section";
-@import "_reasons-section";
-@import "_contact-modal";
-@import "_form-group";
-@import "_control-checkbox";

@@ -1,5 +1,6 @@
 // fonts
-$main-font: "Roboto", sans-serif;
+$main-font: "Open Sans", sans-serif;
+$secondary-font: "Rubik", sans-serif;
 
 // breakpoints
 $breakpoints: (
@@ -10,13 +11,16 @@ $breakpoints: (
 );
 
 // base vars
-$btn-primary-bg: #5d78ff;
-$text-color-base: #001e41;
+$main-color: #1b5fc1;
+$accent-color: #ffb800;
+$text-color-base: #575c74;
+$titles-color: #0c122d;
+
 $body-bg: white;
 $font-family-base: $main-font;
-$font-size-base: 1.4rem;
+$font-size-base: 1.6rem;
 $font-weight-base: 400;
-$line-height-base: 1.5;
+$line-height-base: 1.8;
 $links-color-base: inherit;
 $headings-font-weight: 400;
 $transition: all 0.3s ease;
