@@ -157,6 +157,10 @@ h5 {
 	border-radius: 1.6rem 1.6rem 1.6rem 0px;
 }
 
+.green-section-holder {
+	background: #f5fcfa;
+}
+
 /* header */
 #header {
 	position: fixed;
