@@ -1,0 +1,77 @@
+.form-group {
+	position: relative;
+	display: block;
+	margin-bottom: 0.8rem;
+
+	.form-label {
+		display: block;
+		margin-bottom: 0.4rem;
+		font-weight: 600;
+		font-size: 1.2rem;
+		letter-spacing: 0.0025em;
+		color: #919191;
+
+		@include media("<md") {
+			margin-bottom: 0.3rem;
+			font-size: 0.9rem;
+		}
+	}
+
+	.form-control {
+		width: 100%;
+		padding: 0.8rem 1.2rem;
+		font-weight: 400;
+		font-size: 14px;
+		letter-spacing: 0.0025em;
+		background: #ffffff;
+		border: 0.1rem solid #d5d5d6;
+		border-radius: 0.8rem;
+		transition: $transition;
+
+		@include media("<md") {
+			font-size: 1.05rem;
+		}
+
+		&::placeholder {
+			color: #bdbdbd;
+		}
+	}
+
+	.error-message {
+		position: absolute;
+		bottom: -1.2rem;
+		left: 0;
+		font-size: 1rem;
+		color: #ff1919;
+		transition: $transition;
+		opacity: 0;
+		pointer-events: none;
+		visibility: hidden;
+	}
+
+	&.error {
+		.form-control {
+			border-color: #ff1919;
+		}
+
+		.error-message {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+		}
+	}
+
+	.iti--allow-dropdown {
+		.iti__selected-flag {
+			background: transparent;
+		}
+
+		.iti__selected-dial-code {
+			font-size: 1.4rem;
+
+			@include media("<md") {
+				font-size: 1.05rem;
+			}
+		}
+	}
+}
