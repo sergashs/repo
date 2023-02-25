@@ -111,3 +111,13 @@
 		right: 0;
 	}
 }
+
+.home-page {
+	.illustration-block {
+		&.left-pos-1 {
+			@include media("<md") {
+				top: 153rem;
+			}
+		}
+	}
+}

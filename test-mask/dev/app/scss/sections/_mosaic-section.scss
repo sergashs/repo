@@ -1,4 +1,4 @@
-.section-mosaic {
+.mosaic-section {
 	position: relative;
 	z-index: 2;
 	padding-bottom: 3rem;
@@ -153,6 +153,11 @@
 			padding: 4.1rem 3.8rem 5.4rem 3.8rem;
 			color: #000000;
 			background: $accent-color;
+
+			@include media("<lg") {
+				padding-left: 3rem;
+				padding-right: 3rem;
+			}
 
 			@include media("<sm") {
 				padding-top: 3rem;

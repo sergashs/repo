@@ -25,6 +25,12 @@ body {
 	&.menu-opened {
 		overflow: hidden;
 	}
+
+	&.admin-bar {
+		@media (min-width: 601px) {
+			position: relative;
+		}
+	}
 }
 
 a {
