@@ -56,7 +56,11 @@
 }
 
 .border-radius-type-1 {
-	border-radius: 1.6rem 1.6rem 1.6rem 0px;
+	border-radius: 1.6rem 1.6rem 1.6rem 0;
+
+	@include media("<md") {
+		border-radius: 0.8rem 0.8rem 0.8rem 0;
+	}
 }
 
 .green-section-holder {
@@ -66,6 +70,7 @@
 .illustration-block {
 	position: absolute;
 	z-index: 1;
+	max-width: 109rem;
 
 	&::before {
 		content: "";
