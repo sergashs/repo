@@ -40,20 +40,31 @@
 
 // test(10, 5);
 
+
+// objects
 class Person
 {
 	public $name = 'Victor';
 	public $age = 20;
 
-	public function sayHello()
+	// setter
+	public function setName($name)
 	{
-		echo 'Hi';
+		$this->name = $name;
 	}
+
+	// getter 
+	public function getName()
+	{
+		return $this->name;
+	}
+
 }
 
 $person = new Person();
 
-echo $person->age;
-$person->sayHello();
+$person->setName('Vasya');
+
+echo $person->getName();
 
 ?>
