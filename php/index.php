@@ -46,6 +46,8 @@ class Person
 {
 	public $name = 'Victor';
 	public $age = 20;
+	public $hobby = 'swimming';
+
 
 	// setter
 	public function setName($name)
@@ -59,12 +61,25 @@ class Person
 		return $this->name;
 	}
 
+	// __construct автоматично створює
+
+	public function setProperty($name, $age, $hobby)
+	{
+		$this->name = $name;
+		$this->age = $age;
+		$this->hobby = $hobby;
+	}
+
 }
 
 $person = new Person();
 
-$person->setName('Vasya');
+// $person->setName('Vasya');
 
-echo $person->getName();
+// echo $person->getName();
+
+$person->setProperty('Io', 1000, 'hfhf');
+
+echo $person->hobby;
 
 ?>
