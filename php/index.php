@@ -72,14 +72,29 @@ class Person
 
 }
 
-$person = new Person();
+
+class Developer extends Person
+{
+
+}
+
+
+
+// $person = new Person();
 
 // $person->setName('Vasya');
 
 // echo $person->getName();
 
-$person->setProperty('Io', 1000, 'hfhf');
+// $person->setProperty('Io', 1000, 'hfhf');
 
-echo $person->hobby;
+// echo $person->hobby;
+
+$developer = new Developer();
+
+$developer->setProperty('Io', 1000, 'hfhf');
+
+echo $developer->name;
+
 
 ?>
