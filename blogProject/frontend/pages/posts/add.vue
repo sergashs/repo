@@ -1,20 +1,21 @@
 <template>
 	<div class="add-post-page">
 		<div class="container">
-			<div class="form-group">
-				<p>title</p>
+			<div class="form-holder">
+				<div class="form-group">
+					<p>title</p>
+					<InputText type="text" v-model="form.title" placeholder="title" />
+				</div>
 
-				<a-input v-model:value="form.title" placeholder="title" />
+				<div class="form-group">
+					<p>content</p>
+					<Textarea v-model="form.content" placeholder="content" autoResize rows="5" cols="30" />
+				</div>
+
+				{{ form }} <br />
+
+				<a-button type="primary" :loading="loading" @click="addNewPost(form)">Add post</a-button>
 			</div>
-
-			<div class="form-group">
-				<p>content</p>
-				<a-input v-model:value="form.content" placeholder="content" />
-			</div>
-
-			{{ form }}
-
-			<a-button type="primary" :loading="loading" @click="addNewPost(form)">Add post</a-button>
 		</div>
 	</div>
 </template>
@@ -68,5 +69,10 @@ async function addNewPost(form) {
 
 .form-group {
 	margin-bottom: 15px;
+}
+
+.form-holder {
+	max-width: 600px;
+	width: 100%;
 }
 </style>
