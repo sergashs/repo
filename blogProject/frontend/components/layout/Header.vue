@@ -28,7 +28,7 @@ const menu = ref([
 	},
 	{
 		title: "Add Post",
-		url: "/posts/add"
+		url: "/posts/create"
 	}
 ]);
 </script>

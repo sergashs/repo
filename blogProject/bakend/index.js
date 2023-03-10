@@ -7,10 +7,18 @@ import dataBase from "./src/database.js";
 const PORT = 5000;
 
 const app = express();
+app.use((req, res, next) => {
+	setTimeout(() => {
+		next();
+	}, 1000); // затримка в 5 секунд
+});
+
+
 app.use(cors());
 app.use(express.json());
 app.use('/api', postsRouter);
 app.use('/api', authRouter);
+
 
 
 // import auth from "./src/Middleware/auth.js";
@@ -18,6 +26,7 @@ app.use('/api', authRouter);
 // app.post("/welcome", auth, (req, res) => {
 // 	res.status(200).send("Welcome 🙌 ");
 // });
+
 
 async function startApp() {
 	try {

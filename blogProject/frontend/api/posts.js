@@ -6,11 +6,19 @@ const path = (path) => {
 }
 
 export default {
-	getAllPosts: () => {
+	create: (params = {}) => {
+		return API.post(path(), params)
+	},
+	getAll: () => {
 		return API.get(path());
 	},
-	deletePost: (id) => {
+	getOnePost: (id) => {
+		return API.get(path(id))
+	},
+	update: (params = {}) => {
+		return API.put(path(params.id), params)
+	},
+	delete: (id) => {
 		return API.delete(path(id));
-	}
-
+	},
 }

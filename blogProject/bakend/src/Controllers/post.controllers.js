@@ -28,10 +28,13 @@ class PostController {
 				if (error) {
 					return res.status(500).json({ error });
 				}
-				res.status(201).json({ id: results.insertId });
+
+				res.status(201).json({ id: results.insertId, });
+
 			});
 		} catch (e) {
 			res.status(500).json(e);
+
 		}
 	}
 

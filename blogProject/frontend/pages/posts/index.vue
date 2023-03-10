@@ -5,17 +5,17 @@
 				<div v-if="loading" class="col"><i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i></div>
 				<div v-else v-for="item in data" :key="item._id" class="col">
 					<div>
-						<Card>
-							<template #title>
-								<h3>{{ item.title }}</h3>
-							</template>
-							<template #content>
-								{{ item.content }}
-							</template>
-							<template #footer>
-								<Button severity="danger" :loading="loading" @click="deletePost(item.id)">delete post</Button>
-							</template>
-						</Card>
+						<a-card>
+							<h3>{{ item.title }}</h3>
+							{{ item.content }}
+							<br />
+							<a-button type="primary" @click="editPost(item.id)">
+								<template #icon><edit-outlined /></template>
+							</a-button>
+							<a-button type="danger" :loading="loading" @click="deletePost(item.id)">
+								<template #icon><delete-outlined /></template>
+							</a-button>
+						</a-card>
 					</div>
 				</div>
 			</div>
@@ -24,20 +24,20 @@
 </template>
 
 <script setup>
-import { message } from "ant-design-vue";
 import { ref, onMounted } from "vue";
 import ApiPosts from "@/api/posts";
+import { DeleteOutlined, EditOutlined } from "@ant-design/icons-vue";
 
 const data = ref([]);
 const loading = ref(true);
 const error = ref(null);
+const router = useRouter();
 
 async function getPosts() {
-	// try {
 	loading.value = true;
-	await ApiPosts.getAllPosts()
+	await ApiPosts.getAll()
 		.then((response) => {
-			data.value = response;
+			data.value = response.reverse();
 		})
 		.catch((err) => {
 			error.value = err;
@@ -46,16 +46,10 @@ async function getPosts() {
 		.finally(() => {
 			loading.value = false;
 		});
-	// } catch (err) {
-	// 	error.value = err;
-	// 	loading.value = false;
-	// } finally {
-	// 	loading.value = false;
-	// }
 }
 
 async function deletePost(id) {
-	await ApiPosts.deletePost(id)
+	await ApiPosts.delete(id)
 		.then((response) => {
 			console.log(`delete post with ${id}`);
 		})
@@ -68,17 +62,13 @@ async function deletePost(id) {
 		});
 }
 
+function editPost(id) {
+	router.push(`/posts/edit/${id}`);
+}
+
 onMounted(() => {
 	getPosts();
 });
-
-// let posts = ref([]);
-
-// async function getPosts() {
-// 	posts = { posts } = await useAsyncData("posts", () => $fetch("http://localhost:5000/api/posts"));
-
-// 	console.log(posts);
-// }
 </script>
 
 <style lang="scss" scoped>
@@ -89,13 +79,13 @@ onMounted(() => {
 	margin-right: -15px;
 
 	.col {
-		width: 33%;
+		width: 33.333%;
 		padding-left: 15px;
 		padding-right: 15px;
 	}
 }
 
-.p-card {
+.ant-card {
 	margin-bottom: 30px;
 
 	img {
