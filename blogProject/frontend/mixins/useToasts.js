@@ -1,24 +1,25 @@
 import { message } from "ant-design-vue";
 
-export default function useToast() {
+class Toast {
+	constructor() {
+		message.config({
+			duration: 2
+		});
+	}
 
-	message.config({
-		duration: 2,
-	});
-
-	const success = (text) => {
+	success(text) {
 		message.success(text);
-	};
-	const error = (text) => {
-		message.error(text);
-	};
-	const warning = (text) => {
-		message.warning(text);
-	};
+	}
 
-	return {
-		success,
-		error,
-		warning
+	error(text) {
+		message.error(text);
+	}
+
+	warning(text) {
+		message.warning(text);
 	}
 }
+
+const useToast = new Toast();
+
+export default useToast;

@@ -23,12 +23,11 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import ApiPosts from "@/api/posts";
-import useToasts from "@/mixins/useToasts";
+import useToast from "@/mixins/useToasts";
 
 const form = ref({});
 const loading = ref(false);
 const requestError = ref();
-const { warning: toastWarning, success: toastSuccess, error: toastError } = useToasts();
 
 async function createPost() {
 	loading.value = true;
@@ -36,10 +35,9 @@ async function createPost() {
 	await ApiPosts.create(form.value)
 		.then((response) => {
 			if (response.status === 500) {
-				return toastError(response.data.error.sqlMessage);
+				return useToast.error(response.data.error.sqlMessage);
 			}
-
-			toastSuccess(`post will be created with id ${response.id}`);
+			useToast.success(`a post with id ${response.id} was created `);
 		})
 		.catch((err) => {
 			loading.value = false;
