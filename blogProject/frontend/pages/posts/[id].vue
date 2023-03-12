@@ -11,20 +11,84 @@
 					<p>{{ data.content }}</p>
 				</div>
 
-				{{ data }} <br />
+				<a-space :size="25">
+					<div><eye-outlined /> {{ data.views }}</div>
+					<div><message-outlined /> {{ comments.length }}</div>
+				</a-space>
+
+				<a-divider style="height: 2px; background-color: #f0f0f0; margin-top: 20px; margin-bottom: 20px" />
+
+				<a-comment v-for="comment in comments" :key="comment.id">
+					<!-- <template #actions>
+						<span key="comment-basic-like">
+							<a-tooltip title="Like">
+								<template v-if="action === 'liked'">
+									<LikeFilled @click="like" />
+								</template>
+								<template v-else>
+									<LikeOutlined @click="like" />
+								</template>
+							</a-tooltip>
+							<span style="padding-left: 8px; cursor: auto">
+								{{ likes }}
+							</span>
+						</span>
+						<span key="comment-basic-dislike">
+							<a-tooltip title="Dislike">
+								<template v-if="action === 'disliked'">
+									<DislikeFilled @click="dislike" />
+								</template>
+								<template v-else>
+									<DislikeOutlined @click="dislike" />
+								</template>
+							</a-tooltip>
+							<span style="padding-left: 8px; cursor: auto">
+								{{ dislikes }}
+							</span>
+						</span>
+						<span key="comment-basic-reply-to">Reply to</span>
+					</template> -->
+					<template #author
+						><a>{{ comment.username }}</a></template
+					>
+					<!-- <template #avatar>
+						<a-avatar src="https://joeschmoe.io/api/v1/random" alt="Han Solo" />
+					</template> -->
+					<template #content>
+						<p>{{ comment.comment }}</p>
+					</template>
+					<template #datetime>
+						<a-tooltip :title="dayjs().format('YYYY-MM-DD HH:mm:ss')">
+							<span>{{ dayjs().from(comment.created_at) }}</span>
+						</a-tooltip>
+					</template>
+				</a-comment>
+
+				{{ comment }}
+				<a-input v-model:value="comment.username" placeholder="author name" style="margin-bottom: 15px" />
+				<a-textarea v-model:value="comment.comment" :rows="4" placeholder="text of comment" style="margin-bottom: 15px" />
+
+				<a-button html-type="submit" :loading="commentsLoading" type="primary" @click="createComment"> Add Comment </a-button>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script setup>
+import dayjs from "dayjs";
 import { ref, onMounted } from "vue";
 import ApiPosts from "@/api/posts";
-import { LoadingOutlined } from "@ant-design/icons-vue";
+import ApiPostsComments from "@/api/postsComments";
+import { LoadingOutlined, EyeOutlined, MessageOutlined } from "@ant-design/icons-vue";
+import relativeTime from "dayjs/plugin/relativeTime";
+dayjs.extend(relativeTime);
 
 const data = ref([]);
 const loading = ref(true);
 const route = useRoute();
+const comment = ref({});
+const comments = ref([]);
+const commentsLoading = ref(false);
 
 async function getPost(id) {
 	loading.value = true;
@@ -41,7 +105,42 @@ async function getPost(id) {
 		});
 }
 
+async function getComments(id) {
+	await ApiPostsComments.getAllForPost(id)
+		.then((response) => {
+			comments.value = response;
+		})
+		.catch((err) => {
+			error.value = err;
+		})
+		.finally(() => {});
+}
+
+async function createComment() {
+	commentsLoading.value = true;
+
+	await ApiPostsComments.create({
+		id: route.params.id,
+		username: comment.value.username,
+		comment: comment.value.comment
+	})
+		.then((response) => {
+			if (response.status === 500) {
+				return useToast.error(response.data.error.sqlMessage);
+			}
+			useToast.success(response);
+		})
+		.catch((err) => {
+			commentsLoading.value = false;
+		})
+		.finally(() => {
+			commentsLoading.value = false;
+			getComments(route.params.id);
+		});
+}
+
 onMounted(() => {
 	getPost(route.params.id);
+	getComments(route.params.id);
 });
 </script>

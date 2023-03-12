@@ -54,8 +54,6 @@ class PostController {
 				// Отримання IP-адреси клієнта
 				const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
 
-				console.log(ip);
-
 				// Якщо IP-адреса вже була відвідана, то не збільшуємо кількість унікальних переглядів
 				if (!post.viewers.split(',').includes(ip)) {
 					post.viewers += `,${ip}`;

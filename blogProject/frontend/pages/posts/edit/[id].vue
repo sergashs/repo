@@ -1,16 +1,16 @@
 <template>
 	<div class="container">
-		<div v-if="loading" class="col"><i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i></div>
+		<div v-if="loading" class="col"><loading-outlined :style="{ fontSize: '20px' }" /></div>
 		<div v-else>
 			<div class="form-holder">
 				<div class="form-group">
 					<p>title</p>
-					<InputText type="text" v-model="data.title" placeholder="title" />
+					<a-input type="text" v-model:value="data.title" placeholder="title" />
 				</div>
 
 				<div class="form-group">
 					<p>content</p>
-					<Textarea v-model="data.content" placeholder="content" autoResize rows="5" cols="30" />
+					<a-textarea v-model:value="data.content" placeholder="content" :rows="10" />
 				</div>
 
 				{{ data }} <br />
@@ -24,6 +24,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import ApiPosts from "@/api/posts";
+import { LoadingOutlined } from "@ant-design/icons-vue";
 
 const data = ref([]);
 const loading = ref(true);

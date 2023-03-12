@@ -1,26 +1,28 @@
 <template>
 	<div class="posts-page">
 		<div class="container">
-			<div class="row">
-				<div v-if="loading" class="col"><loading-outlined :style="{ fontSize: '20px' }" /></div>
-				<div v-else v-for="item in data" :key="item.id" class="col">
-					<div>
-						<a-card>
-							<h3>
-								<nuxt-link :to="`/posts/${item.id}`">{{ item.title }} </nuxt-link>
-							</h3>
-							{{ item.content }}
-							<br />
+			<a-row :gutter="20">
+				<a-col v-if="loading"><loading-outlined :style="{ fontSize: '20px' }" /></a-col>
+				<a-col v-else v-for="item in data" :key="item.id" :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
+					<a-card>
+						<h3>
+							<nuxt-link :to="`/posts/${item.id}`">{{ item.title }} </nuxt-link>
+						</h3>
+						{{ item.content }}
+						<a-divider style="height: 2px; background-color: #f0f0f0; margin-top: 10px; margin-bottom: 10px" />
+						<eye-outlined /> {{ item.views }}
+						<br />
+						<a-space :size="5">
 							<a-button type="primary" @click="editPost(item.id)">
 								<template #icon><edit-outlined /></template>
 							</a-button>
 							<a-button type="danger" :loading="loadingDelete" @click="deletePost(item.id)">
 								<template #icon><delete-outlined /></template>
 							</a-button>
-						</a-card>
-					</div>
-				</div>
-			</div>
+						</a-space>
+					</a-card>
+				</a-col>
+			</a-row>
 		</div>
 	</div>
 </template>
@@ -28,7 +30,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import ApiPosts from "@/api/posts";
-import { DeleteOutlined, EditOutlined, LoadingOutlined } from "@ant-design/icons-vue";
+import { DeleteOutlined, EditOutlined, LoadingOutlined, EyeOutlined } from "@ant-design/icons-vue";
 
 const data = ref([]);
 const loading = ref(true);

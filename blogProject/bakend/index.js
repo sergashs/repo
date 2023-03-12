@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import postsRouter from "./src/Routes/posts.routes.js";
+import postCommentsRouter from "./src/Routes/postComments.routes.js";
 import authRouter from "./src/Routes/auth.routes.js";
 import dataBase from "./src/database.js";
 
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
 app.use(cors());
 app.use(express.json());
 app.use('/api', postsRouter);
+app.use('/api', postCommentsRouter);
 app.use('/api', authRouter);
 
 
