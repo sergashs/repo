@@ -4,5 +4,8 @@ export default defineNuxtConfig({
 	build: {
 		transpile: ["primevue"]
 	},
-	plugins: ["~/plugins/primevue.js"]
+	plugins: ["~/plugins/primevue.js"],
+	generate: {
+		routes: ["/blog/dynamic-post"]
+	}
 });

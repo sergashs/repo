@@ -2,17 +2,19 @@
 	<div class="posts-page">
 		<div class="container">
 			<div class="row">
-				<div v-if="loading" class="col"><i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i></div>
-				<div v-else v-for="item in data" :key="item._id" class="col">
+				<div v-if="loading" class="col"><loading-outlined :style="{ fontSize: '20px' }" /></div>
+				<div v-else v-for="item in data" :key="item.id" class="col">
 					<div>
 						<a-card>
-							<h3>{{ item.title }}</h3>
+							<h3>
+								<nuxt-link :to="`/posts/${item.id}`">{{ item.title }} </nuxt-link>
+							</h3>
 							{{ item.content }}
 							<br />
 							<a-button type="primary" @click="editPost(item.id)">
 								<template #icon><edit-outlined /></template>
 							</a-button>
-							<a-button type="danger" :loading="loading" @click="deletePost(item.id)">
+							<a-button type="danger" :loading="loadingDelete" @click="deletePost(item.id)">
 								<template #icon><delete-outlined /></template>
 							</a-button>
 						</a-card>
@@ -26,10 +28,11 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import ApiPosts from "@/api/posts";
-import { DeleteOutlined, EditOutlined } from "@ant-design/icons-vue";
+import { DeleteOutlined, EditOutlined, LoadingOutlined } from "@ant-design/icons-vue";
 
 const data = ref([]);
 const loading = ref(true);
+const loadingDelete = ref(false);
 const error = ref(null);
 const router = useRouter();
 
@@ -49,6 +52,7 @@ async function getPosts() {
 }
 
 async function deletePost(id) {
+	loadingDelete.value = true;
 	await ApiPosts.delete(id)
 		.then((response) => {
 			console.log(`delete post with ${id}`);
@@ -56,9 +60,11 @@ async function deletePost(id) {
 		.catch((err) => {
 			error.value = err;
 			console.log(error);
+			loadingDelete.value = false;
 		})
 		.finally(() => {
 			getPosts();
+			loadingDelete.value = false;
 		});
 }
 

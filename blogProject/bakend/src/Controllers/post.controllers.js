@@ -41,19 +41,41 @@ class PostController {
 	async getOne(req, res) {
 		try {
 			const sql = 'SELECT * FROM posts WHERE id = ?';
-			await dataBase.query(sql, [req.params.id], (error, results) => {
+			await dataBase.query(sql, [req.params.id], async (error, results) => {
 				if (error) {
 					return res.status(500).json({ error });
 				}
 				if (results.length === 0) {
 					return res.status(404).json({ error: 'Post not found' });
 				}
-				res.json(results[0]);
+
+				const post = results[0];
+
+				// Отримання IP-адреси клієнта
+				const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+
+				console.log(ip);
+
+				// Якщо IP-адреса вже була відвідана, то не збільшуємо кількість унікальних переглядів
+				if (!post.viewers.split(',').includes(ip)) {
+					post.viewers += `,${ip}`;
+					post.views++;
+				}
+
+				// Оновлення запису статті в базі даних
+				const updatePostSql = `UPDATE posts SET views=${post.views}, viewers='${post.viewers}' WHERE id=${req.params.id}`;
+				await dataBase.query(updatePostSql, err => {
+					if (err) {
+						return res.status(500).json({ error: err.message });
+					}
+					res.json(post);
+				});
 			});
 		} catch (e) {
 			res.status(500).json(e);
 		}
 	}
+
 
 	async update(req, res) {
 		try {
