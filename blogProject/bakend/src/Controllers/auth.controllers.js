@@ -62,7 +62,7 @@ class UserController {
 					const match = await bcrypt.compare(password, results[0].password);
 					if (match) {
 						const token = generateAccessToken(results[0].id, results[0].username, results[0].email)
-						res.status(200).json({ token, results });
+						res.status(200).json({ token: token });
 					} else {
 						res.status(401).json({ message: 'Invalid credentials' });
 					}
