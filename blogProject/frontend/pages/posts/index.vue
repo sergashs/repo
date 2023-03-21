@@ -38,9 +38,9 @@ const loadingDelete = ref(false);
 const error = ref(null);
 const router = useRouter();
 
-async function getPosts() {
+function getPosts() {
 	loading.value = true;
-	await ApiPosts.getAll()
+	ApiPosts.getAll()
 		.then((response) => {
 			data.value = response.reverse();
 		})
@@ -53,9 +53,9 @@ async function getPosts() {
 		});
 }
 
-async function deletePost(id) {
+function deletePost(id) {
 	loadingDelete.value = true;
-	await ApiPosts.delete(id)
+	ApiPosts.delete(id)
 		.then((response) => {
 			console.log(`delete post with ${id}`);
 		})

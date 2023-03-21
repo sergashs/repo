@@ -30,9 +30,9 @@ const data = ref([]);
 const loading = ref(true);
 const route = useRoute();
 
-async function getPost(id) {
+function getPost(id) {
 	loading.value = true;
-	await ApiPosts.getOnePost(id)
+	ApiPosts.getOnePost(id)
 		.then((response) => {
 			data.value = response;
 		})
@@ -45,9 +45,9 @@ async function getPost(id) {
 		});
 }
 
-async function updatePost() {
+function updatePost() {
 	loading.value = true;
-	await ApiPosts.update(data.value)
+	ApiPosts.update(data.value)
 		.then((response) => {
 			console.log(response);
 		})

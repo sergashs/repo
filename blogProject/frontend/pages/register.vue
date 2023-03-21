@@ -45,10 +45,10 @@ function onFinishFailed(errorInfo) {
 	console.log("Failed:", errorInfo);
 }
 
-async function login() {
+function login() {
 	loading.value = true;
 
-	await ApiAuth.register(formState.value)
+	ApiAuth.register(formState.value)
 		.then((response) => {
 			if (response.status === 500) {
 				return Toast.error(response.data.error.sqlMessage);

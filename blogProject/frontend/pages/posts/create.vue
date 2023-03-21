@@ -29,10 +29,10 @@ const form = ref({});
 const loading = ref(false);
 const requestError = ref();
 
-async function createPost() {
+function createPost() {
 	loading.value = true;
 
-	await ApiPosts.create(form.value)
+	ApiPosts.create(form.value)
 		.then((response) => {
 			if (response.status === 500) {
 				return Toast.error(response.data.error.sqlMessage);

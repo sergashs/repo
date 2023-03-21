@@ -90,9 +90,9 @@ const comment = ref({});
 const comments = ref([]);
 const commentsLoading = ref(false);
 
-async function getPost(id) {
+function getPost(id) {
 	loading.value = true;
-	await ApiPosts.getOnePost(id)
+	ApiPosts.getOnePost(id)
 		.then((response) => {
 			data.value = response;
 		})
@@ -105,8 +105,8 @@ async function getPost(id) {
 		});
 }
 
-async function getComments(id) {
-	await ApiPostsComments.getAllForPost(id)
+function getComments(id) {
+	ApiPostsComments.getAllForPost(id)
 		.then((response) => {
 			comments.value = response;
 		})
@@ -116,10 +116,10 @@ async function getComments(id) {
 		.finally(() => {});
 }
 
-async function createComment() {
+function createComment() {
 	commentsLoading.value = true;
 
-	await ApiPostsComments.create({
+	ApiPostsComments.create({
 		id: route.params.id,
 		username: comment.value.username,
 		comment: comment.value.comment
