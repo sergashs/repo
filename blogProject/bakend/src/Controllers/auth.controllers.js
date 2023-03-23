@@ -2,7 +2,6 @@ import dataBase from "../database.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
-
 const generateAccessToken = (id, username, email) => {
 	const payload = {
 		id, username, email
