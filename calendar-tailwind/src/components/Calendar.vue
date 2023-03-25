@@ -3,8 +3,8 @@
 		<div class="flex items-center justify-between pb-4">
 			<h2 class="font-medium">{{ currentMonthUa }}</h2>
 			<div class="flex">
-				<button class="mr-2 bg-blue-600 px-3 py-1 border-rounded text-white hover:bg-blue-700" @click="prevMonth">Prev</button>
-				<button class="bg-blue-600 px-3 py-1 border-rounded text-white hover:bg-blue-700" @click="nextMonth">Next</button>
+				<button class="mr-2 bg-blue-600 px-3 py-1 border-rounded text-white hover:bg-blue-700" @click="prevMonth">Назад</button>
+				<button class="bg-blue-600 px-3 py-1 border-rounded text-white hover:bg-blue-700" @click="nextMonth">Вперед</button>
 			</div>
 		</div>
 		<table class="w-full">
@@ -14,9 +14,13 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr v-for="(week, index) in weeks" :key="index" class="text-center">
-					<td v-for="(day, dayIndex) in week" :key="dayIndex" :class="[day.isCurrentMonth ? null : 'text-gray-300', day.events.length > 0 ? 'bg-blue-100' : null]" @click="clickOnDay(day)" class="py-8 border">
-						{{ day.date || "" }}
+				<tr v-for="(week, index) in weeks" :key="index" class="text-center group relative">
+					<td v-for="(day, dayIndex) in week" :key="dayIndex" :class="[day.isCurrentMonth ? null : 'text-gray-300', day.events.length > 0 ? 'bg-blue-100' : null]" @click="clickOnDay(day)" class="py-8 border relative w-7">
+						{{ day.date }} <br />
+						<span v-for="(event, index) in day.events" :key="index" class="text-left absolute top-0 right-0 p-2 w-full h-full bg-blue-100 transition opacity-0 group-hover:opacity-100">
+							<span class="font-medium">Подія:</span> {{ event.title }} <br />
+							<span class="font-medium">Початок:</span> {{ eventDateToHour(event.start) }} <br /><span class="font-medium">Кінець:</span> {{ eventDateToHour(event.end) }}</span
+						>
 					</td>
 				</tr>
 			</tbody>
@@ -44,8 +48,8 @@ export default {
 			currentMonthUa: "",
 			createdEvents: [
 				{
-					start: new Date("2023-03-26T14:00:00+02:00"),
-					end: new Date("2023-03-26T15:00:00+02:00"),
+					start: new Date("2023-03-26T14:00:00+03:00"),
+					end: new Date("2023-03-26T15:00:00+03:00"),
 					title: "doing something"
 				}
 			]
@@ -108,8 +112,12 @@ export default {
 		},
 		clickOnDay(day) {
 			console.log(day);
+		},
+		eventDateToHour(value) {
+			return format(value, "HH:mm");
 		}
 	},
+
 	mounted() {
 		this.createCalendar(this.date);
 	}
