@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<div v-if="loading" class="col"><loading-outlined :style="{ fontSize: '20px' }" /></div>
+		<div v-if="loading"><loading-outlined :style="{ fontSize: '20px' }" /></div>
 		<div v-else>
 			<div class="form-holder">
 				<div class="form-group">

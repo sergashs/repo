@@ -1,20 +1,21 @@
 <template>
-	<div class="calendar">
-		<h1 className="text-3xl font-bold underline">Hello world!</h1>
-		<div class="calendar-header">
-			<button @click="prevMonth">Prev</button>
-			<h2>{{ currentMonth }}</h2>
-			<button @click="nextMonth">Next</button>
+	<div class="p-4">
+		<div class="flex items-center justify-between pb-4">
+			<h2 class="font-medium">{{ currentMonthUa }}</h2>
+			<div class="flex">
+				<button class="bg-blue-600 px-3 py-1 border-rounded text-white hover:bg-blue-700" @click="prevMonth">Prev</button>
+				<button class="bg-blue-600 px-3 py-1 border-rounded text-white hover:bg-blue-700" @click="nextMonth">Next</button>
+			</div>
 		</div>
-		<table class="calendar-table">
-			<thead>
+		<table class="w-full">
+			<thead class="border-b border-gray-200 border">
 				<tr>
-					<th v-for="day in weekDays" :key="day">{{ day }}</th>
+					<th v-for="day in weekDays" :key="day" class="p-2 border-r">{{ day }}</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr v-for="(week, index) in weeks" :key="index">
-					<td v-for="(day, dayIndex) in week" :key="dayIndex" :class="{ 'calendar-day': day }" @click="clickOnDay(day)">
+				<tr v-for="(week, index) in weeks" :key="index" class="text-center">
+					<td v-for="(day, dayIndex) in week" :key="dayIndex" :class="[day.isCurrentMonth ? null : 'text-gray-300', day.events.length > 0 ? 'bg-blue-100' : null]" @click="clickOnDay(day)" class="py-8 border">
 						{{ day.date || "" }}
 					</td>
 				</tr>
@@ -24,7 +25,8 @@
 </template>
 
 <script>
-import { startOfWeek, endOfWeek, isSameMonth, startOfMonth, endOfMonth, eachDayOfInterval, format, parseISO } from "date-fns";
+import { startOfWeek, endOfWeek, isSameMonth, startOfMonth, endOfMonth, eachDayOfInterval, format, isSameDay } from "date-fns";
+import { formatInTimeZone } from "date-fns-tz";
 
 export default {
 	name: "Calendar",
@@ -38,28 +40,70 @@ export default {
 		return {
 			currentMonth: "",
 			weeks: [],
-			weekDays: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+			weekDays: ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Нд"],
+			currentMonthUa: ""
 		};
 	},
 	methods: {
 		prevMonth() {
-			const prevMonth = new Date(this.date.setMonth(this.date.getMonth() - 1));
-			this.generateCalendar(prevMonth);
+			this.generateCalendar(new Date(this.date.setMonth(this.date.getMonth() - 1)));
 		},
 		nextMonth() {
-			const nextMonth = new Date(this.date.setMonth(this.date.getMonth() + 1));
-			this.generateCalendar(nextMonth);
+			this.generateCalendar(new Date(this.date.setMonth(this.date.getMonth() + 1)));
 		},
 		generateCalendar(date) {
-			this.currentMonth = format(date, "MMMM yyyy");
-			const startOfMonthDate = startOfMonth(date);
-			const endOfMonthDate = endOfMonth(date);
+			// const londonDate = formatInTimeZone(date, "Europe/London", "yyyy-MM-dd'T'HH:mm:ss.SSS");
+			// const currentDate = new Date(londonDate);
+
+			// this.currentMonth = format(currentDate, "MMMM yyyy");
+			// this.currentMonthUa = currentDate.toLocaleDateString(undefined, { month: "long", year: "numeric" });
+			// const startOfMonthDate = startOfMonth(currentDate);
+			// const endOfMonthDate = endOfMonth(currentDate);
+			// const startOfWeekDate = startOfWeek(startOfMonthDate, { weekStartsOn: 1 });
+			// const endOfWeekDate = endOfWeek(endOfMonthDate, { weekStartsOn: 1 });
+			// const days = eachDayOfInterval({
+			// 	start: startOfWeekDate,
+			// 	end: endOfWeekDate
+			// });
+			// const weeks = [];
+			// let week = [];
+			// let countWeekDay = 0;
+
+			// days.forEach((day) => {
+			// 	week.push({
+			// 		date: format(day, "dd"),
+			// 		isCurrentMonth: isSameMonth(day, startOfMonthDate)
+			// 	});
+
+			// 	countWeekDay++;
+
+			// 	if (countWeekDay === 7) {
+			// 		weeks.push(week);
+			// 		countWeekDay = 0;
+			// 		week = [];
+			// 	}
+			// });
+			// weeks.push(week);
+			// this.weeks = weeks;
+
+			const londonDate = formatInTimeZone(date, "Europe/London", "yyyy-MM-dd'T'HH:mm:ss.SSS");
+			const currentDate = new Date(londonDate);
+			this.currentMonth = format(currentDate, "MMMM yyyy");
+			this.currentMonthUa = currentDate.toLocaleDateString(undefined, { month: "long", year: "numeric" });
+
+			// Add the event to the calendar
+			const eventStart = new Date("2023-03-26T14:00:00+02:00");
+			const eventEnd = new Date("2023-03-26T15:00:00+02:00");
+
+			const startOfMonthDate = startOfMonth(currentDate);
+			const endOfMonthDate = endOfMonth(currentDate);
 			const startOfWeekDate = startOfWeek(startOfMonthDate, { weekStartsOn: 1 });
 			const endOfWeekDate = endOfWeek(endOfMonthDate, { weekStartsOn: 1 });
 			const days = eachDayOfInterval({
 				start: startOfWeekDate,
 				end: endOfWeekDate
 			});
+
 			const weeks = [];
 			let week = [];
 			let countWeekDay = 0;
@@ -67,8 +111,18 @@ export default {
 			days.forEach((day) => {
 				week.push({
 					date: format(day, "dd"),
-					isCurrentMonth: isSameMonth(parseISO(day), startOfMonthDate)
+					isCurrentMonth: isSameMonth(day, startOfMonthDate),
+					events: []
 				});
+
+				if (isSameDay(day, eventStart)) {
+					week[week.length - 1].events.push({
+						start: eventStart,
+						end: eventEnd
+					});
+
+					console.log(week[week.length - 1]);
+				}
 
 				countWeekDay++;
 
@@ -78,10 +132,9 @@ export default {
 					week = [];
 				}
 			});
+
 			weeks.push(week);
 			this.weeks = weeks;
-
-			console.log(weeks);
 		},
 		clickOnDay(day) {
 			console.log(day);
@@ -92,47 +145,3 @@ export default {
 	}
 };
 </script>
-
-<style>
-.calendar {
-	font-family: sans-serif;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
-.calendar-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 1rem;
-}
-
-.calendar-table {
-	border-collapse: collapse;
-}
-
-.calendar-table th,
-.calendar-table td {
-	padding: 0.5rem;
-	text-align: center;
-	border: 1px solid #ccc;
-}
-
-.calendar-table td {
-	cursor: pointer;
-}
-
-.calendar-table td.calendar-day {
-	background-color: #f5f5f5;
-}
-
-.calendar-table td.today {
-	font-weight: bold;
-}
-
-.calendar-table td.selected {
-	background-color: #d8d8d8;
-}
-</style>
