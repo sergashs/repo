@@ -3,7 +3,7 @@
 		<div class="flex items-center justify-between pb-4">
 			<h2 class="font-medium">{{ currentMonthUa }}</h2>
 			<div class="flex">
-				<button class="bg-blue-600 px-3 py-1 border-rounded text-white hover:bg-blue-700" @click="prevMonth">Prev</button>
+				<button class="mr-2 bg-blue-600 px-3 py-1 border-rounded text-white hover:bg-blue-700" @click="prevMonth">Prev</button>
 				<button class="bg-blue-600 px-3 py-1 border-rounded text-white hover:bg-blue-700" @click="nextMonth">Next</button>
 			</div>
 		</div>
@@ -41,59 +41,28 @@ export default {
 			currentMonth: "",
 			weeks: [],
 			weekDays: ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Нд"],
-			currentMonthUa: ""
+			currentMonthUa: "",
+			createdEvents: [
+				{
+					start: new Date("2023-03-26T14:00:00+02:00"),
+					end: new Date("2023-03-26T15:00:00+02:00"),
+					title: "doing something"
+				}
+			]
 		};
 	},
 	methods: {
 		prevMonth() {
-			this.generateCalendar(new Date(this.date.setMonth(this.date.getMonth() - 1)));
+			this.createCalendar(new Date(this.date.setMonth(this.date.getMonth() - 1)));
 		},
 		nextMonth() {
-			this.generateCalendar(new Date(this.date.setMonth(this.date.getMonth() + 1)));
+			this.createCalendar(new Date(this.date.setMonth(this.date.getMonth() + 1)));
 		},
-		generateCalendar(date) {
-			// const londonDate = formatInTimeZone(date, "Europe/London", "yyyy-MM-dd'T'HH:mm:ss.SSS");
-			// const currentDate = new Date(londonDate);
-
-			// this.currentMonth = format(currentDate, "MMMM yyyy");
-			// this.currentMonthUa = currentDate.toLocaleDateString(undefined, { month: "long", year: "numeric" });
-			// const startOfMonthDate = startOfMonth(currentDate);
-			// const endOfMonthDate = endOfMonth(currentDate);
-			// const startOfWeekDate = startOfWeek(startOfMonthDate, { weekStartsOn: 1 });
-			// const endOfWeekDate = endOfWeek(endOfMonthDate, { weekStartsOn: 1 });
-			// const days = eachDayOfInterval({
-			// 	start: startOfWeekDate,
-			// 	end: endOfWeekDate
-			// });
-			// const weeks = [];
-			// let week = [];
-			// let countWeekDay = 0;
-
-			// days.forEach((day) => {
-			// 	week.push({
-			// 		date: format(day, "dd"),
-			// 		isCurrentMonth: isSameMonth(day, startOfMonthDate)
-			// 	});
-
-			// 	countWeekDay++;
-
-			// 	if (countWeekDay === 7) {
-			// 		weeks.push(week);
-			// 		countWeekDay = 0;
-			// 		week = [];
-			// 	}
-			// });
-			// weeks.push(week);
-			// this.weeks = weeks;
-
+		createCalendar(date) {
 			const londonDate = formatInTimeZone(date, "Europe/London", "yyyy-MM-dd'T'HH:mm:ss.SSS");
 			const currentDate = new Date(londonDate);
 			this.currentMonth = format(currentDate, "MMMM yyyy");
 			this.currentMonthUa = currentDate.toLocaleDateString(undefined, { month: "long", year: "numeric" });
-
-			// Add the event to the calendar
-			const eventStart = new Date("2023-03-26T14:00:00+02:00");
-			const eventEnd = new Date("2023-03-26T15:00:00+02:00");
 
 			const startOfMonthDate = startOfMonth(currentDate);
 			const endOfMonthDate = endOfMonth(currentDate);
@@ -115,14 +84,15 @@ export default {
 					events: []
 				});
 
-				if (isSameDay(day, eventStart)) {
-					week[week.length - 1].events.push({
-						start: eventStart,
-						end: eventEnd
-					});
-
-					console.log(week[week.length - 1]);
-				}
+				this.createdEvents.forEach((event) => {
+					if (isSameDay(day, event.start)) {
+						week[week.length - 1].events.push({
+							title: event.title,
+							start: event.start,
+							end: event.end
+						});
+					}
+				});
 
 				countWeekDay++;
 
@@ -140,8 +110,8 @@ export default {
 			console.log(day);
 		}
 	},
-	created() {
-		this.generateCalendar(this.date);
+	mounted() {
+		this.createCalendar(this.date);
 	}
 };
 </script>
