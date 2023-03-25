@@ -14,8 +14,8 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr v-for="(week, index) in weeks" :key="index" class="text-center group relative">
-					<td v-for="(day, dayIndex) in week" :key="dayIndex" :class="[day.isCurrentMonth ? null : 'text-gray-300', day.events.length > 0 ? 'bg-blue-100' : null]" @click="clickOnDay(day)" class="py-8 border relative w-7">
+				<tr v-for="(week, index) in weeks" :key="index" class="text-center relative">
+					<td v-for="(day, dayIndex) in week" :key="dayIndex" :class="[day.isCurrentMonth ? null : 'text-gray-300', day.events.length > 0 ? 'bg-blue-100' : null]" @click="clickOnDay(day)" class="py-8 border relative w-7 group">
 						{{ day.date }} <br />
 						<span v-for="(event, index) in day.events" :key="index" class="text-left absolute top-0 right-0 p-2 w-full h-full bg-blue-100 transition opacity-0 group-hover:opacity-100">
 							<span class="font-medium">Подія:</span> {{ event.title }} <br />
