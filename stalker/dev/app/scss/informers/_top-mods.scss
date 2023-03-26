@@ -91,4 +91,24 @@
 			font-style: italic;
 		}
 	}
+
+	&.style2 {
+		.mods-item {
+			flex-direction: column;
+
+			.h2 {
+				text-transform: none;
+			}
+
+			.img-holder {
+				width: 100%;
+				margin-right: 0;
+				margin-bottom: 1.5rem;
+			}
+
+			&::before {
+				display: none;
+			}
+		}
+	}
 }
