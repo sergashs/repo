@@ -25,5 +25,6 @@ export default {
 </script>
 
 <style lang="scss">
+// aaa
 @import "@/assets/scss/main.scss";
 </style>
