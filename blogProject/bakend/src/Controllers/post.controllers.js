@@ -1,6 +1,5 @@
-// import PostService from "../Services/post.service.js";
-
 import dataBase from "../database.js";
+import imgService from "../Services/img.service.js";
 
 
 class PostController {
@@ -19,12 +18,14 @@ class PostController {
 		}
 	}
 
-	async create(req, res) {
+	async create(req, res,) {
+		const imgName = imgService.saveFIle(req.files && req.files.img);
+
 		try {
 			const { title, content } = req.body;
-			const sql = 'INSERT INTO posts (title, content) VALUES (?, ?)';
+			const sql = 'INSERT INTO posts (title, content, img) VALUES (?, ?, ?)';
 
-			await dataBase.query(sql, [title, content], (error, results) => {
+			await dataBase.query(sql, [title, content, imgName], (error, results) => {
 				if (error) {
 					return res.status(500).json({ error });
 				}

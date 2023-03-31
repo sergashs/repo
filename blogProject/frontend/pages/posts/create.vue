@@ -12,6 +12,13 @@
 					<a-textarea v-model:value="form.content" placeholder="content" :auto-size="{ minRows: 2, maxRows: 5 }" />
 				</div>
 
+				<a-upload action="" :multiple="true" :file-list="fileList" @change="handleChange">
+					<a-button>
+						<upload-outlined></upload-outlined>
+						Upload
+					</a-button>
+				</a-upload>
+
 				{{ form }} <br />
 
 				<a-button type="primary" :loading="loading" @click="createPost()">Create post</a-button>
@@ -28,6 +35,25 @@ import Toast from "@/services/Toast.js";
 const form = ref({});
 const loading = ref(false);
 const requestError = ref();
+
+const handleChange = (UploadChangeParam) => {
+	let resFileList = [...info.fileList];
+
+	// 1. Limit the number of uploaded files
+	//    Only to show two recent uploaded files, and old ones will be replaced by the new
+	resFileList = resFileList.slice(-2);
+
+	// 2. read from response and show file link
+	resFileList = resFileList.map((file) => {
+		if (file.response) {
+			// Component will show file.url as link
+			file.url = file.response.url;
+		}
+		return file;
+	});
+
+	fileList.value = resFileList;
+};
 
 function createPost() {
 	loading.value = true;

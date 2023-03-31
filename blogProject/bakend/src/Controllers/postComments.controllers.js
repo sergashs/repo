@@ -5,10 +5,10 @@ class PostCommentsController {
 	async create(req, res) {
 		try {
 			const post_id = req.params.id;
-			const { username, comment } = req.body;
-			const sql = 'INSERT INTO comments (post_id, username, comment) VALUES (?, ?, ?)';
+			const { user_id, comment } = req.body;
+			const sql = 'INSERT INTO comments (post_id, user_id, comment) VALUES (?, ?, ?)';
 
-			await dataBase.query(sql, [post_id, username, comment], function (error, results, fields) {
+			await dataBase.query(sql, [post_id, user_id, comment], function (error, results, fields) {
 				if (error) {
 					return res.status(500).json({ error });
 				}
@@ -21,9 +21,25 @@ class PostCommentsController {
 	}
 
 	async getOne(req, res) {
+		// try {
+		// 	const post_id = req.params.id;
+		// 	const sql = 'SELECT * FROM comments WHERE post_id = ?';
+
+		// 	await dataBase.query(sql, [post_id], function (error, results, fields) {
+		// 		if (error) {
+		// 			return res.status(500).json({ error });
+		// 		}
+
+		// 		res.json(results);
+		// 	});
+		// } catch (e) {
+		// 	res.status(500).json(e);
+
+		// }
+
 		try {
 			const post_id = req.params.id;
-			const sql = 'SELECT * FROM comments WHERE post_id = ?';
+			const sql = 'SELECT comments.*, users.username FROM comments JOIN users ON comments.user_id = users.id WHERE comments.post_id = ?';
 
 			await dataBase.query(sql, [post_id], function (error, results, fields) {
 				if (error) {
@@ -34,7 +50,6 @@ class PostCommentsController {
 			});
 		} catch (e) {
 			res.status(500).json(e);
-
 		}
 	}
 }

@@ -8,6 +8,9 @@
 						<h3>
 							<nuxt-link :to="`/posts/${item.id}`">{{ item.title }} </nuxt-link>
 						</h3>
+						<div class="img-holder">
+							<img v-if="item.img" :src="`http://localhost:5000/${item.img}`" alt="..." />
+						</div>
 						{{ item.content }}
 						<a-divider style="height: 2px; background-color: #f0f0f0; margin-top: 10px; margin-bottom: 10px" />
 						<eye-outlined /> {{ item.views }}

@@ -4,6 +4,7 @@ import postsRouter from "./src/Routes/posts.routes.js";
 import postCommentsRouter from "./src/Routes/postComments.routes.js";
 import authRouter from "./src/Routes/auth.routes.js";
 import dataBase from "./src/database.js";
+import fileUpload from 'express-fileupload';
 
 const PORT = 5000;
 
@@ -11,12 +12,14 @@ const app = express();
 app.use((req, res, next) => {
 	setTimeout(() => {
 		next();
-	}, 1000); // затримка в 5 секунд
+	}, 1000);
 });
 
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('static'));
+app.use(fileUpload({}));
 app.use('/api', postsRouter);
 app.use('/api', postCommentsRouter);
 app.use('/api', authRouter);
