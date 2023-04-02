@@ -18,7 +18,7 @@ class PostController {
 		}
 	}
 
-	async create(req, res,) {
+	async create(req, res) {
 		const imgName = imgService.saveFIle(req.files && req.files.img);
 
 		try {

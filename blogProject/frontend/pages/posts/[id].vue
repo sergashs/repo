@@ -65,7 +65,6 @@
 				</a-comment>
 
 				{{ comment }}
-				<a-input v-model:value="comment.username" placeholder="author name" style="margin-bottom: 15px" />
 				<a-textarea v-model:value="comment.comment" :rows="4" placeholder="text of comment" style="margin-bottom: 15px" />
 
 				<a-button html-type="submit" :loading="commentsLoading" type="primary" @click="createComment"> Add Comment </a-button>
@@ -121,7 +120,7 @@ function createComment() {
 
 	ApiPostsComments.create({
 		id: route.params.id,
-		username: comment.value.username,
+		user_id: 10,
 		comment: comment.value.comment
 	})
 		.then((response) => {

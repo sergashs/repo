@@ -12,12 +12,14 @@
 					<a-textarea v-model:value="form.content" placeholder="content" :auto-size="{ minRows: 2, maxRows: 5 }" />
 				</div>
 
-				<a-upload action="" :multiple="true" :file-list="fileList" @change="handleChange">
+				<!-- <a-upload v-model:value="form.img" name="file" action="/api/upload" @change="handleFileSelect">
 					<a-button>
 						<upload-outlined></upload-outlined>
-						Upload
+						Click to Upload
 					</a-button>
-				</a-upload>
+				</a-upload> -->
+
+				<input type="file" @change="handleFileSelect" />
 
 				{{ form }} <br />
 
@@ -35,25 +37,19 @@ import Toast from "@/services/Toast.js";
 const form = ref({});
 const loading = ref(false);
 const requestError = ref();
+const file = ref({});
 
-const handleChange = (UploadChangeParam) => {
-	let resFileList = [...info.fileList];
+function handleFileSelect(e) {
+	file.value = e.target.files[0];
 
-	// 1. Limit the number of uploaded files
-	//    Only to show two recent uploaded files, and old ones will be replaced by the new
-	resFileList = resFileList.slice(-2);
+	const img = new FormData();
+	img.append("img", file);
 
-	// 2. read from response and show file link
-	resFileList = resFileList.map((file) => {
-		if (file.response) {
-			// Component will show file.url as link
-			file.url = file.response.url;
-		}
-		return file;
-	});
+	// form.value = { ...form.value, img };
+	form.value.img = file.value;
 
-	fileList.value = resFileList;
-};
+	console.log(form.value.img);
+}
 
 function createPost() {
 	loading.value = true;

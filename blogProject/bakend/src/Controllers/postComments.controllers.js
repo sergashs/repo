@@ -40,17 +40,19 @@ class PostCommentsController {
 		try {
 			const post_id = req.params.id;
 			const sql = 'SELECT comments.*, users.username FROM comments JOIN users ON comments.user_id = users.id WHERE comments.post_id = ?';
-
 			await dataBase.query(sql, [post_id], function (error, results, fields) {
 				if (error) {
-					return res.status(500).json({ error });
+					console.error(error);
+					return res.status(500).json({ error: 'An error occurred while fetching comments.' });
 				}
-
+				console.log('Fetched comments:', results);
 				res.json(results);
 			});
 		} catch (e) {
-			res.status(500).json(e);
+			console.error(e);
+			res.status(500).json({ error: 'An error occurred while fetching comments.' });
 		}
+
 	}
 }
 
