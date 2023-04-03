@@ -5,7 +5,14 @@ import imgService from "../Services/img.service.js";
 class PostController {
 	async getAll(req, res) {
 		try {
-			const sql = 'SELECT * FROM posts';
+			// const sql = 'SELECT * FROM posts';
+
+			const sql = `
+            SELECT posts.*, COUNT(comments.id) AS comments_count
+            FROM posts
+            LEFT JOIN comments ON posts.id = comments.post_id
+            GROUP BY posts.id
+        `;
 
 			await dataBase.query(sql, (error, results) => {
 				if (error) {

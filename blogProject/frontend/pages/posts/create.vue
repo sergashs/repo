@@ -12,14 +12,12 @@
 					<a-textarea v-model:value="form.content" placeholder="content" :auto-size="{ minRows: 2, maxRows: 5 }" />
 				</div>
 
-				<!-- <a-upload v-model:value="form.img" name="file" action="/api/upload" @change="handleFileSelect">
+				<a-upload v-model:value="form.img" name="file" @change="handleFileSelect">
 					<a-button>
-						<upload-outlined></upload-outlined>
+						<!-- <upload-outlined></upload-outlined> -->
 						Click to Upload
 					</a-button>
-				</a-upload> -->
-
-				<input type="file" @change="handleFileSelect" />
+				</a-upload>
 
 				{{ form }} <br />
 
@@ -40,21 +38,31 @@ const requestError = ref();
 const file = ref({});
 
 function handleFileSelect(e) {
-	file.value = e.target.files[0];
+	// file.value = e.target.files[0];
+	// form.value.img = file.value;
+	// console.log(form.value.img);
+	// originFileObj
+	form.value.img = e.fileList[0].originFileObj;
 
-	const img = new FormData();
-	img.append("img", file);
-
-	// form.value = { ...form.value, img };
-	form.value.img = file.value;
-
-	console.log(form.value.img);
+	console.log(e.fileList[0]);
 }
 
 function createPost() {
 	loading.value = true;
 
-	ApiPosts.create(form.value)
+	const formData = new FormData();
+	for (const key in form.value) {
+		if (form.value.hasOwnProperty(key)) {
+			formData.append(key, form.value[key]);
+		}
+	}
+	// formData.append("title", form.value.title);
+	// formData.append("content", form.value.content);
+	// formData.append("img", form.value.img); // add image file
+
+	ApiPosts.create(formData, { headers: { "Content-Type": "multipart/form-data" } })
+
+		// ApiPosts.create(form.value)
 		.then((response) => {
 			if (response.status === 500) {
 				return Toast.error(response.data.error.sqlMessage);

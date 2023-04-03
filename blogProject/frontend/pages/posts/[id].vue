@@ -1,25 +1,26 @@
 <template>
-	<div class="container">
-		<div v-if="loading"><loading-outlined :style="{ fontSize: '20px' }" /></div>
-		<div v-else>
-			<div class="form-holder">
-				<div class="form-group">
+	<div class="post-page">
+		<div class="container">
+			<div v-if="loading"><loading-outlined :style="{ fontSize: '20px' }" /></div>
+			<div v-else>
+				<div class="content-holder">
 					<h1>{{ data.title }}</h1>
-				</div>
 
-				<div class="form-group">
+					<figure v-if="data.img">
+						<img :src="`http://localhost:5000/${data.img}`" alt="..." />
+					</figure>
+
 					<p>{{ data.content }}</p>
-				</div>
 
-				<a-space :size="25">
-					<div><eye-outlined /> {{ data.views }}</div>
-					<div><message-outlined /> {{ comments.length }}</div>
-				</a-space>
+					<a-space :size="25">
+						<div><eye-outlined /> {{ data.views }}</div>
+						<div><message-outlined /> {{ comments.length }}</div>
+					</a-space>
 
-				<a-divider style="height: 2px; background-color: #f0f0f0; margin-top: 20px; margin-bottom: 20px" />
+					<a-divider style="height: 2px; background-color: #f0f0f0; margin-top: 20px; margin-bottom: 20px" />
 
-				<a-comment v-for="comment in comments" :key="comment.id">
-					<!-- <template #actions>
+					<a-comment v-for="comment in comments" :key="comment.id">
+						<!-- <template #actions>
 						<span key="comment-basic-like">
 							<a-tooltip title="Like">
 								<template v-if="action === 'liked'">
@@ -48,26 +49,27 @@
 						</span>
 						<span key="comment-basic-reply-to">Reply to</span>
 					</template> -->
-					<template #author
-						><a>{{ comment.username }}</a></template
-					>
-					<!-- <template #avatar>
+						<template #author
+							><a>{{ comment.username }}</a></template
+						>
+						<!-- <template #avatar>
 						<a-avatar src="https://joeschmoe.io/api/v1/random" alt="Han Solo" />
 					</template> -->
-					<template #content>
-						<p>{{ comment.comment }}</p>
-					</template>
-					<template #datetime>
-						<a-tooltip :title="dayjs().format('YYYY-MM-DD HH:mm:ss')">
-							<span>{{ dayjs().from(comment.created_at) }}</span>
-						</a-tooltip>
-					</template>
-				</a-comment>
+						<template #content>
+							<p>{{ comment.comment }}</p>
+						</template>
+						<template #datetime>
+							<a-tooltip :title="dayjs().format('YYYY-MM-DD HH:mm:ss')">
+								<span>{{ dayjs().from(comment.created_at) }}</span>
+							</a-tooltip>
+						</template>
+					</a-comment>
 
-				{{ comment }}
-				<a-textarea v-model:value="comment.comment" :rows="4" placeholder="text of comment" style="margin-bottom: 15px" />
+					{{ comment }}
+					<a-textarea v-model:value="comment.comment" :rows="4" placeholder="text of comment" style="margin-bottom: 15px" />
 
-				<a-button html-type="submit" :loading="commentsLoading" type="primary" @click="createComment"> Add Comment </a-button>
+					<a-button html-type="submit" :loading="commentsLoading" type="primary" @click="createComment"> Add Comment </a-button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -143,3 +145,14 @@ onMounted(() => {
 	getComments(route.params.id);
 });
 </script>
+
+<style lang="scss" scoped>
+.post-page {
+	figure {
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+</style>

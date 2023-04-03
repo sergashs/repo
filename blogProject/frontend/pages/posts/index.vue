@@ -11,18 +11,22 @@
 						<div class="img-holder">
 							<img v-if="item.img" :src="`http://localhost:5000/${item.img}`" alt="..." />
 						</div>
-						{{ item.content }}
-						<a-divider style="height: 2px; background-color: #f0f0f0; margin-top: 10px; margin-bottom: 10px" />
-						<eye-outlined /> {{ item.views }}
+						<p>{{ item.content }}</p>
+						<a-divider style="height: 2px; background-color: #f0f0f0; margin-top: auto; margin-bottom: 10px" />
+						<a-space :size="25">
+							<div><eye-outlined /> {{ item.views }}</div>
+							<div><message-outlined /> {{ item.comments_count }}</div>
+						</a-space>
+
 						<br />
-						<a-space :size="5">
+						<!-- <a-space :size="5">
 							<a-button type="primary" @click="editPost(item.id)">
 								<template #icon><edit-outlined /></template>
 							</a-button>
 							<a-button type="danger" :loading="loadingDelete" @click="deletePost(item.id)">
 								<template #icon><delete-outlined /></template>
 							</a-button>
-						</a-space>
+						</a-space> -->
 					</a-card>
 				</a-col>
 			</a-row>
@@ -33,7 +37,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import ApiPosts from "@/api/posts";
-import { DeleteOutlined, EditOutlined, LoadingOutlined, EyeOutlined } from "@ant-design/icons-vue";
+import { DeleteOutlined, EditOutlined, LoadingOutlined, EyeOutlined, MessageOutlined } from "@ant-design/icons-vue";
 
 const data = ref([]);
 const loading = ref(true);
@@ -98,6 +102,10 @@ onMounted(() => {
 
 .ant-card {
 	margin-bottom: 30px;
+
+	.img-holder {
+		margin-bottom: 10px;
+	}
 
 	img {
 		width: 100%;
