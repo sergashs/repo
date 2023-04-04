@@ -21,10 +21,12 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import { useStore } from "vuex";
 import ApiAuth from "@/api/auth";
 import Toast from "@/services/Toast.js";
 
+const store = useStore();
 const loading = ref(false);
 const formState = ref({
 	username: "sergas",
@@ -65,6 +67,10 @@ function login() {
 			loading.value = false;
 		});
 }
+
+onMounted(() => {
+	console.log(store.state.user);
+});
 </script>
 
 <style lang="scss" scoped>
