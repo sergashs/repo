@@ -32,6 +32,7 @@ const formState = ref({
 	username: "sergas",
 	password: "1"
 });
+const router = useRouter();
 
 function onFinish(values) {
 	login();
@@ -58,6 +59,10 @@ function login() {
 			}
 			Toast.success(`login is successful`);
 			console.log(response);
+			localStorage.setItem("token", response.token);
+			setTimeout(() => {
+				router.push("/");
+			}, 1500);
 		})
 		.catch((err) => {
 			loading.value = false;

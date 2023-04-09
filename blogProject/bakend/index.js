@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import userRouter from "./src/Routes/user.routes.js";
 import postsRouter from "./src/Routes/posts.routes.js";
 import postCommentsRouter from "./src/Routes/postComments.routes.js";
 import authRouter from "./src/Routes/auth.routes.js";
@@ -23,6 +24,7 @@ app.use(fileUpload({}));
 app.use('/api', postsRouter);
 app.use('/api', postCommentsRouter);
 app.use('/api', authRouter);
+app.use('/api', userRouter);
 
 
 

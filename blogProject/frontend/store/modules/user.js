@@ -1,13 +1,32 @@
+
+
 export const user = {
 	namespaced: true,
 	state: {
-		user: 'gg'
+		user: {}
 	},
 
 	getters: {
+		user: (state) => state.user,
 	},
 
-	mutations: {},
+	mutations: {
+		SET_USER(state, user) {
+			state.user = user
+		},
+	},
 
-	actions: {}
+	actions: {
+		getSelfUser({ commit }, params) {
+			return ApiAccount.getSelfUser(params).then(response => {
+				commit('SET_USER', response);
+
+				return response
+
+			}).catch((error) => {
+				//console.log(error);
+				return error
+			})
+		},
+	}
 }
