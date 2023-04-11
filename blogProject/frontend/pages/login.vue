@@ -43,7 +43,7 @@ function onFinishFailed(errorInfo) {
 	console.log("Failed:", errorInfo);
 }
 
-function login() {
+async function login() {
 	loading.value = true;
 
 	ApiAuth.login(formState.value)
@@ -58,11 +58,11 @@ function login() {
 				return;
 			}
 			Toast.success(`login is successful`);
-			console.log(response);
+			// console.log(response);
 			localStorage.setItem("token", response.token);
-			setTimeout(() => {
-				router.push("/");
-			}, 1500);
+			// setTimeout(() => {
+			// 	router.push("/");
+			// }, 1500);
 		})
 		.catch((err) => {
 			loading.value = false;
@@ -73,9 +73,9 @@ function login() {
 		});
 }
 
-onMounted(() => {
-	console.log(store.state.user);
-});
+// onMounted(() => {
+// 	console.log(store.state.user);
+// });
 </script>
 
 <style lang="scss" scoped>

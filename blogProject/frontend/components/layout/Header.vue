@@ -10,6 +10,10 @@
 						</nuxt-link>
 					</li>
 				</ul>
+				<a-space :size="10">
+					<a-button href="/login" type="primary">Login</a-button>
+					<a-button>Registration</a-button>
+				</a-space>
 			</nav>
 		</div>
 		<!-- <Button label="plus" @click="counter++" /> -->
@@ -17,6 +21,12 @@
 </template>
 
 <script setup>
+import { ref, onMounted, computed } from "vue";
+import { useStore, mapGetters } from "vuex";
+
+const store = useStore();
+const currentUser = computed(() => store.getters["auth/token"]);
+
 const menu = ref([
 	{
 		title: "Home",
@@ -31,6 +41,10 @@ const menu = ref([
 		url: "/posts/create"
 	}
 ]);
+
+onMounted(() => {
+	console.log(currentUser.value);
+});
 </script>
 
 <style lang="scss" scoped>
@@ -49,9 +63,14 @@ const menu = ref([
 		text-transform: uppercase;
 	}
 
+	.nav {
+		display: flex;
+		align-items: center;
+	}
+
 	.menu {
 		list-style: none;
-		margin: 0;
+		margin: 0 20px 0 0;
 		padding: 0;
 		display: flex;
 

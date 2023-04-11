@@ -17,8 +17,10 @@ class UserController {
 			console.error(e);
 			res.status(500).json({ error: 'An error occurred while fetching user.' });
 		}
-
 	}
+	// async getSelfUser(){
+
+	// }
 
 }
 
