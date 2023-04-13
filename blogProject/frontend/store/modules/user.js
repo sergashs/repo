@@ -1,3 +1,4 @@
+import ApiUsers from "@/api/users";
 
 
 export const user = {
@@ -17,15 +18,15 @@ export const user = {
 	},
 
 	actions: {
-		getSelfUser({ commit }, params) {
-			return ApiAccount.getSelfUser(params).then(response => {
+		getUser({ commit }, params) {
+			console.log('s')
+			return ApiUsers.getSelfUser(params).then(response => {
 				commit('SET_USER', response);
-
-				return response
-
+				console.log(response)
+				return response;
 			}).catch((error) => {
-				//console.log(error);
-				return error
+				console.log(error);
+				return error;
 			})
 		},
 	}

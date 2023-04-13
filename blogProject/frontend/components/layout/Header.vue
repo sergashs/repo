@@ -13,19 +13,23 @@
 				<a-space :size="10">
 					<a-button href="/login" type="primary">Login</a-button>
 					<a-button>Registration</a-button>
+					<button @click="getUser">ds</button>
 				</a-space>
 			</nav>
 		</div>
-		<!-- <Button label="plus" @click="counter++" /> -->
 	</header>
 </template>
 
 <script setup>
 import { ref, onMounted, computed } from "vue";
-import { useStore, mapGetters } from "vuex";
+import { useStore, mapGetters, mapActions } from "vuex";
 
 const store = useStore();
-const currentUser = computed(() => store.getters["auth/token"]);
+const currentUser = computed(() => store.getters["user/user"]);
+
+// const getUser = () => mapActions("user", ["getUser"]);
+
+const getUser = () => store.dispatch("user/getUser");
 
 const menu = ref([
 	{
@@ -45,6 +49,32 @@ const menu = ref([
 onMounted(() => {
 	console.log(currentUser.value);
 });
+
+// import { useStore, mapGetters, mapActions } from "vuex";
+
+// export default {
+// 	data() {
+// 		return {
+// 			menu: [
+// 				{
+// 					title: "Home",
+// 					url: "/"
+// 				},
+// 				{
+// 					title: "Posts",
+// 					url: "/posts"
+// 				},
+// 				{
+// 					title: "Add Post",
+// 					url: "/posts/create"
+// 				}
+// 			]
+// 		};
+// 	},
+// 	methods: {
+// 		...mapActions("user", ["getUser"])
+// 	}
+// };
 </script>
 
 <style lang="scss" scoped>

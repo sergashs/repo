@@ -28,11 +28,11 @@ app.use('/api', userRouter);
 
 
 
-// import auth from "./src/Middleware/auth.js";
+import auth from "./src/Middleware/auth.js";
 
-// app.post("/welcome", auth, (req, res) => {
-// 	res.status(200).send("Welcome 🙌 ");
-// });
+app.post("/welcome", auth, (req, res) => {
+	res.status(200).send("Welcome 🙌 ");
+});
 
 
 async function startApp() {

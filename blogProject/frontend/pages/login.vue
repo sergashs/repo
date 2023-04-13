@@ -43,7 +43,7 @@ function onFinishFailed(errorInfo) {
 	console.log("Failed:", errorInfo);
 }
 
-async function login() {
+function login() {
 	loading.value = true;
 
 	ApiAuth.login(formState.value)
