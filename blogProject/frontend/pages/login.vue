@@ -60,9 +60,10 @@ function login() {
 			Toast.success(`login is successful`);
 			// console.log(response);
 			localStorage.setItem("token", response.token);
-			// setTimeout(() => {
-			// 	router.push("/");
-			// }, 1500);
+			setTimeout(() => {
+				store.dispatch("user/getUser");
+				router.push("/");
+			}, 1500);
 		})
 		.catch((err) => {
 			loading.value = false;

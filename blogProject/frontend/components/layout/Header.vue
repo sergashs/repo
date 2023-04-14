@@ -10,10 +10,13 @@
 						</nuxt-link>
 					</li>
 				</ul>
-				<a-space :size="10">
+				<a-space v-if="Object.keys(currentUser).length <= 0" :size="10">
 					<a-button href="/login" type="primary">Login</a-button>
 					<a-button>Registration</a-button>
-					<button @click="getUser">ds</button>
+				</a-space>
+				<a-space v-else :size="10">
+					<a-typography-title :level="5" style="margin-bottom: 0">{{ currentUser.username }}</a-typography-title>
+					<a-button @click="logout">Logout</a-button>
 				</a-space>
 			</nav>
 		</div>
@@ -21,17 +24,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from "vue";
+import { onMounted, computed } from "vue";
 import { useStore, mapGetters, mapActions } from "vuex";
 
 const store = useStore();
+const router = useRouter();
 const currentUser = computed(() => store.getters["user/user"]);
-
-// const getUser = () => mapActions("user", ["getUser"]);
-
 const getUser = () => store.dispatch("user/getUser");
 
-const menu = ref([
+const menu = [
 	{
 		title: "Home",
 		url: "/"
@@ -44,37 +45,17 @@ const menu = ref([
 		title: "Add Post",
 		url: "/posts/create"
 	}
-]);
+];
 
-onMounted(() => {
-	console.log(currentUser.value);
+function logout() {
+	store.dispatch("user/logout");
+}
+
+onMounted(async () => {
+	if (localStorage.getItem("token")) {
+		await getUser();
+	}
 });
-
-// import { useStore, mapGetters, mapActions } from "vuex";
-
-// export default {
-// 	data() {
-// 		return {
-// 			menu: [
-// 				{
-// 					title: "Home",
-// 					url: "/"
-// 				},
-// 				{
-// 					title: "Posts",
-// 					url: "/posts"
-// 				},
-// 				{
-// 					title: "Add Post",
-// 					url: "/posts/create"
-// 				}
-// 			]
-// 		};
-// 	},
-// 	methods: {
-// 		...mapActions("user", ["getUser"])
-// 	}
-// };
 </script>
 
 <style lang="scss" scoped>

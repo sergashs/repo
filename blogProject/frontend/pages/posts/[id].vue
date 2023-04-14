@@ -78,12 +78,15 @@
 <script setup>
 import dayjs from "dayjs";
 import { ref, onMounted } from "vue";
+import { useStore } from "vuex";
 import ApiPosts from "@/api/posts";
 import ApiPostsComments from "@/api/postsComments";
 import { LoadingOutlined, EyeOutlined, MessageOutlined } from "@ant-design/icons-vue";
 import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
 
+const store = useStore();
+const currentUser = computed(() => store.getters["user/user"]);
 const data = ref([]);
 const loading = ref(true);
 const route = useRoute();
@@ -122,7 +125,7 @@ function createComment() {
 
 	ApiPostsComments.create({
 		id: route.params.id,
-		user_id: 10,
+		user_id: currentUser.value.id,
 		comment: comment.value.comment
 	})
 		.then((response) => {
