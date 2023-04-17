@@ -9,7 +9,7 @@ export default {
 	create: (params = {}) => {
 		return API.post(path(params.id), params)
 	},
-	getAllForPost: (id) => {
+	getAllForOne: (id) => {
 		return API.get(path(id))
 	},
 }

@@ -6,6 +6,6 @@ export default defineNuxtConfig({
 	},
 	plugins: ["~/plugins/primevue.js"],
 	generate: {
-		routes: ["/blog/dynamic-post", "/login", "/register"]
+		routes: ["/login", "/register"]
 	}
 });

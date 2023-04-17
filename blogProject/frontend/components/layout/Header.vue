@@ -38,12 +38,12 @@ const menu = [
 		url: "/"
 	},
 	{
-		title: "Posts",
-		url: "/posts"
+		title: "News",
+		url: "/news"
 	},
 	{
 		title: "Add Post",
-		url: "/posts/create"
+		url: "/news/create"
 	}
 ];
 

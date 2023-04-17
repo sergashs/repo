@@ -22,7 +22,7 @@ export const user = {
 			return ApiUsers.getSelfUser(params).then(response => {
 				if (response.username) {
 					commit('SET_USER', response);
-					console.log(response)
+					// console.log(response)
 					return response;
 				}
 			}).catch((error) => {

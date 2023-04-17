@@ -23,7 +23,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import ApiPosts from "@/api/posts";
+import ApiNews from "@/api/news";
 import { LoadingOutlined } from "@ant-design/icons-vue";
 
 const data = ref([]);
@@ -32,7 +32,7 @@ const route = useRoute();
 
 function getPost(id) {
 	loading.value = true;
-	ApiPosts.getOnePost(id)
+	ApiNews.getOnePost(id)
 		.then((response) => {
 			data.value = response;
 		})
@@ -47,7 +47,7 @@ function getPost(id) {
 
 function updatePost() {
 	loading.value = true;
-	ApiPosts.update(data.value)
+	ApiNews.update(data.value)
 		.then((response) => {
 			console.log(response);
 		})
