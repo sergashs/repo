@@ -51,9 +51,9 @@ function logout() {
 	store.dispatch("user/logout");
 }
 
-onMounted(async () => {
+onMounted(() => {
 	if (localStorage.getItem("token")) {
-		await getUser();
+		getUser();
 	}
 });
 </script>
