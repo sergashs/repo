@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	lazyLoad();
 	mobileMenu();
 	initSliderBuyGames();
+	fancyboxImges();
 	initModals();
 	showTelegramModal();
 });
@@ -186,4 +187,19 @@ function initModals() {
 
 	}
 }
+
+
+// fancyboxImges
+function fancyboxImges() {
+	const images = document.querySelectorAll('.wp-block-image a');
+
+	if (images) {
+		images.forEach(function (item) {
+			const href = item.getAttribute("href");
+			item.setAttribute('data-fancybox', 'wp-gallery');
+			item.setAttribute('data-src', href);
+		})
+	}
+}
+
 
