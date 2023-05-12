@@ -126,9 +126,6 @@ function initSliderBuyGames() {
 function showTelegramModal() {
 	const storage = localStorage.getItem('showTelegram') || null;
 
-
-	console.log(storage)
-
 	if (storage) {
 		document.querySelector('#modal-notify').classList.remove('open');
 		document.querySelector(".modal-overlay").classList.remove('active');
