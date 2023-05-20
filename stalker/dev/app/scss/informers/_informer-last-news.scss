@@ -48,6 +48,15 @@
 			figcaption {
 				flex: 1;
 				color: $cloudy;
+
+				a {
+					color: $mercury;
+					text-decoration: underline;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
 			}
 		}
 

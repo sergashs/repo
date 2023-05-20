@@ -170,3 +170,61 @@
 		background-size: 1.5rem;
 	}
 }
+
+.widget_wpforo_recent_posts {
+	.wpforo-widget-wrap {
+		.widget-title {
+			border-bottom: 0.1rem solid $tuatara !important;
+		}
+
+		li {
+			background: #181818;
+			padding: 1.5rem !important;
+			border: solid 0.1rem #202020 !important;
+			transition: all 0.35s linear;
+
+			&:hover {
+				background: lighten(#181818, 3);
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 1rem !important;
+			}
+
+			.wpforo-list-item-left {
+				width: 15% !important;
+
+				img {
+					width: 28px !important;
+					height: auto !important;
+				}
+			}
+
+			.wpforo-list-item-right {
+				width: 85% !important;
+			}
+		}
+
+		.wpforo-list-item {
+			padding-left: 0.8rem;
+			padding-right: 0.8rem;
+		}
+
+		.posttitle {
+			color: $mercury;
+
+			a {
+				text-decoration: underline !important;
+
+				&:hover {
+					text-decoration: none !important;
+				}
+			}
+		}
+
+		.postuser {
+			padding-top: 0.5rem !important;
+			color: #9b9a97;
+		}
+	}
+}
