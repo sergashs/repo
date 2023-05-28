@@ -72,11 +72,25 @@
 			}
 		}
 
+		.wpforo-post-content {
+			display: flex;
+			flex-direction: column;
+			padding: 10px !important;
+		}
+
 		.wpforo-post {
 			blockquote {
 				width: 100% !important;
 				border: none !important;
 				background: #282628 !important;
+			}
+
+			.wpf-embed {
+				margin: auto;
+			}
+
+			figure[data-attachids] {
+				margin: auto;
 			}
 		}
 		.wpforo-revision-body {
