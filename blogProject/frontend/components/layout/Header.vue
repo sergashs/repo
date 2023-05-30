@@ -10,27 +10,52 @@
 						</nuxt-link>
 					</li>
 				</ul>
+				<a-space v-if="Object.keys(currentUser).length <= 0" :size="10">
+					<a-button href="/login" type="primary">Login</a-button>
+					<a-button>Registration</a-button>
+				</a-space>
+				<a-space v-else :size="10">
+					<a-typography-title :level="5" style="margin-bottom: 0">{{ currentUser.username }}</a-typography-title>
+					<a-button @click="logout">Logout</a-button>
+				</a-space>
 			</nav>
 		</div>
-		<!-- <Button label="plus" @click="counter++" /> -->
 	</header>
 </template>
 
 <script setup>
-const menu = ref([
+import { onMounted, computed } from "vue";
+import { useStore, mapGetters, mapActions } from "vuex";
+
+const store = useStore();
+const router = useRouter();
+const currentUser = computed(() => store.getters["user/user"]);
+const getUser = () => store.dispatch("user/getUser");
+
+const menu = [
 	{
 		title: "Home",
 		url: "/"
 	},
 	{
-		title: "Posts",
-		url: "/posts"
+		title: "News",
+		url: "/news"
 	},
 	{
 		title: "Add Post",
-		url: "/posts/create"
+		url: "/news/create"
 	}
-]);
+];
+
+function logout() {
+	store.dispatch("user/logout");
+}
+
+onMounted(() => {
+	if (localStorage.getItem("token")) {
+		getUser();
+	}
+});
 </script>
 
 <style lang="scss" scoped>
@@ -49,9 +74,14 @@ const menu = ref([
 		text-transform: uppercase;
 	}
 
+	.nav {
+		display: flex;
+		align-items: center;
+	}
+
 	.menu {
 		list-style: none;
-		margin: 0;
+		margin: 0 20px 0 0;
 		padding: 0;
 		display: flex;
 

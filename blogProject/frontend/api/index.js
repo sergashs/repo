@@ -3,6 +3,10 @@ import config from './config';
 
 export const customAxios = axios.create(config());
 customAxios.interceptors.request.use(function (config) {
+
+	config.headers['x-access-token'] = localStorage.getItem('token');
+
+
 	return config;
 }, null, { synchronous: true });
 

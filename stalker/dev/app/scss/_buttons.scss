@@ -8,6 +8,8 @@
 
 	&:hover {
 		color: $cloudy;
+		text-decoration: none;
+		background: lighten($black, 5);
 	}
 
 	&:focus {

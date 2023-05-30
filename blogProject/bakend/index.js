@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import userRouter from "./src/Routes/user.routes.js";
 import postsRouter from "./src/Routes/posts.routes.js";
 import postCommentsRouter from "./src/Routes/postComments.routes.js";
 import authRouter from "./src/Routes/auth.routes.js";
@@ -12,7 +13,7 @@ const app = express();
 app.use((req, res, next) => {
 	setTimeout(() => {
 		next();
-	}, 0);
+	}, 3000);
 });
 
 
@@ -23,14 +24,15 @@ app.use(fileUpload({}));
 app.use('/api', postsRouter);
 app.use('/api', postCommentsRouter);
 app.use('/api', authRouter);
+app.use('/api', userRouter);
 
 
 
-// import auth from "./src/Middleware/auth.js";
+import auth from "./src/Middleware/auth.js";
 
-// app.post("/welcome", auth, (req, res) => {
-// 	res.status(200).send("Welcome 🙌 ");
-// });
+app.post("/welcome", auth, (req, res) => {
+	res.status(200).send("Welcome 🙌 ");
+});
 
 
 async function startApp() {

@@ -15,9 +15,11 @@
 					</div>
 					<div class="comments">
 						<h2 v-if="post.title.rendered" class="comments-title" v-html="`комментарі до ${post.title.rendered}`"></h2>
-						<div v-for="(item, index) in comments" :key="index">
+						<!-- <div v-for="(item, index) in comments" :key="index">
 							{{ item }}
-						</div>
+						</div> -->
+
+						<Comment v-for="(item, index) in comments" :key="index" :comment="item" />
 					</div>
 				</div>
 				<div class="col-md-4 col-lg-3">site sidebar</div>
@@ -27,6 +29,8 @@
 </template>
 
 <script>
+import Comment from "@/components/Comment";
+
 export default {
 	data() {
 		return {
@@ -37,6 +41,9 @@ export default {
 				comment: true
 			}
 		};
+	},
+	components: {
+		Comment
 	},
 	async fetch() {
 		try {

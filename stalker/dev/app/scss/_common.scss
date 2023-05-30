@@ -21,11 +21,13 @@
 	list-style: none;
 	display: flex;
 	flex-wrap: wrap;
+	font-size: 1.3rem;
+	color: darken($cloudy, 8);
 	border-top: 0.1rem solid $tuatara;
 
 	li {
-		font-size: 1.3rem;
-		color: darken($cloudy, 8);
+		display: flex;
+		align-items: center;
 		margin-right: 3rem;
 		line-height: 1;
 
@@ -33,7 +35,7 @@
 			margin-bottom: 1rem;
 		}
 
-		i {
+		.icon-holder {
 			margin-right: 0.5rem;
 		}
 	}

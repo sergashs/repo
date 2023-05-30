@@ -29,7 +29,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import ApiPosts from "@/api/posts";
+import ApiNews from "@/api/news";
 import Toast from "@/services/Toast.js";
 
 const form = ref({});
@@ -60,9 +60,7 @@ function createPost() {
 	// formData.append("content", form.value.content);
 	// formData.append("img", form.value.img); // add image file
 
-	ApiPosts.create(formData, { headers: { "Content-Type": "multipart/form-data" } })
-
-		// ApiPosts.create(form.value)
+	ApiNews.create(formData, { headers: { "Content-Type": "multipart/form-data" } })
 		.then((response) => {
 			if (response.status === 500) {
 				return Toast.error(response.data.error.sqlMessage);

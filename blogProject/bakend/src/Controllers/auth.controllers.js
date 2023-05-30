@@ -9,7 +9,7 @@ const generateAccessToken = (id, username, email) => {
 	return jwt.sign(payload, process.env.USER_TOKEN_KEY, { expiresIn: "24h" });
 }
 
-class UserController {
+class AuthController {
 	async register(req, res) {
 		try {
 
@@ -75,4 +75,4 @@ class UserController {
 
 }
 
-export default new UserController();
+export default new AuthController();

@@ -78,12 +78,15 @@
 <script setup>
 import dayjs from "dayjs";
 import { ref, onMounted } from "vue";
-import ApiPosts from "@/api/posts";
-import ApiPostsComments from "@/api/postsComments";
+import { useStore } from "vuex";
+import ApiNews from "@/api/news";
+import ApiNewsComments from "@/api/newsComments";
 import { LoadingOutlined, EyeOutlined, MessageOutlined } from "@ant-design/icons-vue";
 import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
 
+const store = useStore();
+const currentUser = computed(() => store.getters["user/user"]);
 const data = ref([]);
 const loading = ref(true);
 const route = useRoute();
@@ -93,7 +96,7 @@ const commentsLoading = ref(false);
 
 function getPost(id) {
 	loading.value = true;
-	ApiPosts.getOnePost(id)
+	ApiNews.getOne(id)
 		.then((response) => {
 			data.value = response;
 		})
@@ -107,7 +110,7 @@ function getPost(id) {
 }
 
 function getComments(id) {
-	ApiPostsComments.getAllForPost(id)
+	ApiNewsComments.getAllForOne(id)
 		.then((response) => {
 			comments.value = response;
 		})
@@ -120,9 +123,9 @@ function getComments(id) {
 function createComment() {
 	commentsLoading.value = true;
 
-	ApiPostsComments.create({
+	ApiNewsComments.create({
 		id: route.params.id,
-		user_id: 10,
+		user_id: currentUser.value.id,
 		comment: comment.value.comment
 	})
 		.then((response) => {

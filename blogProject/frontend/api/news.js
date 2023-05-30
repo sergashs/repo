@@ -12,7 +12,7 @@ export default {
 	getAll: () => {
 		return API.get(path());
 	},
-	getOnePost: (id) => {
+	getOne: (id) => {
 		return API.get(path(id))
 	},
 	update: (params = {}) => {

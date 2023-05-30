@@ -1,0 +1,66 @@
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(black, 0.7);
+	z-index: 101;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.3s ease;
+
+	&.active {
+		opacity: 1;
+		pointer-events: all;
+		transition: all 0.3s ease;
+	}
+
+	.modal-head {
+		padding-right: 2rem;
+		padding-bottom: 2rem;
+	}
+
+	.modal-block {
+		position: absolute;
+		width: 100%;
+		max-width: 60rem;
+		padding: 2rem;
+		background: $cod-gray;
+		border-radius: 1rem;
+		opacity: 0;
+		pointer-events: none;
+		transform: translateY(3rem);
+		transition: all 0.3s ease;
+
+		&.open {
+			position: relative;
+			opacity: 1;
+			pointer-events: all;
+			transform: translateY(0);
+			transition: all 0.3s ease;
+		}
+	}
+
+	.btn-close-modal {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		width: 2rem;
+		height: 2rem;
+		text-indent: -9999px;
+		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23afaeac' class='bi bi-x' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E") no-repeat;
+		background-size: 2rem;
+		background-position: center;
+		border: none;
+		opacity: 0.5;
+		transition: all 0.3s ease;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}

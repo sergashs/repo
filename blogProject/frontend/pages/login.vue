@@ -32,6 +32,7 @@ const formState = ref({
 	username: "sergas",
 	password: "1"
 });
+const router = useRouter();
 
 function onFinish(values) {
 	login();
@@ -57,7 +58,12 @@ function login() {
 				return;
 			}
 			Toast.success(`login is successful`);
-			console.log(response);
+			// console.log(response);
+			localStorage.setItem("token", response.token);
+			setTimeout(() => {
+				store.dispatch("user/getUser");
+				router.push("/");
+			}, 1500);
 		})
 		.catch((err) => {
 			loading.value = false;
@@ -68,9 +74,9 @@ function login() {
 		});
 }
 
-onMounted(() => {
-	console.log(store.state.user);
-});
+// onMounted(() => {
+// 	console.log(store.state.user);
+// });
 </script>
 
 <style lang="scss" scoped>

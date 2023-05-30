@@ -4,7 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	correctVh();
 	lazyLoad();
 	mobileMenu();
-	initSliderBuyGames()
+	initSliderBuyGames();
+	fancyboxImges();
+	initModals();
+	showTelegramModal();
 });
 
 window.addEventListener('resize', () => {
@@ -118,3 +121,82 @@ function initSliderBuyGames() {
 		},
 	})
 }
+
+// show telegram-modal
+function showTelegramModal() {
+	const storage = localStorage.getItem('showTelegram') || null;
+
+	if (storage) {
+		document.querySelector('#modal-notify').classList.remove('open');
+		document.querySelector(".modal-overlay").classList.remove('active');
+	} else {
+		document.querySelector(".modal-overlay").classList.add('active');
+		document.querySelector('#modal-notify').classList.add('open');
+		localStorage.setItem('showTelegram', true)
+	}
+}
+
+// modals 
+function initModals() {
+	const btns = document.querySelectorAll("[modal-id]");
+	const overlay = document.querySelector(".modal-overlay");
+	const modals = document.querySelectorAll(".modal-block");
+
+	if (btns) {
+		function deleteActiveClass() {
+			for (modal of modals) {
+				modal.classList.remove("open");
+			}
+		}
+
+		document.addEventListener('click', function (e) {
+			let modalOpener = document.querySelector('[modal-id]');
+			let isInsideOpener = e.target.closest('[modal-id]');
+
+			if (modalOpener === e.target || isInsideOpener) {
+				e.preventDefault();
+				deleteActiveClass();
+				const modalID = e.target.getAttribute('modal-id');
+				const modal = document.getElementById(modalID);
+				overlay.classList.add("active");
+				modal.classList.add("open");
+
+			}
+
+			let modalClose = e.target.closest('.btn-close-modal');
+			if (modalClose) {
+				e.preventDefault();
+				overlay.classList.remove("active");
+				e.target.closest('.modal-block').classList.remove("open");
+
+			}
+		});
+
+		if (overlay) {
+			overlay.addEventListener("click", function (e) {
+				if (e.target == overlay) {
+					document.querySelector(".modal-block.open").classList.remove("open");
+					overlay.classList.remove("active");
+
+				}
+			});
+		}
+
+	}
+}
+
+
+// fancyboxImges
+function fancyboxImges() {
+	const images = document.querySelectorAll('.wp-block-image a');
+
+	if (images) {
+		images.forEach(function (item) {
+			const href = item.getAttribute("href");
+			item.setAttribute('data-fancybox', 'wp-gallery');
+			item.setAttribute('data-src', href);
+		})
+	}
+}
+
+

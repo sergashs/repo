@@ -6,7 +6,7 @@
 				<a-col v-else v-for="item in data" :key="item.id" :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
 					<a-card>
 						<h3>
-							<nuxt-link :to="`/posts/${item.id}`">{{ item.title }} </nuxt-link>
+							<nuxt-link :to="`/news/${item.id}`">{{ item.title }} </nuxt-link>
 						</h3>
 						<div class="img-holder">
 							<img v-if="item.img" :src="`http://localhost:5000/${item.img}`" alt="..." />
@@ -36,7 +36,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import ApiPosts from "@/api/posts";
+import ApiNews from "@/api/news";
 import { DeleteOutlined, EditOutlined, LoadingOutlined, EyeOutlined, MessageOutlined } from "@ant-design/icons-vue";
 
 const data = ref([]);
@@ -47,7 +47,7 @@ const router = useRouter();
 
 function getPosts() {
 	loading.value = true;
-	ApiPosts.getAll()
+	ApiNews.getAll()
 		.then((response) => {
 			data.value = response.reverse();
 		})
@@ -62,7 +62,7 @@ function getPosts() {
 
 function deletePost(id) {
 	loadingDelete.value = true;
-	ApiPosts.delete(id)
+	ApiNews.delete(id)
 		.then((response) => {
 			console.log(`delete post with ${id}`);
 		})
@@ -78,7 +78,7 @@ function deletePost(id) {
 }
 
 function editPost(id) {
-	router.push(`/posts/edit/${id}`);
+	router.push(`/news/edit/${id}`);
 }
 
 onMounted(() => {
