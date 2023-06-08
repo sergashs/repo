@@ -1,0 +1,68 @@
+.card-mods {
+	padding-bottom: 0.5rem;
+	margin-bottom: 2.5rem;
+	border-bottom: 0.1rem solid #202020;
+
+	figure {
+		.row {
+			margin-bottom: 1.5rem;
+			@include grid-gutter(2rem);
+		}
+	}
+
+	.info-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: 1.5rem;
+		line-height: 1.1;
+
+		.list-item {
+			display: flex;
+			align-items: center;
+
+			&:not(:last-child) {
+				margin-bottom: 1rem;
+				padding-bottom: 1rem;
+				border-bottom: 0.1rem solid #202020;
+			}
+		}
+
+		.icon-holder {
+			display: flex;
+			margin-right: 1rem;
+		}
+	}
+
+	.tags-list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: 1.3rem;
+		line-height: 1.1;
+
+		.list-item {
+			margin-bottom: 1rem;
+
+			&:not(:last-child) {
+				margin-right: 1rem;
+			}
+		}
+
+		a {
+			display: inline-block;
+			text-decoration: none;
+			padding: 0.5rem 1rem;
+			color: #9d9d9d;
+			background: #202020;
+			border-radius: 0.5rem;
+
+			&:hover {
+				color: lighten(#9d9d9d, 10);
+				background: lighten(#202020, 5);
+			}
+		}
+	}
+}
