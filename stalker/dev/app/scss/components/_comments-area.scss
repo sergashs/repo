@@ -148,6 +148,12 @@
 				display: block;
 				margin-bottom: 0.5rem;
 			}
+
+			select {
+				background: black;
+				color: inherit;
+				outline: none;
+			}
 		}
 
 		.comment-rating-form {

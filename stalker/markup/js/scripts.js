@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	fancyboxImges();
 	initModals();
 	showTelegramModal();
+	initCustomScrollBar();
 });
 
 window.addEventListener('resize', () => {
@@ -200,3 +201,21 @@ function fancyboxImges() {
 }
 
 
+function initCustomScrollBar() {
+	// Array.prototype.forEach.call(
+	// 	document.querySelectorAll('.scroll'),
+	// 	(el) => new SimpleBar(el, {
+	// 		forceVisible: 'y',
+	// 		autoHide: false,
+	// 		scrollbarColor: '#888/#f1f1f1'
+	// 	})
+	// );
+
+	// const simpleBar = new SimpleBar(document.querySelector('.scroll-comments'), {
+	// 	autoHide: false,
+	// });
+
+
+
+
+}

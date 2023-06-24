@@ -3,6 +3,7 @@
 @import "libraries/bootstrap/bootstrap";
 @import "libraries/fancybox";
 @import "libraries/swiper/swiper";
+@import "libraries/simplebar";
 // global
 @import "_fonts";
 @import "reset";
@@ -21,6 +22,7 @@
 @import "components/card";
 @import "components/cards/card-mods";
 @import "components/comments-area";
+@import "components/tags-list";
 
 // pages
 @import "pages/single-post";
@@ -29,10 +31,10 @@
 @import "wp/wpforo";
 @import "wp/wpforo-profile";
 @import "wp/wp-widgets";
+@import "wp/wp-pagenavi";
 
 // informers
 @import "components/informers/top-mods";
-@import "components/informers/informer-last-news";
 @import "components/informers/informer-last-forum";
 @import "components/informers/informer-last-files";
 @import "components/informers/informer-last-comments";
@@ -40,3 +42,4 @@
 @import "components/informers/informer-last-video";
 @import "components/informers/informer-similar-news";
 @import "components/informers/informer-buy-game";
+@import "components/informers/informer-last-news";

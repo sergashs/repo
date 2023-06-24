@@ -1,10 +1,9 @@
 .informer-last-comments {
-	margin-bottom: 2rem;
-	height: 39rem;
-	overflow-x: auto;
+	margin-bottom: 2.5rem;
 
-	&::-webkit-scrollbar {
-		display: none;
+	ul {
+		margin: 0;
+		list-style: none;
 	}
 
 	.item {
@@ -28,22 +27,27 @@
 				display: inline-flex;
 				margin-bottom: 0.5rem;
 				font-weight: 500;
+				font-size: 1.5rem;
 				color: $mercury;
 			}
 
 			.date {
 				display: block;
 				color: $dove-gray;
+				font-size: 1.3rem;
 			}
 		}
 
 		.img-holder {
-			max-width: 5rem;
+			width: 4rem;
+			height: 4rem;
 			margin-right: 1rem;
 
 			img {
 				width: 100%;
-				border-radius: 0.5rem;
+				height: 100%;
+				object-fit: cover;
+				border-radius: 50%;
 			}
 		}
 
@@ -53,6 +57,10 @@
 		}
 
 		.link-to-post {
+			display: block;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
 			font-size: 1.3rem;
 			color: $dove-gray;
 		}

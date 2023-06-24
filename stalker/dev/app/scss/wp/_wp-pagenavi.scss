@@ -1,0 +1,21 @@
+.wp-pagenavi {
+	margin-bottom: 2rem;
+
+	a,
+	span {
+		background: #131313;
+		border: solid 0.1rem #202020;
+		text-decoration: none;
+
+		&:hover {
+			border-color: lighten(#202020, 10);
+		}
+	}
+
+	span {
+		&.current {
+			background: transparent;
+			border: none;
+		}
+	}
+}
