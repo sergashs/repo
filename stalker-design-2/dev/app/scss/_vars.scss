@@ -1,0 +1,55 @@
+// vars
+$images: "../images/";
+$fonts: "../fonts/";
+
+$roboto-condensed: "Roboto Condensed", sans-serif;
+$oswald: "Oswald", sans-serif;
+$fira-sans-condensed: "Fira Sans Condensed", sans-serif;
+
+// bootstrap grid
+$grid-columns: 12;
+$grid-gutter-width: 34px;
+$grid-gutter-width-mobile: $grid-gutter-width;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1340px
+);
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1302px
+);
+
+// colors
+$white: #fff;
+$black: #000;
+$gray: #707070;
+$gray2: #878787;
+$cod-gray: #101010;
+$silver: #c4c4c4;
+$mercury: #e2e2e2;
+$cloudy: #afaeac;
+$tuatara: #202020;
+$dove-gray: #616161;
+$mine-shaft: #252525;
+
+// base vars
+$text-color-base: $cloudy;
+$body-bg: $black;
+$font-family-base: $fira-sans-condensed;
+$font-size-base: 1.6rem;
+$font-weight-base: 300;
+$line-height-base: 1.3;
+$links-color-base: inherit;
+
+$transition: all 0.3s ease;
+
+// dev2
+// dev3
+// dev4

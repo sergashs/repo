@@ -1,0 +1,147 @@
+#wpforo {
+	width: unset !important;
+
+	#wpforo-wrap {
+		background: unset !important;
+
+		&.wpf-dark {
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+
+		#wpforo-menu {
+			background: #282628 !important;
+		}
+
+		.wpfl-1 {
+			.wpforo-category {
+				background: #282628 !important;
+				border-radius: 0 !important;
+			}
+
+			.wpforo-subforum {
+				border-top: #323232 1px dashed !important;
+			}
+		}
+
+		.wpf-search {
+			i {
+				pointer-events: none;
+				z-index: 2 !important;
+			}
+
+			input[type="text"] {
+				&.wpf-search-field {
+					background: #282628 !important;
+					z-index: 1 !important;
+				}
+			}
+		}
+
+		.wpf-notifications {
+			background: #282628 !important;
+			border-bottom: none !important;
+
+			.wpf-notification-head,
+			.wpf-notification-content {
+				color: inherit !important;
+			}
+		}
+
+		.wpf-breadcrumb {
+			a {
+				color: inherit !important;
+			}
+		}
+
+		.wpforo-post-head {
+			.wpf-post-head-top {
+				.wpf-post-info {
+					.wpf-post-info-forum {
+						color: inherit !important;
+					}
+				}
+
+				.wpf-post-stat {
+					.wpf-post-stat-box {
+						span {
+							color: inherit !important;
+						}
+					}
+				}
+			}
+		}
+
+		.wpforo-post-content {
+			display: flex;
+			flex-direction: column;
+			padding: 10px !important;
+		}
+
+		.wpforo-post {
+			blockquote {
+				width: 100% !important;
+				border: none !important;
+				background: #282628 !important;
+			}
+
+			.wpf-embed {
+				margin: auto;
+			}
+
+			figure[data-attachids] {
+				margin: auto;
+			}
+		}
+		.wpforo-revision-body {
+			blockquote {
+				width: 100% !important;
+				border: none !important;
+				background: #282628 !important;
+			}
+		}
+
+		.wpf-spoiler-wrap {
+			.wpf-spoiler-head {
+				border-left: none !important;
+			}
+
+			.wpf-spoiler-body {
+				border-top: 1px solid #646464 !important;
+				border-left: none !important;
+			}
+		}
+
+		.wpf-head-bar {
+			border-radius: 0 !important;
+		}
+
+		.wpf-button-secondary {
+			box-shadow: none !important;
+		}
+
+		.wpf-button-outlined {
+			box-shadow: none !important;
+		}
+
+		#wpforo-stat-body {
+			.wpf-last-info {
+				div {
+					&.wpf-forum-icons {
+						border-top: 1px solid #585858 !important;
+					}
+				}
+			}
+		}
+
+		.wpforo-profile {
+			.wpforo-profile-menu {
+				.wpf-profile-menu {
+					&:hover {
+						color: #e0e0e0 !important;
+					}
+				}
+			}
+		}
+	}
+}
