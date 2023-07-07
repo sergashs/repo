@@ -191,8 +191,13 @@
 				margin-bottom: 1rem !important;
 			}
 
+			.wpforo-list-item {
+				display: flex;
+			}
+
 			.wpforo-list-item-left {
-				width: 15% !important;
+				width: unset !important;
+				margin-right: 1rem;
 
 				img {
 					width: 28px !important;
@@ -201,7 +206,7 @@
 			}
 
 			.wpforo-list-item-right {
-				width: 85% !important;
+				width: unset !important;
 			}
 		}
 
@@ -214,10 +219,8 @@
 			color: $mercury;
 
 			a {
-				text-decoration: underline !important;
-
 				&:hover {
-					text-decoration: none !important;
+					text-decoration: underline !important;
 				}
 			}
 		}
