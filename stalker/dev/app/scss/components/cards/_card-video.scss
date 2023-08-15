@@ -1,0 +1,50 @@
+.card-video {
+	.img-holder {
+		display: flex;
+		margin-bottom: 1rem;
+
+		img {
+			width: 100%;
+			height: auto;
+			border-radius: 0.5rem;
+		}
+	}
+
+	.card-title {
+		margin-bottom: 0.5rem;
+		font-weight: 500;
+		color: #cdcdcd;
+		font-size: 1.7rem;
+		line-height: 1.3;
+	}
+
+	.card-info {
+		margin: 0;
+		padding: 0;
+		color: #878787;
+		font-size: 1.4rem;
+		line-height: 1.5;
+		list-style: none;
+	}
+
+	a {
+		color: #cdcdcd;
+	}
+
+	.with-dot {
+		position: relative;
+		margin: 0 2rem 0 0;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: -14px;
+			width: 4px;
+			height: 4px;
+			background: #878787;
+			transform: translateY(-50%);
+			border-radius: 50%;
+		}
+	}
+}
