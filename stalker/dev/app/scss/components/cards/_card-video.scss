@@ -33,13 +33,14 @@
 
 	.with-dot {
 		position: relative;
-		margin: 0 2rem 0 0;
 
 		&::after {
 			content: "";
-			position: absolute;
 			top: 50%;
-			right: -14px;
+			right: 0;
+			display: inline-flex;
+			margin-left: 0.8rem;
+			margin-right: 0.6rem;
 			width: 4px;
 			height: 4px;
 			background: #878787;
