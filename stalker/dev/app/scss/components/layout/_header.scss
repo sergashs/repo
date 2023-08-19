@@ -9,8 +9,18 @@
 		list-style: none;
 	}
 
+	.row {
+		@include media-breakpoint-down(lg) {
+			padding-bottom: 1rem;
+		}
+	}
+
 	.logo {
 		max-width: 10rem;
+
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 1rem;
+		}
 
 		img {
 			width: 100%;
@@ -58,116 +68,27 @@
 		}
 	}
 
-	.user-profile {
-		position: relative;
-		display: none;
-
-		.open-profile-dropdown {
-			display: flex;
-			align-items: center;
-			padding: 0.5rem 1rem;
-			background: rgba($black, 0.5);
-			backdrop-filter: blur(0.5rem);
-
-			.user-name {
-				color: $cloudy;
-				margin-right: 1rem;
-			}
-		}
-
-		.dropdown-arrow {
-			font-size: 1.1rem;
-			color: $cloudy;
-			transition: $transition;
-		}
-
-		.user-avatar {
-			margin: 0 1rem 0 0;
-			width: 3rem;
-
-			img {
-				width: 100%;
-				height: auto;
-				border-radius: 0.3rem;
-			}
-		}
-
-		.dropdown-ul {
-			position: absolute;
-			top: 100%;
-			right: 0;
-			margin-top: 1rem;
-			background: rgba($black, 0.5);
-			backdrop-filter: blur(0.5rem);
-			border-radius: 0.5rem;
-			white-space: nowrap;
-			overflow: hidden;
-			opacity: 0;
-			visibility: hidden;
-			pointer-events: none;
-			transition: $transition;
-
-			li {
-				a {
-					display: block;
-					padding: 1rem 1.3rem;
-					font-size: 1.3rem;
-					color: $cloudy;
-					text-decoration: none;
-
-					i {
-						width: 2rem;
-						margin-right: 0.5rem;
-					}
-				}
-
-				&:hover {
-					a {
-						background: rgba($white, 0.05);
-					}
-				}
-			}
-		}
-
-		&.open {
-			.dropdown-ul {
-				opacity: 1;
-				pointer-events: all;
-				visibility: visible;
-				transition: $transition;
-			}
-
-			.dropdown-arrow {
-				transform: rotate(180deg);
-				transition: $transition;
-			}
-		}
-	}
-
 	.main-nav {
+		position: relative;
 		max-width: 125rem;
 		width: 100%;
 		margin: auto;
+		padding-top: 2rem;
 		font-family: $oswald;
-		background: $cod-gray;
-		border-top: solid 0.1rem $tuatara;
-		border-left: solid 0.1rem $tuatara;
-		border-right: solid 0.1rem $tuatara;
-		box-shadow: 0.4rem 0 1rem rgba($black, 0.65);
+		z-index: 2;
+		border-top: 0.1rem solid #202020;
+		border-left: 0.1rem solid #202020;
+		border-right: 0.1rem solid #202020;
+		background: #101010;
 
-		ul {
+		.menu {
 			@include media-breakpoint-up(lg) {
 				display: flex;
-				margin-left: -1.7rem;
 			}
 
 			li {
 				a {
 					display: inline-block;
-					padding-top: 1.2rem;
-					padding-bottom: 1.2rem;
-					padding-right: 1.5rem;
-					padding-left: 1.5rem;
 					font-size: 1.8rem;
 					color: $silver;
 					text-decoration: none;
@@ -176,12 +97,8 @@
 						display: block;
 					}
 
-					@include media-breakpoint-up(lg) {
-						border-right: solid 0.1rem $tuatara;
-					}
-
 					&:hover {
-						background: rgba($silver, 0.05);
+						color: lighten($silver, 20);
 					}
 				}
 			}
@@ -197,6 +114,14 @@
 				max-width: 30rem;
 			}
 		}
+	}
+
+	.illustration-holder {
+		margin-top: 1rem;
+		min-height: 20rem;
+		background: url("#{$images}/header.jpg") no-repeat;
+		background-position: 50% 100%;
+		background-size: cover;
 	}
 
 	.dropdown-menu-wrapper {
@@ -221,12 +146,10 @@
 			@include media-breakpoint-down(lg) {
 				position: absolute;
 				top: 4.6rem;
-				left: 0;
+				right: 0;
 				min-width: 20rem;
 				background: $cod-gray;
-				border-right: solid 0.1rem $tuatara;
-				border-left: solid 0.1rem $tuatara;
-				border-bottom: solid 0.1rem $tuatara;
+				border: solid 0.1rem $tuatara;
 				opacity: 0;
 				visibility: hidden;
 				pointer-events: none;
@@ -243,11 +166,49 @@
 
 			ul {
 				&.menu {
+					.sub-menu {
+						transition: $transition;
+						background: #232323;
+						box-shadow: 0rem 2rem 2rem rgba($black, 0.65);
+						border-radius: 0.5rem;
+
+						li {
+							&:first-child {
+								> a {
+									border-top-left-radius: 0.5rem;
+									border-top-right-radius: 0.5rem;
+								}
+							}
+
+							&:last-child {
+								> a {
+									border-bottom-right-radius: 0.5rem;
+									border-bottom-left-radius: 0.5rem;
+								}
+							}
+
+							&:not(:last-child) {
+								@include media-breakpoint-up(lg) {
+									border-bottom: solid 0.1rem lighten($tuatara, 5);
+								}
+							}
+						}
+
+						a {
+							&:hover {
+								background: rgba(white, 0.1);
+							}
+						}
+					}
+
 					.menu-item-has-children {
 						position: relative;
 
-						> a {
-							padding-right: 3rem;
+						a {
+							padding: 1rem;
+							@include media-breakpoint-up(lg) {
+								padding-right: 2rem;
+							}
 						}
 
 						&::after {
@@ -255,14 +216,22 @@
 								content: "";
 								position: absolute;
 								top: 50%;
-								right: 1.5rem;
+								right: 0;
 								width: 1rem;
 								height: 1rem;
-								transform: translateY(-50%);
+								transform: translateY(calc(-50% - 0.25rem));
 								background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='iso-8859-1'%3F%3E%3C!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='199.404px' height='199.404px' viewBox='0 0 199.404 199.404' style='enable-background:new 0 0 199.404 199.404;' xml:space='preserve' fill='%23c4c4c4'%3E%3Cg%3E%3Cpolygon points='199.404,63.993 171.12,35.709 99.702,107.127 28.284,35.709 0,63.993 99.702,163.695 '/%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E%0A");
 								background-repeat: no-repeat;
 								background-size: 1rem;
 								transition: $transition;
+							}
+						}
+
+						.menu-item-has-children {
+							&::after {
+								@include media-breakpoint-up(lg) {
+									right: 1rem;
+								}
 							}
 						}
 
@@ -283,7 +252,7 @@
 
 							&::after {
 								@include media-breakpoint-up(lg) {
-									transform: translateY(-50%) rotate(180deg);
+									transform: translateY(calc(-50% - 0.25rem)) rotate(180deg);
 								}
 							}
 						}
@@ -291,23 +260,17 @@
 						> .sub-menu {
 							@include media-breakpoint-up(lg) {
 								position: absolute;
-								left: 1.5rem;
+								left: 0;
 								display: block;
 								width: 25rem;
 								visibility: hidden;
 								opacity: 0;
 								pointer-events: none;
-								transition: $transition;
-								background: $cod-gray;
-								box-shadow: 0rem 2rem 2rem rgba($black, 0.65);
-								border-top: solid 0.1rem $tuatara;
 							}
 
 							a {
 								@include media-breakpoint-up(lg) {
 									display: block;
-									border-left: solid 0.1rem $tuatara;
-									border-bottom: solid 0.1rem $tuatara;
 								}
 							}
 						}
@@ -335,30 +298,72 @@
 								@include media-breakpoint-up(lg) {
 									position: absolute;
 									top: 0;
-									left: calc(100% + 1.6rem);
+									left: calc(100% + 0rem);
 									display: block;
 									width: 25rem;
 									visibility: hidden;
 									opacity: 0;
 									pointer-events: none;
-									transition: $transition;
-									background: $cod-gray;
-									box-shadow: 0rem 2rem 2rem rgba($black, 0.65);
-									border-top: solid 0.1rem $tuatara;
 								}
 
 								a {
 									@include media-breakpoint-up(lg) {
 										display: block;
-										border-left: solid 0.1rem $tuatara;
-										border-bottom: solid 0.1rem $tuatara;
 									}
 								}
 							}
 						}
 					}
 				}
+
+				&.menu {
+					> .menu-item,
+					> .menu-item-has-children {
+						> a {
+							padding: 0 0 1rem 0;
+
+							@include media-breakpoint-down(lg) {
+								padding: 1rem;
+							}
+						}
+
+						&:not(:last-child) {
+							@include media-breakpoint-up(lg) {
+								margin-right: 2rem;
+							}
+
+							@include media-breakpoint-down(lg) {
+								border-bottom: solid 0.1rem #202020;
+							}
+						}
+					}
+
+					> .menu-item-has-children {
+						> a {
+							padding-right: 1.5rem;
+						}
+					}
+				}
 			}
+		}
+	}
+
+	.social-links {
+		@include media-breakpoint-up(sm) {
+			margin-bottom: 1rem;
+			justify-content: flex-end;
+		}
+
+		@include media-breakpoint-down(sm) {
+			margin-right: 2rem;
+		}
+
+		a {
+			padding: 0;
+		}
+
+		.icon-holder {
+			width: 2rem;
 		}
 	}
 

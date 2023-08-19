@@ -2,7 +2,6 @@
 .header {
 	position: relative;
 	z-index: 10;
-	padding-top: 16rem;
 
 	ul {
 		margin: 0;
@@ -65,8 +64,11 @@
 		max-width: 125rem;
 		width: 100%;
 		margin: auto;
+		padding-top: 2rem;
 		font-family: $oswald;
 		z-index: 2;
+		border-bottom: 0.1rem solid #202020;
+		background: #101010;
 
 		.menu {
 			@include media-breakpoint-up(lg) {
@@ -97,12 +99,18 @@
 			}
 		}
 		.search-form {
-			margin-bottom: 1rem;
-
 			@include media-breakpoint-down(md) {
 				max-width: 30rem;
 			}
 		}
+	}
+
+	.illustration-holder {
+		margin-top: 1rem;
+		min-height: 20rem;
+		background: url("#{$images}/header.jpg") no-repeat;
+		background-position: 50% 100%;
+		background-size: cover;
 	}
 
 	.dropdown-menu-wrapper {

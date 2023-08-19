@@ -8,7 +8,7 @@ $fira-sans-condensed: "Fira Sans Condensed", sans-serif;
 
 // bootstrap grid
 $grid-columns: 12;
-$grid-gutter-width: 34px;
+$grid-gutter-width: 30px;
 $grid-gutter-width-mobile: $grid-gutter-width;
 
 $grid-breakpoints: (
@@ -47,9 +47,14 @@ $font-size-base: 1.6rem;
 $font-weight-base: 300;
 $line-height-base: 1.3;
 $links-color-base: inherit;
-
 $transition: all 0.3s ease;
 
-// dev2
-// dev3
-// dev4
+$spacer: 1rem;
+$spacers: (
+	0: 0,
+	1: $spacer * 1,
+	2: $spacer * 2,
+	3: $spacer * 3,
+	4: $spacer * 4,
+	5: $spacer * 5
+);

@@ -7,7 +7,7 @@
 
 	li {
 		&:not(:last-child) {
-			margin-right: 2.5rem;
+			margin-right: 1rem;
 		}
 
 		a {
@@ -16,7 +16,6 @@
 
 			&:hover {
 				opacity: 1;
-
 				transform: scale(1.2);
 			}
 		}

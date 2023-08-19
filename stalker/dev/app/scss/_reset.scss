@@ -5,15 +5,26 @@ html {
 body {
 	margin: 0;
 	min-width: 320px;
-	background: black;
+	background: url("#{$images}wall-bg.jpg") repeat;
 	color: $text-color-base;
 	font: $font-weight-base #{$font-size-base}/ $line-height-base $font-family-base;
 	font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	position: relative;
 	display: flex;
 	flex-direction: column;
+
+	// &::before {
+	// 	position: absolute;
+	// 	content: "";
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	background: rgba(black, 0.75);
+	// }
 
 	&.buddypress {
 		#page {
@@ -79,10 +90,9 @@ input[type="submit"]::-moz-focus-inner {
 	max-width: 125rem;
 	width: 100%;
 	margin: auto;
-	padding-top: 1.7rem;
+	padding-top: 1.5rem;
 	background: $cod-gray;
 	border: solid 0.1rem $tuatara;
-	box-shadow: 0.4rem 0 3rem rgba($black, 0.65);
 }
 
 h1 {

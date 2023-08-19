@@ -1,31 +1,19 @@
 <header class="header">
-	<div class="header-top">
-		<div class="container-fluid">
-			<div class="logo">
-				<img data-src="images/logo.png" src="#" loading="lazy" class="lazyload" alt="#">
-			</div>
-			<div class="user-profile">
-				<div class="open-profile-dropdown">
-					<div class="user-avatar">
-						<img data-src="images/496767602.png" src="#" alt="image description" loading="lazy" class="lazyload">
-					</div>
-					<span class="user-name">Stalker</span>
-					<span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
-				</div>
-				<ul class="dropdown-ul">
-					<li><a href="#"><i class="fas fa-user"></i> Профіль</a></li>
-					<li><a href="#"><i class="fas fa-envelope"></i> Повідомлення</a></li>
-					<li><a href="#"><i class="fas fa-user-edit"></i> Редагувати профіль</a></li>
-					<li><a href="#"><i class="fas fa-door-open"></i> Вийти</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
 	<div class="main-nav">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-4 col-md-8 col-lg-9 informer-row-border">
-					<div class="dropdown-menu-wrapper"> <a class="open-menu-wrapper d-inline-flex d-lg-none"> <span class="open-menu" href="#"> <span></span> <span></span> <span class="sr-only">Open Mobile Nav</span> </span> <span class="open-menu-title">Menu</span> </a>
+				<div class="col-sm-4 col-md-8 col-lg-9 mb-1 mb-sm-0">
+					<div class="dropdown-menu-wrapper d-flex d-sm-block align-items-center flex-row-reverse justify-content-between flex-sm-column">
+						<a class="open-menu-wrapper d-inline-flex d-lg-none">
+							<span class="open-menu" href="#">
+								<span></span>
+								<span></span>
+								<span class="sr-only">Open Mobile Nav</span>
+							</span>
+							<span class="open-menu-title">Menu</span> </a>
+						<div class="logo">
+							<img data-src="images/logo.png" src="#" loading="lazy" class="lazyload" alt="#">
+						</div>
 						<nav id="site-navigation" class="main-navigation">
 							<div class="menu-top-menu-container">
 								<ul id="primary-menu" class="menu">
@@ -147,13 +135,38 @@
 						</nav>
 					</div>
 				</div>
-				<div class="col-8 col-md-4 col-lg-3 d-flex align-items-center justify-content-end">
-					<form role="search" method="get" class="search-form" action="/">
+				<div class="col-sm-8 col-md-4 col-lg-3 d-flex flex-sm-column align-items-center align-items-sm-end justify-content-end">
+					<ul class="social-links">
+						<li>
+							<a href="https://www.youtube.com/channel/UCerdfFvztagv6-T6CoLDVag">
+								<span class="icon-holder">
+									<img data-src="images/icon-youtube.svg" src="#" alt="Наш Youtube канал" loading="lazy" class="lazyload">
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://discord.gg/RAh7GCTT4e">
+								<span class="icon-holder">
+									<img data-src="images/icon-telegram.svg" src="#" alt="Наш Diskord канал" loading="lazy" class="lazyload">
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://t.me/stalker_news_ua">
+								<span class="icon-holder">
+									<img data-src="images/icon-discord.svg" src="#" alt="Наш Telegram канал" loading="lazy" class="lazyload">
+								</span>
+							</a>
+						</li>
+					</ul>
+					<form role="search" method="get" class="search-form ms-auto" action="/">
 						<input type="search" class="form-control" placeholder="Пошук …" value="" name="s">
 						<input type="submit" class="btn" value="Шукати">
 					</form>
 				</div>
 			</div>
+		</div>
+		<div class="illustration-holder">
 		</div>
 	</div>
 </header>

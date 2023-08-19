@@ -15,27 +15,27 @@ body {
 	display: flex;
 	flex-direction: column;
 
-	&::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		min-height: 30rem;
-		background: url("#{$images}/header.jpg") no-repeat;
-		background-position: 50% 100%;
-		background-size: cover;
-	}
+	// &::before {
+	// 	content: "";
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	min-height: 40rem;
+	// 	background: url("#{$images}/header.jpg") no-repeat;
+	// 	background-position: 50% 100%;
+	// 	background-size: cover;
+	// }
 
-	&::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		min-height: 30rem;
-		background: linear-gradient(to bottom, transparent 0%, black 100%);
-	}
+	// &::after {
+	// 	content: "";
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	min-height: 40rem;
+	// 	background: linear-gradient(to bottom, transparent 0%, black 100%);
+	// }
 
 	&.buddypress {
 		#page {
@@ -103,6 +103,7 @@ input[type="submit"]::-moz-focus-inner {
 	margin: auto;
 	padding-top: 1.7rem;
 	z-index: 2;
+	background: #101010;
 }
 
 h1 {
