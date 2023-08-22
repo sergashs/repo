@@ -1,3 +1,9 @@
+.wpft-profile {
+	.wpforo-right-sidebar {
+		display: none !important;
+	}
+}
+
 #wpforo {
 	width: unset !important;
 
@@ -7,6 +13,86 @@
 		&.wpf-dark {
 			margin: 0 !important;
 			padding: 0 !important;
+		}
+
+		.wpforo-right-sidebar {
+			width: 100% !important;
+			display: flex;
+			flex-wrap: wrap;
+
+			@include media-breakpoint-down(sm) {
+				display: none;
+			}
+
+			@include media-breakpoint-up(sm) {
+				gap: 1.5rem;
+			}
+
+			aside {
+				width: calc(25% - 1.2rem) !important;
+
+				@include media-breakpoint-down(md) {
+					width: calc(50% - 0.75rem) !important;
+				}
+
+				@include media-breakpoint-down(sm) {
+					width: 100% !important;
+				}
+			}
+
+			.wpforo-widget-wrap {
+				padding: 0 !important;
+			}
+
+			.widget-title {
+				border-bottom: 2px solid #727272 !important;
+			}
+		}
+
+		.wpforo-list-item-right {
+			float: unset !important;
+
+			.postuser {
+				font-size: 1.2rem;
+				line-height: 1.4rem;
+			}
+
+			.posttitle {
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 1;
+			}
+		}
+
+		.wpforo-forum-icon {
+			border-left: 0 !important;
+		}
+
+		[wpf-tooltip]::after {
+			@include media-breakpoint-down(xl) {
+				left: unset !important;
+				right: 0;
+				transform: translateY(-100%) translateX(0) !important;
+			}
+		}
+
+		.wpf-res-menu {
+			color: #999999 !important;
+		}
+
+		.wpforo-main {
+			display: flex;
+			flex-direction: column-reverse;
+
+			.wpforo-content {
+				width: 100% !important;
+			}
+
+			.wpforo-profile-content {
+				width: 100% !important;
+			}
 		}
 
 		#wpforo-menu {
@@ -140,6 +226,31 @@
 					&:hover {
 						color: #e0e0e0 !important;
 					}
+				}
+			}
+		}
+
+		.wpforo-members {
+			gap: 1.5rem;
+			padding-left: 0 !important;
+
+			.wpforo-member {
+				width: calc(33% - 0.75rem) !important;
+				margin: 0 !important;
+				padding: 1rem !important;
+				border-radius: 1rem;
+				background: #1f1f1f !important;
+
+				@include media-breakpoint-down(lg) {
+					width: calc(50% - 0.75rem) !important;
+				}
+
+				@include media-breakpoint-down(md) {
+					width: 100% !important;
+				}
+
+				.wpforo-member-bg {
+					width: calc(100% - 2rem) !important;
 				}
 			}
 		}

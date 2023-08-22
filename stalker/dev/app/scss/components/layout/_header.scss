@@ -146,7 +146,7 @@
 			@include media-breakpoint-down(lg) {
 				position: absolute;
 				top: 4.6rem;
-				right: 0;
+				left: 0;
 				min-width: 20rem;
 				background: $cod-gray;
 				border: solid 0.1rem $tuatara;
@@ -154,6 +154,11 @@
 				visibility: hidden;
 				pointer-events: none;
 				transition: $transition;
+			}
+
+			@include media-breakpoint-down(sm) {
+				left: unset;
+				right: 0;
 			}
 
 			.menu-opened & {
