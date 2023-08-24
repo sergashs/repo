@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-import { Card, Col, Row, Empty, Input, InputNumber, Pagination, Button, Modal, Comment, Avatar } from 'ant-design-vue';
+import { Card, Col, Row, Input, InputNumber, Pagination, Button, Modal, Comment, Avatar, Empty } from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
 
 const app = createApp(App);
@@ -19,4 +19,5 @@ app.use(Button);
 app.use(Modal);
 app.use(Comment);
 app.use(Avatar);
+app.use(Empty);
 app.mount('#app');

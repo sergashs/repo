@@ -8,18 +8,14 @@
 				<h3 class="user-name">{{ user.displayName }}</h3>
 				<a-button @click="signOut" type="primary">Вийти</a-button>
 			</template>
-			<template v-else>
-				<p>Користувач не увійшов. Увійдіть щоб бачити чат і писати повідомлення!</p>
-				<a-button @click="signInWithGooglePopup" type="primary">Login with Google</a-button>
-			</template>
 		</div>
 
-		<div class="messages-list" ref="messagesList">
-			<!-- <div v-for="message in messages" :key="message">
-			<div :class="message.admin ? 'admin' : 'client'">
-				{{ message.text }}
-			</div>
-		</div> -->
+		<div class="messages-list" :class="{ empty: messages.length === 0 }" ref="messagesList">
+			<a-empty v-if="messages.length === 0" :image="simpleImage">
+				<template #description>
+					<span> Немає повідомлень </span>
+				</template>
+			</a-empty>
 
 			<a-comment v-for="item in messages" :key="item">
 				<!-- <template #actions>
@@ -68,8 +64,16 @@
 			</a-comment>
 		</div>
 		<div class="chat-footer">
-			<a-Input placeholder="Текст повідомлення" v-model:value="message" @keypress.enter="sendMessage" />
-			<a-button @click="sendMessage" type="primary" :loading="loading">Відправити</a-button>
+			<template v-if="user">
+				<a-Input placeholder="Текст повідомлення" v-model:value="message" @keypress.enter="sendMessage" />
+				<a-button @click="sendMessage" type="primary" :loading="loading">Відправити</a-button>
+			</template>
+			<template v-else>
+				<div class="login-holder">
+					<p>Потрібно залогінитись щоб мати змогу писати повідомлення</p>
+					<a-button @click="signInWithGooglePopup" type="primary">Залогінитись через гугл</a-button>
+				</div>
+			</template>
 		</div>
 	</div>
 </template>
@@ -175,19 +179,17 @@ export default {
 		},
 
 		getCurrentTime() {
-			// const now = new Date();
-			// const hours = String(now.getHours()).padStart(2, "0");
-			// const minutes = String(now.getMinutes()).padStart(2, "0");
-			// return `${hours}:${minutes}`;
-
 			const now = Timestamp.now();
 			return now;
 		},
 		formatTimestampToTime(timestamp) {
 			const date = timestamp.toDate();
+			const monthNames = ["січня", "лютого", "березня", "квітня", "травня", "червня", "липня", "серпня", "вересня", "жовтня", "листопада", "грудня"];
+			const month = monthNames[date.getMonth()];
+			const day = date.getDate().toString().padStart(2, "0");
 			const hours = date.getHours().toString().padStart(2, "0");
 			const minutes = date.getMinutes().toString().padStart(2, "0");
-			return `${hours}:${minutes}`;
+			return `${day} ${month} в ${hours}:${minutes}`;
 		},
 		scrollToBottom() {
 			const messagesList = this.$refs.messagesList;
@@ -225,6 +227,7 @@ export default {
 	.user-info {
 		display: flex;
 		align-items: center;
+		margin-bottom: 10px;
 
 		.user-name {
 			margin-bottom: 0;
@@ -245,12 +248,25 @@ export default {
 	}
 
 	.messages-list {
+		margin-bottom: 10px;
+		min-height: 500px;
 		max-height: 500px;
 		overflow: auto;
+
+		&.empty {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 
 	.ant-comment-inner {
 		padding: 5px 0;
+	}
+
+	.login-holder {
+		text-align: center;
 	}
 }
 </style>
