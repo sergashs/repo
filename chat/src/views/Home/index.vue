@@ -25,9 +25,10 @@ export default {
 <style lang="scss" scoped>
 .home-page {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 	min-height: 100vh;
+	min-height: calc(var(--vh, 1vh) * 100);
 }
 </style>

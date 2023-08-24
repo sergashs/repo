@@ -3,7 +3,6 @@ import App from './App.vue'
 import router from './router'
 
 import { Card, Col, Row, Input, InputNumber, Pagination, Button, Modal, Comment, Avatar, Empty } from 'ant-design-vue';
-import 'ant-design-vue/dist/antd.css';
 
 const app = createApp(App);
 
