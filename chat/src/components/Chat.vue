@@ -20,7 +20,7 @@
 						</template>
 					</a-empty>
 
-					<a-comment v-for="item in messages" :key="item" :class="item.name === user.displayName ? 'my-message' : ''">
+					<a-comment v-for="item in messages" :key="item" :class="isMyCommentClass(item.name)">
 						<!-- <template #actions>
 					<span key="comment-basic-like">
 						<a-tooltip title="Like">
@@ -220,6 +220,13 @@ export default {
 			if (messagesList && messagesList.scrollHeight) {
 				messagesList.scrollTop = messagesList.scrollHeight;
 			}
+		},
+		isMyCommentClass(username) {
+			if (this.user && this.user.displayName) {
+				return this.user.displayName === username ? "my-message" : "";
+			} else {
+				return "";
+			}
 		}
 	},
 	mounted() {
@@ -228,12 +235,10 @@ export default {
 			this.user = JSON.parse(storedUser);
 		}
 
-		// this.getMessages();
-
 		const messagesCollection = collection(db, "messages");
 		const q = query(messagesCollection, orderBy("timestamp"), limit(100));
 
-		const addedMessageIds = []; // Список вже доданих повідомлень
+		const addedMessageIds = [];
 
 		onSnapshot(q, (snapshot) => {
 			snapshot.docChanges().forEach((change) => {
