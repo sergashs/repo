@@ -13,7 +13,7 @@ const app = express();
 app.use((req, res, next) => {
 	setTimeout(() => {
 		next();
-	}, 3000);
+	}, 0);
 });
 
 

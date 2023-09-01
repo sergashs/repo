@@ -18,6 +18,10 @@
 				height: 100%;
 			}
 
+			@include media-breakpoint-down(md) {
+				margin-bottom: 1.5rem;
+			}
+
 			img {
 				border-radius: 0.5rem;
 

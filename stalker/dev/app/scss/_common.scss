@@ -46,27 +46,6 @@
 	border-right: 0.1rem solid $tuatara;
 }
 
-.breadcrumb {
-	margin-bottom: 2rem;
-
-	li {
-		a {
-			color: $gray2;
-			text-decoration: none;
-		}
-
-		&:hover {
-			a {
-				color: $cloudy;
-			}
-		}
-
-		&.active {
-			color: $cloudy;
-		}
-	}
-}
-
 .fancybox__container {
 	z-index: 1000000;
 }
@@ -137,5 +116,24 @@
 				opacity: 1;
 			}
 		}
+	}
+}
+
+.download-link {
+	display: block;
+	text-decoration: none;
+	padding: 1.5rem 1rem;
+	font-size: 1.8rem;
+	color: #9d9d9d;
+	text-decoration: underline;
+	text-align: center;
+	background: #202020;
+	border-radius: 0.5rem;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&:hover {
+		color: lighten(#9d9d9d, 10);
+		background: lighten(#202020, 5);
 	}
 }

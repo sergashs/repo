@@ -116,3 +116,8 @@ strong,
 b {
 	font-weight: 600;
 }
+
+// reset line-height on icons
+.bi {
+	line-height: 0;
+}
