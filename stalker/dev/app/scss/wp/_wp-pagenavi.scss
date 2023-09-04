@@ -14,8 +14,8 @@
 
 	span {
 		&.current {
-			background: transparent;
-			border: none;
+			background: #131313;
+			border-color: lighten(#202020, 10);
 		}
 	}
 }

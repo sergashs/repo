@@ -4,11 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	correctVh();
 	lazyLoad();
 	mobileMenu();
-	initSliderBuyGames();
+	initSlides()
 	fancyboxImges();
-	initModals();
-	showTelegramModal();
-	initCustomScrollBar();
 });
 
 window.addEventListener('resize', () => {
@@ -103,7 +100,7 @@ function mobileMenu() {
 };
 
 
-function initSliderBuyGames() {
+function initSlides() {
 	const swiper = new Swiper('.swiper-buy-game', {
 		speed: 900,
 		loop: true,
@@ -111,8 +108,8 @@ function initSliderBuyGames() {
 		slidesPerView: 1,
 		spaceBetween: 10,
 		navigation: {
-			nextEl: ".swiper-button-next",
-			prevEl: ".swiper-button-prev",
+			nextEl: ".swiper-buy-game .swiper-button-next",
+			prevEl: ".swiper-buy-game .swiper-button-prev",
 		},
 		lazy: {
 			loadPrevNext: true,
@@ -121,71 +118,35 @@ function initSliderBuyGames() {
 			delay: 2000,
 		},
 	})
+
+	const swiper2 = new Swiper('.swiper-new-mods', {
+		speed: 900,
+		loop: true,
+		slidesPerView: 1,
+		spaceBetween: 20,
+		navigation: {
+			nextEl: ".swiper-new-mods .swiper-button-next",
+			prevEl: ".swiper-new-mods .swiper-button-prev",
+		},
+		lazy: {
+			loadPrevNext: true,
+		},
+		autoplay: {
+			delay: 2000,
+		},
+		breakpoints: {
+			640: {
+				slidesPerView: 2,
+			},
+			768: {
+				slidesPerView: 3,
+			},
+			1024: {
+				slidesPerView: 4,
+			},
+		},
+	})
 }
-
-// show telegram-modal
-function showTelegramModal() {
-	const storage = localStorage.getItem('showTelegram') || null;
-
-	if (storage) {
-		document.querySelector('#modal-notify').classList.remove('open');
-		document.querySelector(".modal-overlay").classList.remove('active');
-	} else {
-		document.querySelector(".modal-overlay").classList.add('active');
-		document.querySelector('#modal-notify').classList.add('open');
-		localStorage.setItem('showTelegram', true)
-	}
-}
-
-// modals 
-function initModals() {
-	const btns = document.querySelectorAll("[modal-id]");
-	const overlay = document.querySelector(".modal-overlay");
-	const modals = document.querySelectorAll(".modal-block");
-
-	if (btns) {
-		function deleteActiveClass() {
-			for (modal of modals) {
-				modal.classList.remove("open");
-			}
-		}
-
-		document.addEventListener('click', function (e) {
-			let modalOpener = document.querySelector('[modal-id]');
-			let isInsideOpener = e.target.closest('[modal-id]');
-
-			if (modalOpener === e.target || isInsideOpener) {
-				e.preventDefault();
-				deleteActiveClass();
-				const modalID = e.target.getAttribute('modal-id');
-				const modal = document.getElementById(modalID);
-				overlay.classList.add("active");
-				modal.classList.add("open");
-
-			}
-
-			let modalClose = e.target.closest('.btn-close-modal');
-			if (modalClose) {
-				e.preventDefault();
-				overlay.classList.remove("active");
-				e.target.closest('.modal-block').classList.remove("open");
-
-			}
-		});
-
-		if (overlay) {
-			overlay.addEventListener("click", function (e) {
-				if (e.target == overlay) {
-					document.querySelector(".modal-block.open").classList.remove("open");
-					overlay.classList.remove("active");
-
-				}
-			});
-		}
-
-	}
-}
-
 
 // fancyboxImges
 function fancyboxImges() {
@@ -200,22 +161,10 @@ function fancyboxImges() {
 	}
 }
 
-
-function initCustomScrollBar() {
-	// Array.prototype.forEach.call(
-	// 	document.querySelectorAll('.scroll'),
-	// 	(el) => new SimpleBar(el, {
-	// 		forceVisible: 'y',
-	// 		autoHide: false,
-	// 		scrollbarColor: '#888/#f1f1f1'
-	// 	})
-	// );
-
-	// const simpleBar = new SimpleBar(document.querySelector('.scroll-comments'), {
-	// 	autoHide: false,
-	// });
-
-
-
-
+function initTooltips() {
+	const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+	if (tooltipTriggerList) {
+		const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+	}
 }
+

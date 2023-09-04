@@ -18,11 +18,10 @@
 @import "components/search-form";
 @import "components/search-card";
 @import "components/social-links";
-@import "components/modal";
-@import "components/modals/subscribe-telegram";
-@import "components/card";
+@import "components/cards/card";
 @import "components/cards/card-mods";
 @import "components/cards/card-video";
+@import "components/cards/card-news";
 @import "components/comments-area";
 @import "components/tags-list";
 
@@ -39,4 +38,3 @@
 @import "components/informers/top-mods";
 @import "components/informers/informer-last-comments";
 @import "components/informers/informer-buy-game";
-@import "components/informers/informer-last-news";

@@ -19,7 +19,7 @@
 // @import "tables";
 // @import "forms";
 // @import "buttons";
-// @import "transitions";
+@import "transitions";
 // @import "dropdown";
 // @import "button-group";
 // @import "nav";
@@ -35,8 +35,8 @@
 // @import "close";
 // @import "toasts";
 // @import "modal";
-// @import "tooltip";
-// @import "popover";
+@import "tooltip";
+@import "popover";
 
 // Helpers
 @import "helpers";

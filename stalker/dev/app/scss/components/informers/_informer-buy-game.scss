@@ -25,44 +25,16 @@
 		display: flex;
 	}
 
-	.swiper-button-prev {
-		margin-right: 1rem;
+	&.new-mods {
+		margin-bottom: 1.5rem;
+		border-bottom: 0.1rem solid #202020;
 
-		&::before {
-			background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='48' width='48'%3E%3Cpath d='M28.05 36 16 23.95 28.05 11.9 30.2 14.05 20.3 23.95 30.2 33.85Z' fill='%233e3e3e'/%3E%3C/svg%3E");
-		}
-	}
-
-	.swiper-button-next {
-		&::before {
-			background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='48' width='48'%3E%3Cpath d='M18.75 36 16.6 33.85 26.5 23.95 16.6 14.05 18.75 11.9 30.8 23.95Z' fill='%233e3e3e' /%3E%3C/svg%3E");
-		}
-	}
-
-	.swiper-button-prev,
-	.swiper-button-next {
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 2.5rem;
-		height: 2.5rem;
-		background: $tuatara;
-		border-radius: 0.3rem;
-		border: solid 0.1rem lighten($tuatara, 15);
-		transition: $transition;
-
-		&::before {
-			content: "";
-			display: block;
-			width: 2rem;
-			height: 2rem;
-			background-size: 2rem;
-			background-repeat: no-repeat;
-		}
-
-		&:hover {
-			filter: brightness(1.4);
+		h3 {
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			-webkit-line-clamp: 1;
 		}
 	}
 }

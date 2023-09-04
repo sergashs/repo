@@ -16,11 +16,8 @@
 	}
 
 	.logo {
-		max-width: 10rem;
-
-		@include media-breakpoint-up(lg) {
-			margin-bottom: 1rem;
-		}
+		max-width: 30rem;
+		align-self: flex-end;
 
 		img {
 			width: 100%;
@@ -117,6 +114,8 @@
 	}
 
 	.illustration-holder {
+		display: flex;
+		justify-content: space-between;
 		margin-top: 1rem;
 		min-height: 20rem;
 		background: url("#{$images}/header.jpg") no-repeat;
@@ -154,11 +153,6 @@
 				visibility: hidden;
 				pointer-events: none;
 				transition: $transition;
-			}
-
-			@include media-breakpoint-down(sm) {
-				left: unset;
-				right: 0;
 			}
 
 			.menu-opened & {
@@ -216,6 +210,17 @@
 							}
 						}
 
+						&::before {
+							@include media-breakpoint-up(lg) {
+								content: "";
+								position: absolute;
+								top: 100%;
+								right: 0;
+								width: 100%;
+								height: 100%;
+							}
+						}
+
 						&::after {
 							@include media-breakpoint-up(lg) {
 								content: "";
@@ -224,7 +229,7 @@
 								right: 0;
 								width: 1rem;
 								height: 1rem;
-								transform: translateY(calc(-50% - 0.25rem));
+								transform: translateY(-50%);
 								background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='iso-8859-1'%3F%3E%3C!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='199.404px' height='199.404px' viewBox='0 0 199.404 199.404' style='enable-background:new 0 0 199.404 199.404;' xml:space='preserve' fill='%23c4c4c4'%3E%3Cg%3E%3Cpolygon points='199.404,63.993 171.12,35.709 99.702,107.127 28.284,35.709 0,63.993 99.702,163.695 '/%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E%0A");
 								background-repeat: no-repeat;
 								background-size: 1rem;
@@ -265,6 +270,7 @@
 						> .sub-menu {
 							@include media-breakpoint-up(lg) {
 								position: absolute;
+								top: calc(100% + 1rem);
 								left: 0;
 								display: block;
 								width: 25rem;
@@ -325,7 +331,7 @@
 					> .menu-item,
 					> .menu-item-has-children {
 						> a {
-							padding: 0 0 1rem 0;
+							padding: 0;
 
 							@include media-breakpoint-down(lg) {
 								padding: 1rem;
@@ -354,13 +360,11 @@
 	}
 
 	.social-links {
-		@include media-breakpoint-up(sm) {
-			margin-bottom: 1rem;
-			justify-content: flex-end;
-		}
+		align-self: flex-end;
+		padding: 1rem;
 
-		@include media-breakpoint-down(sm) {
-			margin-right: 2rem;
+		@include media-breakpoint-up(sm) {
+			justify-content: flex-end;
 		}
 
 		a {
