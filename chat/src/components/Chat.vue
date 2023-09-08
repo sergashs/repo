@@ -231,7 +231,10 @@ export default {
 			const container = document.querySelector(".chat-holder");
 			const footer = document.querySelector(".chat-footer");
 			const exitButton = document.querySelector(".exit-button");
-			messagesHolder.style.maxHeight = container.offsetHeight - footer.offsetHeight - exitButton.offsetHeight + "px";
+
+			if (window.innerWidth < 768) {
+				messagesHolder.style.maxHeight = container.offsetHeight - footer.offsetHeight - exitButton.offsetHeight + "px";
+			}
 		}
 	},
 	mounted() {
@@ -261,7 +264,10 @@ export default {
 	max-width: 400px;
 	display: flex;
 	flex-direction: column;
-	flex: 1;
+
+	@media (max-width: 768px) {
+		flex: 1;
+	}
 }
 
 .chat-holder {
