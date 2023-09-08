@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "ant-design-vue": "^3.2.15",
+    "autosize": "^6.0.1",
     "axios": "^0.27.2",
     "bad-words": "^3.0.4",
     "core-js": "^3.8.3",

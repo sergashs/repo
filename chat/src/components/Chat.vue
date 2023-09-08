@@ -2,7 +2,7 @@
 	<div class="component-holder">
 		<div class="chat-holder">
 			<div class="container">
-				<!-- <button @click="deleteAllMessages">ddd</button> -->
+				<!-- <button @click="deleteAllMessages">delete all messages</button> -->
 				<!-- <div class="user-info">
 				<template v-if="user">
 					<div class="avatar-holder">
@@ -69,7 +69,7 @@
 				<div class="chat-footer">
 					<template v-if="user">
 						<div class="send-area">
-							<a-Input placeholder="Текст повідомлення" v-model:value="message" @keypress.enter="sendMessage" />
+							<a-textarea placeholder="Текст повідомлення" v-model:value="message" @keypress.enter="sendMessage" @input="onPrint" />
 							<a-button @click="sendMessage" type="primary" :disabled="this.message.length < 0" :loading="loading">Відправити</a-button>
 						</div>
 					</template>
@@ -92,7 +92,8 @@
 import { db, auth } from "../firebase";
 import { query, collection, getDocs, addDoc, Timestamp, limit, orderBy, deleteDoc } from "firebase/firestore";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { onSnapshot } from "firebase/firestore";
+// import { onSnapshot } from "firebase/firestore";
+// import autosize from "autosize";
 
 export default {
 	data() {
@@ -100,7 +101,8 @@ export default {
 			message: "",
 			messages: [],
 			user: null,
-			loading: false
+			loading: false,
+			computedHeight: "auto"
 		};
 	},
 	methods: {
@@ -128,6 +130,7 @@ export default {
 				console.error("Помилка під час виходу:", error);
 			}
 		},
+
 		async sendMessage() {
 			if (this.message.length > 0) {
 				this.loading = true;
@@ -140,7 +143,7 @@ export default {
 						timestamp: this.getCurrentTime()
 					});
 
-					// this.getMessages();
+					await this.getMessages();
 				} catch (e) {
 					console.error("Error adding document: ", e);
 				} finally {
@@ -149,24 +152,6 @@ export default {
 				}
 			}
 		},
-		// async getMessages() {
-		// 	try {
-		// 		// eslint-disable-next-line
-		// 		const querySnapshot = await getDocs(collection(db, "messages"), limit(1));
-		// 		/* eslint-disable */
-		// 		const messages = [];
-
-		// 		querySnapshot.forEach((doc) => {
-		// 			const messageData = doc.data();
-		// 			messages.push(messageData);
-		// 		});
-
-		// 		this.messages = messages;
-		// 	} catch (e) {
-		// 		console.error("Error reading database", e);
-		// 	}
-		// },
-
 		async getMessages() {
 			try {
 				const q = query(collection(db, "messages"), orderBy("timestamp"), limit(100));
@@ -183,6 +168,10 @@ export default {
 				this.messages = messages;
 			} catch (e) {
 				console.error("Error reading database", e);
+			} finally {
+				await this.messages;
+				await this.scrollToBottom();
+				await this.setMessageHeight();
 			}
 		},
 		async deleteAllMessages() {
@@ -227,6 +216,22 @@ export default {
 			} else {
 				return "";
 			}
+		},
+		onPrint(event) {
+			const textarea = event.target;
+
+			textarea.style.height = "18px";
+			textarea.style.height = textarea.scrollHeight + "px";
+			this.setMessageHeight();
+			this.scrollToBottom();
+		},
+
+		setMessageHeight() {
+			const messagesHolder = document.querySelector(".messages-list");
+			const container = document.querySelector(".chat-holder");
+			const footer = document.querySelector(".chat-footer");
+			const exitButton = document.querySelector(".exit-button");
+			messagesHolder.style.maxHeight = container.offsetHeight - footer.offsetHeight - exitButton.offsetHeight + "px";
 		}
 	},
 	mounted() {
@@ -235,28 +240,17 @@ export default {
 			this.user = JSON.parse(storedUser);
 		}
 
-		const messagesCollection = collection(db, "messages");
-		const q = query(messagesCollection, orderBy("timestamp"), limit(100));
+		this.getMessages();
 
-		const addedMessageIds = [];
+		// const text_area = document.querySelector(".ant-input");
 
-		onSnapshot(q, (snapshot) => {
-			snapshot.docChanges().forEach((change) => {
-				if (change.type === "added") {
-					const messageData = change.doc.data();
-					const messageId = change.doc.id;
+		// if (text_area) {
+		// 	autosize(text_area);
 
-					if (!addedMessageIds.includes(messageId)) {
-						this.messages.push(messageData);
-						addedMessageIds.push(messageId);
-
-						setTimeout(() => {
-							this.scrollToBottom();
-						}, 100);
-					}
-				}
-			});
-		});
+		// 	text_area.addEventListener("input", () => {
+		// 		autosize.update(text_area);
+		// 	});
+		// }
 	}
 };
 </script>
@@ -267,21 +261,34 @@ export default {
 	max-width: 400px;
 	display: flex;
 	flex-direction: column;
+	flex: 1;
 }
 
 .chat-holder {
 	display: flex;
 	flex-direction: column;
-	padding: 10px 0;
+	flex: 1;
+	padding: 0 0 10px 0;
 	background: white;
-	border-radius: 10px;
-	box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.05);
+
+	@media (min-width: 768px) {
+		border-radius: 10px;
+		box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.05);
+	}
+
+	> .container {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
 
 	.chat-footer {
 		width: 100%;
 		display: flex;
 
 		.ant-input {
+			max-height: 100px;
+			resize: none;
 			margin-right: 10px;
 		}
 	}
@@ -310,8 +317,8 @@ export default {
 	}
 
 	.messages-list {
+		padding-top: 10px;
 		margin-bottom: 10px;
-		min-height: 500px;
 		max-height: 500px;
 		overflow: auto;
 
@@ -391,12 +398,13 @@ export default {
 	.send-area {
 		width: 100%;
 		display: flex;
-		flex-direction: column;
+		align-items: flex-end;
 		padding: 10px;
 		background: #f1f1f1;
 		border-radius: 10px;
 
 		.ant-input {
+			min-height: 55px;
 			padding: 0;
 			background: transparent;
 			border: none;

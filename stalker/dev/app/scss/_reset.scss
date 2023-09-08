@@ -5,7 +5,7 @@ html {
 body {
 	margin: 0;
 	min-width: 320px;
-	background: url("#{$images}wall-bg.jpg") repeat;
+	background: url("#{$images}background.jpg") repeat;
 	color: $text-color-base;
 	font: $font-weight-base #{$font-size-base}/ $line-height-base $font-family-base;
 	font-smoothing: antialiased;
@@ -104,10 +104,11 @@ h2 {
 	padding-bottom: 1.5rem;
 }
 
-h3 {
+h3,
+.h3 {
 	font-family: $roboto-condensed;
 	margin-bottom: 1.5rem;
-	font-size: 1.6rem;
+	font-size: 1.8rem;
 	font-weight: 400;
 	color: $mercury;
 }

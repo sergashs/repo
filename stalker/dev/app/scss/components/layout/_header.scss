@@ -116,7 +116,7 @@
 	.illustration-holder {
 		display: flex;
 		justify-content: space-between;
-		margin-top: 1rem;
+		margin-top: 1.5rem;
 		min-height: 20rem;
 		background: url("#{$images}/header.jpg") no-repeat;
 		background-position: 50% 100%;
@@ -361,7 +361,7 @@
 
 	.social-links {
 		align-self: flex-end;
-		padding: 1rem;
+		padding: 1.5rem;
 
 		@include media-breakpoint-up(sm) {
 			justify-content: flex-end;

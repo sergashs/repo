@@ -1,0 +1,26 @@
+.main-page {
+	.informer-buy-game {
+		&.new-mods {
+			margin-bottom: 1.5rem;
+			border-bottom: 0.1rem solid #202020;
+
+			h3 {
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 1;
+			}
+		}
+	}
+
+	.card-article {
+		h3 {
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			-webkit-line-clamp: 2;
+		}
+	}
+}
