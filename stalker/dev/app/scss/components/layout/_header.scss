@@ -359,23 +359,6 @@
 		}
 	}
 
-	.social-links {
-		align-self: flex-end;
-		padding: 1.5rem;
-
-		@include media-breakpoint-up(sm) {
-			justify-content: flex-end;
-		}
-
-		a {
-			padding: 0;
-		}
-
-		.icon-holder {
-			width: 2rem;
-		}
-	}
-
 	.open-menu {
 		position: relative;
 		width: 2.5rem;

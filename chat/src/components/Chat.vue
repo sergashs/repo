@@ -14,7 +14,8 @@
 			</div> -->
 
 				<div class="messages-list" :class="{ empty: messages.length === 0 }" ref="messagesList">
-					<a-empty v-if="messages.length === 0" :image="simpleImage">
+					<a-spin v-if="loadingMessages" />
+					<a-empty v-else-if="!loadingMessages && messages.length === 0" :image="simpleImage">
 						<template #description>
 							<span> Немає повідомлень </span>
 						</template>
@@ -68,6 +69,13 @@
 				</div>
 				<div class="chat-footer">
 					<template v-if="user">
+						<a-popover v-model:visible="showEmoji" trigger="click">
+							<template #content>
+								<EmojiPicker @emoji_click="pickEmoji" />
+							</template>
+							<smile-outlined :style="{ fontSize: '19px' }" />
+						</a-popover>
+
 						<div class="send-area">
 							<a-textarea placeholder="Текст повідомлення" v-model:value="message" @keypress.enter="sendMessage" @input="onPrint" />
 							<a-button @click="sendMessage" type="primary" :disabled="this.message.length < 0" :loading="loading">Відправити</a-button>
@@ -92,17 +100,24 @@
 import { db, auth } from "../firebase";
 import { query, collection, getDocs, addDoc, Timestamp, limit, orderBy, deleteDoc } from "firebase/firestore";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-// import { onSnapshot } from "firebase/firestore";
-// import autosize from "autosize";
+import { onSnapshot } from "firebase/firestore";
+import { SmileOutlined } from "@ant-design/icons-vue";
+import EmojiPicker from "@/components/EmojiPicker";
 
 export default {
+	components: {
+		SmileOutlined,
+		EmojiPicker
+	},
 	data() {
 		return {
 			message: "",
 			messages: [],
 			user: null,
 			loading: false,
-			computedHeight: "auto"
+			computedHeight: "auto",
+			loadingMessages: true,
+			showEmoji: false
 		};
 	},
 	methods: {
@@ -133,10 +148,11 @@ export default {
 
 		async sendMessage() {
 			if (this.message.length > 0) {
-				this.loading = true;
+				// this.loading = true;
 
 				try {
 					await addDoc(collection(db, "messages"), {
+						userId: this.user.uid,
 						name: this.user.displayName,
 						avatar_url: this.user.photoURL,
 						message: this.message,
@@ -147,8 +163,7 @@ export default {
 				} catch (e) {
 					console.error("Error adding document: ", e);
 				} finally {
-					this.message = "";
-					this.loading = false;
+					// this.loading = false;
 				}
 			}
 		},
@@ -157,7 +172,6 @@ export default {
 				const q = query(collection(db, "messages"), orderBy("timestamp"), limit(100));
 
 				const querySnapshot = await getDocs(q);
-
 				const messages = [];
 
 				querySnapshot.forEach((doc) => {
@@ -169,6 +183,7 @@ export default {
 			} catch (e) {
 				console.error("Error reading database", e);
 			} finally {
+				this.loadingMessages = false;
 				await this.messages;
 				await this.scrollToBottom();
 				await this.setMessageHeight();
@@ -183,7 +198,7 @@ export default {
 					deleteDoc(doc.ref);
 				});
 
-				this.messages = []; // Очистити масив повідомлень у Vue
+				this.messages = [];
 			} catch (error) {
 				console.error("Помилка під час видалення повідомлень:", error);
 			}
@@ -232,9 +247,76 @@ export default {
 			const footer = document.querySelector(".chat-footer");
 			const exitButton = document.querySelector(".exit-button");
 
-			if (window.innerWidth < 768) {
-				messagesHolder.style.maxHeight = container.offsetHeight - footer.offsetHeight - exitButton.offsetHeight + "px";
+			if (exitButton && window.innerWidth < 768) {
+				messagesHolder.style.maxHeight = container.offsetHeight - footer.offsetHeight - exitButton.offsetHeight + 10 + "px";
 			}
+		},
+		// async addBaseChangeListener() {
+		// 	const messagesCollection = collection(db, "messages");
+		// 	const q = query(messagesCollection, orderBy("timestamp"), limit(100));
+
+		// 	const allChangesProcessed = new Promise((resolve) => {
+		// 		let processedChanges = 0;
+
+		// 		onSnapshot(q, (snapshot) => {
+		// 			snapshot.docChanges().forEach((change) => {
+		// 				if (processedChanges === snapshot.docChanges().length) {
+		// 					resolve();
+		// 				}
+
+		// 				console.log(change);
+		// 			});
+
+		// 			this.getMessages();
+		// 		});
+		// 	});
+
+		// 	await allChangesProcessed;
+		// 	await this.scrollToBottom();
+		// 	await this.setMessageHeight();
+		// },
+
+		async addBaseChangeListener() {
+			const messagesCollection = collection(db, "messages");
+			const q = query(messagesCollection, orderBy("timestamp"), limit(100));
+
+			const allChangesProcessed = new Promise((resolve) => {
+				let processedChanges = 0;
+
+				onSnapshot(q, async (snapshot) => {
+					const user = this.user; // Отримуємо поточного користувача
+
+					snapshot.docChanges().forEach((change) => {
+						// Отримуємо дані повідомлення
+						const messageData = change.doc.data();
+
+						// Перевіряємо, чи є властником повідомлення поточний користувач
+						const isCurrentUserMessage = user && user.uid === messageData.userId;
+
+						if (isCurrentUserMessage) {
+							// console.log("This message was sent by the current user:", messageData);
+							this.message = "";
+						} else {
+							// console.log("This message was sent by another user:", messageData);
+						}
+
+						processedChanges++;
+						if (processedChanges === snapshot.docChanges().length) {
+							resolve();
+						}
+					});
+
+					await this.getMessages();
+				});
+			});
+
+			await allChangesProcessed;
+			await this.scrollToBottom();
+			await this.setMessageHeight();
+		},
+
+		pickEmoji(emoji) {
+			this.message += emoji;
 		}
 	},
 	mounted() {
@@ -244,16 +326,7 @@ export default {
 		}
 
 		this.getMessages();
-
-		// const text_area = document.querySelector(".ant-input");
-
-		// if (text_area) {
-		// 	autosize(text_area);
-
-		// 	text_area.addEventListener("input", () => {
-		// 		autosize.update(text_area);
-		// 	});
-		// }
+		this.addBaseChangeListener();
 	}
 };
 </script>
@@ -264,10 +337,16 @@ export default {
 	max-width: 400px;
 	display: flex;
 	flex-direction: column;
+	flex: 1;
 
-	@media (max-width: 768px) {
-		flex: 1;
+	@media (min-width: 768px) {
+		padding: 20px;
+		max-height: 700px;
 	}
+}
+
+.ant-popover-arrow {
+	display: none;
 }
 
 .chat-holder {
@@ -285,12 +364,19 @@ export default {
 	> .container {
 		display: flex;
 		flex-direction: column;
+		justify-content: space-between;
 		flex: 1;
 	}
 
 	.chat-footer {
 		width: 100%;
 		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		.anticon {
+			margin-bottom: 10px;
+		}
 
 		.ant-input {
 			max-height: 100px;
@@ -325,8 +411,10 @@ export default {
 	.messages-list {
 		padding-top: 10px;
 		margin-bottom: 10px;
-		max-height: 500px;
+		flex: 1;
 		overflow: auto;
+
+		max-height: 500px;
 
 		&.empty {
 			display: flex;
