@@ -122,3 +122,14 @@ b {
 .bi {
 	line-height: 0;
 }
+
+hr {
+	border: none;
+	margin: 0;
+	opacity: 1;
+	border-bottom: solid 0.1rem $tuatara;
+}
+
+.tooltip-inner {
+	padding: 0.5rem;
+}

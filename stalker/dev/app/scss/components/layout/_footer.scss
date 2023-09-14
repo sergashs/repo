@@ -118,4 +118,18 @@
 			width: 2rem;
 		}
 	}
+
+	.counter-holder {
+		display: inline-flex;
+		opacity: 0.2;
+		transition: all 0.3s;
+
+		@include media-breakpoint-down(md) {
+			margin-bottom: 1rem;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+	}
 }
