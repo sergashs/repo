@@ -23,6 +23,7 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.8.1",
     "path": "^0.12.7",
+    "puppeteer": "^21.2.1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
