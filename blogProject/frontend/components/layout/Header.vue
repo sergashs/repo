@@ -24,11 +24,12 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useStore } from "vuex";
 
 const store = useStore();
 const currentUser = computed(() => store.getters["user/user"]);
+// const currentUser = ref("");
 
 const menu = [
 	{
@@ -45,8 +46,17 @@ const menu = [
 	}
 ];
 
+// currentUser.value = await $fetch("http://localhost:5000/api/users", {
+// 	method: "GET",
+// 	headers: {
+// 		"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInVzZXJuYW1lIjoic2VyZ2FzIiwiZW1haWwiOiJzZXJnYXNAZ21haWwuY29tIiwiaWF0IjoxNjk0OTU3Nzc2LCJleHAiOjE2OTUwNDQxNzZ9.B6FmL80AvnbLLPvQ-588Ij9bqdv9uaTbkrmTI_zdACw"
+// 	}
+// }).catch((error) => error.data);
+
 function logout() {
+	console.log("?");
 	store.dispatch("user/logout");
+	currentUser.value = {};
 }
 </script>
 

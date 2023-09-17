@@ -74,9 +74,9 @@ function login() {
 		});
 }
 
-// onMounted(() => {
-// 	console.log(store.state.user);
-// });
+onMounted(() => {
+	console.log(store.state.user);
+});
 </script>
 
 <style lang="scss" scoped>

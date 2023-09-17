@@ -27,7 +27,6 @@ class UserController {
 			return res.status(403).send("A token is required for authentication");
 		}
 
-
 		try {
 			const decoded = jwt.verify(token, process.env.USER_TOKEN_KEY);
 			req.user = decoded;
