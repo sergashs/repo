@@ -24,13 +24,11 @@
 </template>
 
 <script setup>
-import { onMounted, computed } from "vue";
-import { useStore, mapGetters, mapActions } from "vuex";
+import { computed } from "vue";
+import { useStore } from "vuex";
 
 const store = useStore();
-const router = useRouter();
 const currentUser = computed(() => store.getters["user/user"]);
-const getUser = () => store.dispatch("user/getUser");
 
 const menu = [
 	{
@@ -50,12 +48,6 @@ const menu = [
 function logout() {
 	store.dispatch("user/logout");
 }
-
-onMounted(() => {
-	if (localStorage.getItem("token")) {
-		getUser();
-	}
-});
 </script>
 
 <style lang="scss" scoped>
