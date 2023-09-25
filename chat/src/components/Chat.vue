@@ -69,7 +69,7 @@
 				</div>
 				<div class="chat-footer">
 					<template v-if="user">
-						<a-popover v-model:visible="showEmoji" trigger="click">
+						<a-popover placement="topLeft" v-model:visible="showEmoji" trigger="click">
 							<template #content>
 								<EmojiPicker @emoji_click="pickEmoji" />
 							</template>
@@ -148,8 +148,6 @@ export default {
 
 		async sendMessage() {
 			if (this.message.length > 0) {
-				// this.loading = true;
-
 				try {
 					await addDoc(collection(db, "messages"), {
 						userId: this.user.uid,
@@ -162,8 +160,6 @@ export default {
 					await this.getMessages();
 				} catch (e) {
 					console.error("Error adding document: ", e);
-				} finally {
-					// this.loading = false;
 				}
 			}
 		},
@@ -251,30 +247,6 @@ export default {
 				messagesHolder.style.maxHeight = container.offsetHeight - footer.offsetHeight - exitButton.offsetHeight + 10 + "px";
 			}
 		},
-		// async addBaseChangeListener() {
-		// 	const messagesCollection = collection(db, "messages");
-		// 	const q = query(messagesCollection, orderBy("timestamp"), limit(100));
-
-		// 	const allChangesProcessed = new Promise((resolve) => {
-		// 		let processedChanges = 0;
-
-		// 		onSnapshot(q, (snapshot) => {
-		// 			snapshot.docChanges().forEach((change) => {
-		// 				if (processedChanges === snapshot.docChanges().length) {
-		// 					resolve();
-		// 				}
-
-		// 				console.log(change);
-		// 			});
-
-		// 			this.getMessages();
-		// 		});
-		// 	});
-
-		// 	await allChangesProcessed;
-		// 	await this.scrollToBottom();
-		// 	await this.setMessageHeight();
-		// },
 
 		async addBaseChangeListener() {
 			const messagesCollection = collection(db, "messages");
@@ -284,20 +256,15 @@ export default {
 				let processedChanges = 0;
 
 				onSnapshot(q, async (snapshot) => {
-					const user = this.user; // Отримуємо поточного користувача
+					const user = this.user;
 
 					snapshot.docChanges().forEach((change) => {
-						// Отримуємо дані повідомлення
 						const messageData = change.doc.data();
 
-						// Перевіряємо, чи є властником повідомлення поточний користувач
 						const isCurrentUserMessage = user && user.uid === messageData.userId;
 
 						if (isCurrentUserMessage) {
-							// console.log("This message was sent by the current user:", messageData);
 							this.message = "";
-						} else {
-							// console.log("This message was sent by another user:", messageData);
 						}
 
 						processedChanges++;
@@ -413,7 +380,6 @@ export default {
 		margin-bottom: 10px;
 		flex: 1;
 		overflow: auto;
-
 		max-height: 500px;
 
 		&.empty {
@@ -516,6 +482,14 @@ export default {
 
 	.exit-button {
 		margin: auto;
+	}
+}
+
+.ant-popover-inner-content {
+	max-width: 340px;
+
+	@media (max-width: 575px) {
+		max-width: 100%;
 	}
 }
 </style>
