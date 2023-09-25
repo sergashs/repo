@@ -20,7 +20,6 @@ export const user = {
 	actions: {
 		getUser({ commit }, params) {
 			return ApiUsers.getSelfUser(params).then(response => {
-				console.log(params)
 
 				if (response.username) {
 					commit('SET_USER', response);

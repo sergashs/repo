@@ -1,42 +1,50 @@
 <template>
 	<div class="layout">
-		<Header />
-		<NuxtPage />
+		<template v-if="!state.loading">
+			<loading-outlined :style="{ fontSize: '20px' }" />
+		</template>
+		<template v-else>
+			<Header v-if="state.loading" />
+			<NuxtPage v-if="state.loading" />
+		</template>
 	</div>
 </template>
 
 <script setup>
 import Header from "@/components/layout/Header";
-// import { onMounted, onBeforeMount } from "vue";
-import { useStore, mapGetters, mapActions } from "vuex";
-import ApiUsers from "@/api/users";
-import { ref } from "vue";
+import { LoadingOutlined } from "@ant-design/icons-vue";
+import { useStore } from "vuex";
+import { reactive } from "vue";
 
 const store = useStore();
 const getUser = () => store.dispatch("user/getUser");
-let user = ref("1");
+const state = reactive({
+	loading: false
+});
 
 onMounted(async () => {
 	if (localStorage.getItem("token")) {
-		// getUser();
-		await getUser();
+		getSelfUser();
+	} else {
+		state.loading = true;
 	}
 });
 
-async function getSelfUser() {
-	await ApiUsers.getSelfUser()
+const getSelfUser = async () => {
+	await getUser()
 		.then((response) => {
 			if (response.username) {
-				console.log(response);
-				user.value = response;
 				return response;
 			}
 		})
 		.catch((error) => {
 			console.log(error);
 			return error;
+		})
+		.finally(() => {
+			state.loading = true;
 		});
-}
+};
 
 // const { pending, data: todos } = useFetch("http://localhost:5000/api/users", {
 // 	lazy: true
@@ -51,5 +59,13 @@ async function getSelfUser() {
 .layout {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+
+	.anticon-loading {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 }
 </style>
