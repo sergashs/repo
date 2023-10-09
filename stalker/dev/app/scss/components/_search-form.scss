@@ -1,35 +1,32 @@
 .search-form {
-	display: flex;
-	width: 100%;
+  display: flex;
+  width: 100%;
+  border-style: solid;
+  border-width: 0.5rem;
+  border-image: url("#{$images}input.svg") 9 9 stretch;
+  color: $primary-color;
+  background: #2a282c;
 
-	.form-control,
-	.search-field {
-		width: 100%;
-		padding: 0.5rem 1rem;
-		color: $cloudy;
-		background: darken($tuatara, 50);
-		border: solid 0.1rem $tuatara;
-		border-right: none;
-		outline: none;
+  .form-control,
+  .search-field {
+    flex: 1;
+    border: none;
+    font-size: 1.4rem;
 
-		&::placeholder {
-			color: $cloudy;
-		}
+    &::placeholder {
+      color: rgba($primary-color, 0.7);
+    }
 
-		&:focus {
-			box-shadow: none;
-		}
-	}
+    &:focus {
+      box-shadow: none;
+    }
+  }
 
-	.search-submit {
-		white-space: normal;
-		padding: 0.5rem 1rem;
-		color: $cloudy;
-		background: $black;
-		border: solid 0.1rem $tuatara;
+  .btn {
+    font-size: 1.4rem;
 
-		&:hover {
-			color: $cloudy;
-		}
-	}
+    .button-text {
+      padding: 0.5rem 0;
+    }
+  }
 }
