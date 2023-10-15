@@ -5,7 +5,18 @@ $fonts: "../fonts/";
 $primary-font: "Rubik", sans-serif;
 $secondary-font: "Oswald", sans-serif;
 
-// bootstrap grid
+// bootstrap vars
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 1,
+  2: $spacer * 2,
+  3: $spacer * 3,
+  4: $spacer * 4,
+  5: $spacer * 5
+);
+
+$red: red;
 $grid-columns: 12;
 $grid-gutter-width: 30px;
 $grid-gutter-width-mobile: $grid-gutter-width;
@@ -53,13 +64,3 @@ $font-weight-base: 400;
 $line-height-base: 1.3;
 $links-color-base: inherit;
 $transition: all 0.3s ease;
-
-$spacer: 1rem;
-$spacers: (
-  0: 0,
-  1: $spacer * 1,
-  2: $spacer * 2,
-  3: $spacer * 3,
-  4: $spacer * 4,
-  5: $spacer * 5
-);
