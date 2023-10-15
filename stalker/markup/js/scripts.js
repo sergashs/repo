@@ -107,10 +107,10 @@ function initSlides() {
 		effect: "fade",
 		slidesPerView: 1,
 		spaceBetween: 10,
-		navigation: {
-			nextEl: ".swiper-buy-game .swiper-button-next",
-			prevEl: ".swiper-buy-game .swiper-button-prev",
-		},
+		// navigation: {
+		// 	nextEl: ".swiper-buy-game .swiper-button-next",
+		// 	prevEl: ".swiper-buy-game .swiper-button-prev",
+		// },
 		lazy: {
 			loadPrevNext: true,
 		},
@@ -124,9 +124,13 @@ function initSlides() {
 		loop: true,
 		slidesPerView: 1,
 		spaceBetween: 20,
-		navigation: {
-			nextEl: ".swiper-new-mods .swiper-button-next",
-			prevEl: ".swiper-new-mods .swiper-button-prev",
+		// navigation: {
+		// 	nextEl: ".swiper-new-mods .swiper-button-next",
+		// 	prevEl: ".swiper-new-mods .swiper-button-prev",
+		// },
+		pagination: {
+			el: ".swiper-new-mods .swiper-pagination",
+			clickable: true,
 		},
 		lazy: {
 			loadPrevNext: true,

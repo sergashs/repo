@@ -81,8 +81,15 @@ input[type="submit"]::-moz-focus-inner {
   width: 100%;
   margin: auto;
   padding-top: 1.5rem;
-  background: $cod-gray;
-  border: solid 0.1rem $tuatara;
+  background: $bg-color;
+  border: solid 0.1rem rgba($primary-color, 0.2);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $primary-color;
 }
 
 h1 {
@@ -127,7 +134,7 @@ hr {
   border: none;
   margin: 0;
   opacity: 1;
-  border-bottom: solid 0.1rem $tuatara;
+  border-bottom: solid 0.1rem rgba($primary-color, 0.2);
 }
 
 .tooltip-inner {
