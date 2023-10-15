@@ -101,20 +101,18 @@ h1 {
 }
 
 h2 {
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 2rem 0;
   font-family: $secondary-font;
   font-weight: 400;
   font-size: 2rem;
   color: $mercury;
   text-transform: uppercase;
-  border-bottom: 0.1rem solid $tuatara;
-  padding-bottom: 1.5rem;
 }
 
 h3,
 .h3 {
   font-family: $secondary-font;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   font-size: 1.8rem;
   font-weight: 400;
   color: $mercury;
@@ -130,11 +128,17 @@ b {
   line-height: 0;
 }
 
-hr {
+hr,
+.wp-block-separator {
   border: none;
   margin: 0;
   opacity: 1;
   border-bottom: solid 0.1rem rgba($primary-color, 0.2);
+}
+
+.wp-block-separator {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .tooltip-inner {
