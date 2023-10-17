@@ -55,6 +55,8 @@ $secondary-color: #8c8983;
 $accent-color: #ee991a;
 $bg-color: #181512;
 
+// #202020
+
 // base vars
 $text-color-base: $secondary-color;
 $body-bg: $black;
@@ -64,3 +66,5 @@ $font-weight-base: 400;
 $line-height-base: 1.3;
 $links-color-base: inherit;
 $transition: all 0.3s ease;
+
+$border-color: rgba($primary-color, 0.2);
