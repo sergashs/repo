@@ -256,3 +256,9 @@
   margin-left: -$grid-gutter-width / 2;
   margin-right: -$grid-gutter-width / 2;
 }
+
+.block-border-1 {
+  border-style: solid;
+  border-width: 0.5rem;
+  border-image: url("#{$images}input.svg") 9 9 stretch;
+}
