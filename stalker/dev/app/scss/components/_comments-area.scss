@@ -1,192 +1,192 @@
 .comments-area {
-	padding-bottom: 4rem;
-	color: $cloudy;
+  padding-bottom: 4rem;
+  color: $cloudy;
 
-	textarea#comment {
-		width: 100%;
-		padding: 1rem;
-		color: $cloudy;
-		background: darken($tuatara, 5);
-		border: solid 0.1rem $tuatara;
-		outline: none;
-		resize: none;
-	}
+  textarea#comment {
+    width: 100%;
+    padding: 1rem;
+    color: $cloudy;
+    background: rgba(black, 0.45);
+    border: solid 0.1rem $tuatara;
+    outline: none;
+    resize: none;
+  }
 
-	.comment-form-comment {
-		> label {
-			display: none;
-			margin-bottom: 1rem;
-		}
-	}
+  .comment-form-comment {
+    > label {
+      display: none;
+      margin-bottom: 1rem;
+    }
+  }
 
-	.comment-reply-title {
-		text-transform: uppercase;
-	}
+  .comment-reply-title {
+    text-transform: uppercase;
+  }
 
-	.logged-in-as {
-		display: none;
-	}
+  .logged-in-as {
+    display: none;
+  }
 
-	.submit {
-		padding: 1rem;
-		color: $cloudy;
-		background: $black;
-		border: solid 0.1rem $tuatara;
+  .submit {
+    padding: 1rem;
+    color: $cloudy;
+    background: rgba($black, 0.45);
+    border: solid 0.1rem $tuatara;
 
-		&:hover {
-			background: $cod-gray;
-		}
-	}
+    &:hover {
+      background: $cod-gray;
+    }
+  }
 
-	.comment-list {
-		margin: 0 0 2rem 0;
-		padding-left: 0;
-		list-style: none;
+  .comment-list {
+    margin: 0 0 2rem 0;
+    padding-left: 0;
+    list-style: none;
 
-		.thread-even {
-			&:not(:last-child) {
-				margin-bottom: 2rem;
-			}
-		}
+    .thread-even {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
 
-		.comment-body {
-			&:not(:last-child) {
-				margin-bottom: 2.5rem;
-			}
-		}
+    .comment-body {
+      &:not(:last-child) {
+        margin-bottom: 2.5rem;
+      }
+    }
 
-		.comment {
-			position: relative;
-			padding: 1.5rem;
-			background: $tuatara;
+    .comment {
+      position: relative;
+      padding: 1.5rem;
+      background: $tuatara;
 
-			.comment-reply-login {
-				font-size: 1.4rem;
-			}
+      .comment-reply-login {
+        font-size: 1.4rem;
+      }
 
-			.comment {
-				margin-bottom: 1.5rem;
-				padding-top: 0;
-				padding-right: 0;
-				padding-bottom: 0;
-				padding-left: 1rem;
-			}
+      .comment {
+        margin-bottom: 1.5rem;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 1rem;
+      }
 
-			.comment-content {
-				line-height: 1.5;
-			}
+      .comment-content {
+        line-height: 1.5;
+      }
 
-			.cld-like-dislike-wrap {
-				// position: absolute;
-				// right: 1.5rem;
-				// bottom: 1.5rem;
-				margin-bottom: 0;
+      .cld-like-dislike-wrap {
+        // position: absolute;
+        // right: 1.5rem;
+        // bottom: 1.5rem;
+        margin-bottom: 0;
 
-				.cld-common-wrap {
-					min-width: unset;
-					margin-right: 2rem;
-					// margin-left: 2rem;
-				}
-			}
+        .cld-common-wrap {
+          min-width: unset;
+          margin-right: 2rem;
+          // margin-left: 2rem;
+        }
+      }
 
-			.reply {
-				padding-top: 1rem;
-			}
-		}
+      .reply {
+        padding-top: 1rem;
+      }
+    }
 
-		.says {
-			display: none;
-		}
+    .says {
+      display: none;
+    }
 
-		.avatar {
-			margin-right: 0.5rem;
-		}
+    .avatar {
+      margin-right: 0.5rem;
+    }
 
-		.comment-meta {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			margin-bottom: 1.5rem;
-			border-bottom: solid 0.1rem lighten($tuatara, 10);
-			padding-bottom: 1.5rem;
-		}
+    .comment-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      border-bottom: solid 0.1rem lighten($tuatara, 10);
+      padding-bottom: 1.5rem;
+    }
 
-		.comment-author {
-			color: $mercury;
-		}
+    .comment-author {
+      color: $mercury;
+    }
 
-		.comment-metadata {
-			opacity: 0.6;
-		}
+    .comment-metadata {
+      opacity: 0.6;
+    }
 
-		.edit-link {
-			&::before {
-				content: "";
-				margin: 0 1rem;
-				width: 0.5rem;
-				height: 0.5rem;
-				background: rgba($mercury, 0.6);
-				display: inline-block;
-				transform: translateY(-50%);
-				border-radius: 50%;
-			}
-		}
+    .edit-link {
+      &::before {
+        content: "";
+        margin: 0 1rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        background: rgba($mercury, 0.6);
+        display: inline-block;
+        transform: translateY(-50%);
+        border-radius: 50%;
+      }
+    }
 
-		ol {
-			&.children {
-				padding: 0;
-				list-style: none;
-			}
-		}
-	}
+    ol {
+      &.children {
+        padding: 0;
+        list-style: none;
+      }
+    }
+  }
 
-	&.review-area {
-		.input-group {
-			margin-bottom: 1rem;
+  &.review-area {
+    .input-group {
+      margin-bottom: 1rem;
 
-			> label {
-				display: block;
-				margin-bottom: 0.5rem;
-			}
+      > label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
 
-			select {
-				background: black;
-				color: inherit;
-				outline: none;
-			}
-		}
+      select {
+        background: black;
+        color: inherit;
+        outline: none;
+      }
+    }
 
-		.comment-rating-form {
-			input {
-				display: none;
-			}
-		}
+    .comment-rating-form {
+      input {
+        display: none;
+      }
+    }
 
-		.comment-content {
-			.row {
-				@include grid-gutter(2rem);
-			}
+    .comment-content {
+      .row {
+        @include grid-gutter(2rem);
+      }
 
-			.input-group {
-				background: #181818;
-				padding: 1.5rem;
+      .input-group {
+        background: #181818;
+        padding: 1.5rem;
 
-				p {
-					margin-bottom: 0;
-				}
+        p {
+          margin-bottom: 0;
+        }
 
-				.label {
-					font-style: italic;
-				}
+        .label {
+          font-style: italic;
+        }
 
-				.comment-rating-form {
-					margin-bottom: 0;
+        .comment-rating-form {
+          margin-bottom: 0;
 
-					sup {
-						margin-left: 0.5rem;
-					}
-				}
-			}
-		}
-	}
+          sup {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
 }

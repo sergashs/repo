@@ -73,10 +73,9 @@
     padding-top: 2rem;
     font-family: $secondary-font;
     z-index: 2;
-    border-top: 0.1rem solid rgba($primary-color, 0.2);
-    border-left: 0.1rem solid rgba($primary-color, 0.2);
-    border-right: 0.1rem solid rgba($primary-color, 0.2);
-    background: #101010;
+    border-left: 0.1rem solid $border-color;
+    border-right: 0.1rem solid $border-color;
+    background: $bg-color;
 
     .menu {
       @include media-breakpoint-up(lg) {
@@ -117,10 +116,11 @@
     display: flex;
     justify-content: space-between;
     margin-top: 1.5rem;
-    min-height: 20rem;
+    min-height: 40rem;
     background: url("#{$images}/header.jpg") no-repeat;
     background-position: 50% 100%;
     background-size: cover;
+    border-top: 0.1rem solid $border-color;
   }
 
   .dropdown-menu-wrapper {
