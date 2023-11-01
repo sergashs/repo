@@ -10,7 +10,7 @@
     &:not(:last-child) {
       margin-bottom: 2rem;
       padding-bottom: 1rem;
-      border-bottom: 0.1rem solid $tuatara;
+      border-bottom: 0.1rem solid $border-color;
     }
 
     figure {
