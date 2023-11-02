@@ -16,11 +16,16 @@ body {
   display: flex;
   flex-direction: column;
 
-  &.buddypress {
-    #page {
-      #primary {
-        max-width: 125rem;
-      }
+  &.is_wpforo_page-1,
+  &.home {
+    .breadcrumb {
+      display: none;
+    }
+  }
+
+  &.wpft-account {
+    .wpforo-right-sidebar {
+      display: none !important;
     }
   }
 }
