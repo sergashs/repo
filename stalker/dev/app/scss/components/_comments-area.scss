@@ -58,7 +58,6 @@
     .comment {
       position: relative;
       padding: 1.5rem;
-      background: $tuatara;
 
       .comment-reply-login {
         font-size: 1.4rem;
@@ -77,15 +76,11 @@
       }
 
       .cld-like-dislike-wrap {
-        // position: absolute;
-        // right: 1.5rem;
-        // bottom: 1.5rem;
         margin-bottom: 0;
 
         .cld-common-wrap {
           min-width: unset;
           margin-right: 2rem;
-          // margin-left: 2rem;
         }
       }
 
@@ -140,7 +135,27 @@
     }
   }
 
+  .comment-respond {
+    padding: 1rem;
+    border-style: solid;
+    border-width: 0.5rem;
+    -o-border-image: url("#{$images}input.svg") 9 9 stretch;
+    border-image: url("#{$images}input.svg") 9 9 stretch;
+  }
+
   &.review-area {
+    .comment {
+      border-style: solid;
+      border-width: 0.5rem;
+      -o-border-image: url("#{$images}input.svg") 9 9 stretch;
+      border-image: url("#{$images}input.svg") 9 9 stretch;
+    }
+
+    .comment-meta {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
     .input-group {
       margin-bottom: 1rem;
 
@@ -163,13 +178,26 @@
     }
 
     .comment-content {
+      &::before {
+        content: "";
+        display: block;
+        margin-bottom: 1rem;
+        width: 100%;
+        height: 0.2rem;
+        background: url("#{$images}orange-line.svg") no-repeat;
+        background-size: cover;
+      }
+
       .row {
         @include grid-gutter(2rem);
       }
 
       .input-group {
-        background: #181818;
-        padding: 1.5rem;
+        padding: 1rem;
+        border-style: solid;
+        border-width: 0.5rem;
+        -o-border-image: url("#{$images}input.svg") 9 9 stretch;
+        border-image: url("#{$images}input.svg") 9 9 stretch;
 
         p {
           margin-bottom: 0;
