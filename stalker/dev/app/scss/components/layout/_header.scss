@@ -148,7 +148,7 @@
         left: 0;
         min-width: 20rem;
         background: $cod-gray;
-        border: solid 0.1rem $tuatara;
+        border: solid 0.1rem $border-color;
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
@@ -166,10 +166,12 @@
       ul {
         &.menu {
           .sub-menu {
+            transform: translateY(1rem);
             transition: $transition;
-            background: #232323;
+            background: $bg-color;
             box-shadow: 0rem 2rem 2rem rgba($black, 0.65);
             border-radius: 0.5rem;
+            border: solid 0.1rem $border-color;
 
             li {
               &:first-child {
@@ -188,7 +190,7 @@
 
               &:not(:last-child) {
                 @include media-breakpoint-up(lg) {
-                  border-bottom: solid 0.1rem lighten($tuatara, 5);
+                  border-bottom: solid 0.1rem $border-color;
                 }
               }
             }
@@ -254,6 +256,7 @@
             &:hover {
               .sub-menu {
                 @include media-breakpoint-up(lg) {
+                  transform: translateY(0);
                   opacity: 1;
                   visibility: visible;
                   pointer-events: all;
@@ -344,7 +347,7 @@
               }
 
               @include media-breakpoint-down(lg) {
-                border-bottom: solid 0.1rem #202020;
+                border-bottom: solid 0.1rem $border-color;
               }
             }
           }

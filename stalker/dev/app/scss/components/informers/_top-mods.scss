@@ -7,16 +7,23 @@
   .mods-item {
     position: relative;
     display: flex;
-    margin-bottom: 1.5rem;
-    border-bottom: 0.1rem solid $tuatara;
-    padding-bottom: 1.5rem;
+    align-items: flex-start;
 
     @include media-breakpoint-down(md) {
       flex-direction: column;
     }
 
+    &:not(:first-child) {
+      .img-holder,
+      .item-content {
+        padding-top: 2rem;
+      }
+    }
+
     .img-holder {
       min-width: 25rem;
+      mask: url(#{$images}mask.svg) top left/100% 100%;
+      mask-size: cover;
 
       @include media-breakpoint-up(md) {
         width: 25rem;
@@ -40,31 +47,13 @@
       }
     }
 
-    h2 {
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-
-    &::before {
-      counter-increment: section;
-      content: counter(section);
-      margin-right: 1.5rem;
-      font-weight: 600;
-      font-size: 2rem;
-      font-family: $secondary-font;
-      min-width: 2.8rem;
-
-      @include media-breakpoint-down(md) {
-        margin-bottom: 1.5rem;
-        font-size: 1.5rem;
-      }
-    }
-
     .item-meta {
       margin: 0;
       padding: 0;
       list-style: none;
       display: flex;
+      padding-top: 1rem;
+      border-top: 0.1rem solid $border-color;
 
       li {
         display: flex;
@@ -95,10 +84,6 @@
   &.style2 {
     .mods-item {
       flex-direction: column;
-
-      .h2 {
-        text-transform: none;
-      }
 
       .img-holder {
         width: 100%;
