@@ -52,6 +52,7 @@
 
   &.with-icon {
     .icon-holder {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -60,6 +61,11 @@
       background: url("#{$images}orange-before.svg") no-repeat;
       background-size: cover;
       background-position: right;
+      z-index: 3;
+
+      i {
+        transition: $transition;
+      }
     }
 
     .button-text {
@@ -83,6 +89,12 @@
         &::before {
           left: 0;
           filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+        }
+      }
+
+      .icon-holder {
+        i {
+          transform: translateX(0.3rem);
         }
       }
     }

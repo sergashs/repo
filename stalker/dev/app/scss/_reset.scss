@@ -23,7 +23,8 @@ body {
     }
   }
 
-  &.wpft-account {
+  &.wpft-account,
+  &.wpft-messages {
     .wpforo-right-sidebar {
       display: none !important;
     }
