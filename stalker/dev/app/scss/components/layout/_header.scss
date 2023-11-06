@@ -118,9 +118,17 @@
     justify-content: space-between;
     margin-top: 1.5rem;
     min-height: 40rem;
-    background: url("#{$images}header.jpg") no-repeat;
     background-position: 50% 100%;
     background-size: cover;
+    background-repeat: no-repeat;
+
+    .header-bg-1 & {
+      background-image: url("#{$images}header.jpg");
+    }
+
+    .header-bg-2 & {
+      background-image: url("#{$images}header.jpg");
+    }
 
     &::before {
       content: "";

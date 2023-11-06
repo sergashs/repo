@@ -1,20 +1,3 @@
-.bg-img {
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
 .meta-info {
   padding: 1.5rem 0 0 0;
   margin: 0;
@@ -218,6 +201,8 @@
   border-image: url("#{$images}input.svg") 9 9 stretch;
 }
 
+// animations
+
 .flash-animation {
   position: relative;
   overflow: hidden;
@@ -275,4 +260,58 @@
       transform: scale(1.1);
     }
   }
+}
+
+// animations
+
+.simplebar-track {
+  background: rgba(black, 0.8);
+  border-radius: 1.2rem;
+
+  .simplebar-scrollbar {
+    &::before {
+      // background: rgba($accent-color, 0.5);
+    }
+  }
+}
+
+.design-picker {
+  .img-holder {
+    height: 9.95rem;
+    overflow: hidden;
+    border-radius: 2rem;
+    border: solid 0.2rem;
+    transition: $transition;
+    cursor: pointer;
+  }
+
+  input {
+    &:checked {
+      + .img-holder {
+        border-color: $accent-color;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.row-gutter-1 {
+  @include grid-gutter(1rem);
+}
+
+.row-gutter-2 {
+  @include grid-gutter(2rem);
+}
+
+.row-gutter-3 {
+  @include grid-gutter(3rem);
+}
+
+.row-gutter-4 {
+  @include grid-gutter(4rem);
 }

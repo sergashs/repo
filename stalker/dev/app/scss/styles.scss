@@ -1,4 +1,5 @@
 @import "vars";
+@import "mixins/mixins";
 // libraries
 @import "libraries/bootstrap/bootstrap";
 @import "libraries/fancybox";
@@ -27,6 +28,7 @@
 @import "components/cards/card-wiki-cat";
 @import "components/breadcrumb";
 @import "components/comment-rating-form";
+@import "components/modal";
 
 // pages
 @import "pages/single-post";
