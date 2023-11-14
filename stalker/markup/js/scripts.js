@@ -179,21 +179,27 @@ function headerCustomize() {
 	let headerVariants = [];
 	const btns = document.querySelectorAll('[header-customize]');
 
-	if (btns) {
-		btns.forEach((btn) => {
-			headerVariants.push(btn.children[0].id);
 
-			btn.addEventListener('click', function (event) {
-				setStorage(this.children[0].id);
-				getStorage();
+
+	function initButtons() {
+		if (btns) {
+			btns.forEach((btn) => {
+				headerVariants.push(btn.children[0].id);
+
+				btn.addEventListener('click', function (event) {
+					setStorage(this.children[0].id);
+					getStorage();
+				})
+
+
+				if (localStorage.getItem('header-bg') === btn.children[0].id) {
+					btn.children[0].checked = true;
+				}
 			})
-
-
-			if (localStorage.getItem('header-bg') === btn.children[0].id) {
-				btn.children[0].checked = true;
-			}
-		})
+		}
 	}
+
+	initButtons();
 
 	function setStorage(value) {
 		localStorage.setItem('header-bg', value);
@@ -202,9 +208,13 @@ function headerCustomize() {
 	function getStorage() {
 		const key = localStorage.getItem('header-bg');
 
-		if (key.length > 0) {
+		if (key && key.length > 0) {
 			clearClasses(headerVariants);
 			document.body.classList.add(key);
+		} else {
+			setStorage('header-bg-1');
+			getStorage();
+			initButtons();
 		}
 	}
 
