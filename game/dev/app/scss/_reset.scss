@@ -74,6 +74,7 @@ input[type="submit"]::-moz-focus-inner {
   margin-right: auto;
   background: var(--bs-body-bg);
   box-shadow: rgb(var(--bs-secondary-color-rgb), 0.25) 0 0 0.3rem 0;
+  z-index: 5;
 }
 
 .site-main {

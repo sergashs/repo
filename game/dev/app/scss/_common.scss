@@ -155,3 +155,44 @@
 .row-gutter-4 {
   @include grid-gutter(4rem);
 }
+
+.form-control {
+  padding: 0.8rem 1rem;
+}
+
+.page-bg {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 30rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("#{$images}head_game.jpg");
+
+  &.intro-bg {
+    top: 0;
+    background-position: top center;
+
+    &::before {
+      background: linear-gradient(to top, var(--bs-dark-bg-subtle) 0%, transparent 55%);
+    }
+  }
+
+  &.bottom-bg {
+    bottom: 0;
+    background-position: bottom center;
+
+    &::before {
+      background: linear-gradient(to bottom, var(--bs-dark-bg-subtle) 0%, transparent 55%);
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

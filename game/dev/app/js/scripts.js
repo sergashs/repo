@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// mobileMenu();
 	// initSlides()
 	// fancyboxImges();
-
+	headerSearch();
 });
 
 window.addEventListener('resize', () => {
@@ -172,5 +172,22 @@ function initTooltips() {
 	const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 	if (tooltipTriggerList) {
 		const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+	}
+}
+
+
+function headerSearch() {
+	const block = document.querySelector('#header-block-search');
+	const btns = block.querySelectorAll('.btn-toggle');
+	const form = block.querySelector('.form-holder');
+
+	if (btns) {
+		btns.forEach((btn) => {
+			btn.addEventListener('click', function (event) {
+				event.preventDefault();
+
+				block.classList.toggle('show');
+			})
+		})
 	}
 }
