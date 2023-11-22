@@ -1,0 +1,73 @@
+//= inc/_head.html
+
+<body>
+	<div class="wrapper">
+		//= inc/_header.html
+		<main id="main" class="site-main">
+			<div class="home-page">
+				<div class="container">
+					<nav class="navbar navbar-expand-lg bg-body-tertiary">
+						<div class="container-fluid">
+							<a class="navbar-brand" href="#">Navbar</a>
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarNav">
+								<ul class="navbar-nav">
+									<li class="nav-item">
+										<a class="nav-link active" aria-current="page" href="#">Home</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">Features</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">Pricing</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link disabled" aria-disabled="true">Disabled</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+					<li>
+						<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+							<svg class="bi me-2 opacity-50 theme-icon">
+								<use href="#sun-fill"></use>
+							</svg>
+							Light
+							<svg class="bi ms-auto d-none">
+								<use href="#check2"></use>
+							</svg>
+						</button>
+					</li>
+					<li>
+						<button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="dark" aria-pressed="true">
+							<svg class="bi me-2 opacity-50 theme-icon">
+								<use href="#moon-stars-fill"></use>
+							</svg>
+							Dark
+							<svg class="bi ms-auto d-none">
+								<use href="#check2"></use>
+							</svg>
+						</button>
+					</li>
+					<li>
+						<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+							<svg class="bi me-2 opacity-50 theme-icon">
+								<use href="#circle-half"></use>
+							</svg>
+							Auto
+							<svg class="bi ms-auto d-none">
+								<use href="#check2"></use>
+							</svg>
+						</button>
+					</li>
+				</div>
+			</div>
+		</main>
+		//= inc/_footer.html
+	</div><!-- / wrapper -->
+</body>
+
+</html>
