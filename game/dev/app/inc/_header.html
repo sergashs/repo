@@ -1,6 +1,19 @@
 <header class="header">
-	<div class="container">
-		<div class="top-games py-1">
+	<div class="dropdown dropdown-theme-mode">
+		<button class="btn btn-link text-decoration-none dropdown-toggle d-inline-flex align-items-center py-1 px-0" type="button" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false" id="bd-theme">
+			<span class="theme-icon-active">
+				<i class="bi bi-brightness-high-fill"></i>
+			</span>
+			<span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
+		</button>
+		<ul class="dropdown-menu">
+			<li><a class="dropdown-item text-decoration-none" href="#" data-bs-theme-value="light" aria-pressed="false"><i class="bi bi-brightness-high-fill me-1"></i> Light</a></li>
+			<li><a class="dropdown-item text-decoration-none" href="#" data-bs-theme-value="dark" aria-pressed="true"><i class="bi bi-moon-stars-fill me-1"></i> Dark</a></li>
+			<li><a class="dropdown-item text-decoration-none" href="#" data-bs-theme-value="auto" aria-pressed="false"><i class="bi bi-circle-half me-1"></i> Auto</a></li>
+		</ul>
+	</div>
+	<div class="top-games py-2">
+		<div class="container">
 			<span class="d-block me-2">ТОП ігри:</span>
 			<ul class="list">
 				<li class="list-item">
@@ -26,4 +39,40 @@
 			</ul>
 		</div>
 	</div>
+	<div class="header-middle">
+		<div class="block-logo">
+			<span class="logo-title">Game<span>Runner</span></span>
+			<p>блог про ігри :)</p>
+		</div>
+		<div class="block-video">
+			<span class="block-title">
+				Нові відео
+			</span>
+		</div>
+	</div>
+	<nav class="main-nav">
+		<ul>
+			<li>
+				<a href="#">Головна</a>
+			</li>
+			<li>
+				<a href="#">Новини</a>
+			</li>
+			<li>
+				<a href="#">Файловий архів</a>
+			</li>
+			<li>
+				<a href="#">Спільноти</a>
+			</li>
+			<li>
+				<a href="#">Статті</a>
+			</li>
+			<li>
+				<a href="#">Відео</a>
+			</li>
+			<li>
+				<a href="#">Блог</a>
+			</li>
+		</ul>
+	</nav>
 </header>
