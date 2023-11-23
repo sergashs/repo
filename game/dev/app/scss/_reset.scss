@@ -92,23 +92,6 @@ h4,
 .h5 {
   font-family: $secondary-font;
   font-weight: 400;
-  color: $primary-color;
-}
-
-h1 {
-  margin-bottom: 1rem;
-  font-size: 2.6rem;
-}
-
-h2 {
-  margin: 0 0 2rem 0;
-  font-size: 2rem;
-  text-transform: uppercase;
-}
-
-h3 {
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
 }
 
 .bi {
@@ -118,3 +101,9 @@ h3 {
 .container {
   max-width: 120rem;
 }
+
+// [data-bs-theme="dark"] {
+//   .border-end {
+//     border-color: #343a40 !important;
+//   }
+// }
