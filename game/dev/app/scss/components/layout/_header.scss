@@ -156,13 +156,13 @@
       display: flex;
       font-family: $secondary-font;
       font-weight: 700;
-      color: white;
       text-transform: uppercase;
       background: $blue;
 
       a {
         display: inline-flex;
         padding: 1.5rem 2rem;
+        color: white;
         background: $blue;
         text-decoration: none;
 

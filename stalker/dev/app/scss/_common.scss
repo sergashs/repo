@@ -316,3 +316,24 @@
 .row-gutter-4 {
   @include grid-gutter(4rem);
 }
+
+.table {
+  color: inherit;
+  border-top: solid 0.1rem $border-color;
+  border-left: solid 0.1rem $border-color;
+  border-right: solid 0.1rem $border-color;
+
+  td {
+    padding: 1rem;
+
+    &:not(:last-child) {
+      border-right: solid 0.1rem $border-color;
+    }
+  }
+
+  thead {
+    tr {
+      background: rgba(white, 0.05);
+    }
+  }
+}

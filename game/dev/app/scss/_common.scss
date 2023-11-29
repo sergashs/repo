@@ -196,3 +196,25 @@
     height: 100%;
   }
 }
+
+.p-1_5 {
+  padding: 1.5rem;
+}
+
+.link-style-1 {
+  color: $blue;
+
+  &:hover {
+    color: $red;
+    text-decoration-color: $red;
+  }
+}
+
+.link-style-2 {
+  color: $red;
+
+  &:hover {
+    color: $blue;
+    text-decoration-color: $blue;
+  }
+}

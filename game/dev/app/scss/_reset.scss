@@ -20,12 +20,10 @@ body {
 
 a {
   text-decoration: none;
-  color: $links-color-base;
   transition: $transition;
 }
 
 a:hover {
-  color: $links-color-base;
   text-decoration: underline;
 }
 
