@@ -1,9 +1,10 @@
 /* footer */
 .footer {
-  color: var(--bs-body-bg);
-  background: var(--bs-dark);
+	// color: var(--bs-body-bg);
+	color: rgba(var(--bs-tertiary-bg-rgb), 0.8);
+	background: var(--bs-dark);
 
-  [data-bs-theme="dark"] & {
-    color: var(--bs-body-color);
-  }
+	[data-bs-theme="dark"] & {
+		color: var(--bs-body-color);
+	}
 }
