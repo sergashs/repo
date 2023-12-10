@@ -136,6 +136,8 @@
   }
 
   .block-video {
+    max-width: 60rem;
+
     .block-title {
       display: block;
       padding: 2rem 1rem;
@@ -145,6 +147,16 @@
       writing-mode: vertical-rl;
       transform: rotate(180deg);
       font-size: 1.4rem;
+      text-align: center;
+    }
+
+    .block-list {
+      display: flex;
+      overflow: auto;
+
+      .card-video {
+        margin-right: 2rem;
+      }
     }
   }
 

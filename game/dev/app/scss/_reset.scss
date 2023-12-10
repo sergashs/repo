@@ -100,8 +100,6 @@ h4,
   max-width: 120rem;
 }
 
-// [data-bs-theme="dark"] {
-//   .border-end {
-//     border-color: #343a40 !important;
-//   }
+// @include media-breakpoint-down(md) {
+//   $grid-gutter-width: 20px;
 // }
