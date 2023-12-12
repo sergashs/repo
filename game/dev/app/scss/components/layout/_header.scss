@@ -6,7 +6,14 @@
   .header-top {
     background: rgba(var(--bs-body-bg-rgb), 1);
     border-bottom: solid 0.1rem var(--bs-secondary-bg);
-    overflow: hidden;
+
+    @include media-breakpoint-down(xl) {
+      position: relative;
+    }
+
+    @include media-breakpoint-up(xl) {
+      overflow: hidden;
+    }
 
     .container {
       display: flex;
@@ -65,8 +72,11 @@
   }
 
   .block-search {
-    position: relative;
     display: flex;
+
+    @include media-breakpoint-up(xl) {
+      position: relative;
+    }
 
     .btn-toggle {
       display: inline-flex;
@@ -81,9 +91,17 @@
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
-      transform: translateX(3rem) translateY(50%);
       transition: $transition;
       background: var(--bs-tertiary-bg);
+      transform: translateY(50%);
+
+      @include media-breakpoint-up(xl) {
+        transform: translateX(3rem) translateY(50%);
+      }
+
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+      }
 
       .btn-toggle {
         position: absolute;
@@ -99,7 +117,10 @@
         opacity: 1;
         visibility: visible;
         pointer-events: all;
-        transform: translateX(1.5rem) translateY(50%);
+
+        @include media-breakpoint-up(xl) {
+          transform: translateX(1.5rem) translateY(50%);
+        }
       }
     }
   }
@@ -137,6 +158,7 @@
 
   .block-video {
     max-width: 60rem;
+    min-width: 0;
 
     .block-title {
       display: block;
@@ -155,7 +177,9 @@
       overflow: auto;
 
       .card-video {
-        margin-right: 2rem;
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
       }
     }
   }
