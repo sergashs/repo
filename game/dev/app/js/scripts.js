@@ -3,7 +3,7 @@ let loadLazyLoadScript = false;
 document.addEventListener('DOMContentLoaded', () => {
 	correctVh();
 	// lazyLoad();
-	// mobileMenu();
+	mobileMenu();
 	// initSlides()
 	// fancyboxImges();
 	headerSearch();
@@ -88,7 +88,7 @@ function correctVh() {
 
 // mobile menu
 function mobileMenu() {
-	const openBtn = document.querySelector('.dropdown-menu-wrapper');
+	const openBtn = document.querySelector('.open-menu-wrapper');
 
 	openBtn.addEventListener('click', function (event) {
 		event.preventDefault();

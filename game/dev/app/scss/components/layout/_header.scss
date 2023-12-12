@@ -161,6 +161,22 @@
   }
 
   .main-nav {
+    position: relative;
+
+    @include media-breakpoint-down(xl) {
+      display: flex;
+      align-items: center;
+      min-height: 4.5rem;
+      background: $blue;
+    }
+
+    .container {
+      @include media-breakpoint-down(xl) {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
     ul {
       margin: 0;
       padding: 0;
@@ -170,6 +186,30 @@
       font-weight: 700;
       text-transform: uppercase;
       background: $blue;
+      transition: $transition;
+
+      @include media-breakpoint-down(xl) {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        max-width: 30rem;
+        width: 100%;
+        flex-direction: column;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        border-top: solid 0.1rem var(--bs-border-color);
+        transform: translateY(2rem);
+      }
+
+      .menu-opened & {
+        @include media-breakpoint-down(xl) {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: all;
+          transform: translateY(0);
+        }
+      }
 
       a {
         display: inline-flex;
@@ -177,6 +217,10 @@
         color: white;
         background: $blue;
         text-decoration: none;
+
+        @include media-breakpoint-down(xl) {
+          width: 100%;
+        }
 
         &:hover {
           background: darken($blue, 10);
@@ -193,14 +237,32 @@
     z-index: 2;
   }
 
+  .open-menu-wrapper {
+    cursor: pointer;
+
+    @include media-breakpoint-up(md) {
+      padding-right: 1rem;
+    }
+
+    .open-menu-title {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: normal;
+      padding-top: 0.3rem;
+    }
+  }
+
   .open-menu {
     position: relative;
     width: 2.5rem;
     height: 4rem;
     display: block;
+    margin-right: 1rem;
     font-size: 0;
     line-height: 0;
     z-index: 10;
+    color: white;
 
     span {
       position: absolute;

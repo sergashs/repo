@@ -4,8 +4,6 @@ html {
 
 body {
   margin: 0;
-  padding-top: 30rem;
-  padding-bottom: 30rem;
   min-width: 320px;
   background: var(--bs-dark-bg-subtle);
   font: $font-weight-base #{$font-size-base}/ $line-height-base $font-family-base;
@@ -16,6 +14,11 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+
+  @include media-breakpoint-up(xl) {
+    padding-top: 30rem;
+    padding-bottom: 30rem;
+  }
 }
 
 a {
