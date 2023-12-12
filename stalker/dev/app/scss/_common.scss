@@ -237,6 +237,7 @@
 }
 
 .underline-animation {
+  text-decoration: none;
   background: linear-gradient(to right, currentColor 0%, currentColor 100%);
   background-size: 0 6%;
   background-repeat: no-repeat;
