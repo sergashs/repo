@@ -76,6 +76,11 @@ input[type="submit"]::-moz-focus-inner {
   background: var(--bs-body-bg);
   box-shadow: rgb(var(--bs-secondary-color-rgb), 0.25) 0 0 0.3rem 0;
   z-index: 5;
+
+  [data-bs-theme="dark"] & {
+    box-shadow: none;
+    border: solid 0.1rem var(--bs-border-color);
+  }
 }
 
 .site-main {
