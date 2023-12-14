@@ -278,6 +278,7 @@
         pointer-events: none;
         border-top: solid 0.1rem var(--bs-border-color);
         transform: translateY(2rem);
+        z-index: 99;
       }
 
       .menu-opened & {
