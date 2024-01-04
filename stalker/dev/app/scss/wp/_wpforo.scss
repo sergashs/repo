@@ -144,6 +144,10 @@
       a {
         color: inherit !important;
       }
+
+      div {
+        background: #141414;
+      }
     }
 
     .wpforo-post-head {
@@ -261,6 +265,38 @@
       }
     }
   }
+}
+
+.wpforo-copy-url-wrap .wpforo-copy-url-label {
+  background: #1c191e !important;
+}
+
+.wpforo-copy-url-wrap .wpforo-copy-url {
+  color: #e0e0e0;
+  background: #1c191e !important;
+}
+
+#wpforo #wpforo-wrap .wpf-activity-icon {
+  width: 80px !important;
+}
+
+#wpforo #wpforo-wrap .wpf-activity-panel {
+  color: #919191;
+}
+
+#wpforo #wpforo-wrap .wpf-activity {
+  color: #919191;
+}
+
+#wpforo #wpforo-wrap .wpf-tools {
+  color: #919191;
+  background: #ffffff12 !important;
+  border-radius: 0 !important;
+  outline: none !important;
+}
+
+#wpforo #wpforo-wrap .wpforo-messages-content .wpfpm-main .wpfpm-form-wrapper .wpf-post-create {
+  color: #919191;
 }
 
 #wpforo #wpforo-wrap.wpf-dark input[type="text"],

@@ -113,7 +113,7 @@ function scss() {
 			overrideBrowserslist: ['last 2 versions'],
 			cascade: true
 		}))
-		.pipe(cleanCSS()) // Add the minification step here
+		.pipe(cleanCSS())
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(path.build.css))
 		.pipe(browsersync.stream());
