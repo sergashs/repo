@@ -123,6 +123,10 @@
     background-size: cover;
     background-repeat: no-repeat;
 
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+    }
+
     .header-bg-1 & {
       background-image: url("#{$images}header-1.jpg");
     }
@@ -411,6 +415,39 @@
   .search-form {
     .button-text {
       font-size: 1.2rem;
+    }
+  }
+
+  .dropdown-profile {
+    .profile-avatar {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .dropdown-menu {
+      background: $primary-color;
+    }
+
+    .dropdown-item {
+      &:hover {
+        background: darken($primary-color, 10);
+      }
+    }
+
+    .bi-chevron-down {
+      transition: $transition;
+    }
+
+    .dropdown-toggle {
+      &::after {
+        display: none;
+      }
+    }
+
+    .show {
+      .bi-chevron-down {
+        transform: rotate(180deg);
+      }
     }
   }
 
