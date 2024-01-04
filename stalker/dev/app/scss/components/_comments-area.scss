@@ -58,6 +58,10 @@
     .comment {
       position: relative;
       padding: 1.5rem;
+      border-style: solid;
+      border-width: 0.5rem;
+      -o-border-image: url("#{$images}input.svg") 9 9 stretch;
+      border-image: url("#{$images}input.svg") 9 9 stretch;
 
       .comment-reply-login {
         font-size: 1.4rem;
@@ -144,13 +148,6 @@
   }
 
   &.review-area {
-    .comment {
-      border-style: solid;
-      border-width: 0.5rem;
-      -o-border-image: url("#{$images}input.svg") 9 9 stretch;
-      border-image: url("#{$images}input.svg") 9 9 stretch;
-    }
-
     .comment-meta {
       padding-bottom: 0;
       border-bottom: 0;
