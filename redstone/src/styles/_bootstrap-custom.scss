@@ -1,0 +1,21 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "libraries/bootstrap/functions";
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "libraries/bootstrap/variables";
+
+// 5. Include remainder of required parts
+@import "libraries/bootstrap/mixins";
+@import "libraries/bootstrap/root";
+
+// 6. Optionally include any other parts as needed
+@import "libraries/bootstrap/utilities";
+@import "libraries/bootstrap/reboot";
+@import "libraries/bootstrap/type";
+@import "libraries/bootstrap/images";
+@import "libraries/bootstrap/containers";
+@import "libraries/bootstrap/grid";
+@import "libraries/bootstrap/helpers";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "libraries/bootstrap/utilities/api";

@@ -1,0 +1,41 @@
+.btn {
+  min-height: 4.7rem;
+  padding: 1.3rem 2.6rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+
+  &.btn-primary {
+    color: white;
+    background-image: linear-gradient(180deg, white 50%, $color-primary 50%);
+    background-size: 200% 200%;
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    border: solid 0.1rem $color-primary;
+
+    &:hover {
+      @include media-breakpoint-up(xl) {
+        color: $color-primary;
+        background-position: 0% 0%;
+      }
+    }
+  }
+
+  &.btn-outline-primary {
+    color: $color-primary;
+    background-image: linear-gradient(180deg, white 50%, $color-primary 50%);
+    background-size: 200% 200%;
+    background-position: 100% 0%;
+    background-repeat: no-repeat;
+    border: solid 0.1rem $color-primary;
+
+    &:hover {
+      @include media-breakpoint-up(xl) {
+        color: white;
+        background-position: 0% 100%;
+      }
+    }
+  }
+}
