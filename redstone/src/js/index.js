@@ -12,6 +12,7 @@ const isTouchScreen = navigator.userAgent.match(/Android/i) || navigator.userAge
 document.addEventListener('DOMContentLoaded', () => {
 	correctVh();
 	gsapReviewCursors();
+	scrollSection();
 });
 
 
@@ -50,3 +51,25 @@ function gsapReviewCursors() {
 	}
 }
 
+
+function scrollSection() {
+	const btns = document.querySelectorAll('.scroll-section');
+
+	if (btns && btns.length > 0) {
+		btns.forEach(btn => {
+			btn.addEventListener('click', () => {
+
+
+
+				gsap.to(window, {
+					duration: 0,
+					scrollTo: {
+						y: btn.parentNode.parentNode.scrollHeight,
+						// autoKill: false, 
+					},
+
+				});
+			})
+		})
+	}
+}

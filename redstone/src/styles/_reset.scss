@@ -45,6 +45,11 @@ input[type="submit"] {
   transition: $transition;
 }
 
+button {
+  background: transparent;
+  border: none;
+}
+
 button::-moz-focus-inner,
 input[type="reset"]::-moz-focus-inner,
 input[type="button"]::-moz-focus-inner,
@@ -62,4 +67,20 @@ p {
   min-height: calc(var(--vh, 1vh) * 100);
   display: flex;
   flex-direction: column;
+}
+
+html:not(.touch-screen) ::-webkit-scrollbar,
+html:not(.touch-screen)::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+html:not(.touch-screen) ::-webkit-scrollbar-thumb,
+html:not(.touch-screen)::-webkit-scrollbar-thumb {
+  background: #e70000;
+}
+
+html:not(.touch-screen) ::-webkit-scrollbar-track,
+html:not(.touch-screen)::-webkit-scrollbar-track {
+  background: #e1e1e1;
 }

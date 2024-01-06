@@ -1,4 +1,6 @@
 .section-categories {
+  padding-top: 3rem;
+
   .section-header {
     @include media-breakpoint-up(xl) {
       display: flex;
