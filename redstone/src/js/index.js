@@ -13,12 +13,57 @@ document.addEventListener('DOMContentLoaded', () => {
 	correctVh();
 	gsapReviewCursors();
 	scrollSection();
+	fullscreenMenu();
 });
 
 
 window.addEventListener('resize', () => {
 	correctVh();
+
 });
+
+
+function fullscreenMenu() {
+	const btnsDropdown = document.querySelectorAll('.menu-fullscreen .has-submenu .has-submenu-link');
+	const btnsCLose = document.querySelectorAll('.menu-fullscreen .has-submenu .sub-menu-close');
+	const btnOpenMenu = document.querySelector('.btn-menu-toggle');
+
+	if (btnsDropdown) {
+		btnsDropdown.forEach(btn => {
+			btn.addEventListener('click', () => {
+				clearClass();
+				btn.parentNode.classList.add('active');
+			})
+		})
+
+
+		btnsCLose.forEach(btn => {
+			btn.addEventListener('click', () => {
+				clearClass();
+			})
+		})
+
+
+		const tl = gsap.timeline({});
+
+
+		btnOpenMenu.addEventListener('click', () => {
+			if (document.body.classList.contains('menu-opened')) {
+				tl.to('.menu-fullscreen', { y: '-100%' });
+				document.body.classList.remove('menu-opened')
+			} else {
+				tl.to('.menu-fullscreen', { y: 0 });
+				document.body.classList.add('menu-opened')
+			}
+		})
+	}
+
+	function clearClass() {
+		btnsDropdown.forEach(btn => {
+			btn.parentNode.classList.remove('active');
+		})
+	}
+}
 
 
 // correctVh

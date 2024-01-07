@@ -24,6 +24,14 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @include media-breakpoint-up(xxxl) {
+    padding-top: 13rem;
+  }
+
+  @include media-breakpoint-down(xl) {
+    padding-top: 6rem;
+  }
 }
 
 a {
@@ -71,13 +79,13 @@ p {
 
 html:not(.touch-screen) ::-webkit-scrollbar,
 html:not(.touch-screen)::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 0.6rem;
+  height: 0.6rem;
 }
 
 html:not(.touch-screen) ::-webkit-scrollbar-thumb,
 html:not(.touch-screen)::-webkit-scrollbar-thumb {
-  background: #e70000;
+  background: $color-primary;
 }
 
 html:not(.touch-screen) ::-webkit-scrollbar-track,

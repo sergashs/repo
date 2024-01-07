@@ -26,12 +26,16 @@
     .text {
       margin-bottom: 0;
       padding-left: 5%;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       flex: 1;
       font-weight: 300;
       padding-left: 9%;
       line-height: 1.6;
       color: rgba(66, 66, 66, 0.9);
+
+      @include media-breakpoint-down(xxxl) {
+        font-size: 1.5rem;
+      }
 
       @include media-breakpoint-down(xl) {
         display: none;
