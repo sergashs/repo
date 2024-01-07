@@ -4,6 +4,14 @@
       min-height: calc(100vh - 8rem);
       min-height: calc(var(--vh, 1vh) * 100 - 8rem);
     }
+
+    @include media-breakpoint-down(sm) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: calc(100vh - 6rem);
+      min-height: calc(var(--vh, 1vh) * 100 - 6rem);
+    }
   }
 
   .section-title {
@@ -47,9 +55,20 @@
       justify-content: center;
     }
 
+    @include media-breakpoint-down(sm) {
+      position: absolute;
+      left: 0;
+      bottom: 2.5rem;
+      width: 100%;
+    }
+
     li {
       &:not(:last-child) {
         margin-right: 4.5rem;
+
+        @include media-breakpoint-down(md) {
+          margin-right: 2rem;
+        }
       }
 
       &:first-child {
@@ -131,6 +150,21 @@
     bottom: 4rem;
     transform: translateX(-50%);
     align-self: center;
+
+    @include media-breakpoint-down(xl) {
+      display: none;
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: block;
+      bottom: 0.5rem;
+    }
+
+    svg {
+      @include media-breakpoint-down(sm) {
+        height: 3.6rem;
+      }
+    }
 
     .dashed {
       animation: dash 8s linear infinite;

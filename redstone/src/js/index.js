@@ -19,51 +19,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('resize', () => {
 	correctVh();
-
+	gsapReviewCursors();
 });
 
 
 function fullscreenMenu() {
 	const btnsDropdown = document.querySelectorAll('.menu-fullscreen .has-submenu .has-submenu-link');
 	const btnsCLose = document.querySelectorAll('.menu-fullscreen .has-submenu .sub-menu-close');
-	const btnOpenMenu = document.querySelector('.btn-menu-toggle');
+	const btnsOpenMenu = document.querySelectorAll('.btn-menu-toggle');
 
 	if (btnsDropdown) {
-		btnsDropdown.forEach(btn => {
-			btn.addEventListener('click', () => {
-				clearClass();
-				btn.parentNode.classList.add('active');
+		function clearClass() {
+			btnsDropdown.forEach(btn => {
+				btn.parentNode.classList.remove('active');
+			});
+		}
+
+		if (btnsDropdown) {
+			btnsDropdown.forEach(btn => {
+				btn.addEventListener('click', () => {
+					if (btn.parentNode.classList.contains('active')) {
+						clearClass();
+					} else {
+						clearClass();
+						btn.parentNode.classList.add('active');
+					}
+				})
 			})
-		})
 
-
-		btnsCLose.forEach(btn => {
-			btn.addEventListener('click', () => {
-				clearClass();
+			btnsCLose.forEach(btn => {
+				btn.addEventListener('click', () => {
+					clearClass();
+				})
 			})
-		})
+		}
+	}
+
+	const tl = gsap.timeline({ paused: true });
+
+	tl.to('.menu-fullscreen', { y: 0 })
+		.fromTo(document.querySelectorAll('.menu-animate-block'), { opacity: 0, height: 0 }, { opacity: 1, height: window.innerWidth > 992 ? '50vh' : '100%', stagger: 0.15 })
+		.fromTo(document.querySelectorAll('.menu-fullscreen-primary'), { opacity: 0, }, { opacity: 1, stagger: 0.15 })
+		.fromTo('.menu-social', { opacity: 0 }, { opacity: 1 })
 
 
-		const tl = gsap.timeline({});
+	tl.eventCallback('onReverseComplete', () => {
+		document.body.classList.remove('menu-opened');
+		document.querySelector('.header .logo-holder img').setAttribute('src', 'images/logo.svg');
+	});
+
+	tl.reverse();
 
 
-		btnOpenMenu.addEventListener('click', () => {
+
+	btnsOpenMenu.forEach(btn => {
+		btn.addEventListener('click', () => {
 			if (document.body.classList.contains('menu-opened')) {
-				tl.to('.menu-fullscreen', { y: '-100%' });
-				document.body.classList.remove('menu-opened')
+				tl.reverse();
 			} else {
-				tl.to('.menu-fullscreen', { y: 0 });
-				document.body.classList.add('menu-opened')
+				tl.reversed(!tl.reversed());
+				document.querySelector('.header .logo-holder img').setAttribute('src', 'images/logo_white.svg');
+				document.body.classList.add('menu-opened');
 			}
 		})
-	}
+	})
 
-	function clearClass() {
-		btnsDropdown.forEach(btn => {
-			btn.parentNode.classList.remove('active');
-		})
-	}
 }
+
+
 
 
 // correctVh

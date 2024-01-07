@@ -32,6 +32,10 @@ body {
   @include media-breakpoint-down(xl) {
     padding-top: 6rem;
   }
+
+  &.menu-opened {
+    overflow: hidden;
+  }
 }
 
 a {
