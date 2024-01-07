@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	gsapReviewCursors();
 	scrollSection();
 	fullscreenMenu();
+	headerScroll();
+	getModal();
 });
 
 
@@ -21,6 +23,53 @@ window.addEventListener('resize', () => {
 	correctVh();
 	gsapReviewCursors();
 });
+
+
+function getModal() {
+
+	const btns = document.querySelectorAll('.open-popup');
+
+	if (btns && btns.length > 0) {
+		btns.forEach(btn => {
+			btn.addEventListener('click', () => {
+				const xhr = new XMLHttpRequest();
+
+				xhr.open("GET", "https://jsonplaceholder.typicode.com/todos/1", true);
+
+				xhr.onload = function () {
+					if (xhr.status == 200) {
+						document.getElementById("modalContainer").innerHTML = `<div class="modal"><div class="container">${xhr.responseText}</div></div>`;
+					} else {
+						console.error("Помилка Ajax-запиту: " + xhr.status);
+					}
+				};
+
+				xhr.onerror = function () {
+					console.error("Помилка Ajax-запиту");
+				};
+
+				xhr.send();
+			})
+		})
+
+
+
+
+	}
+}
+
+
+function headerScroll() {
+	const header = document.querySelector('.header');
+
+	window.addEventListener('scroll', function () {
+		if (window.scrollY > 0) {
+			header.classList.add('scrolled');
+		} else {
+			header.classList.remove('scrolled');
+		}
+	});
+}
 
 
 function fullscreenMenu() {

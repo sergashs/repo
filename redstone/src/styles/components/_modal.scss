@@ -1,0 +1,18 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background: white;
+  animation: appear 0.5s;
+  z-index: 101;
+
+  @keyframes appear {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}

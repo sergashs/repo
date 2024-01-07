@@ -8,6 +8,7 @@
   align-items: center;
   z-index: 99;
   background-color: #fff;
+  transition: $transition;
 
   @include media-breakpoint-up(xxxl) {
     min-height: 13rem;
@@ -15,6 +16,10 @@
 
   @include media-breakpoint-down(xl) {
     min-height: 6rem;
+  }
+
+  &.scrolled {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.02);
   }
 
   .left-side {
