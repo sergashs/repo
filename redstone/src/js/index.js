@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	fullscreenMenu();
 	headerScroll();
 	getModal();
+	homeGsapAnimations();
 });
 
 
@@ -25,8 +26,32 @@ window.addEventListener('resize', () => {
 });
 
 
-function getModal() {
+function homeGsapAnimations() {
+	const tlIntroSection = gsap.timeline();
 
+	if (window.innerWidth > 1200) {
+		tlIntroSection.fromTo(document.querySelector('.section-intro .section-title'), { opacity: 0, y: -20 }, { opacity: 1, y: 0, autoAlpha: 1 });
+		tlIntroSection.fromTo(document.querySelector('.section-intro .btn-outline-primary'), { opacity: 0, y: -20 }, { opacity: 1, y: 0, autoAlpha: 1 });
+		tlIntroSection.fromTo(document.querySelector('.section-intro .list-logos'), { opacity: 0, y: -20 }, { opacity: 1, y: 0, autoAlpha: 1 });
+		tlIntroSection.fromTo(document.querySelector('.section-intro .count-block'), { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, autoAlpha: 1 });
+	} else {
+		tlIntroSection.fromTo(document.querySelector('.section-intro .count-block'), { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, autoAlpha: 1 });
+		tlIntroSection.fromTo(document.querySelector('.section-intro .section-title'), { opacity: 0, y: -20 }, { opacity: 1, y: 0, autoAlpha: 1 });
+		tlIntroSection.fromTo(document.querySelector('.section-intro .btn-outline-primary'), { opacity: 0, y: -20 }, { opacity: 1, y: 0, autoAlpha: 1 });
+		tlIntroSection.fromTo(document.querySelector('.section-intro .list-logos'), { opacity: 0, y: -20 }, { opacity: 1, y: 0, autoAlpha: 1 });
+
+	}
+
+
+	gsap.fromTo(document.querySelectorAll('.animation-appear-y'), { opacity: 0, y: -20 }, {
+		opacity: 1, y: 0, autoAlpha: 1, stagger: 0.25, scrollTrigger: {
+			trigger: document.querySelectorAll(".animation-appear-y"),
+			start: 'top 75%',
+		},
+	});
+}
+
+function getModal() {
 	const btns = document.querySelectorAll('.open-popup');
 
 	if (btns && btns.length > 0) {
@@ -106,10 +131,14 @@ function fullscreenMenu() {
 
 	const tl = gsap.timeline({ paused: true });
 
-	tl.to('.menu-fullscreen', { y: 0 })
-		.fromTo(document.querySelectorAll('.menu-animate-block'), { opacity: 0, height: 0 }, { opacity: 1, height: window.innerWidth > 992 ? '50vh' : '100%', stagger: 0.15 })
-		.fromTo(document.querySelectorAll('.menu-fullscreen-primary'), { opacity: 0, }, { opacity: 1, stagger: 0.15 })
-		.fromTo('.menu-social', { opacity: 0 }, { opacity: 1 })
+	tl.to('.menu-fullscreen', { y: 0 });
+	if (window.innerWidth > 992) {
+		tl.fromTo(document.querySelectorAll('.menu-animate-block'), { opacity: 0, height: 0 }, { opacity: 1, height: '50vh', stagger: 0.15 });
+	} else {
+		tl.fromTo(document.querySelectorAll('.menu-animate-block'), { opacity: 0, y: 20 }, { opacity: 1, y: 0, stagger: 0.15 });
+	}
+	tl.fromTo(document.querySelectorAll('.menu-fullscreen-primary'), { opacity: 0, }, { opacity: 1, stagger: 0.15 })
+	tl.fromTo('.menu-social', { opacity: 0 }, { opacity: 1 })
 
 
 	tl.eventCallback('onReverseComplete', () => {
