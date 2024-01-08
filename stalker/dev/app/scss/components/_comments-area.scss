@@ -57,7 +57,7 @@
 
     .comment {
       position: relative;
-      padding: 1.5rem;
+      padding: 1rem;
       border-style: solid;
       border-width: 0.5rem;
       -o-border-image: url("#{$images}input.svg") 9 9 stretch;
@@ -67,12 +67,14 @@
         font-size: 1.4rem;
       }
 
+      .comment-body {
+        margin-bottom: 0;
+      }
+
       .comment {
-        margin-bottom: 1.5rem;
-        padding-top: 0;
-        padding-right: 0;
-        padding-bottom: 0;
-        padding-left: 1rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+        padding: 1rem;
       }
 
       .comment-content {
@@ -148,6 +150,22 @@
   }
 
   &.review-area {
+    .comment-list {
+      .comment {
+        padding: 1rem;
+        margin-bottom: 2rem;
+
+        .comment-body {
+          margin-bottom: 0;
+        }
+
+        .comment {
+          margin-top: 1rem;
+          margin-bottom: 0;
+        }
+      }
+    }
+
     .comment-meta {
       padding-bottom: 0;
       border-bottom: 0;
@@ -212,6 +230,10 @@
           }
         }
       }
+    }
+
+    .reply {
+      display: none;
     }
   }
 }
