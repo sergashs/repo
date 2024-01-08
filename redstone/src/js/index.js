@@ -6,7 +6,6 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
-
 const isTouchScreen = navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i);
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,12 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	homeGsapAnimations();
 });
 
-
 window.addEventListener('resize', () => {
 	correctVh();
 	gsapReviewCursors();
 });
-
 
 function homeGsapAnimations() {
 	const tlIntroSection = gsap.timeline();
@@ -41,7 +38,6 @@ function homeGsapAnimations() {
 		tlIntroSection.fromTo(document.querySelector('.section-intro .list-logos'), { opacity: 0, y: -20 }, { opacity: 1, y: 0, autoAlpha: 1 });
 
 	}
-
 
 	gsap.fromTo(document.querySelectorAll('.animation-appear-y'), { opacity: 0, y: -20 }, {
 		opacity: 1, y: 0, autoAlpha: 1, stagger: 0.25, scrollTrigger: {
@@ -76,10 +72,6 @@ function getModal() {
 				xhr.send();
 			})
 		})
-
-
-
-
 	}
 }
 
