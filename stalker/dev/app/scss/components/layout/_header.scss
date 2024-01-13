@@ -127,34 +127,6 @@
       flex-direction: column;
     }
 
-    .header-bg-1 & {
-      background-image: url("#{$images}header-1.jpg");
-    }
-
-    .header-bg-2 & {
-      background-image: url("#{$images}header-2.jpg");
-    }
-
-    .header-bg-3 & {
-      background-image: url("#{$images}header-3.jpg");
-    }
-
-    .header-bg-4 & {
-      background-image: url("#{$images}header-4.jpg");
-    }
-
-    .header-bg-5 & {
-      background-image: url("#{$images}header-5.jpg");
-    }
-
-    .header-bg-6 & {
-      background-image: url("#{$images}header-6.jpg");
-    }
-
-    .header-bg-7 & {
-      background-image: url("#{$images}header-7.jpg");
-    }
-
     &::before {
       content: "";
       position: absolute;

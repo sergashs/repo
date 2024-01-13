@@ -175,11 +175,67 @@ function initTooltips() {
 	}
 }
 
+// function headerCustomize() {
+// 	let headerVariants = [];
+// 	const btns = document.querySelectorAll('[header-customize]');
+
+
+
+// 	function initButtons() {
+// 		if (btns) {
+// 			btns.forEach((btn) => {
+// 				headerVariants.push(btn.children[0].id);
+
+// 				btn.addEventListener('click', function (event) {
+// 					setStorage(this.children[0].id);
+// 					getStorage();
+// 				})
+
+
+// 				if (localStorage.getItem('header-bg') === btn.children[0].id) {
+// 					btn.children[0].checked = true;
+// 				}
+// 			})
+// 		}
+// 	}
+
+// 	initButtons();
+
+// 	function setStorage(value) {
+// 		localStorage.setItem('header-bg', value);
+// 	}
+
+// 	function getStorage() {
+// 		const key = localStorage.getItem('header-bg');
+
+// 		if (key && key.length > 0) {
+// 			clearClasses(headerVariants);
+// 			document.body.classList.add(key);
+// 		} else {
+// 			setStorage('header-bg-1');
+// 			getStorage();
+// 			initButtons();
+// 		}
+// 	}
+
+// 	function clearClasses(list) {
+// 		list.forEach(item => {
+// 			document.body.classList.remove(item)
+// 		});
+// 	}
+
+
+// 	getStorage();
+// }
+
 function headerCustomize() {
 	let headerVariants = [];
 	const btns = document.querySelectorAll('[header-customize]');
+	const key = localStorage.getItem('header-bg');
+	const img = document.querySelector('.illustration-holder .lazyload-bg');
+	const imgSrc = img.getAttribute('data-src');
 
-
+	getStorage();
 
 	function initButtons() {
 		if (btns) {
@@ -188,7 +244,7 @@ function headerCustomize() {
 
 				btn.addEventListener('click', function (event) {
 					setStorage(this.children[0].id);
-					getStorage();
+					img.parentNode.style.cssText = `background-image: url(${imgSrc.replace("header-1", replaceStr(this.children[0].id))})`;
 				})
 
 
@@ -205,25 +261,20 @@ function headerCustomize() {
 		localStorage.setItem('header-bg', value);
 	}
 
+	function replaceStr(str) {
+		return str.replace(/header-bg-(\d+)/g, 'header-$1');
+	}
+
 	function getStorage() {
-		const key = localStorage.getItem('header-bg');
+		const img = document.querySelector('.illustration-holder .lazyload-bg');
+		let imgSrc = img.getAttribute('data-src');
 
 		if (key && key.length > 0) {
-			clearClasses(headerVariants);
-			document.body.classList.add(key);
+			img.setAttribute('src', '#');
+			img.setAttribute('data-src', imgSrc.replace("header-1", replaceStr(key)));
 		} else {
 			setStorage('header-bg-1');
-			getStorage();
-			initButtons();
 		}
 	}
 
-	function clearClasses(list) {
-		list.forEach(item => {
-			document.body.classList.remove(item)
-		});
-	}
-
-
-	getStorage();
 }
