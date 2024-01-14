@@ -88,7 +88,7 @@ function correctVh() {
 
 // mobile menu
 function mobileMenu() {
-	const openBtn = document.querySelector('.dropdown-menu-wrapper');
+	const openBtn = document.querySelector('.open-menu-wrapper');
 
 	openBtn.addEventListener('click', function (event) {
 		event.preventDefault();
@@ -153,6 +153,38 @@ function initSlides() {
 			},
 		},
 	})
+
+
+	const swiper3 = new Swiper('.swiper-new-comments', {
+		speed: 900,
+		loop: true,
+		slidesPerView: 1,
+		spaceBetween: 20,
+		pagination: {
+			el: ".swiper-new-comments .swiper-pagination",
+			clickable: true,
+		},
+		lazy: {
+			loadPrevNext: true,
+		},
+		autoplay: {
+			delay: 2000,
+			disableOnInteraction: false,
+			pauseOnMouseEnter: true,
+		},
+		breakpoints: {
+			640: {
+				slidesPerView: 2,
+			},
+			768: {
+				slidesPerView: 3,
+			},
+			1024: {
+				slidesPerView: 4,
+			},
+		},
+	})
+
 }
 
 // fancyboxImges
