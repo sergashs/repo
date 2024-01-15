@@ -122,13 +122,9 @@ function initSlides() {
 
 	const swiper2 = new Swiper('.swiper-new-mods', {
 		speed: 900,
-		loop: true,
+		// loop: true,
 		slidesPerView: 1,
 		spaceBetween: 20,
-		// navigation: {
-		// 	nextEl: ".swiper-new-mods .swiper-button-next",
-		// 	prevEl: ".swiper-new-mods .swiper-button-prev",
-		// },
 		pagination: {
 			el: ".swiper-new-mods .swiper-pagination",
 			clickable: true,
@@ -157,7 +153,7 @@ function initSlides() {
 
 	const swiper3 = new Swiper('.swiper-new-comments', {
 		speed: 900,
-		loop: true,
+		// loop: true,
 		slidesPerView: 1,
 		spaceBetween: 20,
 		pagination: {
