@@ -185,13 +185,24 @@ function initSlides() {
 
 // fancyboxImges
 function fancyboxImges() {
-	const images = document.querySelectorAll('.wp-block-image a');
+	// const images = document.querySelectorAll('.wp-block-image a');
+	const images = document.querySelectorAll('.single-post .wp-block-image.size-full');
+
 
 	if (images) {
 		images.forEach(function (item) {
-			const href = item.getAttribute("href");
-			item.setAttribute('data-fancybox', 'wp-gallery');
-			item.setAttribute('data-src', href);
+			const src = item.childNodes[0].getAttribute('src');
+			const link = document.createElement('a');
+			link.setAttribute('href', src);
+			link.setAttribute('data-fancybox', 'wp-gallery');
+			link.setAttribute('data-src', src);
+
+			item.childNodes[0].parentNode.insertBefore(link, item.childNodes[0]);
+
+			console.log(item.childNodes[1])
+
+			item.childNodes[0].appendChild(item.childNodes[1]);
+
 		})
 	}
 }
