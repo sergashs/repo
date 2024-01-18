@@ -7,11 +7,64 @@ document.addEventListener('DOMContentLoaded', () => {
 	mobileMenu();
 	initSlides()
 	fancyboxImges();
+	starsRating();
 });
 
 window.addEventListener('resize', () => {
 	correctVh();
 });
+
+
+
+function starsRating() {
+	const ratingStars = [...document.querySelectorAll("#comment-rating-form .rating-form-star")];
+
+	if (ratingStars) {
+		function executeRating(stars, result) {
+			const starClassActive = "rating-form-star active";
+			const starClassHalf = "rating-form-star half";
+			const starClassUnactive = "rating-form-star unactive";
+			const starsLength = stars.length;
+
+			stars.forEach((star, index) => {
+				star.onclick = (event) => {
+					const rect = star.getBoundingClientRect();
+					const clickX = event.clientX - rect.left;
+
+					if (clickX < rect.width / 2) {
+						printRatingResult(result, index + 0.5);
+						console.log(event.target)
+						setStars(stars, starClassActive, index);
+						event.target.className = starClassHalf;
+					} else {
+						printRatingResult(result, index + 1);
+						setStars(stars, starClassActive, index);
+					}
+				};
+			});
+		}
+
+		function setStars(stars, className, endIndex) {
+			for (let i = 0; i <= endIndex; i++) {
+				stars[i].className = className;
+			}
+			for (let i = endIndex + 1; i < stars.length; i++) {
+				stars[i].className = "rating-form-star unactive";
+			}
+		}
+
+		function printRatingResult(result, num = 0) {
+			const input = document.querySelector('#rating-form-star');
+			input.value = num;
+		}
+
+		executeRating(ratingStars);
+	}
+
+
+
+}
+
 
 
 // lazyLoad Images
@@ -46,39 +99,12 @@ function lazyLoad() {
 				img.style.display = 'none';
 				img.parentNode.style.backgroundImage = 'url(' + img.dataset.src + ')';
 			}
-			if (img.classList.contains('svg-html')) {
-				replaseInlineSvg(img);
-			}
+
 		});
 	}
 }
 
-// replaseInlineSvg
-function replaseInlineSvg(el) {
-	const imgID = el.getAttribute('id');
-	const imgClass = el.getAttribute('class');
-	const imgURL = el.getAttribute('src');
 
-	fetch(imgURL)
-		.then(data => data.text())
-		.then(response => {
-			const parser = new DOMParser();
-			const xmlDoc = parser.parseFromString(response, 'text/html');
-			const svg = xmlDoc.querySelector('svg');
-
-			if (typeof imgID !== 'undefined') {
-				svg.setAttribute('id', imgID);
-			}
-
-			if (typeof imgClass !== 'undefined') {
-				svg.setAttribute('class', imgClass + ' replaced-svg');
-			}
-
-			svg.removeAttribute('xmlns:a');
-
-			el.parentNode.replaceChild(svg, el);
-		});
-}
 
 // correctVh
 function correctVh() {
@@ -213,59 +239,6 @@ function initTooltips() {
 		const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 	}
 }
-
-// function headerCustomize() {
-// 	let headerVariants = [];
-// 	const btns = document.querySelectorAll('[header-customize]');
-
-
-
-// 	function initButtons() {
-// 		if (btns) {
-// 			btns.forEach((btn) => {
-// 				headerVariants.push(btn.children[0].id);
-
-// 				btn.addEventListener('click', function (event) {
-// 					setStorage(this.children[0].id);
-// 					getStorage();
-// 				})
-
-
-// 				if (localStorage.getItem('header-bg') === btn.children[0].id) {
-// 					btn.children[0].checked = true;
-// 				}
-// 			})
-// 		}
-// 	}
-
-// 	initButtons();
-
-// 	function setStorage(value) {
-// 		localStorage.setItem('header-bg', value);
-// 	}
-
-// 	function getStorage() {
-// 		const key = localStorage.getItem('header-bg');
-
-// 		if (key && key.length > 0) {
-// 			clearClasses(headerVariants);
-// 			document.body.classList.add(key);
-// 		} else {
-// 			setStorage('header-bg-1');
-// 			getStorage();
-// 			initButtons();
-// 		}
-// 	}
-
-// 	function clearClasses(list) {
-// 		list.forEach(item => {
-// 			document.body.classList.remove(item)
-// 		});
-// 	}
-
-
-// 	getStorage();
-// }
 
 function headerCustomize() {
 	let headerVariants = [];

@@ -5,7 +5,38 @@
 		//= inc/_header.html
 		<main id="main" class="site-main">
 			<div class="container-fluid">
-				<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="2560" height="876" src="https://stalker-news.info/wp-content/uploads/2024/01/1.1-1-scaled.jpg" alt="" class="wp-image-2274" style="aspect-ratio:16/9;object-fit:cover" srcset="https://stalker-news.info/wp-content/uploads/2024/01/1.1-1-scaled.jpg 2560w, https://stalker-news.info/wp-content/uploads/2024/01/1.1-1-768x263.jpg 768w" sizes="(max-width: 2560px) 100vw, 2560px"></figure>
+				<form action="https://stalker-news.info/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+					<p class="logged-in-as">Ви увійшли як serhii. <a href="https://stalker-news.info/wp-admin/profile.php">Редагувати свій обліковий запис</a>. <a href="https://stalker-news.info/sign-out/?redirect_to=https%3A%2F%2Fstalker-news.info%2Fmods%2Fistoriia-dzhona%2F&amp;_wpfnonce=19d39b22db">Вийти?</a> <span class="required-field-message">Обов’язкові поля позначені <span class="required">*</span></span></p>
+					<div class="input-group"><label for="passing_time">Час проходження<span class="required">*</span></label><select id="passing_time" name="passing_time" tabindex="5">
+							<option value="" selected="">Оберіть значення</option>
+							<option value="Тільки почав проходити">Тільки почав проходити</option>
+							<option value="Граю тривалий час">Граю тривалий час</option>
+							<option value="Пройшов модифікацію">Пройшов модифікацію</option>
+							<option value="Закинув проходження">Закинув проходження</option>
+						</select></div>
+					<div class="input-group"><label for="rating">Рейтинг<span class="required">*</span></label>
+						<div id="comment-rating-form" class="comment-rating-form">
+							<div class="rating-form-star unactive"></div>
+							<div class="rating-form-star unactive"></div>
+							<div class="rating-form-star unactive"></div>
+							<div class="rating-form-star unactive"></div>
+							<div class="rating-form-star unactive"></div>
+							<div class="rating-form-star unactive"></div>
+							<div class="rating-form-star unactive"></div>
+							<div class="rating-form-star unactive"></div>
+							<div class="rating-form-star unactive"></div>
+							<div class="rating-form-star unactive"></div>
+							<input type="number" name="rating" id="rating-form-star" value="">
+						</div>
+					</div>
+					<p class="comment-form-comment"><label for="comment">Коментар <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required=""></textarea></p>
+					<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Відправити рецензію"> <input type="hidden" name="comment_post_ID" value="2332" id="comment_post_ID"> <input type="hidden" name="comment_parent" id="comment_parent" value="0"></p>
+					<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="29c669fc94"></p><input type="hidden" id="_wp_unfiltered_html_comment_disabled" name="_wp_unfiltered_html_comment" value="aa698a2260">
+					<script>(function () { if (window === window.parent) { document.getElementById('_wp_unfiltered_html_comment_disabled').name = '_wp_unfiltered_html_comment'; } })();</script>
+					<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>Δ<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="1705614402014">
+						<script>document.getElementById("ak_js_1").setAttribute("value", (new Date()).getTime());</script>
+					</p>
+				</form>
 			</div>
 		</main>
 		//= inc/_footer.html
