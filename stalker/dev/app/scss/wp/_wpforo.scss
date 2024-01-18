@@ -316,3 +316,52 @@
 #wpforo #wpforo-wrap.wpf-dark .wpf-field:not(.wpf-field-type-tinymce) .wpf-field-wrap i {
   color: #bcbcbc !important;
 }
+
+#wpforo #wpforo-wrap.wpf-dark input[type="text"],
+#wpforo #wpforo-wrap.wpf-dark input[type="search"],
+#wpforo #wpforo-wrap.wpf-dark input[type="email"],
+#wpforo #wpforo-wrap.wpf-dark input[type="date"],
+#wpforo #wpforo-wrap.wpf-dark input[type="number"],
+#wpforo #wpforo-wrap.wpf-dark input[type="url"],
+#wpforo #wpforo-wrap.wpf-dark input[type="tel"],
+#wpforo #wpforo-wrap.wpf-dark input[type="password"],
+#wpforo #wpforo-wrap.wpf-dark input[type="email"],
+#wpforo #wpforo-wrap.wpf-dark textarea,
+#wpforo #wpforo-wrap.wpf-dark select {
+  box-shadow: none !important;
+  background-color: #141414 !important;
+  border: 1px solid #727272 !important;
+  border-radius: 6px !important;
+}
+
+.comment-form-ajdg_nobot {
+  padding: 8px 10px !important;
+  color: #e0e0e0 !important;
+
+  @media (min-width: 800px) {
+    display: flex !important;
+  }
+
+  > label {
+    display: block !important;
+
+    @media (min-width: 800px) {
+      width: 38% !important;
+    }
+  }
+
+  #ajdg_nobot_answer {
+    flex-grow: 1;
+
+    @media (max-width: 800px) {
+      width: 100% !important;
+    }
+  }
+}
+
+.wpforo-register-content {
+  select {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
