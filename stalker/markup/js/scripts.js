@@ -18,33 +18,37 @@ window.addEventListener('resize', () => {
 
 
 function releaseTimer() {
-	const daysEl = document.getElementById('days');
-	const hoursEl = document.getElementById('hours');
-	const minsEL = document.getElementById('mins');
-	const secondsEL = document.getElementById('seconds');
+	const timer = document.getElementById('countdown-timer');
 
-	const newYears = '4 Sep 2024';
+	if (timer) {
+		const daysEl = document.getElementById('days');
+		const hoursEl = document.getElementById('hours');
+		const minsEL = document.getElementById('mins');
+		const secondsEL = document.getElementById('seconds');
 
-	function countdown() {
-		const newYearsDate = new Date(newYears);
-		const currentDate = new Date();
+		const newYears = '5 Sep 2024';
 
-		const totalSeconds = (newYearsDate - currentDate) / 1000;
-		const minutes = Math.floor(totalSeconds / 60) % 60;
-		const hours = Math.floor(totalSeconds / 3600) % 24;
-		const days = Math.floor(totalSeconds / 3600 / 24);
-		const seconds = Math.floor(totalSeconds) % 60;
+		function countdown() {
+			const newYearsDate = new Date(newYears);
+			const currentDate = new Date();
 
-
-		daysEl.innerText = days;
-		hoursEl.innerText = hours;
-		minsEL.innerText = minutes;
-		secondsEL.innerText = seconds;
+			const totalSeconds = (newYearsDate - currentDate) / 1000;
+			const minutes = Math.floor(totalSeconds / 60) % 60;
+			const hours = Math.floor(totalSeconds / 3600) % 24;
+			const days = Math.floor(totalSeconds / 3600 / 24);
+			const seconds = Math.floor(totalSeconds) % 60;
 
 
+			daysEl.innerText = days;
+			hoursEl.innerText = hours;
+			minsEL.innerText = minutes;
+			secondsEL.innerText = seconds;
+		}
+
+		setInterval(countdown, 1000);
 	}
 
-	setInterval(countdown, 1000);
+
 }
 
 function starsRating() {
