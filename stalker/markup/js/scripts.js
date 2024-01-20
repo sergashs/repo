@@ -249,6 +249,7 @@ function initSlides() {
 function fancyboxImges() {
 	// const images = document.querySelectorAll('.wp-block-image a');
 	const images = document.querySelectorAll('.single-post .wp-block-image.size-full');
+	const imagesLarge = document.querySelectorAll('.single-post .wp-block-image.size-large')
 
 
 	if (images) {
@@ -258,15 +259,21 @@ function fancyboxImges() {
 			link.setAttribute('href', src);
 			link.setAttribute('data-fancybox', 'wp-gallery');
 			link.setAttribute('data-src', src);
-
 			item.childNodes[0].parentNode.insertBefore(link, item.childNodes[0]);
-
-			console.log(item.childNodes[1])
-
 			item.childNodes[0].appendChild(item.childNodes[1]);
+		})
+	}
+
+	if (imagesLarge) {
+		imagesLarge.forEach(function (item) {
+			const src = item.querySelector('img').getAttribute('src');
+
+			item.childNodes[0].setAttribute('data-fancybox', 'wp-gallery');
+			item.childNodes[0].setAttribute('data-src', src);
 
 		})
 	}
+
 }
 
 function initTooltips() {
