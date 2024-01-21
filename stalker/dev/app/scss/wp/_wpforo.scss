@@ -172,6 +172,14 @@
       display: flex;
       flex-direction: column;
       padding: 10px !important;
+
+      a {
+        color: $accent-color !important;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
 
     .wpforo-post {
@@ -364,4 +372,13 @@
     width: 100% !important;
     max-width: 100% !important;
   }
+}
+
+#mceu_23 {
+  display: none;
+}
+
+#mceu_57-button,
+#mceu_56 {
+  display: none;
 }
