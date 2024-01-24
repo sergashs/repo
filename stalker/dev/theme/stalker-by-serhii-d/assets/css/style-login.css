@@ -1,0 +1,98 @@
+.login {
+  padding: 5% 0 0;
+  background: #101010;
+}
+
+#login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login h1 a {
+  background-image: url("https://stalker-news.info/wp-content/themes/stalker-by-serhii-d/assets/images/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 270px;
+  height: 110px;
+  pointer-events: none;
+}
+
+.login form {
+  color: #afaeac;
+  background: #1d1d1d;
+  border-color: #363636;
+}
+
+.login #backtoblog a,
+.login #nav a {
+  color: #afaeac;
+  box-shadow: none;
+}
+
+.login #backtoblog a:hover,
+.login #nav a:hover,
+.login h1 a:hover {
+  color: #ebebeb;
+}
+
+.login #backtoblog a:focus,
+.login #nav a:focus,
+.login h1 a:focus {
+  color: #ebebeb;
+}
+
+.login .bsp-register {
+  display: none;
+}
+
+.login .button-primary {
+  color: #afaeac;
+  background: #181818;
+  border-radius: 0.3rem;
+  border: solid 0.1rem #3e3e3e;
+  box-shadow: none;
+}
+
+.login .button-primary:hover {
+  background: #181818;
+  border-color: #3e3e3e;
+}
+
+.login form .input {
+  background: #1d1d1d;
+  border-color: #4c4c4c;
+  outline: none;
+  box-shadow: none;
+}
+
+.login input:-webkit-autofill,
+.login input:-webkit-autofill:hover,
+.login input:-webkit-autofill:focus,
+.login input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #1d1d1d inset !important;
+}
+
+.login input:-webkit-autofill {
+  -webkit-text-fill-color: #afaeac !important;
+}
+
+.login .button-secondary {
+  color: #afaeac;
+}
+
+.login .button-secondary.wp-hide-pw:focus,
+.login .button-secondary.wp-hide-pw:hover {
+  color: #ebebeb;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.login .language-switcher {
+  display: none;
+}
+
+.login #nav {
+  color: #afaeac;
+}
