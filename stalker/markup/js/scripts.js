@@ -16,8 +16,6 @@ window.addEventListener('resize', () => {
 	correctVh();
 });
 
-
-
 function releaseTimer() {
 	const timer = document.getElementById('countdown-timer');
 

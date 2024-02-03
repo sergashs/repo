@@ -82,11 +82,24 @@
       }
 
       .cld-like-dislike-wrap {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .cld-like-wrap {
+        margin-right: 2rem;
+      }
+
+      .cld-like-trigger {
+        text-decoration: none;
+      }
+
+      .cld-like-dislike-wrap {
+        margin-right: 0;
         margin-bottom: 0;
 
         .cld-common-wrap {
           min-width: unset;
-          margin-right: 2rem;
         }
       }
 
