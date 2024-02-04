@@ -46,8 +46,6 @@ function releaseTimer() {
 
 		setInterval(countdown, 1000);
 	}
-
-
 }
 
 function starsRating() {
@@ -99,8 +97,6 @@ function starsRating() {
 
 }
 
-
-
 // lazyLoad Images
 function lazyLoad() {
 	if ('loading' in HTMLImageElement.prototype) {
@@ -138,8 +134,6 @@ function lazyLoad() {
 	}
 }
 
-
-
 // correctVh
 function correctVh() {
 	const vh = window.innerHeight * 0.01;
@@ -162,13 +156,13 @@ function mobileMenu() {
 
 
 function initSlides() {
-	if (document.querySelector('.swiper-buy-game') && document.querySelector('.swiper-buy-game').length > 0) {
+	if (document.querySelector('.swiper-buy-game')) {
 		const swiper = new Swiper('.swiper-buy-game', {
 			speed: 900,
 			loop: true,
 			effect: "fade",
 			slidesPerView: 1,
-			spaceBetween: 10,,
+			spaceBetween: 10,
 			lazy: {
 				loadPrevNext: true,
 			},
@@ -178,7 +172,7 @@ function initSlides() {
 		})
 	}
 
-	if ((document.querySelector('.swiper-new-mods') && document.querySelector('.swiper-new-mods').length > 0)) {
+	if (document.querySelector('.swiper-new-mods')) {
 		const swiper2 = new Swiper('.swiper-new-mods', {
 			speed: 900,
 			// loop: true,
@@ -211,7 +205,7 @@ function initSlides() {
 	}
 
 
-	if (((document.querySelector('.swiper-new-comments') && document.querySelector('.swiper-new-comments').length > 0))) {
+	if (document.querySelector('.swiper-new-comments')) {
 		const swiper3 = new Swiper('.swiper-new-comments', {
 			speed: 900,
 			// loop: true,
