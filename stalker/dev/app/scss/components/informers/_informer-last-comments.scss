@@ -1,6 +1,14 @@
 .informer-last-comments {
   margin-bottom: 2rem;
 
+  .scroll {
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      border-radius: 1.2rem;
+    }
+  }
+
   ul {
     margin: 0;
     list-style: none;

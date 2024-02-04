@@ -132,11 +132,6 @@ b {
   font-weight: 600;
 }
 
-// reset line-height on icons
-.bi {
-  line-height: 0;
-}
-
 hr,
 .wp-block-separator {
   border: none;
@@ -152,4 +147,14 @@ hr,
 
 .tooltip-inner {
   padding: 1rem;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+  background: rgb(6 5 6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 1.2rem;
 }
