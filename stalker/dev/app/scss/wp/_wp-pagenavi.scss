@@ -1,21 +1,24 @@
 .wp-pagenavi {
-	margin-bottom: 2rem;
+  margin-bottom: 2rem;
 
-	a,
-	span {
-		background: #131313;
-		border: solid 0.1rem #202020;
-		text-decoration: none;
+  a,
+  span {
+    padding: 0.5rem 1rem;
+    background: #131313;
+    border: solid 0.1rem #202020;
+    text-decoration: none;
+  }
 
-		&:hover {
-			border-color: lighten(#202020, 10);
-		}
-	}
+  a {
+    &:hover {
+      border-color: lighten(#202020, 10);
+    }
+  }
 
-	span {
-		&.current {
-			background: #131313;
-			border-color: lighten(#202020, 10);
-		}
-	}
+  span {
+    &.current {
+      background: #131313;
+      border-color: lighten(#202020, 10);
+    }
+  }
 }
