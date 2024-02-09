@@ -150,11 +150,12 @@ hr,
 }
 
 ::-webkit-scrollbar {
-  width: 1rem;
+  width: 1.2rem;
   background: rgb(6 5 6);
 }
 
 ::-webkit-scrollbar-thumb {
   background: #333;
   border-radius: 1.2rem;
+  border: solid 0.2rem rgb(6 5 6);
 }
