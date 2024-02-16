@@ -16,8 +16,6 @@ window.addEventListener('resize', () => {
 	correctVh();
 });
 
-
-
 function releaseTimer() {
 	const timer = document.getElementById('countdown-timer');
 
@@ -48,8 +46,6 @@ function releaseTimer() {
 
 		setInterval(countdown, 1000);
 	}
-
-
 }
 
 function starsRating() {
@@ -101,8 +97,6 @@ function starsRating() {
 
 }
 
-
-
 // lazyLoad Images
 function lazyLoad() {
 	if ('loading' in HTMLImageElement.prototype) {
@@ -140,8 +134,6 @@ function lazyLoad() {
 	}
 }
 
-
-
 // correctVh
 function correctVh() {
 	const vh = window.innerHeight * 0.01;
@@ -164,90 +156,93 @@ function mobileMenu() {
 
 
 function initSlides() {
-	const swiper = new Swiper('.swiper-buy-game', {
-		speed: 900,
-		loop: true,
-		effect: "fade",
-		slidesPerView: 1,
-		spaceBetween: 10,
-		// navigation: {
-		// 	nextEl: ".swiper-buy-game .swiper-button-next",
-		// 	prevEl: ".swiper-buy-game .swiper-button-prev",
-		// },
-		lazy: {
-			loadPrevNext: true,
-		},
-		autoplay: {
-			delay: 2000,
-		},
-	})
+	if (document.querySelector('.swiper-buy-game')) {
+		const swiper = new Swiper('.swiper-buy-game', {
+			speed: 900,
+			loop: true,
+			effect: "fade",
+			slidesPerView: 1,
+			spaceBetween: 10,
+			lazy: {
+				loadPrevNext: true,
+			},
+			autoplay: {
+				delay: 2000,
+			},
+		})
+	}
 
-	const swiper2 = new Swiper('.swiper-new-mods', {
-		speed: 900,
-		// loop: true,
-		slidesPerView: 1,
-		spaceBetween: 20,
-		pagination: {
-			el: ".swiper-new-mods .swiper-pagination",
-			clickable: true,
-		},
-		lazy: {
-			loadPrevNext: true,
-		},
-		autoplay: {
-			delay: 2000,
-			disableOnInteraction: false,
-			pauseOnMouseEnter: true,
-		},
-		breakpoints: {
-			640: {
-				slidesPerView: 2,
+	if (document.querySelector('.swiper-new-mods')) {
+		const swiper2 = new Swiper('.swiper-new-mods', {
+			speed: 900,
+			// loop: true,
+			slidesPerView: 1,
+			spaceBetween: 20,
+			pagination: {
+				el: ".swiper-new-mods .swiper-pagination",
+				clickable: true,
 			},
-			768: {
-				slidesPerView: 3,
+			lazy: {
+				loadPrevNext: true,
 			},
-			1024: {
-				slidesPerView: 4,
+			autoplay: {
+				delay: 2000,
+				disableOnInteraction: false,
+				pauseOnMouseEnter: true,
 			},
-		},
-	})
+			breakpoints: {
+				640: {
+					slidesPerView: 2,
+				},
+				768: {
+					slidesPerView: 3,
+				},
+				1024: {
+					slidesPerView: 4,
+				},
+			},
+		})
+	}
 
 
-	const swiper3 = new Swiper('.swiper-new-comments', {
-		speed: 900,
-		// loop: true,
-		slidesPerView: 1,
-		spaceBetween: 20,
-		pagination: {
-			el: ".swiper-new-comments .swiper-pagination",
-			clickable: true,
-		},
-		lazy: {
-			loadPrevNext: true,
-		},
-		autoplay: {
-			delay: 2000,
-			disableOnInteraction: false,
-			pauseOnMouseEnter: true,
-		},
-		breakpoints: {
-			640: {
-				slidesPerView: 2,
+	if (document.querySelector('.swiper-new-comments')) {
+		const swiper3 = new Swiper('.swiper-new-comments', {
+			speed: 900,
+			// loop: true,
+			slidesPerView: 1,
+			spaceBetween: 20,
+			pagination: {
+				el: ".swiper-new-comments .swiper-pagination",
+				clickable: true,
 			},
-			768: {
-				slidesPerView: 3,
+			lazy: {
+				loadPrevNext: true,
 			},
-			1024: {
-				slidesPerView: 4,
+			autoplay: {
+				delay: 2000,
+				disableOnInteraction: false,
+				pauseOnMouseEnter: true,
 			},
-		},
-	})
+			breakpoints: {
+				640: {
+					slidesPerView: 2,
+				},
+				768: {
+					slidesPerView: 3,
+				},
+				1024: {
+					slidesPerView: 4,
+				},
+			},
+		})
+	}
+
+
 
 }
 
 // fancyboxImges
 function fancyboxImges() {
-	// const images = document.querySelectorAll('.wp-block-image a');
 	const images = document.querySelectorAll('.single-post .wp-block-image.size-full');
 	const imagesLarge = document.querySelectorAll('.single-post .wp-block-image.size-large')
 
@@ -331,7 +326,6 @@ function headerCustomize() {
 			setStorage('header-bg-1');
 		}
 	}
-
 }
 
 

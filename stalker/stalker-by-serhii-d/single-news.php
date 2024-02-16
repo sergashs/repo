@@ -63,7 +63,7 @@ get_header();
 							<ul class="meta-info pt-1">
 								<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Перегляди">
 									<div class="icon-holder">
-										<i class="bi bi-eye"></i>
+										<i class="fa fa-eye"></i>
 									</div>
 									<?php
 									$views = get_post_meta(get_the_ID(), 'entry_views', true);
@@ -72,7 +72,7 @@ get_header();
 								</li>
 								<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Коментарі">
 									<div class="icon-holder">
-										<i class="bi bi-chat-dots"></i>
+										<i class="fa fa-comments"></i>
 									</div>
 									<?php
 									$post_id = get_the_ID();

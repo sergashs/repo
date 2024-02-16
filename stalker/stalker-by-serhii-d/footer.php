@@ -23,29 +23,35 @@
 			<div class="col-md-6 col-lg-3 d-lg-flex justify-content-lg-center">
 				<ul class="footer-menu">
 					<li class="menu-item">
-						<a href="/forum/k/anomalii-pomylky-na-sajti-fiks-bahiv/" class="menu-link">
-							<i class="bi bi-bug"></i>
+						<a href="/forum/k/anomalii-pomylky-na-sajti-fiks-bahiv/" class="menu-link d-inline-flex align-items-center">
+							<span class="d-inline-block" style="width: 15px;margin-right:5px;">
+								<i class="fas fa-bug"></i>
+							</span>
 							Повідомити про помилку
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/forum/pravyla/" class="menu-link">
-							<i class="bi bi-file-text"></i>
+						<a href="/forum/pravyla/" class="menu-link d-inline-flex align-items-center">
+							<span class="d-inline-block" style="width: 15px;margin-right:5px;">
+								<i class="far fa-file-alt"></i>
+							</span>
 							Правила сайту
 						</a>
 					</li>
 					<li class="menu-item">
-						<a href="/forum/k/administratorskyj-i-moderatorskyj-sklad-nashoho-sajtu/" class="menu-link">
-							<i class="bi bi-people"></i>
+						<a href="/forum/k/administratorskyj-i-moderatorskyj-sklad-nashoho-sajtu/" class="menu-link d-inline-flex align-items-center">
+							<span class="d-inline-block" style="width: 15px;margin-right:5px;font-size: 13px;">
+								<i class="fas fa-users"></i>
+							</span>
 							Наша команда
 						</a>
 					</li>
-					<li class="menu-item">
+					<!-- <li class="menu-item">
 						<a href="/forum/k/nabir-v-komandu-sajtu/" class="menu-link">
 							<i class="bi bi-collection"></i>
 							Набір в команду
 						</a>
-					</li>
+					</li> -->
 				</ul>
 			</div>
 			<div class="col-md-6 col-lg-3 d-lg-flex justify-content-lg-center">
@@ -85,7 +91,8 @@
 						my_height = 51;
 						my_alt = "MyCounter - счётчик и статистика";
 					</script>
-					<script type="text/javascript" src="https://get.mycounter.ua/counter2.0.js">
+					<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/counter2.0.js">
+						// <script type="text/javascript" src="https://get.mycounter.ua/counter2.0.js">
 					</script>
 					<noscript>
 						<a target="_blank" href="https://mycounter.ua/"><img src="https://get.mycounter.ua/counter.php?id=176189" title="MyCounter - счётчик и статистика" alt="MyCounter - счётчик и статистика" width="88" height="31" border="0" /></a>
@@ -105,8 +112,8 @@
 		<div class="modal-content">
 			<div class="modal-header px-1 px-md-2 pt-1 pt-md-2 border-bottom-0">
 				<span class="modal-title h3 fs-4 mb-0" id="ThemeSettingsTitle">Налаштування дизайну сайту</span>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-					<i class="bi bi-x"></i>
+				<button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close">
+					<i class="fas fa-times"></i>
 				</button>
 			</div>
 			<div class="px-1 px-md-2"><img data-src="https://stalker-news.info/wp-content/uploads/2023/10/orange-line.svg" src="#" alt="orange line" loading="lazy" class="width-max-100 mb-1 lazyload"></div>
@@ -182,8 +189,8 @@
 		<div class="modal-content">
 			<div class="modal-header px-1 px-md-2 pt-1 pt-md-2 border-bottom-0">
 				<span class="modal-title h3 fs-4 mb-0" id="ThemeSettingsTitle">Голосування за модифікацію місяця</span>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-					<i class="bi bi-x"></i>
+				<button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close">
+					<i class="fas fa-times"></i>
 				</button>
 			</div>
 			<div class="modal-body px-1 pb-1 px-md-2 pb-md-2">
@@ -212,8 +219,8 @@
 		<div class="modal-content">
 			<div class="modal-header px-1 px-md-2 pt-1 pt-md-2 border-bottom-0">
 				<span class="modal-title h3 fs-4 mb-0" id="ThemeSettingsTitle">Нас сьогодні відвідали</span>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-					<i class="bi bi-x"></i>
+				<button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close">
+					<i class="fas fa-times"></i>
 				</button>
 			</div>
 			<div class="modal-body px-1 pb-1 px-md-2 pb-md-2">

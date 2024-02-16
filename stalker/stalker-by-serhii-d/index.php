@@ -134,7 +134,7 @@ get_header();
 								<ul class="meta-info">
 									<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Категорія">
 										<div class="icon-holder">
-											<i class="bi bi-grid"></i>
+											<i class="fa fa-bars"></i>
 										</div>
 										<?php $categories = get_the_category();
 										if (!empty($categories)) {
@@ -143,13 +143,13 @@ get_header();
 									</li>
 									<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Дата публікації">
 										<div class="icon-holder">
-											<i class="bi bi-calendar4"></i>
+											<i class="fa fa-calendar"></i>
 										</div>
 										<?php echo get_the_date(); ?>
 									</li>
 									<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Автор публікації">
 										<div class="icon-holder">
-											<i class="bi bi-person"></i>
+											<i class="fa fa-user"></i>
 										</div>
 										<?php
 										$author_id = get_the_author_meta('ID');
@@ -159,7 +159,7 @@ get_header();
 									</li>
 									<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Перегляди">
 										<div class="icon-holder">
-											<i class="bi bi-eye"></i>
+											<i class="fa fa-eye"></i>
 										</div>
 										<?php
 										$views = get_post_meta(get_the_ID(), 'entry_views', true);
@@ -168,7 +168,7 @@ get_header();
 									</li>
 									<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Коментарі">
 										<div class="icon-holder">
-											<i class="bi bi-chat-dots"></i>
+											<i class="fa fa-comments"></i>
 										</div>
 										<?php
 										$post_id = get_the_ID();
@@ -222,7 +222,7 @@ get_header();
 							<h3 class="mb-1 pb-0 border-bottom-0 fs-3 pt-0">Голосування: Модифікація місяця</h3>
 							<img data-src="https://stalker-news.info/wp-content/uploads/2023/10/radiation-line.svg" src="#" alt="Radiation line" class="ms-auto me-auto width-max-100 lazyload" loading="lazy">
 						</div>
-						<button class="btn btn-primary with-icon d-inline-flex mb-1" data-bs-toggle="modal" data-bs-target="#ModOfMonth"><span class="icon-holder"><i class="bi bi-card-checklist"></i></span> <span class="button-text p-1 ps-2">Голосувати</span> <span class="button-after"></span></button>
+						<button class="btn btn-primary with-icon d-inline-flex mb-1" data-bs-toggle="modal" data-bs-target="#ModOfMonth"><span class="icon-holder"><i class="far fa-list-alt"></i></span> <span class="button-text p-1 ps-2">Голосувати</span> <span class="button-after"></span></button>
 					</div>
 					<div class="mx-minus">
 						<hr>
@@ -248,11 +248,7 @@ get_header();
 									<div class="card card-news p-1 card-article mb-2 block-border-1">
 										<figure class="flex-column mb-1">
 											<a href="<?php the_permalink(); ?>" class="img-holder me-0 mb-0" style="max-width: 100%;">
-												<?php if (is_singular()): ?>
-													<img data-src="<?php the_post_thumbnail_url(); ?>" src="#" alt="<?php the_title() ?>" loading="lazy" class="lazyload">
-												<?php else: ?>
-													<img data-src="<?php the_post_thumbnail_url('large'); ?>" src="#" alt="<?php the_title() ?>" loading="lazy" class="lazyload">
-												<?php endif; ?>
+												<img data-src="<?php the_post_thumbnail_url('medium_large'); ?>" src="#" alt="<?php the_title() ?>" loading="lazy" class="lazyload">
 											</a>
 										</figure>
 										<?php the_title('<h3><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h3>'); ?>
@@ -304,7 +300,7 @@ get_header();
 								echo '<a href="' . esc_url($user_url) . '"><img data-src="' . esc_url($user_avatar) . '" src="#" width="54" height="54" class="rounded-2 object-fit-cover lazyload" loading="lazy" alt="' . esc_attr($user_name) . '"></a>';
 								echo '<div class="ps-1">';
 								echo '<a href="' . esc_url($user_url) . '">' . esc_html($user_name) . '</a>';
-								echo '<div><i class="bi bi-pencil-square"></i> Рецензій: ' . esc_html($comments_count) . '</div>';
+								echo '<div><i class="fas fa-pencil-alt"></i> Рецензій: ' . esc_html($comments_count) . '</div>';
 								echo '</div>';
 								echo '</div>';
 								if ($item_count < 4) {
@@ -358,8 +354,8 @@ get_header();
 												echo '<span class="content-holder">';
 												echo '<span class="item-title">' . get_the_title() . '</span>';
 												echo '<span class="item-info">';
-												echo '<span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Перегляди" class="me-1"><i class="bi bi-eye"></i> ' . $views . '</span>';
-												echo '<span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Коментарі"><i class="bi bi-chat-dots"></i> ' . $comments_count . '</span>';
+												echo '<span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Перегляди" class="me-1"><i class="fa fa-eye"></i> ' . $views . '</span>';
+												echo '<span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Коментарі"><i class="fa fa-comments"></i> ' . $comments_count . '</span>';
 												echo '</span>';
 												echo '</span>';
 												echo '</a></li>';
@@ -382,44 +378,42 @@ get_header();
 								<img data-src="https://stalker-news.info/wp-content/uploads/2023/10/orange-line.svg" src="#" alt="orange line" loading="lazy" class="lazyload width-max-100">
 							</div>
 							<?php
-							$args = array(
+							$posts = wp_get_recent_posts([
 								'post_type' => 'photos',
-								'posts_per_page' => 3,
-							);
+								'numberposts' => 3,
+							]);
 
-							$news_query = new WP_Query($args);
+							foreach ($posts as $post) {
+								$post_id = $post['ID'];
+								$post_permalink = get_permalink($post_id);
 
-							if ($news_query->have_posts()) {
-								while ($news_query->have_posts()) {
-									$news_query->the_post();
-									?>
-									<div class="card card-news p-0 mb-2">
-										<figure class="flex-column mb-0">
+								?>
+								<div class="card card-news p-0 mb-2">
+									<figure class="flex-column mb-0">
+										<a href="<?php echo esc_url($post_permalink); ?>" class="img-holder scale-animation me-0 mb-0">
 											<?php
-											$post_id = get_the_ID();
-											$post_permalink = get_permalink($post_id);
-											?>
-											<a href="<?php echo esc_url($post_permalink); ?>" class="img-holder scale-animation me-0 mb-0">
-												<?php
-												$picture_id = get_post_meta($post_id, 'picture', true);
+											$picture_id = get_post_meta($post_id, 'picture', true);
 
-												if (!empty($picture_id)) {
-													$image_url = wp_get_attachment_image_url($picture_id, 'small');
-													?>
-													<img src="#" data-src="<?php echo esc_url($image_url); ?>" alt="<?php the_title(); ?>" loading="lazy" class="lazyload">
-												<?php } else {
-													echo "Зображення не знайдено.";
-												}
-												?>
-											</a>
-										</figure>
-									</div>
-									<?php
-								}
-								wp_reset_postdata();
-							} else {
-								echo "Записів не знайдено.";
+											if (!empty($picture_id)) {
+												$image_url = wp_get_attachment_image_url($picture_id, 'thumbnail');
+
+												echo wp_get_attachment_image($picture_id, 'thumbnail');
+
+												echo '<span class="visually-hidden">' . get_the_title($post_id) . '</span>';
+
+											} else {
+												echo "ID картинки не знайдено за полем 'picture'.";
+											}
+
+
+
+											?>
+										</a>
+									</figure>
+								</div>
+								<?php
 							}
+
 							?>
 							<div class="mx-minus">
 								<hr>

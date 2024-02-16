@@ -54,7 +54,8 @@ get_header(); ?>
 			echo '<span class="d-block fst-italic item-members">Кількість учасників: ' . esc_html($count) . '</span>';
 			echo '</span>';
 			echo '<span class="item-scale">';
-			echo '<span class="scale-inner" style="width: ' . ($count / $total_users_count * 100) . '%;"></span>';
+			echo '<span class="scale-inner" data-position="' . $count / $total_users_count * 100 . '"></span>';
+			// echo '<span class="scale-inner" style="width: ' . ($count / $total_users_count * 100) . '%;"></span>';
 			echo '</span>';
 
 			$image_path = $positions_and_images[$position];
@@ -66,5 +67,14 @@ get_header(); ?>
 		echo '</ul>';
 		?>
 	</div>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const scaleInnerElements = document.querySelectorAll(".item-scale .scale-inner");
+			scaleInnerElements.forEach((element, index) => {
+				const widthPercentage = element.getAttribute("data-position");
+				element.style.width = widthPercentage + "%";
+			});
+		});
+	</script>
 </main>
 <?php get_footer(); ?>

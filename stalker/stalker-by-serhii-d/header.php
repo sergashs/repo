@@ -23,49 +23,16 @@
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<div id="page" class="wrapper">
-		<a class="skip-link screen-reader-text" href="#primary">
+		<!-- <a class="skip-link screen-reader-text" href="#primary">
 			<?php esc_html_e('Skip to content', 'stalker-by-serhii-d'); ?>
-		</a>
+		</a> -->
 		<header id="masthead" class="header">
-			<!-- <div class="header-top">
-				<div class="container-fluid">
-					<div class="left">
-						<div class="logo">
-							<a href="<?php echo get_home_url(); ?>">
-								<img data-src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="logo" src="#" loading="lazy" class="lazyload">
-							</a>
-						</div>
-					</div>
-				 <div class="user-profile">
-						<div class="open-profile-dropdown">
-							<?php if (is_user_logged_in()) { ?>
-							<?php } else { ?>
-							<a href="/wp-login.php" rel="home">Реєстрація / Вхід</a>
-							<?php } ?>
-						</div>
-					</div> 
-					<div class="main-nav">
-						<div class="dropdown-menu-wrapper">
-							<nav id="site-navigation" class="main-navigation">
-								<?php
-								wp_nav_menu(
-									array(
-										'theme_location' => 'menu-2',
-										'menu_id' => 'secondary-menu',
-									)
-								);
-								?>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div> -->
 			<div class="main-nav">
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-4 col-md-8 col-lg-9 d-flex align-items-center">
 							<div class="dropdown-menu-wrapper">
-								<a class="open-menu-wrapper d-inline-flex d-lg-none">
+								<a href="#" class="open-menu-wrapper d-inline-flex d-lg-none">
 									<span class="open-menu" href="#">
 										<span></span>
 										<span></span>
@@ -132,7 +99,7 @@
 										<span class="button-title me-1">
 											<?php echo $current_user->user_login; ?>
 										</span>
-										<i class="bi bi-chevron-down d-inline-flex"></i>
+										<i class="fas fa-chevron-down d-inline-flex"></i>
 									</span>
 									<span class="button-after"></span>
 								</button>
@@ -154,15 +121,22 @@
 							<?php
 						}
 						?>
-						<span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Налаштування дизайну">
-							<button type="button" class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#ThemeSettings">
-								<span class="button-before"></span>
-								<span class="button-text">
-									<i class="bi bi-brush-fill"></i>
-								</span>
-								<span class="button-after"></span>
-							</button>
-						</span>
+						<?php
+						if (is_user_logged_in()) {
+							?>
+							<span data-bs-toggle="tooltip">
+								<button type="button" class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#ThemeSettings">
+									<span class="button-before"></span>
+									<span class="button-text">
+										<i class="fas fa-paint-brush"></i>
+										<span class="visually-hidden">налаштування теми</span>
+									</span>
+									<span class="button-after"></span>
+								</button>
+							</span>
+							<?php
+						}
+						?>
 					</div>
 				</div>
 				<hr>

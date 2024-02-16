@@ -256,7 +256,7 @@ endif;
 			if ($download_link) {
 				$post_title = get_the_title();
 				echo '<a class="btn btn-primary with-icon d-flex mt-1" href="' . esc_url($download_link) . '">
-							<span class="icon-holder"><i class="bi bi-download"></i></span>
+							<span class="icon-holder"><i class="fas fa-download"></i></span>
 							<span class="button-text p-1">Завантажити ' . esc_html($post_title) . '</span>
 							<span class="button-after"></span></a>';
 			} ?>

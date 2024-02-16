@@ -64,7 +64,7 @@ endif;
 				<ul class="meta-info">
 					<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Категорія">
 						<div class="icon-holder">
-							<i class="bi bi-grid"></i>
+							<i class="fa fa-bars"></i>
 						</div>
 						<?php $categories = get_the_category();
 						if (!empty($categories)) {
@@ -73,13 +73,13 @@ endif;
 					</li>
 					<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Дата публікації">
 						<div class="icon-holder">
-							<i class="bi bi-calendar4"></i>
+							<i class="fa fa-calendar"></i>
 						</div>
 						<?php echo get_the_date(); ?>
 					</li>
 					<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Автор публікації">
 						<div class="icon-holder">
-							<i class="bi bi-person"></i>
+							<i class="fa fa-user"></i>
 						</div>
 						<?php
 						$author_id = get_the_author_meta('ID');
@@ -89,7 +89,7 @@ endif;
 					</li>
 					<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Перегляди">
 						<div class="icon-holder">
-							<i class="bi bi-eye"></i>
+							<i class="fa fa-eye"></i>
 						</div>
 						<?php
 						if (get_post_meta(get_the_ID(), 'entry_views', true)) {
@@ -101,7 +101,7 @@ endif;
 					</li>
 					<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Коментарі">
 						<div class="icon-holder">
-							<i class="bi bi-chat-dots"></i>
+							<i class="fa fa-comments"></i>
 						</div>
 						<?php
 						$post_id = get_the_ID();

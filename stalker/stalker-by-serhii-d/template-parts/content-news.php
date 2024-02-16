@@ -70,24 +70,24 @@ endif;
 					</figcaption>
 				</figure>
 				<ul class="meta-info">
-					<li>
+					<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Категорії">
 						<div class="icon-holder">
-							<i class="bi bi-grid"></i>
+							<i class="fa fa-bars"></i>
 						</div>
 						<?php $categories = get_the_category();
 						if (!empty($categories)) {
 							echo '<a href="' . esc_url(get_category_link($categories[0]->term_id)) . '">' . esc_html($categories[0]->name) . '</a>';
 						} ?>
 					</li>
-					<li>
+					<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Дата публікації">
 						<div class="icon-holder">
-							<i class="bi bi-calendar4"></i>
+							<i class="fa fa-calendar"></i>
 						</div>
 						<?php echo get_the_date(); ?>
 					</li>
-					<li>
+					<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Автор публікації">
 						<div class="icon-holder">
-							<i class="bi bi-person"></i>
+							<i class="fa fa-user"></i>
 						</div>
 						<?php
 						$author_id = get_the_author_meta('ID');
@@ -95,9 +95,9 @@ endif;
 						echo '<a href="' . $author_link . '">' . get_the_author() . '</a>';
 						?>
 					</li>
-					<li>
+					<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Перегляди">
 						<div class="icon-holder">
-							<i class="bi bi-eye"></i>
+							<i class="fa fa-eye"></i>
 						</div>
 						<?php
 						if (get_post_meta(get_the_ID(), 'entry_views', true)) {
@@ -107,9 +107,9 @@ endif;
 						}
 						?>
 					</li>
-					<li>
+					<li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Коментарі">
 						<div class="icon-holder">
-							<i class="bi bi-chat-dots"></i>
+							<i class="fa fa-comments"></i>
 						</div>
 						<?php
 						$post_id = get_the_ID();
