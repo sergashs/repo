@@ -388,6 +388,14 @@
     .button-text {
       font-size: 1.2rem;
     }
+
+    .form-control {
+      color: #f2e8d9;
+
+      &:focus {
+        background: #2a282c;
+      }
+    }
   }
 
   .dropdown-profile {

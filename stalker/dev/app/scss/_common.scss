@@ -199,38 +199,6 @@
 
 // animations
 
-.flash-animation {
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    z-index: 2;
-    left: -80%;
-    width: 50%;
-    height: 100%;
-    display: block;
-    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
-    -webkit-transform: skewX(-25deg);
-    transform: skewX(-25deg);
-  }
-
-  @keyframes imgflash {
-    100% {
-      left: 125%;
-    }
-  }
-
-  &:hover {
-    &::before {
-      animation: imgflash 1s;
-    }
-  }
-}
-
 .underline-animation {
   text-decoration: none;
   background: linear-gradient(to right, currentColor 0%, currentColor 100%);
@@ -305,27 +273,6 @@
 
 .row-gutter-4 {
   @include grid-gutter(4rem);
-}
-
-.table {
-  color: inherit;
-  border-top: solid 0.1rem $border-color;
-  border-left: solid 0.1rem $border-color;
-  border-right: solid 0.1rem $border-color;
-
-  td {
-    padding: 1rem;
-
-    &:not(:last-child) {
-      border-right: solid 0.1rem $border-color;
-    }
-  }
-
-  thead {
-    tr {
-      background: rgba(white, 0.05);
-    }
-  }
 }
 
 .no-results {
