@@ -180,6 +180,14 @@
           text-decoration: underline;
         }
       }
+
+      .standard {
+        td,
+        th {
+          padding: 0.5rem;
+          border: solid 0.1rem $border-color;
+        }
+      }
     }
 
     .wpforo-post {
