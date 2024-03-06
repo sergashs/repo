@@ -18,6 +18,10 @@
   figure {
     display: unset;
 
+    &.wp-block-gallery {
+      display: flex;
+    }
+
     .img-holder {
       position: relative;
       margin-bottom: 1.5rem;
