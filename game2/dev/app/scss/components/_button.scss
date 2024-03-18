@@ -1,0 +1,16 @@
+/* buttons */
+.btn {
+  display: inline-flex;
+  text-align: center;
+  padding: 1rem 2rem;
+  white-space: normal;
+  font-family: $secondary-font;
+  font-weight: 500;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  outline: none;
+}
+
+a.btn {
+  text-decoration: none;
+}

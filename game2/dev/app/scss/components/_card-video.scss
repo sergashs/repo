@@ -1,0 +1,56 @@
+.card-video {
+  display: inline-flex;
+
+  &.header-informer {
+    width: 19rem;
+    flex-shrink: 0;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(white, 0.35);
+      transition: $transition;
+
+      [data-bs-theme="dark"] & {
+        background-color: rgba(black, 0.35);
+      }
+    }
+
+    &::after {
+      content: "\F4F3";
+      font-family: bootstrap-icons !important;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      opacity: 0;
+      color: white;
+      transition: $transition;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover {
+      &::before {
+        background-color: rgba(black, 0.35);
+
+        [data-bs-theme="dark"] & {
+          background-color: rgba(white, 0.15);
+        }
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
