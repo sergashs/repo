@@ -9,7 +9,8 @@
 // Layouts & Components
 @import "libraries/bootstrap/root";
 @import "libraries/bootstrap/reboot"; // Required
-// @import "libraries/bootstrap/popover";
+@import "libraries/bootstrap/transitions";
+@import "libraries/bootstrap/popover";
 @import "libraries/bootstrap/type";
 @import "libraries/bootstrap/images";
 @import "libraries/bootstrap/modal";
