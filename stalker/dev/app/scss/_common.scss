@@ -295,3 +295,49 @@
     }
   }
 }
+
+.table-holder {
+  overflow: auto;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .table {
+    min-width: 90rem;
+  }
+}
+
+.table {
+  tbody {
+    tr {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.1)), to(transparent));
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
+        -webkit-transition: all 0.55s;
+        transition: all 0.55s;
+        z-index: -1;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  a {
+    color: #ee991a;
+  }
+}
