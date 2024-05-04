@@ -245,18 +245,18 @@ function initSlides() {
 function fancyboxImges() {
 	const images = document.querySelectorAll('.single-post .wp-block-image.size-full');
 	const imagesLarge = document.querySelectorAll('.single-post .wp-block-image.size-large')
-	const mainImg = document.querySelector('.single-post .img-holder img');
+	// const mainImg = document.querySelector('.single-post .img-holder img');
 
-	if (mainImg) {
-		const src = mainImg.getAttribute('src');
-		const link = document.createElement('a');
-		link.setAttribute('href', src);
-		link.setAttribute('data-fancybox', 'wp-gallery');
-		link.setAttribute('data-src', src);
-		link.style.cursor = 'zoom-in';
-		mainImg.parentNode.insertBefore(link, mainImg);
-		link.appendChild(mainImg);
-	}
+	// if (mainImg) {
+	// 	const src = mainImg.getAttribute('src');
+	// 	const link = document.createElement('a');
+	// 	link.setAttribute('href', src);
+	// 	link.setAttribute('data-fancybox', 'wp-gallery');
+	// 	link.setAttribute('data-src', src);
+	// 	link.style.cursor = 'zoom-in';
+	// 	mainImg.parentNode.insertBefore(link, mainImg);
+	// 	link.appendChild(mainImg);
+	// }
 
 	if (images) {
 		images.forEach(function (item) {
