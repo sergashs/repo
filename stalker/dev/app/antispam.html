@@ -1,0 +1,103 @@
+//= inc/_head.html
+
+<body>
+	<div class="wrapper">
+		//= inc/_header.html
+		<main id="main" class="site-main">
+			<div class="main-page">
+				<div class="container-fluid">
+					<form name="wpfreg" action="" enctype="multipart/form-data" method="POST">
+						<div class="wpforo-register-wrap wpfbg-9">
+							<div class="wpforo-register-content">
+								<h3>Приєднуйтесь до нас!</h3>
+								<div class="wpf-table wpforo-register-table wpfbg-9" style="padding-bottom:0;">
+									<div class="wpf-tr row-0">
+										<div class="wpf-td wpfw-1 row_0-col_0  wpf-row-user_login wpf-row-user_email wpf-row-field_bd6de31">
+											<div class="wpf-field wpf-field-type-text wpf-field-name-user_login  wpf-field-required" title="Ім'я користувача">
+												<div class="wpf-label-wrap">
+													<p class="wpf-label wpfcl-1">Ім'я користувача <span class="wpf-field-required-icon" title="Обов'язкове поле">*</span></p>
+													<div class="wpf-desc wpfcl-2">Довжина повинна бути від 3 до 15 символів.</div>
+												</div>
+												<div class="wpf-field-wrap"><i class="fas fa-user wpf-field-icon"></i><input type="text" value="" name="wpfreg[user_login]" id="wpfreg_user_login_6636774fbbde7" class="" placeholder="Ім'я користувача" required="required" autocomplete="off" minlength="3" maxlength="30"></div>
+												<div class="wpf-field-cl"></div>
+											</div>
+											<div class="wpf-field wpf-field-type-email wpf-field-name-user_email  wpf-field-required" title="Email">
+												<div class="wpf-label-wrap">
+													<p class="wpf-label wpfcl-1">Email <span class="wpf-field-required-icon" title="Обов'язкове поле">*</span></p>
+												</div>
+												<div class="wpf-field-wrap"><i class="fas fa-envelope wpf-field-icon"></i><input type="email" value="" name="wpfreg[user_email]" id="wpfreg_user_email_6636774fbbe14" class="" placeholder="Email" required="required" autocomplete="off"></div>
+												<div class="wpf-field-cl"></div>
+											</div>
+											<div class="wpf-field wpf-field-type-select wpf-field-name-field_bd6de31  wpf-field-required" title="Угруповання">
+												<div class="wpf-label-wrap">
+													<p class="wpf-label wpfcl-1">Угруповання <span class="wpf-field-required-icon" title="Обов'язкове поле">*</span></p>
+												</div>
+												<div class="wpf-field-wrap"><i class="fas fa-users wpf-field-icon"></i><select name="data[field_bd6de31]" id="data_field_bd6de31_6636774fbbe32" class="" required="required" autocomplete="off">
+														<option value="Сталкери-одинаки">Сталкери-одинаки</option>
+														<option value="Бандити">Бандити</option>
+														<option value="Військові">Військові</option>
+														<option value="Воля">Воля</option>
+														<option value="Вчені">Вчені</option>
+														<option value="Долг">Долг</option>
+														<option value="Моноліт">Моноліт</option>
+														<option value="Найманці">Найманці</option>
+														<option value="Ренегати">Ренегати</option>
+														<option value="Чисте небо">Чисте небо</option>
+													</select></div>
+												<div class="wpf-field-cl"></div>
+											</div>
+										</div>
+										<div class="wpf-cl"></div>
+									</div>
+									<div class="wpf-tr">
+										<div class="wpf-td wpfw-1">
+											<div class="wpforo_recaptcha_widget">
+												<div style="width: 304px; height: 78px;">
+													<div><iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-918ut67qa0d6" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Ld_b-wlAAAAAEq5eMA8E0N12lMTuGwZYdgOCr4e&amp;co=aHR0cHM6Ly9zdGFsa2VyLW5ld3MuaW5mbzo0NDM.&amp;hl=uk&amp;v=V6_85qpc2Xf2sbe3xTnRte7m&amp;theme=dark&amp;size=normal&amp;cb=7sroavl8k6gt"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+												</div><iframe style="display: none;"></iframe>
+											</div>
+											<div class="wpf-cl"></div>
+											<label class="wpforo-legal-checkbox wpflegal-email">
+												<input name="legal[email]" value="1" required="required" type="checkbox"> &nbsp;
+												<span>Я погоджуюся отримати підтвердження електронною поштою із посиланням на встановлення пароля.</span>
+											</label>
+											<input type="hidden" id="_wpfnonce" name="_wpfnonce" value="0baf67c617"><input type="hidden" name="_wp_http_referer" value="/sign-up/?redirect_to=https%3A%2F%2Fstalker-news.info%2Fsign-in%2F">
+										</div>
+										<div class="wpf-cl"></div>
+									</div>
+									<div class="wpf-tr">
+										<div class="wpf-td wpfw-1">
+											<i class="fas fa-info-circle wpfcl-5 wpf-reg-info" aria-hidden="true" style="font-size:16px;"></i> &nbsp;Після реєстрації ви отримаєте підтвердження електронною поштою із посиланням для встановлення нового пароля
+										</div>
+										<div class="wpf-cl"></div>
+									</div>
+									<div class="wpf-tr">
+										<div class="wpf-td wpfw-1">
+											<div class="wpf-field wpf-field-type-submit" style="text-align:center; width:100%;">
+												<input type="submit" name="wpfororeg" value="Зареєструватись">
+												<div class="wpf-field-login"> <a href="https://stalker-news.info/sign-in/?redirect_to=https%3A%2F%2Fstalker-news.info%2Fsign-in%2F"><i class="fas fa-sign-in-alt"></i> Увійти</a>
+												</div>
+											</div>
+											<div class="wpf-field wpf-extra-field-end">
+												<div class="wpf-field-wrap" style="text-align:center; width:100%;">
+													<input type="hidden" name="wpfaction" value="registration">
+													<div class="wpf-field-cl"></div>
+												</div>
+											</div>
+											<div class="wpf-field-cl"></div>
+										</div>
+										<div class="wpf-cl"></div>
+									</div>
+									<div class="wpf-cl"></div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+		//= inc/_footer.html
+	</div><!-- / wrapper -->
+</body>
+
+</html>

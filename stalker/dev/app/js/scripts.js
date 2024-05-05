@@ -10,11 +10,51 @@ document.addEventListener('DOMContentLoaded', () => {
 	starsRating();
 	releaseTimer();
 	initTooltips();
+	antiSpamRegistration();
 });
 
 window.addEventListener('resize', () => {
 	correctVh();
 });
+
+function antiSpamRegistration() {
+	const btn = document.querySelector('.wpf-field-type-submit');
+
+	if (btn) {
+		const select = document.createElement('select');
+		const defaultOption = document.createElement('option');
+
+		defaultOption.value = '';
+		defaultOption.textContent = 'Select an option';
+		select.classList.add('visually-hidden');
+		select.appendChild(defaultOption);
+
+		for (let i = 1; i <= 3; i++) {
+			const option = document.createElement('option');
+			option.value = i;
+			option.textContent = i;
+			select.appendChild(option);
+		}
+
+		btn.parentNode.insertBefore(select, btn);
+
+		select.addEventListener('change', function (event) {
+			if (select.value.length > 0) {
+				btn.remove();
+				window.location.href = 'https://www.google.com/';
+			}
+		})
+
+		btn.addEventListener('click', function (event) {
+			if (select.value.length > 0) {
+				event.preventDefault();
+				btn.remove();
+				window.location.href = 'https://www.google.com/';
+			}
+		});
+
+	}
+}
 
 function releaseTimer() {
 	const timer = document.getElementById('countdown-timer');
