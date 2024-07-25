@@ -21,7 +21,7 @@ get_header();
 				<img data-src="https://stalker-news.info/wp-content/uploads/2023/10/bg-01.webp" loading="lazy" class="lazyload lazyload-bg" src="#" alt="background">
 				<div class="swiper swiper-container swiper-new-mods overflow-visible">
 					<div class="d-flex flex-column align-items-center pt-1 mb-2 mb-md-3">
-						<h3 class="pb-0 border-bottom-0 text-center fs-3 mb-1">Нові модифікації</h3>
+						<span class="pb-0 border-bottom-0 text-center fs-3 mb-1 d-block h3">Нові модифікації</span>
 						<img data-src="https://stalker-news.info/wp-content/uploads/2023/10/radiation-line.svg" src="#" alt="Radiation line" class="ms-auto me-auto width-max-100 lazyload" loading="lazy">
 					</div>
 					<div class="swiper-wrapper">
@@ -51,6 +51,7 @@ get_header();
 													<?php elseif ($thumbnail_url[0][0]): ?>
 														<img data-src="<?php echo esc_url($thumbnail_url[0][0]); ?>" src="#" alt="<?php the_title(); ?>" loading="lazy" class="lazyload">
 													<?php endif; ?>
+													<span class="visually-hidden"><?php the_title(); ?></span>
 												</a>
 											</figure>
 											<img data-src="https://stalker-news.info/wp-content/uploads/2023/10/orange-line.svg" src="#" alt="orange line" class="width-max-100 lazyload" loading="lazy">
@@ -61,8 +62,6 @@ get_header();
 								<?php
 							}
 							wp_reset_postdata();
-						} else {
-							echo "Записів не знайдено.";
 						}
 						?>
 					</div>
@@ -76,7 +75,7 @@ get_header();
 				<img data-src="https://stalker-news.info/wp-content/uploads/2023/10/bg-03.webp" loading="lazy" class="lazyload lazyload-bg" src="#" alt="background">
 				<div class="col-lg-6 informer-row-border d-flex flex-column">
 					<div class="mb-2">
-						<h3 class="mb-0 pb-0 border-bottom-0 fs-3 pt-1">Новини</h3>
+						<span class="mb-0 pb-0 border-bottom-0 fs-3 pt-1 h3 d-block">Новини</span>
 						<img data-src="https://stalker-news.info/wp-content/uploads/2023/10/orange-line.svg" src="#" alt="orange line" class="width-max-100 lazyload" loading="lazy">
 					</div>
 					<?php
@@ -181,18 +180,16 @@ get_header();
 							<?php
 						}
 						wp_reset_postdata();
-					} else {
-						echo "Записів не знайдено.";
 					}
 					?>
 					<div class="mx-minus">
 						<hr>
 					</div>
 					<div class="section-bg mx-minus text-center flex-grow-1">
-						<img data-src="https://stalker-news.info/wp-content/themes/stalker-by-serhii-d/assets/images/bg-6.jpg" src="#" alt="background" loading="lazy" class="lazyload lazyload-bg">
+						<img data-src="https://stalker-news.info/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2024/04/S2HoC_GSCGameWorld_Ferris_wheel-1200x675.jpg.webp" src="#" alt="background" loading="lazy" class="lazyload lazyload-bg">
 						<div class="bg-dark py-5 py-md-4 bg-opacity-50 h-100 d-flex flex-column justify-content-center">
 							<div class="mb-3 d-flex flex-column">
-								<h3 class="mb-1 pb-0 border-bottom-0 fs-3 pt-0">До виходу S.T.A.L.K.E.R. 2</h3>
+								<span class="mb-1 pb-0 border-bottom-0 fs-3 pt-0 h3 d-block">До виходу S.T.A.L.K.E.R. 2</span>
 								<img data-src="https://stalker-news.info/wp-content/uploads/2023/10/radiation-line.svg" src="#" alt="Radiation line" class="ms-auto me-auto width-max-100 lazyload" loading="lazy">
 							</div>
 							<div id="countdown-timer" class="text-white d-flex justify-content-center">
@@ -216,21 +213,10 @@ get_header();
 					</div>
 				</div>
 				<div class="col-lg-6">
-					<div class="section-bg mx-minus text-center py-5 py-md-4">
-						<img data-src="https://stalker-news.info/wp-content/themes/stalker-by-serhii-d/assets/images/bg5.jpg" loading="lazy" class="lazyload lazyload-bg" src="#" alt="background">
-						<div class="mb-3 d-flex flex-column">
-							<h3 class="mb-1 pb-0 border-bottom-0 fs-3 pt-0">Голосування: Модифікація місяця</h3>
-							<img data-src="https://stalker-news.info/wp-content/uploads/2023/10/radiation-line.svg" src="#" alt="Radiation line" class="ms-auto me-auto width-max-100 lazyload" loading="lazy">
-						</div>
-						<button class="btn btn-primary with-icon d-inline-flex mb-1" data-bs-toggle="modal" data-bs-target="#ModOfMonth"><span class="icon-holder"><i class="far fa-list-alt"></i></span> <span class="button-text p-1 ps-2">Голосувати</span> <span class="button-after"></span></button>
-					</div>
-					<div class="mx-minus">
-						<hr>
-					</div>
-					<div class="row">
+					<div class="row h-100">
 						<div class="col-md-6 informer-row-border">
 							<div class="mb-2">
-								<h3 class="mb-0 pb-0 border-bottom-0 fs-3 pt-1">Статті</h3>
+								<span class="mb-0 pb-0 border-bottom-0 fs-3 pt-1 h3 d-block">Статті</span>
 								<img src="https://stalker-news.info/wp-content/uploads/2023/10/orange-line.svg" alt="orange line" class="width-max-100">
 							</div>
 							<?php
@@ -256,15 +242,13 @@ get_header();
 									<?php
 								}
 								wp_reset_postdata();
-							} else {
-								echo "Записів не знайдено.";
 							}
 							?>
 							<div class="mx-minus">
 								<hr>
 							</div>
 							<div class="mb-2">
-								<h3 class="mb-0 pb-0 border-bottom-0 fs-3 pt-1">Рецензійна Еліта</h3>
+								<span class="mb-0 pb-0 border-bottom-0 fs-3 pt-1 h3 d-block">Рецензійна Еліта</span>
 								<img src="https://stalker-news.info/wp-content/uploads/2023/10/orange-line.svg" alt="orange line" class="width-max-100">
 							</div>
 							<?php
@@ -320,7 +304,7 @@ get_header();
 								<hr>
 							</div>
 							<div class="mb-2">
-								<h3 class="mb-0 pb-0 border-bottom-0 fs-3 pt-1">Відео</h3>
+								<span class="mb-0 pb-0 border-bottom-0 fs-3 pt-1 h3 d-block">Відео</span>
 								<img data-src="https://stalker-news.info/wp-content/uploads/2023/10/orange-line.svg" src="#" alt="orange line" loading="lazy" class="width-max-100 lazyload">
 							</div>
 							<ul class="informer-new-videos mb-2">
@@ -365,8 +349,6 @@ get_header();
 												<?php
 									}
 									wp_reset_postdata();
-								} else {
-									echo '<p class="mb-2">Записів не знайдено.</p>';
 								}
 								?>
 							</ul>
@@ -374,7 +356,7 @@ get_header();
 								<hr>
 							</div>
 							<div class="mb-2">
-								<h3 class="mb-0 pb-0 border-bottom-0 fs-3 pt-1">Фото</h3>
+								<span class="mb-0 pb-0 border-bottom-0 fs-3 pt-1 h3 d-block">Фото</span>
 								<img data-src="https://stalker-news.info/wp-content/uploads/2023/10/orange-line.svg" src="#" alt="orange line" loading="lazy" class="lazyload width-max-100">
 							</div>
 							<?php
@@ -404,22 +386,18 @@ get_header();
 											} else {
 												echo "ID картинки не знайдено за полем 'picture'.";
 											}
-
-
-
 											?>
 										</a>
 									</figure>
 								</div>
 								<?php
 							}
-
 							?>
 							<div class="mx-minus">
 								<hr>
 							</div>
 							<div class="mb-2">
-								<h3 class="mb-0 pb-0 border-bottom-0 fs-3 pt-1">Коментарі</h3>
+								<span class="mb-0 pb-0 border-bottom-0 fs-3 pt-1 h3 d-block">Коментарі</span>
 								<img data-src="https://stalker-news.info/wp-content/uploads/2023/10/orange-line.svg" src="#" alt="orange line" loading="lazy" class="lazyload width-max-100">
 							</div>
 							<?php echo do_shortcode('[last_comments count=10]'); ?>
@@ -427,7 +405,7 @@ get_header();
 								<hr>
 							</div>
 							<div class="mb-2">
-								<h3 class="mb-0 pb-0 border-bottom-0 fs-3 pt-1">Статистика</h3>
+								<span class="mb-0 pb-0 border-bottom-0 fs-3 pt-1 h3 d-block">Статистика</span>
 								<img data-src="https://stalker-news.info/wp-content/uploads/2023/10/orange-line.svg" src="#" alt="orange line" loading="lazy" class="lazyload width-max-100">
 							</div>
 							<?php echo do_shortcode('[cbxuseronline mostuseronline=0 mobile=0 memberlist=0]'); ?>
@@ -478,7 +456,7 @@ get_header();
 			<div class="section-bg p-2 mx-minus overflow-hidden">
 				<img data-src="https://stalker-news.info/wp-content/uploads/2023/10/bg.webp" loading="lazy" class="lazyload lazyload-bg" src="#" alt="background">
 				<div class="d-flex flex-column align-items-center mb-2 mb-md-3">
-					<h3 class="pb-0 border-bottom-0 text-center fs-3 mb-1">Нові рецензії</h3>
+					<span class="pb-0 border-bottom-0 text-center fs-3 mb-1 h3 d-block">Нові рецензії</span>
 					<img data-src="https://stalker-news.info/wp-content/uploads/2023/10/radiation-line.svg" src="#" alt="Radiation line" loading="lazy" class="lazyload ms-auto me-auto width-max-100">
 				</div>
 				<?php

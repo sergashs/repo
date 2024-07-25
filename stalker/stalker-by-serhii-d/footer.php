@@ -183,36 +183,6 @@
 	</div>
 </div>
 <!-- / modal theme settings -->
-<!-- modal poll mod of month -->
-<div class="modal fade" id="ModOfMonth" tabindex="-1" aria-labelledby="ModOfMonthTitle" aria-modal="true" role="dialog">
-	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-		<div class="modal-content">
-			<div class="modal-header px-1 px-md-2 pt-1 pt-md-2 border-bottom-0">
-				<span class="modal-title h3 fs-4 mb-0" id="ThemeSettingsTitle">Голосування за модифікацію місяця</span>
-				<button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close">
-					<i class="fas fa-times"></i>
-				</button>
-			</div>
-			<div class="modal-body px-1 pb-1 px-md-2 pb-md-2">
-				<?php
-				global $wpdb;
-				$table_name = $wpdb->prefix . 'pollsq';
-
-				$results = $wpdb->get_results("SELECT * FROM $table_name");
-
-				if (!empty($results)) {
-					$last_item = end($results);
-					$pollq_id = $last_item->pollq_id;
-					get_poll($pollq_id);
-				} else {
-					echo "Опитування немає. Його потрібно створити в панелі керування";
-				}
-				?>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- modal poll mod of month -->
 <!-- modal visitors -->
 <div class="modal fade" id="SiteVisitors" tabindex="-1" aria-labelledby="SiteVisitorsTitle" aria-modal="true" role="dialog">
 	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">

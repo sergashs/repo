@@ -39,8 +39,10 @@ endif;
 					<?php endif; ?>
 				<? else: ?>
 					<figure class="flex-column">
-						<div class="img-holder mr-0 mb-2" style="max-width: 100%;">
-							<img data-src="<?php the_post_thumbnail_url('full'); ?>" src="#" alt="<?php the_title() ?>" loading="lazy" class="lazyload">
+						<div class="img-holder mr-0 mb-2 ratio ratio-16x9 bg-black" style="max-width: 100%;">
+							<a href="<?php the_post_thumbnail_url('full'); ?>" data-fancybox="wp-gallery">
+								<img data-src="<?php the_post_thumbnail_url('full'); ?>" src="#" alt="<?php the_title() ?>" loading="lazy" class="position-absolute top-50 start-50 translate-middle h-100 lazyload" style="object-fit: contain;">
+							</a>
 						<? endif; ?>
 					</div>
 					<figcaption>
@@ -48,7 +50,6 @@ endif;
 						the_content(
 							sprintf(
 								wp_kses(
-									/* translators: %s: Name of current post. Only visible to screen readers */
 									__('Читати повністю<span class="screen-reader-text"> "%s"</span>', 'stalker-by-serhii-d'),
 									array(
 										'span' => array(

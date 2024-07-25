@@ -8,16 +8,16 @@ get_header(); ?>
 	<div class="container-fluid">
 		<?php
 		$positions_and_images = [
-			'Сталкери-одинаки' => 'group-3.jpg',
-			'Бандити' => 'group-4.jpg',
-			'Військові' => 'group-9.jpg',
-			'Воля' => 'group-2.jpg',
-			'Вчені' => 'group-10.jpg',
-			'Долг' => 'group-7.jpg',
-			'Моноліт' => 'group-8.jpg',
-			'Найманці' => 'group-1.jpg',
-			'Ренегати' => 'group-6.jpg',
-			'Чисте небо' => 'group-5.jpg',
+			'Сталкери-одинаки' => ['image' => 'group-3.jpg', 'color' => '#f1c40f'],
+			'Бандити' => ['image' => 'group-4.jpg', 'color' => '#c27c0e'],
+			'Військові' => ['image' => 'group-9.jpg', 'color' => '#808000'],
+			'Воля' => ['image' => 'group-2.jpg', 'color' => '#008f47'],
+			'Вчені' => ['image' => 'group-10.jpg', 'color' => '#7b68ee'],
+			'Долг' => ['image' => 'group-7.jpg', 'color' => '#992d22'],
+			'Моноліт' => ['image' => 'group-8.jpg', 'color' => '#1abc9c'],
+			'Найманці' => ['image' => 'group-1.jpg', 'color' => '#206694'],
+			'Ренегати' => ['image' => 'group-6.jpg', 'color' => '#a84300'],
+			'Чисте небо' => ['image' => 'group-5.jpg', 'color' => '#81eef3'],
 		];
 
 		$users = get_users([
@@ -47,6 +47,8 @@ get_header(); ?>
 
 		echo '<ul class="list-groups mx-minus">';
 		foreach ($positions_count as $position => $count) {
+			$group_info = $positions_and_images[$position];
+
 			echo '<li class="px-2 py-1">';
 			echo '<span class="item-number text-center" style="min-width:41px;">' . esc_html($item_number) . '.</span>';
 			echo '<span class="d-block" style="min-width:181px;">';
@@ -54,13 +56,10 @@ get_header(); ?>
 			echo '<span class="d-block fst-italic item-members">Кількість учасників: ' . esc_html($count) . '</span>';
 			echo '</span>';
 			echo '<span class="item-scale">';
-			echo '<span class="scale-inner" data-position="' . $count / $total_users_count * 100 . '"></span>';
-			// echo '<span class="scale-inner" style="width: ' . ($count / $total_users_count * 100) . '%;"></span>';
+			echo '<span class="scale-inner" data-position="' . $count / $total_users_count * 100 . '" style="background-color: ' . esc_attr($group_info['color']) . ';"></span>';
 			echo '</span>';
-
-			$image_path = $positions_and_images[$position];
+			$image_path = $group_info['image'];
 			echo '<img src="https://stalker-news.info/wp-content/themes/stalker-by-serhii-d/assets/images/groups/' . esc_attr($image_path) . '" alt="...">';
-
 			echo '</li>';
 			$item_number++;
 		}

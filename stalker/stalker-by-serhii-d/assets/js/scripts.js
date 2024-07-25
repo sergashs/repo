@@ -10,11 +10,51 @@ document.addEventListener('DOMContentLoaded', () => {
 	starsRating();
 	releaseTimer();
 	initTooltips();
+	antiSpamRegistration();
 });
 
 window.addEventListener('resize', () => {
 	correctVh();
 });
+
+function antiSpamRegistration() {
+	const btn = document.querySelector('.wpf-field-type-submit');
+
+	if (btn) {
+		const select = document.createElement('select');
+		const defaultOption = document.createElement('option');
+
+		defaultOption.value = '';
+		defaultOption.textContent = 'Select an option';
+		select.classList.add('visually-hidden');
+		select.appendChild(defaultOption);
+
+		for (let i = 1; i <= 3; i++) {
+			const option = document.createElement('option');
+			option.value = i;
+			option.textContent = i;
+			select.appendChild(option);
+		}
+
+		btn.parentNode.insertBefore(select, btn);
+
+		select.addEventListener('change', function (event) {
+			if (select.value.length > 0) {
+				btn.remove();
+				window.location.href = 'https://www.google.com/';
+			}
+		})
+
+		btn.addEventListener('click', function (event) {
+			if (select.value.length > 0) {
+				event.preventDefault();
+				btn.remove();
+				window.location.href = 'https://www.google.com/';
+			}
+		});
+
+	}
+}
 
 function releaseTimer() {
 	const timer = document.getElementById('countdown-timer');
@@ -244,8 +284,7 @@ function initSlides() {
 // fancyboxImges
 function fancyboxImges() {
 	const images = document.querySelectorAll('.single-post .wp-block-image.size-full');
-	const imagesLarge = document.querySelectorAll('.single-post .wp-block-image.size-large')
-
+	const imagesLarge = document.querySelectorAll('.single-post .wp-block-image.size-large');
 
 	if (images) {
 		images.forEach(function (item) {
@@ -254,6 +293,7 @@ function fancyboxImges() {
 			link.setAttribute('href', src);
 			link.setAttribute('data-fancybox', 'wp-gallery');
 			link.setAttribute('data-src', src);
+			link.style.cursor = 'zoom-in';
 			item.childNodes[0].parentNode.insertBefore(link, item.childNodes[0]);
 			item.childNodes[0].appendChild(item.childNodes[1]);
 		})
@@ -262,10 +302,9 @@ function fancyboxImges() {
 	if (imagesLarge) {
 		imagesLarge.forEach(function (item) {
 			const src = item.querySelector('img').getAttribute('src');
-
 			item.childNodes[0].setAttribute('data-fancybox', 'wp-gallery');
+			item.childNodes[0].style.cursor = 'zoom-in';
 			item.childNodes[0].setAttribute('data-src', src);
-
 		})
 	}
 
@@ -328,23 +367,3 @@ function headerCustomize() {
 	}
 }
 
-
-// (function () {
-// 	// Add event listener
-// 	document.addEventListener("mousemove", parallax);
-// 	const elem = document.querySelector("#parallax");
-// 	// Magic happens here
-// 	function parallax(e) {
-// 		let _w = window.innerWidth / 2;
-// 		let _h = window.innerHeight / 2;
-// 		let _mouseX = e.clientX;
-// 		let _mouseY = e.clientY;
-// 		let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
-// 		let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
-// 		let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
-// 		let x = `${_depth3}, ${_depth2}, ${_depth1}`;
-// 		console.log(x);
-// 		elem.style.backgroundPosition = x;
-// 	}
-
-// })();

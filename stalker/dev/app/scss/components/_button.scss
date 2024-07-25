@@ -54,6 +54,14 @@
       height: auto;
       min-height: 100%;
     }
+
+    &.active {
+      .button-text,
+      .button-after,
+      .button-before {
+        filter: brightness(1.25);
+      }
+    }
   }
 
   &.with-icon {

@@ -24,7 +24,7 @@ if (post_password_required()) {
 	// You can start editing here -- including this comment!
 	if (have_comments()):
 		?>
-		<h2 class="comments-title">
+		<span class="comments-title h2 d-block">
 			<?php
 			$stalker_by_serhii_d_comment_count = get_comments_number();
 			if ('1' === $stalker_by_serhii_d_comment_count) {
@@ -42,7 +42,7 @@ if (post_password_required()) {
 				);
 			}
 			?>
-		</h2><!-- .comments-title -->
+		</span><!-- .comments-title -->
 		<?php the_comments_navigation(); ?>
 		<ol class="comment-list">
 			<?php

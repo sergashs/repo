@@ -9,12 +9,14 @@
 
 get_header();
 ?>
+<?php $additional_info = get_field('additional_info'); ?>
 <main id="primary" class="site-main">
 	<div class="library-single">
 		<div class="container-fluid">
 			<div class="row flex-column-reverse flex-md-row">
-				<div class="col-md-8 col-lg-9 informer-row-border">
+				<div class="<?php echo empty($additional_info) ? 'col-12' : 'col-md-8 col-lg-9 informer-row-border'; ?>">
 					<div class="single-post">
+						<?php if( $additional_info ): ?>
 						<?php
 						if (have_posts()):
 							while (have_posts()):
@@ -24,6 +26,30 @@ get_header();
 							endwhile;
 						endif;
 						?>
+						<?php endif; ?>
+						<?php if( !$additional_info ): ?>
+						<?php
+						if (have_posts()):
+							while (have_posts()):
+								the_post();
+								echo '<h1 class="pt-1 pb-1 fs-2">' . get_the_title() . '</h1>';
+
+							endwhile;
+						endif;
+						?>
+						<?php
+						$thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+						if (!empty($thumbnail_url)) {
+						?>
+						<div class="row">
+							<div class="col-md-6">
+								<img data-src="<?php echo esc_url($thumbnail_url); ?>" src="#" alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy" class="lazyload w-100 mb-1">
+							</div>
+						</div>
+						<?php
+						}
+						?>
+						<?php endif; ?>
 						<?php
 						while (have_posts()):
 							the_post();
@@ -39,7 +65,8 @@ get_header();
 						?>
 					</div>
 				</div>
-				<div class="col-md-4 col-lg-3 py-2">
+				<?php if( $additional_info ): ?>
+				<div class="col-md-4 col-lg-3 py-md-2 pb-3">
 					<?php
 					if (have_posts()):
 						while (have_posts()):
@@ -48,15 +75,21 @@ get_header();
 						endwhile;
 					endif;
 					?>
-					<img data-src="<?php the_post_thumbnail_url('full'); ?>" src="#" alt="<?php the_title() ?>" loading="lazy" class="lazyload w-100 mb-1">
 					<?php
-					$additional_info = get_field('additional_info');
-
+					$thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+					if (!empty($thumbnail_url)) {
+					?>
+					<img data-src="<?php echo esc_url($thumbnail_url); ?>" src="#" alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy" class="lazyload w-100 mb-1">
+					<?php
+					}
+					?>
+					<?php
 					if ($additional_info) {
 						echo $additional_info;
 					}
 					?>
 				</div>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>

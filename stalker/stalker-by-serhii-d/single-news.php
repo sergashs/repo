@@ -31,7 +31,7 @@ get_header();
 			</div>
 			<div class="col-md-4 col-lg-3">
 				<div class="mb-2">
-					<h3 class="mb-0 pb-0 border-bottom-0 fs-3 pt-1">Популярні публікації</h3>
+					<span class="mb-0 pb-0 border-bottom-0 fs-3 pt-1 h3 d-block">Популярні публікації</span>
 					<img src="https://stalker-news.info/wp-content/uploads/2023/10/orange-line.svg" alt="orange line" class="width-max-100">
 				</div>
 				<?php

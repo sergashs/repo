@@ -367,6 +367,39 @@ function get_template_for_category($template)
 }
 add_filter('category_template', 'get_template_for_category');
 
+function get_template_for_custom_category($template)
+{
+    if (basename($template) === 'taxonomy-library_categories.php') { // No custom template for this specific term, let's find its parent
+        // get the current term, e.g. red
+        $term = get_queried_object();
+
+        // check for template file for the custom category
+        $slug_template = locate_template("taxonomy-library_categories-{$term->slug}.php");
+        if ($slug_template)
+            return $slug_template;
+
+        // if the custom category doesn't have a template, then start checking back through the parent levels to find a template for a parent slug
+        $term_to_check = $term;
+        while ($term_to_check->parent) {
+            // get the parent of this level's parent
+            $term_to_check = get_term($term_to_check->parent, 'library_categories');
+
+            if (!$term_to_check || is_wp_error($term_to_check))
+                break; // No valid parent found
+
+            // Use locate_template to check if a template exists for this custom category's slug
+            $slug_template = locate_template("taxonomy-library_categories-{$term_to_check->slug}.php");
+            // if we find a template then return it. Otherwise the loop will check for this level's parent
+            if ($slug_template)
+                return $slug_template;
+        }
+    }
+
+    return $template;
+}
+add_filter('taxonomy_template', 'get_template_for_custom_category');
+
+
 function remove_image_sizes()
 {
 	remove_image_size('1536x1536');
@@ -467,3 +500,5 @@ add_filter('script_loader_src', 'exclude_wpforo_scripts_on_home', 10, 2);
 
 /* disable auto plugins update */
 add_filter('auto_update_plugin', '__return_false');
+
+

@@ -18,19 +18,21 @@ endif;
 	$full_image_url = $is_singular ? wp_get_attachment_image_url($picture_id, 'full') : esc_url(get_permalink());
 	$img_size = $is_singular ? 'full' : 'medium_large';
 	?>
-	<a href="<?php echo $full_image_url; ?>" class="img-holder" <?php echo $is_singular ? 'data-fancybox="wp-gallery"' : ''; ?>>
-		<?php if (has_post_thumbnail()): ?>
-			<?php the_post_thumbnail($img_size); ?>
-		<?php else: ?>
-			<?php
-			$post_id = get_the_ID();
-			$picture_id = get_post_meta($post_id, 'picture', true);
-			if (!empty($picture_id)) {
-				echo wp_get_attachment_image($picture_id, $img_size);
-			}
-			?>
-		<?php endif; ?>
-	</a>
+	<div class="img-holder ratio ratio-16x9 bg-black">
+		<a href="<?php echo $full_image_url; ?>" <?php echo $is_singular ? 'data-fancybox="wp-gallery"' : ''; ?>>
+			<?php if (has_post_thumbnail()): ?>
+				<?php the_post_thumbnail($img_size, ['class' => 'position-absolute top-0 start-0 h-100', 'style' => 'object-fit: contain;']); ?>
+			<?php else: ?>
+				<?php
+				$post_id = get_the_ID();
+				$picture_id = get_post_meta($post_id, 'picture', true);
+				if (!empty($picture_id)) {
+					echo wp_get_attachment_image($picture_id, $img_size, false, ['class' => 'position-absolute top-0 start-0 h-100', 'style' => 'object-fit: contain;']);
+				}
+				?>
+			<?php endif; ?>
+		</a>
+	</div>
 	<?php if (!is_singular()): ?>
 		<h3 class="card-title"><a href="<?php echo esc_url(get_permalink()); ?>" rel="bookmark">
 				<?php the_title(); ?>
@@ -41,15 +43,28 @@ endif;
 			<?php echo wp_kses_post(get_the_content()); ?>
 		</div>
 	<?php endif; ?>
-	<?php
+	<!-- <?php
 	if (!empty($picture_id) && $is_singular) {
 		$post_title = 'Завантажити ' . get_the_title();
 		$file_size = filesize(get_attached_file($picture_id));
 		$formatted_file_size = size_format($file_size);
 
-		echo '<a class="btn btn-primary with-icon d-flex mb-1" href="' . esc_url($full_image_url) . '" download="' . esc_attr($post_title) . '">';
+		echo '<a class="btn btn-primary with-icon d-flex mb-1" href="' . esc_url($full_image_url) . '" download="' . esc_url($full_image_url) . '">';
 		echo '<span class="icon-holder"><i class="fas fa-download"></i></span> <span class="button-text p-1">';
 		echo esc_html($post_title) . ' (' . esc_html($formatted_file_size) . ')';
+		echo '</span> <span class="button-after"></span></a>';
+	}
+	?> -->
+	<?php
+	if (!empty($picture_id) && $is_singular) {
+		$post_title = 'Завантажити ' . get_the_title();
+
+		$original_image_url = wp_get_attachment_url($picture_id);
+		$original_image_url = str_replace('-scaled', '', $original_image_url);
+
+		echo '<a class="btn btn-primary with-icon d-flex mb-1" href="' . esc_url($original_image_url) . '" download="' . esc_url($original_image_url) . '">';
+		echo '<span class="icon-holder"><i class="fas fa-download"></i></span> <span class="button-text p-1">';
+		echo esc_html($post_title);
 		echo '</span> <span class="button-after"></span></a>';
 	}
 	?>

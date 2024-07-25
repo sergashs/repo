@@ -16,6 +16,9 @@
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Rubik:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
@@ -49,6 +52,16 @@
 										)
 									);
 									?>
+									<div class="d-lg-none border-top">
+										<?php
+										wp_nav_menu(
+											array(
+												'theme_location' => 'menu-2',
+												'menu_id' => 'secondary-menu',
+											)
+										);
+										?>
+									</div>
 								</nav>
 							</div>
 						</div>
