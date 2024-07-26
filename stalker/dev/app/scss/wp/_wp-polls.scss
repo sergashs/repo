@@ -1,35 +1,32 @@
 .wp-polls {
-  .wp-polls-ul {
-    margin: 0;
-    padding: 0;
+	.wp-polls-ul {
+		margin: 0;
+		padding: 0;
 
-    > li {
-      &:not(:last-child) {
-        margin-bottom: 1rem;
-      }
-    }
+		> li {
+			&:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+		}
 
-    i {
-      display: block;
-      margin-bottom: 0.3rem;
-      font-style: normal;
-    }
-  }
+		i {
+			display: block;
+			margin-bottom: 0.3rem;
+			font-style: normal;
+		}
+	}
 
-  > p {
-    strong {
-      font-family: $secondary-font;
-      font-weight: 400;
-      font-size: 2rem;
-    }
-  }
+	> p {
+		strong {
+			font-family: $secondary-font;
+			font-weight: 400;
+			font-size: 2rem;
+		}
+	}
 
-  .pollbar {
-    height: 2rem;
-    border: none;
-    background: $accent-color;
-    // background-image: url("#{$images}scale.jpg");
-    // background-position: right;
-    // background-size: contain;
-  }
+	.pollbar {
+		height: 2rem;
+		border: none;
+		background: $primary;
+	}
 }
