@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	.accordion {
+		background: pink;
+	}
+
+	.accordion .header {
+		padding: 20px;
+	}
+
+	.accordion .body {
+		overflow: hidden;
+		transition: 0.3s;
+	}
+
+	.accordion .inner-content {
+		padding: 20px;
+	}
+
+	.accordion .text-holder {}
+
+	.accordion:not(.opened) .text-holder {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		-webkit-line-clamp: 2;
+	}
+</style>
+
+<body>
+	<div class="accordion">
+		<div class="header">
+			sdsadasd
+		</div>
+		<div class="body">
+			<div class="inner-content">
+				<div class="text-holder">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid qui molestias nam pariatur obcaecati repellat nulla sunt quos perspiciatis expedita placeat dolore cupiditate assumenda dicta quaerat enim, corrupti nesciunt reprehenderit.
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora reiciendis voluptas necessitatibus doloremque deserunt ipsum sequi voluptate dolores maxime delectus omnis reprehenderit quidem debitis blanditiis expedita, aut rem quam id.
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus cumque ad modi iste id! Labore doloremque quasi laborum cumque provident, officiis ullam fugiat, consequuntur quos dolores id culpa repellat voluptas?
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	const accordions = document.querySelectorAll('.accordion');
+
+	accordions.forEach((accordion) => {
+		// accordion.querySelector('.body').style.height = '0px';
+
+		accordion.querySelector('.body').setAttribute('data-height', accordion.querySelector('.body').offsetHeight);
+		accordion.querySelector('.body').style.height = `${accordion.querySelector('.body').offsetHeight}px`;
+
+		accordion.querySelector('.header').addEventListener('click', () => {
+			if (accordion.classList.contains('opened')) {
+				accordion.querySelector('.body').style.height = `${accordion.querySelector('.body').scrollHeight}px`;
+				setTimeout(() => {
+					accordion.querySelector('.body').style.height = `${accordion.querySelector('.body').getAttribute('data-height')}px`;
+					accordion.classList.remove('opened');
+				}, 100);
+			} else {
+				accordion.classList.add('opened');
+				accordion.querySelector('.body').style.height = `${accordion.querySelector('.body').scrollHeight}px`;
+			}
+		});
+
+
+		accordion.querySelector('.body').addEventListener('transitionend', (event) => {
+			if (event.propertyName === 'height' && event.target.parentNode.classList.contains('opened')) {
+				console.log('Анімація висоти завершена!');
+				event.target.style.removeProperty('height');
+			}
+		});
+	});
+
+
+
+</script>
+
+</html>
