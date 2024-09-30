@@ -1,0 +1,112 @@
+//= inc/_head.html
+
+<body>
+	<div class="wrapper">
+		//= inc/_header.html
+		<main id="main" class="site-main">
+			<div class="container-fluid">
+				<div class="pt-1 mb-1">
+					<h3 class="mb-0 pb-0 border-bottom-0 fs-4">Україномовні сталкерські спільноти</h3>
+					<img decoding="async" src="https://stalker-news.info/wp-content/uploads/2023/10/orange-line.svg" alt="orange line" class="width-max-100">
+				</div>
+				<div class="d-flex align-items-center">
+					<img data-src="https://stalker-news.info/wp-content/themes/stalker-by-serhii-d/assets/images/icon-youtube.svg" style="width: 30px; height: 30px;" src="#" alt="Наш Youtube канал" loading="lazy" class="lazyload me-1">
+					<p class="h3">Youtube спільноти:</p>
+				</div>
+				<div id="channelList">
+					<ul class="list-unstyled"></ul>
+				</div>
+			</div>
+		</main>
+		<script>
+
+
+			document.addEventListener('DOMContentLoaded', () => {
+				const apiKey = 'AIzaSyBVbSoki2l4e4stmbCYHNNFNcWNDutvHUU';
+				const channelsId = ['UCerdfFvztagv6-T6CoLDVag'];
+				let completedChannels = [];
+
+
+				const getChannelDataById = async (channelId) => {
+					const url = `https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${channelId}&key=${apiKey}`;
+					const response = await fetch(url);
+					console.log(response)
+					return response.json();
+				};
+
+				const fetchChannelsData = async () => {
+					for (const channelId of channelsId) {
+						try {
+							let data;
+							data = await getChannelDataById(channelId);
+
+							if (data.items && data.items.length > 0) {
+								const channelInfo = data.items[0].snippet;
+								const stats = data.items[0].statistics;
+
+								completedChannels.push(
+									{
+										title: channelInfo.title,
+										description: channelInfo.description,
+										channelAvatar: channelInfo.thumbnails.default.url,
+										subscribers: stats.subscriberCount,
+										videosCount: stats.videoCount
+									}
+								)
+							} else {
+								console.log(`Дані для каналу ${channelId} не знайдені.`);
+
+							}
+						} catch (error) {
+							console.error(`Помилка при отриманні даних для каналу ${channelId}:`, error);
+						}
+					}
+
+					// renderChannelsList(completedChannels, 'channelList');
+				};
+
+
+				fetchChannelsData();
+
+
+				function renderChannelsList(channelsArray, targetId) {
+					const targetElement = document.getElementById(targetId);
+					targetElement.innerHTML = '';
+
+
+					channelsArray.forEach((channel) => {
+						const channelMarkup = `
+      <li class="d-flex align-items-center mb-4">
+        <div style="width: 60px; height: 60px;" class="rounded-full overflow-hidden">
+          <img src="${channel.channelAvatar}" alt="${channel.title}" class="w-100 h-100 object-fit-cover flex-shrink-0">
+        </div>
+        <div class="ms-3">
+          <p class="h3">${channel.title}</p>
+          <p>
+            <span class="fw-bold">Підписники:</span>
+            <span>${channel.subscribers}</span>
+          </p>
+          <p>
+            <span class="fw-bold">Кількість відео:</span>
+            <span>${channel.videosCount}</span>
+          </p>
+          <p>
+            <span class="fw-bold">Опис:</span>
+            <span>${channel.description}</span>
+          </p>
+        </div>
+      </li>
+    `;
+
+						// Додаємо розмітку до списку
+						targetElement.insertAdjacentHTML('beforeend', channelMarkup);
+					});
+				}
+			});
+
+		</script>
+		//= inc/_footer.html
+	</div><!-- / wrapper -->
+</body>
+
+</html>
