@@ -243,7 +243,10 @@
     }
   }
 
-  .cld-undo-trigger {
-    color: $primary;
+  .cld-like-trigger,
+  .cld-dislike-trigger {
+    &:not(.cld-undo-trigger) {
+      opacity: 0.5;
+    }
   }
 }
