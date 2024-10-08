@@ -1,7 +1,14 @@
 .page-game {
-  .game-poster {
-    width: 25rem;
-    max-width: 100%;
+  .left-side {
+    @include media-breakpoint-up(md) {
+      width: 25rem;
+      max-width: 100%;
+    }
+
+    .game-poster {
+      width: 25rem;
+      max-width: 100%;
+    }
 
     img {
       width: 100%;
@@ -71,11 +78,6 @@
     iframe {
       width: 100%;
     }
-  }
-
-  .alert {
-    line-height: 1.55;
-    background: rgba(var(--bs-secondary-color-rgb), 0.05);
   }
 
   .game-similars {

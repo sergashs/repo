@@ -2,111 +2,12 @@ let loadLazyLoadScript = false;
 
 document.addEventListener('DOMContentLoaded', () => {
 	correctVh();
-	// lazyLoad();
-	// mobileMenu();
-	// initSlides()
-	// fancyboxImges();
-	// headerSearch();
-	initSmoothScroll();
+
 });
 
 window.addEventListener('resize', () => {
 	correctVh();
 });
-
-
-function initSmoothScroll() {
-	let locoScroll;
-
-	const locoScrollDefaults = {
-		el: document.querySelector('[data-scroll-container]'),
-		smooth: true,
-		// direction: "horizontal",
-		tablet: {
-			breakpoint: 1200
-		}
-	};
-
-	function initLocoScroll() {
-		locoScroll = new LocomotiveScroll(locoScrollDefaults);
-		trackScroll();
-		scrollToSection();
-	}
-
-	function destroyLocoScroll() {
-		locoScroll.destroy();
-	}
-
-	function scrollToSection() {
-		const btns = document.querySelectorAll('[scroll-to]');
-
-		btns.forEach((btn) => {
-			btn.addEventListener('click', () => {
-				const sectionClass = btn.getAttribute('scroll-to');
-				locoScroll.scrollTo(document.querySelector(`.${sectionClass}`));
-			})
-		})
-	}
-
-
-	function trackScroll() {
-		const sections = document.querySelectorAll('[data-section]');
-		const navLinks = document.querySelectorAll('.sections-nav [scroll-to]');
-
-		const handleScroll = () => {
-			const scrollPosition = locoScroll.scroll.instance.scroll.x;
-
-			sections.forEach((section) => {
-				const sectionLeft = section.offsetLeft;
-				const sectionRight = sectionLeft + section.offsetWidth;
-
-				if (scrollPosition >= (sectionLeft - 3) && scrollPosition < sectionRight) {
-					const sectionClass = section.getAttribute('data-section');
-
-					navLinks.forEach((link) => {
-						const linkSection = link.getAttribute('scroll-to');
-						if (sectionClass === linkSection) {
-							link.classList.add('active');
-						} else {
-							link.classList.remove('active');
-						}
-					});
-				}
-			});
-		};
-
-		locoScroll.on('scroll', handleScroll);
-	}
-
-
-	initLocoScroll();
-
-
-	window.addEventListener('resize', () => {
-		if (window.innerWidth > 1200) {
-			window.removeEventListener('resize', locoScroll.scroll.checkResize, false)
-			window.addEventListener('resize', () => resizescroll(), false);
-		}
-	})
-
-
-
-	function resizescroll() {
-		if (!locoScroll.scroll.resizeTick) {
-			locoScroll.scroll.resizeTick = true;
-			requestAnimationFrame(() => {
-				locoScroll.scroll.checkContext();
-				updatescroll();
-				locoScroll.scroll.resizeTick = false;
-			});
-		}
-	}
-
-	function updatescroll() {
-		locoScroll.destroy()
-		initLocoScroll();
-	}
-}
 
 
 // lazyLoad Images

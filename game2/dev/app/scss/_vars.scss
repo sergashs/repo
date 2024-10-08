@@ -22,15 +22,16 @@ $transition: all 0.3s ease;
 $border-color: rgba($primary-color, 0.2);
 
 // bootstrap vars
-// $spacer: 1rem;
-// $spacers: (
-//   0: 0,
-//   1: $spacer * 1,
-//   2: $spacer * 2,
-//   3: $spacer * 3,
-//   4: $spacer * 4,
-//   5: $spacer * 5
-// );
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 3.5
+);
 
 $blue: #029fd6;
 $red: #d11a1f;
@@ -48,4 +49,19 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1340px
+);
+
+$utilities: (
+  "opacity": (
+    property: opacity,
+    values: (
+      0: 0,
+      10: 0.1,
+      15: 0.15,
+      25: 0.25,
+      50: 0.5,
+      75: 0.75,
+      100: 1
+    )
+  )
 );
