@@ -9,8 +9,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Базовий URL для каталогу
-const base_url = "https://www.bookovka.ua/uk/13-khudozhnya-literatura?p=";
-const num_pages = 877;
+const base_url = "https://readeat.com/catalog/xudoznia-literatura?page=1";
+const num_pages = 185;
 
 // Функція для затримки між запитами
 function delay(ms) {
