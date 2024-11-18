@@ -26,7 +26,7 @@ function releaseTimer() {
 		const minsEL = document.getElementById('mins');
 		const secondsEL = document.getElementById('seconds');
 
-		const newYears = '20 Nov 2024';
+		const newYears = '20 Nov 2024 18:00:00';
 
 		function countdown() {
 			const newYearsDate = new Date(newYears);
