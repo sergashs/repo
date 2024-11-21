@@ -8,12 +8,46 @@ document.addEventListener('DOMContentLoaded', () => {
 	initSlides()
 	fancyboxImges();
 	starsRating();
+	releaseTimer();
 	initTooltips();
 });
 
 window.addEventListener('resize', () => {
 	correctVh();
 });
+
+
+function releaseTimer() {
+	const timer = document.getElementById('countdown-timer');
+
+	if (timer) {
+		const daysEl = document.getElementById('days');
+		const hoursEl = document.getElementById('hours');
+		const minsEL = document.getElementById('mins');
+		const secondsEL = document.getElementById('seconds');
+
+		const newYears = '20 Nov 2024 18:00:00';
+
+		function countdown() {
+			const newYearsDate = new Date(newYears);
+			const currentDate = new Date();
+
+			const totalSeconds = (newYearsDate - currentDate) / 1000;
+			const minutes = Math.floor(totalSeconds / 60) % 60;
+			const hours = Math.floor(totalSeconds / 3600) % 24;
+			const days = Math.floor(totalSeconds / 3600 / 24);
+			const seconds = Math.floor(totalSeconds) % 60;
+
+
+			daysEl.innerText = days;
+			hoursEl.innerText = hours;
+			minsEL.innerText = minutes;
+			secondsEL.innerText = seconds;
+		}
+
+		setInterval(countdown, 1000);
+	}
+}
 
 function starsRating() {
 	const ratingStars = [...document.querySelectorAll("#comment-rating-form .rating-form-star")];
@@ -59,6 +93,9 @@ function starsRating() {
 
 		executeRating(ratingStars);
 	}
+
+
+
 }
 
 // lazyLoad Images
@@ -200,6 +237,9 @@ function initSlides() {
 			},
 		})
 	}
+
+
+
 }
 
 // fancyboxImges
@@ -228,6 +268,7 @@ function fancyboxImges() {
 			item.childNodes[0].setAttribute('data-src', src);
 		})
 	}
+
 }
 
 function initTooltips() {
