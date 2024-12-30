@@ -1,0 +1,32 @@
+.section-contact {
+  padding-top: 24rem;
+  padding-bottom: 30rem;
+  background: linear-gradient(to right, rgb(0 0 0 / 0.8), rgb(0 0 0 / 0.8)), url("#{$images}/img-05.jpg") center 100% / cover no-repeat;
+
+  .section-title {
+    margin-bottom: 9rem;
+    text-align: center;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(5rem, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  textarea {
+    margin-bottom: 6rem;
+    min-height: 20rem;
+  }
+
+  .form-inner {
+    display: flex;
+    flex-direction: column;
+
+    .btn-primary {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

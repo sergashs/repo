@@ -1,0 +1,31 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.8rem;
+  font-family: $font-first;
+  font-weight: 800;
+  font-size: 1.6rem;
+  text-decoration: none;
+  width: 30rem;
+  max-width: 100%;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &-primary {
+    color: white;
+    min-height: 6rem;
+    background: $color-primary;
+    border: none;
+
+    &:hover {
+      background: darken($color-primary, 10);
+    }
+
+    &:active {
+      background: darken($color-primary, 20);
+    }
+  }
+}

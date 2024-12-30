@@ -1,0 +1,224 @@
+/* header */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: solid 0.1rem rgba(white, 0.2);
+  z-index: 99;
+
+  .container {
+    display: flex;
+    align-items: center;
+
+    > .btn-primary {
+      margin-left: 4rem;
+
+      //   @include breakpoint(lg, max) {
+      // 	display: none;
+      //   }
+    }
+  }
+
+  .dropdown {
+    margin-left: 5rem;
+    margin-right: 2rem;
+
+    // @include breakpoint(lg, max) {
+    //   margin-left: auto;
+    //   margin-right: 5rem;
+    // }
+  }
+
+  .main-navigation {
+    flex-grow: 1;
+
+    // @include breakpoint(lg, max) {
+    //   position: fixed;
+    //   left: 0;
+    //   top: 6.2rem;
+    //   width: 100%;
+    //   height: calc(100% - 6.2rem);
+    //   padding-top: 8rem;
+    //   padding-bottom: 4rem;
+    //   display: flex;
+    //   flex-direction: column;
+    //   font-size: 2.4rem;
+    //   background: white;
+    //   transition: 0.3s;
+    //   opacity: 0;
+    //   visibility: hidden;
+    //   pointer-events: none;
+    //   overflow: auto;
+    // }
+
+    .menu-opened & {
+      //   @include breakpoint(lg, max) {
+      // 	opacity: 1;
+      // 	visibility: visible;
+      // 	pointer-events: all;
+      //   }
+    }
+
+    .inner-holder {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      //   @include breakpoint(lg, max) {
+      // 	flex-grow: 1;
+      // 	flex-direction: column;
+      // 	justify-content: flex-start;
+      // 	text-align: center;
+      //   }
+    }
+
+    .btn-primary {
+      //   @include breakpoint(lg, min) {
+      // 	display: none;
+      //   }
+    }
+
+    .menu {
+      display: flex;
+      list-style: none;
+      margin: 0 6rem 0 0;
+      padding: 0;
+      font-weight: 500;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+
+      //   @include breakpoint(lg, max) {
+      // 	width: 100%;
+      // 	max-width: 28rem;
+      // 	margin-left: auto;
+      // 	margin-right: auto;
+      // 	flex-direction: column;
+      // 	margin-bottom: 1.6rem;
+      //   }
+
+      .menu-item {
+        &:not(:last-child) {
+          margin-right: 3rem;
+
+          //   @include breakpoint(lg, max) {
+          // 	margin-bottom: 1.6rem;
+          //   }
+        }
+
+        a {
+          position: relative;
+          text-decoration: none;
+          color: inherit;
+
+          //   @include breakpoint(lg, max) {
+          // 	display: block;
+          // 	width: 100%;
+          // 	max-width: 28rem;
+          // 	padding: 1.6rem;
+          // 	color: white;
+          // 	background: #3b3b3b;
+          //   }
+
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: -0.3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            border-bottom: solid 0.1rem;
+            transition: 0.3s;
+          }
+
+          &:hover {
+            @media (hover: hover) {
+              &::before {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .btn-primary {
+      //   @include breakpoint(lg, max) {
+      // 	width: 100%;
+      // 	max-width: 28rem;
+      // 	min-height: 5.2rem;
+      //   }
+    }
+  }
+
+  .open-menu {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    z-index: 100;
+
+    @include media(">=lg") {
+      display: none;
+    }
+
+    // @include breakpoint(lg, min) {
+    //   display: none;
+    // }
+
+    // @include breakpoint(md, max) {
+    //   right: 2.4rem;
+    // }
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      background: $color-primary;
+      border-radius: 0;
+      height: 0.2rem;
+      transition: $transition;
+
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          @if ($i == 1) {
+            margin-top: -1rem;
+          }
+          @if ($i == 2) {
+            margin-top: -0.1rem;
+          }
+          @if ($i == 3) {
+            margin-top: 0.8rem;
+          }
+        }
+      }
+
+      .menu-opened & {
+        @for $i from 1 through 3 {
+          &:nth-child(#{$i}) {
+            @if ($i == 1) {
+              margin-top: 0;
+              transform: rotate(45deg);
+            }
+            @if ($i == 2) {
+              opacity: 0;
+              // transform: translateX(50%);
+            }
+            @if ($i == 3) {
+              margin-top: 0;
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
