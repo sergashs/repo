@@ -3,11 +3,20 @@
   padding-bottom: 15rem;
   background: #111111;
 
+  @include media("<md") {
+    padding-top: 8rem;
+    padding-bottom: 7.5rem;
+  }
+
   .section-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 7rem;
+
+    @include media("<md") {
+      margin-bottom: 4rem;
+    }
   }
 
   .section-title {
@@ -15,13 +24,20 @@
   }
 
   .swiper-buttons-holder {
+    display: flex;
+
     .swiper-button-next,
     .swiper-button-prev {
-      width: 60px;
-      height: 60px;
+      width: 6rem;
+      height: 6rem;
       padding: 0;
       background: transparent;
       border: solid 0.1rem $color-primary;
+
+      @include media("<md") {
+        width: 4.5rem;
+        height: 4.5rem;
+      }
 
       &:hover {
         background: $color-primary;

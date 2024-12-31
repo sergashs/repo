@@ -1,3 +1,120 @@
 /* footer */
 .site-footer {
+  @include media("<md") {
+    text-align: center;
+  }
+
+  .links-social {
+    @include media("<md") {
+      justify-content: center;
+    }
+  }
+
+  a {
+    color: white;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .footer-top {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    ul {
+      font-size: 1.3rem;
+      line-height: 1.25;
+      color: white;
+
+      li {
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+    font-size: 1.4rem;
+    background: #111111;
+
+    p {
+      margin-bottom: 0;
+
+      @include media("<md") {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+
+      @include media("<md") {
+        flex-direction: column;
+      }
+    }
+
+    ul {
+      display: flex;
+
+      @include media("<md") {
+        justify-content: center;
+      }
+
+      li {
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+
+  .site-logo {
+    margin-bottom: 5rem;
+  }
+
+  .row {
+    @include media(">=xl") {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    > .col {
+      &:last-child {
+        @include media(">=xl") {
+          margin-left: 2rem;
+        }
+
+        @include media("<xl") {
+          padding-top: 3rem;
+        }
+      }
+    }
+
+    .row-inner {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(5rem, 1fr));
+      gap: 5rem;
+
+      @include media(">=md") {
+        grid-template-columns: repeat(2, minmax(5rem, 1fr));
+      }
+
+      @include media(">=lg") {
+        grid-template-columns: repeat(4, minmax(5rem, 1fr));
+      }
+    }
+  }
+
+  .footer-title {
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: $color-primary;
+  }
 }

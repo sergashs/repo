@@ -10,11 +10,15 @@
   }
 
   .ac-trigger {
-    padding: 1.5rem 0;
+    padding: 1.5rem 3rem 1.5rem 0;
     font-family: $font-first;
     font-weight: 600;
     font-size: 2rem;
     color: inherit;
+
+    @include media("<md") {
+      font-size: 1.8rem;
+    }
 
     &::after {
       content: "";
@@ -37,6 +41,19 @@
     padding-bottom: 1.5rem;
     font-size: 1.8rem;
     line-height: 1.6;
+
+    @include media("<md") {
+      font-size: 1.4rem;
+    }
+
+    .txt-title {
+      font-weight: 600;
+      font-size: 2rem;
+
+      @include media("<md") {
+        font-size: 1.7rem;
+      }
+    }
 
     p {
       margin-bottom: 1.5rem;

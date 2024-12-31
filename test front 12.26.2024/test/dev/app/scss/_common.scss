@@ -19,6 +19,21 @@
   margin-right: auto;
 }
 
+.site-logo {
+  display: inline-flex;
+
+  .icon-holder {
+    @include media("<md") {
+      width: 3.5rem;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
 .links-social {
   margin: 0;
   padding: 0;
@@ -49,6 +64,10 @@
   font-weight: 800;
   font-size: 4rem;
   line-height: 1.25;
+
+  @include media("<md") {
+    font-size: 2.2rem;
+  }
 }
 
 .text-uppercase {

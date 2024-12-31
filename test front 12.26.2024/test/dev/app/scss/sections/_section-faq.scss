@@ -2,6 +2,11 @@
   padding-top: 20rem;
   padding-bottom: 21.5rem;
 
+  @include media("<md") {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
   .section-title {
     margin-bottom: 6rem;
     text-align: center;

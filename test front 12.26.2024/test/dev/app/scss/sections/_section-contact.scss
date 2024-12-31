@@ -3,21 +3,40 @@
   padding-bottom: 30rem;
   background: linear-gradient(to right, rgb(0 0 0 / 0.8), rgb(0 0 0 / 0.8)), url("#{$images}/img-05.jpg") center 100% / cover no-repeat;
 
+  @include media("<md") {
+    padding-top: 12rem;
+    padding-bottom: 15rem;
+  }
+
   .section-title {
     margin-bottom: 9rem;
     text-align: center;
+
+    @include media("<md") {
+      margin-bottom: 4.5rem;
+    }
   }
 
   .row {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(5rem, 1fr));
-    gap: 3rem;
-    margin-bottom: 3rem;
+    @include media(">md") {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(5rem, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .col {
+      margin-bottom: 3rem;
+    }
   }
 
   textarea {
     margin-bottom: 6rem;
     min-height: 20rem;
+
+    @include media("<md") {
+      margin-bottom: 3rem;
+    }
   }
 
   .form-inner {
@@ -27,6 +46,10 @@
     .btn-primary {
       margin-left: auto;
       margin-right: auto;
+
+      @include media("<sm") {
+        width: 100%;
+      }
     }
   }
 }

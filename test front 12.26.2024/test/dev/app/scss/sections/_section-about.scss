@@ -1,7 +1,12 @@
 .section-about {
-  padding-top: 170px;
+  padding-top: 17rem;
   padding-bottom: 28.5rem;
   text-align: center;
+
+  @include media("<md") {
+    padding-top: 7rem;
+    padding-bottom: 14rem;
+  }
 
   .section-title {
     position: relative;
@@ -10,6 +15,10 @@
     justify-content: center;
     min-height: 20rem;
     margin-bottom: 11rem;
+
+    @include media("<md") {
+      margin-bottom: 5.5rem;
+    }
 
     &::before {
       position: absolute;
@@ -20,13 +29,29 @@
       font-size: 24rem;
       color: #460000;
       z-index: -1;
+
+      @include media("<md") {
+        font-size: 18rem;
+      }
     }
   }
 
   .cards-holder {
     display: grid;
-    grid-template-columns: repeat(4, minmax(5rem, 1fr));
+    grid-template-columns: repeat(1, minmax(5rem, 1fr));
     gap: 3rem;
+
+    @include media(">md") {
+      grid-template-columns: repeat(2, minmax(5rem, 1fr));
+    }
+
+    @include media(">lg") {
+      grid-template-columns: repeat(3, minmax(5rem, 1fr));
+    }
+
+    @include media(">xl") {
+      grid-template-columns: repeat(4, minmax(5rem, 1fr));
+    }
 
     .card {
       display: flex;
