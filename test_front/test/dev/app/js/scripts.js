@@ -1,23 +1,11 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-	correctVh();
 	menu();
 	scrollDown();
 	initSlider();
 	initAccordion();
 });
-
-window.addEventListener('resize', () => {
-	correctVh();
-});
-
-// correctVh
-function correctVh() {
-	const vh = window.innerHeight * 0.01;
-	document.documentElement.style.setProperty('--vh', vh + 'px');
-	console.log(vh)
-}
 
 function scrollDown() {
 	var btnScrollDown = document.querySelector('[data-scroll-down]');
