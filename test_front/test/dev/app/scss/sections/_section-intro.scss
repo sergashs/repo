@@ -66,6 +66,10 @@
     font-weight: 500;
     color: white;
 
+    @include media("<sm") {
+      bottom: 4rem;
+    }
+
     svg {
       margin-top: 2rem;
     }
