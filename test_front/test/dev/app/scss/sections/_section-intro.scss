@@ -6,7 +6,9 @@
   justify-content: center;
   text-align: center;
   min-height: 100svh;
-  // min-height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  transition: 0.3s;
 
   &::after,
   .section-background {
