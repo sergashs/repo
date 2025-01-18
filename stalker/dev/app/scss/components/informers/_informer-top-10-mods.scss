@@ -1,0 +1,65 @@
+.informer-top-10-mods {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  .inner-holder {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    padding-bottom: 1rem;
+    border-bottom: solid 0.1rem $border-color;
+    z-index: 2;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: linear-gradient(to right, rgba(white, 0.1), transparent);
+      transition: all 0.55s;
+      z-index: -1;
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  .item-info {
+    font-size: 1.4rem;
+    color: $body-color;
+  }
+
+  .item-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    font-weight: 500;
+    font-size: 1.7rem;
+    color: $headings-color;
+  }
+
+  .item-rating {
+    width: 2rem;
+    flex-shrink: 0;
+    padding: 0.5rem 2.5rem;
+    font-weight: 500;
+    font-size: 2rem;
+    color: black;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: $primary;
+    border-radius: 0.5rem;
+  }
+}

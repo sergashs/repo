@@ -1,0 +1,35 @@
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	font-weight: 400;
+	font-size: 1.8rem;
+	line-height: 1;
+	padding: 1.2rem 1.9rem;
+
+	@include media("<md") {
+		padding: 1.2rem 3rem;
+		font-size: 1.4rem;
+	}
+
+	&-link {
+		color: $btn-primary-bg;
+	}
+
+	&-primary {
+		color: #ffffff;
+		background: $btn-primary-bg;
+		border-radius: 0.8rem;
+		border: none;
+
+		&:hover {
+			background: lighten($btn-primary-bg, 5);
+			text-decoration: none;
+		}
+	}
+
+	&:disabled,
+	&[disabled] {
+		background: #aed1ff;
+		pointer-events: none;
+	}
+}

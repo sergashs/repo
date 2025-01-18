@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	li {
+		height: 100vh;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+</style>
+
+<body>
+	<!-- Slider main container -->
+	<div class="swiper">
+		<!-- Additional required wrapper -->
+		<div class="swiper-wrapper">
+			<!-- Slides -->
+			<div class="swiper-slide">Slide 1</div>
+			<div class="swiper-slide">Slide 2</div>
+			<div class="swiper-slide">Slide 3</div>
+		</div>
+		<!-- If we need pagination -->
+		<div class="swiper-pagination"></div>
+		<!-- If we need navigation buttons -->
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+		<!-- If we need scrollbar -->
+		<div class="swiper-scrollbar"></div>
+	</div>
+	https://verlok.github.io/vanilla-lazyload/
+	<ul>
+		<li>
+			<img alt="A lazy image" class="lazy" data-src="IMG-worlds-of-adventure.webp" />
+		</li>
+		<li>
+			<img alt="A lazy image" class="lazy" data-src="2009-stadium-about.jpg" />
+		</li>
+		<li>
+			<img alt="A lazy image" class="lazy" data-src="hfpqyV7B-IMG-Dubai-UAE-1200x800.jpg" />
+		</li>
+	</ul>
+	<div class="swiper"></div>
+	<script async src="lazyload.min.js"></script>
+	<script>
+		// Set the options globally
+		// to make LazyLoad self-initialize
+		window.lazyLoadOptions = {
+			// Your custom settings go here
+		};
+		// Listen to the initialization event
+		// and get the instance of LazyLoad
+		window.addEventListener(
+			"LazyLoad::Initialized",
+			function (event) {
+				window.lazyLoadInstance = event.detail.instance;
+			},
+			false
+		);
+	</script>
+	<script src="js.js"></script>
+</body>
+
+</html>

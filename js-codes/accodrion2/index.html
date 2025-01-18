@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	/* accordion */
+	.accordion {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		border-top: 1px solid;
+	}
+
+	.accordion>li {
+		border-bottom: 1px solid;
+	}
+
+	.accordion>li>.title-link,
+	.accordion>li>.title-opener {
+		display: flex;
+		cursor: pointer;
+		padding: 2.6rem 0;
+		position: relative;
+		color: inherit;
+		text-decoration: none;
+		font-size: 2.4rem;
+		line-height: 1.167;
+		align-items: center;
+	}
+
+	.accordion>li>.title-link h3,
+	.accordion>li>.title-opener h3 {
+		margin: 0;
+		font: inherit;
+		padding-right: 1rem;
+		letter-spacing: -0.048rem;
+		color: inherit;
+	}
+
+	.accordion>li>.title-link .ico-plus,
+	.accordion>li>.title-opener .ico-plus {
+		flex-shrink: 0;
+		margin-left: auto;
+		width: 2rem;
+		height: 2rem;
+		position: relative;
+	}
+
+	.accordion>li>.title-link .ico-plus::after,
+	.accordion>li>.title-opener .ico-plus::after,
+	.accordion>li>.title-link .ico-plus::before,
+	.accordion>li>.title-opener .ico-plus::before {
+		width: 100%;
+		height: 1px;
+		content: '';
+		position: absolute;
+		background: currentColor;
+		left: 50%;
+		top: 50%;
+		margin: -1px 0 0 -1rem;
+		transition: all 0.3s ease-out;
+	}
+
+	.accordion>li>.title-link .ico-plus::after,
+	.accordion>li>.title-opener .ico-plus::after {
+		transform: rotate(90deg);
+	}
+
+	.accordion>li>.drop {
+		display: none;
+	}
+
+	.accordion>li>.drop>.hold {
+		padding: 0.2rem 0 0.8rem;
+		max-width: 108.8rem;
+		opacity: 0;
+		transition: opacity 0.3s linear;
+		font-size: 2rem;
+		line-height: 1.4;
+		letter-spacing: 0.02rem;
+	}
+
+	.accordion>li>.drop>.hold mark {
+		background: none;
+		padding: 0;
+		color: var(--highlighted-text);
+	}
+
+	.accordion>li.active>.title-opener .ico-plus::after {
+		transform: rotate(180deg);
+	}
+
+	.accordion>li.active>.drop>.hold {
+		opacity: 1;
+		transition: opacity 0.3s 0.3s linear;
+	}
+</style>
+
+<body>
+	<ul class="accordion">
+		<li class="">
+			<div class="title-opener">
+				<h3>¿Realmente un cambio en mi mentalidad cambiará mi trading?<br>
+				</h3>
+				<i class="ico-plus"></i>
+			</div>
+			<div class="drop" style="box-sizing: border-box; display: none;">
+				<div class="hold">
+					<p>Sí. Porque la manera en la que tomas las decisiones afecta a la rentabilidad de tus operaciones.Si aprendes a gestionar tus emociones, aumentará tu capacidad de operar de una manera mucho más racional.<br>
+						Piénsalo.</p>
+				</div>
+			</div>
+		</li>
+		<li class="">
+			<div class="title-opener">
+				<h3>¿Cuánta experiencia necesito? Soy muy novato…<br>
+				</h3>
+				<i class="ico-plus"></i>
+			</div>
+			<div class="drop" style="box-sizing: border-box; display: none;">
+				<div class="hold">
+					<p>Pues mucho mejor.Así sientas las bases para operar desde cero y tienes la capacidad de construir a partir de una manera de pensar que, hasta ahora, el resto no ha sido capaz ni siquiera de imaginar.</p>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="title-opener">
+				<h3>¿Y si no sabes nada de trading?<br>
+				</h3>
+				<i class="ico-plus"></i>
+			</div>
+			<div class="drop" style="box-sizing: border-box; display: none;">
+				<div class="hold">
+					<p>No te preocupes por nada. En uno de los bonus te enseño desde cero para que puedas empezar a aplicar cuanto antes <mark>estrategias rentables.</mark></p>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="title-opener">
+				<h3>¿El acceso de por vida?</h3>
+				<i class="ico-plus"></i>
+			</div>
+			<div class="drop" style="box-sizing: border-box; display: none;">
+				<div class="hold">
+					<p>Sí. Tendrás acceso para siempre. También a cualquier actualización del futuro. <mark>Siempre estarás actualizado.</mark></p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="title-opener">
+				<h3>¿Qué pasa si después de 2 meses de soporte sigo necesitando acompañamiento?</h3>
+				<i class="ico-plus"></i>
+			</div>
+			<div class="drop" style="box-sizing: border-box; display: none;">
+				<div class="hold">
+					<p>Ya hablaremos de ello. Pero todos los de esta edición podéis renovarlo con una oferta especial y que nos repetirá de <mark>50 euros al mes.</mark></p>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="title-opener">
+				<h3>Ahora te toca a ti.</h3>
+				<i class="ico-plus"></i>
+			</div>
+			<div class="drop" style="box-sizing: border-box; display: none;">
+				<div class="hold">
+					<p><strong>Si quieres saber más</strong>, si quieres dar un paso hacia delante, <mark>contacta con nosotros</mark>. Y empezaremos a trabajar</p>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			accordion();
+		});
+
+		const slideUp = (target, duration = 500) => {
+			target.style.transitionProperty = 'height, margin, padding';
+			target.style.transitionDuration = duration + 'ms';
+			target.style.boxSizing = 'border-box';
+			target.style.height = target.offsetHeight + 'px';
+			target.offsetHeight;
+			target.style.overflow = 'hidden';
+			target.style.height = 0;
+			target.style.paddingTop = 0;
+			target.style.paddingBottom = 0;
+			target.style.marginTop = 0;
+			target.style.marginBottom = 0;
+			window.setTimeout(() => {
+				target.style.display = 'none';
+				target.style.removeProperty('height');
+				target.style.removeProperty('padding-top');
+				target.style.removeProperty('padding-bottom');
+				target.style.removeProperty('margin-top');
+				target.style.removeProperty('margin-bottom');
+				target.style.removeProperty('overflow');
+				target.style.removeProperty('transition-duration');
+				target.style.removeProperty('transition-property');
+			}, duration);
+		}
+
+		const slideDown = (target, duration = 500) => {
+			target.style.removeProperty('display');
+			let display = window.getComputedStyle(target).display;
+			if (display === 'none') display = 'block';
+			target.style.display = display;
+			let height = target.offsetHeight;
+			target.style.overflow = 'hidden';
+			target.style.height = 0;
+			target.style.paddingTop = 0;
+			target.style.paddingBottom = 0;
+			target.style.marginTop = 0;
+			target.style.marginBottom = 0;
+			target.offsetHeight;
+			target.style.boxSizing = 'border-box';
+			target.style.transitionProperty = "height, margin, padding";
+			target.style.transitionDuration = duration + 'ms';
+			target.style.height = height + 'px';
+			target.style.removeProperty('padding-top');
+			target.style.removeProperty('padding-bottom');
+			target.style.removeProperty('margin-top');
+			target.style.removeProperty('margin-bottom');
+			window.setTimeout(() => {
+				target.style.removeProperty('height');
+				target.style.removeProperty('overflow');
+				target.style.removeProperty('transition-duration');
+				target.style.removeProperty('transition-property');
+			}, duration);
+		}
+
+
+		function getSiblings(element) {
+			let siblings = [];
+
+			if (!element.parentNode) {
+				return siblings;
+			}
+
+			let sibling = element.parentNode.firstChild;
+
+			while (sibling) {
+				if (sibling.nodeType === 1 && sibling !== element) {
+					siblings.push(sibling);
+				}
+				sibling = sibling.nextSibling;
+			}
+			return siblings;
+		}
+
+
+		function accordion() {
+			const slide_item = document.querySelectorAll('.accordion > li');
+			const openClass = 'active';
+
+			Array.from(slide_item).forEach(function (item) {
+				const drop = item.querySelector('.drop');
+				const opener = item.querySelector('.title-opener');
+
+				if (item.classList.contains(openClass)) {
+					if (drop) {
+						slideDown(drop, 500);
+					}
+				}
+
+				if (opener) {
+					opener.addEventListener('click', function (e) {
+						e.preventDefault();
+						if (!item.classList.contains(openClass)) {
+							if (drop) {
+								slideDown(drop, 500);
+							}
+
+							item.classList.add(openClass);
+
+							let siblings = getSiblings(item);
+							Array.from(siblings).forEach(function (item) {
+								var drop = item.getElementsByClassName('drop')[0];
+								if (drop) {
+									slideUp(drop, 500);
+								}
+								item.classList.remove(openClass);
+							});
+						} else {
+							item.classList.remove(openClass);
+							if (drop) {
+								slideUp(drop, 500);
+							}
+						}
+					})
+				}
+			});
+		}
+
+	</script>
+</body>
+
+</html>

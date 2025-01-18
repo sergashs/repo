@@ -1,0 +1,252 @@
+.comments-area {
+  padding-bottom: 4rem;
+
+  textarea#comment {
+    width: 100%;
+    padding: 1rem;
+    color: $body-color;
+    background: $body-bg;
+    border: solid 0.1rem $border-color;
+    outline: none;
+    resize: none;
+  }
+
+  .comment-form-comment {
+    > label {
+      display: none;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .comment-reply-title {
+    text-transform: uppercase;
+  }
+
+  .logged-in-as {
+    display: none;
+  }
+
+  .submit {
+    padding: 1rem;
+    background: $headings-color;
+    border: solid 0.1rem $border-color;
+  }
+
+  .comment-list {
+    margin: 0 0 2rem 0;
+    padding-left: 0;
+    list-style: none;
+
+    .thread-even {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .comment-body {
+      &:not(:last-child) {
+        margin-bottom: 2.5rem;
+      }
+    }
+
+    .comment {
+      position: relative;
+      padding: 1rem;
+      border-style: solid;
+      border-width: 0.5rem;
+      -o-border-image: url("#{$images}input.svg") 9 9 stretch;
+      border-image: url("#{$images}input.svg") 9 9 stretch;
+
+      .comment-reply-login {
+        font-size: 1.4rem;
+      }
+
+      .comment-body {
+        margin-bottom: 0;
+      }
+
+      .comment {
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+        padding: 1rem;
+      }
+
+      .comment-content {
+        line-height: 1.5;
+      }
+
+      .cld-like-dislike-wrap {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .cld-like-wrap {
+        margin-right: 2rem;
+      }
+
+      .cld-like-trigger {
+        text-decoration: none;
+      }
+
+      .cld-like-dislike-wrap {
+        margin-right: 0;
+        margin-bottom: 0;
+
+        .cld-common-wrap {
+          min-width: unset;
+        }
+      }
+
+      .reply {
+        padding-top: 1rem;
+      }
+    }
+
+    .says {
+      display: none;
+    }
+
+    .avatar {
+      margin-right: 0.5rem;
+    }
+
+    .comment-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      border-bottom: solid 0.1rem $border-color;
+      padding-bottom: 1.5rem;
+    }
+
+    .comment-author {
+    }
+
+    .comment-metadata {
+      opacity: 0.6;
+    }
+
+    .edit-link {
+      &::before {
+        content: "";
+        margin: 0 1rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        // background: rgba($mercury, 0.6);
+        display: inline-block;
+        transform: translateY(-50%);
+        border-radius: 50%;
+      }
+    }
+
+    ol {
+      &.children {
+        padding: 0;
+        list-style: none;
+      }
+    }
+  }
+
+  .comment-respond {
+    padding: 1rem;
+    border-style: solid;
+    border-width: 0.5rem;
+    -o-border-image: url("#{$images}input.svg") 9 9 stretch;
+    border-image: url("#{$images}input.svg") 9 9 stretch;
+  }
+
+  &.review-area {
+    .comment-list {
+      .comment {
+        padding: 1rem;
+        margin-bottom: 2rem;
+
+        .comment-body {
+          margin-bottom: 0;
+        }
+
+        .comment {
+          margin-top: 1rem;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .comment-meta {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .input-group {
+      margin-bottom: 1rem;
+
+      > label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      select {
+        background: black;
+        color: inherit;
+        outline: none;
+      }
+    }
+
+    .comment-rating-form {
+      input {
+        display: none;
+      }
+    }
+
+    .comment-content {
+      &::before {
+        content: "";
+        display: block;
+        margin-bottom: 1rem;
+        width: 100%;
+        height: 0.2rem;
+        background: url("#{$images}orange-line.svg") no-repeat;
+        background-size: cover;
+      }
+
+      .row {
+        @include grid-gutter(2rem);
+      }
+
+      .input-group {
+        padding: 1rem;
+        border-style: solid;
+        border-width: 0.5rem;
+        -o-border-image: url("#{$images}input.svg") 9 9 stretch;
+        border-image: url("#{$images}input.svg") 9 9 stretch;
+
+        p {
+          margin-bottom: 0;
+        }
+
+        .label {
+          font-style: italic;
+        }
+
+        .comment-rating-form {
+          margin-bottom: 0;
+
+          sup {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+
+    .reply {
+      display: none;
+    }
+  }
+
+  .cld-like-trigger,
+  .cld-dislike-trigger {
+    &:not(.cld-undo-trigger) {
+      opacity: 0.5;
+    }
+  }
+}

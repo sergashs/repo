@@ -1,0 +1,11 @@
+/* footer */
+.footer {
+  // color: var(--bs-body-bg);
+  // color: rgba(var(--bs-tertiary-bg-rgb), 0.8);
+  // background: var(--bs-dark);
+
+  [data-bs-theme="dark"] & {
+    // border-top: solid 0.1rem var(--bs-border-color);
+    // color: var(--bs-body-color);
+  }
+}

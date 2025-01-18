@@ -1,0 +1,11 @@
+.library-single {
+	color: #afaeac;
+
+	p {
+		margin-bottom: 0;
+
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+}

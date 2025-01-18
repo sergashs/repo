@@ -1,0 +1,25 @@
+.informer-buy-game {
+  .swiper-slide {
+    figure {
+      margin-bottom: 0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    a {
+      &:hover {
+        filter: brightness(1.2);
+      }
+    }
+  }
+
+  .swiper-buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+  }
+}

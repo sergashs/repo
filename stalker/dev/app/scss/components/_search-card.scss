@@ -1,0 +1,38 @@
+.search-card {
+  margin-bottom: 2.5rem;
+
+  .entry-meta {
+    display: flex;
+    margin-bottom: 1.5rem;
+
+    .posted-on {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: 1.5rem;
+
+      .entry-date {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .post-thumbnail {
+    display: flex;
+    margin-bottom: 1.5rem;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .entry-footer {
+    .cat-links {
+      margin-right: 1rem;
+    }
+
+    .comments-link {
+      margin-right: 1rem;
+    }
+  }
+}

@@ -1,0 +1,224 @@
+.fancybox__container {
+  z-index: 1000000;
+}
+
+.scroll {
+  padding: 0 1rem 0 0;
+
+  .simplebar-scrollbar {
+    &::before {
+      opacity: 1;
+      background-color: #333333;
+    }
+
+    &.simplebar-visible {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.swiper-container {
+  .swiper-button-prev {
+    margin-right: 1rem;
+
+    &::before {
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='48' width='48'%3E%3Cpath d='M28.05 36 16 23.95 28.05 11.9 30.2 14.05 20.3 23.95 30.2 33.85Z' fill='%233e3e3e'/%3E%3C/svg%3E");
+    }
+  }
+
+  .swiper-button-next {
+    &::before {
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='48' width='48'%3E%3Cpath d='M18.75 36 16.6 33.85 26.5 23.95 16.6 14.05 18.75 11.9 30.8 23.95Z' fill='%233e3e3e' /%3E%3C/svg%3E");
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.3rem;
+    transition: $transition;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      background-size: 2rem;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      filter: brightness(1.4);
+    }
+  }
+
+  .swiper-pagination {
+    display: flex;
+    justify-content: center;
+
+    .swiper-pagination-bullet {
+      margin: 0 0.25rem;
+      width: 0.8rem;
+      height: 0.8rem;
+      background: rgba(white, 0.3);
+      border-radius: 50%;
+
+      &.swiper-pagination-bullet-active {
+        background: $accent-color;
+      }
+    }
+  }
+}
+
+// animations
+
+.flash-animation {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    left: -80%;
+    width: 50%;
+    height: 100%;
+    display: block;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+    -webkit-transform: skewX(-25deg);
+    transform: skewX(-25deg);
+  }
+
+  @keyframes imgflash {
+    100% {
+      left: 125%;
+    }
+  }
+
+  &:hover {
+    &::before {
+      animation: imgflash 1s;
+    }
+  }
+}
+
+.underline-animation {
+  background: linear-gradient(to right, currentColor 0%, currentColor 100%);
+  background-size: 0 6%;
+  background-repeat: no-repeat;
+  background-position: left 100%;
+  transition-duration: 0.5s;
+
+  &:hover {
+    text-decoration: none;
+    background-size: 100% 6%;
+  }
+}
+
+.scale-animation {
+  overflow: hidden;
+
+  > * {
+    transition: 0.3s;
+  }
+
+  &:hover {
+    > * {
+      transform: scale(1.1);
+    }
+  }
+}
+
+// animations
+
+.row-gutter-1 {
+  @include grid-gutter(1rem);
+}
+
+.row-gutter-2 {
+  @include grid-gutter(2rem);
+}
+
+.row-gutter-3 {
+  @include grid-gutter(3rem);
+}
+
+.row-gutter-4 {
+  @include grid-gutter(4rem);
+}
+
+.form-control {
+  padding: 0.8rem 1rem;
+}
+
+.page-bg {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 30rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("#{$images}head_game.jpg");
+
+  &.intro-bg {
+    top: 0;
+    background-position: top center;
+
+    &::before {
+      background: linear-gradient(to top, var(--bs-dark-bg-subtle) 0%, transparent 55%);
+    }
+  }
+
+  &.bottom-bg {
+    bottom: 0;
+    background-position: bottom center;
+
+    &::before {
+      background: linear-gradient(to bottom, var(--bs-dark-bg-subtle) 0%, transparent 55%);
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.me-0_5 {
+  margin-right: 0.5rem;
+}
+
+.p-1_5 {
+  padding: 1.5rem;
+}
+
+.link-style-1 {
+  color: $blue;
+
+  &:hover {
+    color: $red;
+    text-decoration-color: $red;
+  }
+}
+
+.link-style-2 {
+  color: $red;
+
+  &:hover {
+    color: $blue;
+    text-decoration-color: $blue;
+  }
+}

@@ -1,0 +1,54 @@
+.card-mods {
+  padding-bottom: 0.5rem;
+  margin-bottom: 2.5rem;
+
+  figure {
+    .row {
+      margin-bottom: 1.5rem;
+      @include grid-gutter(2rem);
+    }
+
+    .img-holder {
+      @include media-breakpoint-up(md) {
+        height: 100%;
+      }
+
+      @include media-breakpoint-down(md) {
+        margin-bottom: 1.5rem;
+      }
+
+      img {
+        border-radius: 0.5rem;
+
+        @include media-breakpoint-up(md) {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .info-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.5rem;
+    line-height: 1.1;
+
+    .list-item {
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 0.1rem solid $border-color;
+      }
+    }
+
+    .icon-holder {
+      display: flex;
+      margin-right: 1rem;
+    }
+  }
+}

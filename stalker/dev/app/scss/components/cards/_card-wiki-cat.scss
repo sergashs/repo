@@ -1,0 +1,23 @@
+.card-wiki-cat {
+  position: relative;
+
+  .img-holder {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .h3 {
+    position: absolute;
+    left: 50%;
+    bottom: 2rem;
+    transform: translateX(-50%);
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+}

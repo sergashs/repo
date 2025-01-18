@@ -1,0 +1,68 @@
+{
+  "name": "therapy_bot",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve ",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@vuelidate/core": "^2.0.0",
+    "@vuelidate/validators": "^2.0.0",
+    "autoprefixer": "^9.8.8",
+    "axios": "^0.27.2",
+    "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "normalize.css": "^8.0.1",
+    "postcss": "^7.0.39",
+    "sass": "^1.56.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
+    "v-calendar": "^2.4.1",
+    "vant": "^2.12.49",
+    "vue": "^2.6.11",
+    "vue-i18n": "^8.28.2",
+    "vue-round-slider": "^1.0.1",
+    "vue-router": "^3.4.5",
+    "vue-slick-carousel": "^1.0.6",
+    "vue-slider-component": "^3.2.23",
+    "vuelidate": "^0.7.7",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.7",
+    "@vue/cli-plugin-eslint": "~4.5.7",
+    "@vue/cli-plugin-router": "~4.5.7",
+    "@vue/cli-plugin-vuex": "~4.5.7",
+    "@vue/cli-service": "~4.5.7",
+    "@vue/compiler-sfc": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-import": "^1.13.5",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0",
+    "node-sass": "^7.0.3",
+    "sass-loader": "^10.3.1",
+    "vue-cli-plugin-tailwind": "~3.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

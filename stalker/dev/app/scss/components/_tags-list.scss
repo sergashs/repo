@@ -1,0 +1,30 @@
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.3rem;
+  line-height: 1.1;
+
+  .list-item {
+    margin-bottom: 1rem;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    color: $headings-color;
+    background: $border-color;
+    border-radius: 0.5rem;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+  }
+}

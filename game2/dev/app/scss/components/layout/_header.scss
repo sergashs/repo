@@ -1,0 +1,21 @@
+/* header */
+.header {
+  // position: relative;
+  // background: var(--bs-tertiary-bg);
+
+  .open-menu-wrapper {
+    cursor: pointer;
+
+    @include media-breakpoint-up(md) {
+      padding-right: 1rem;
+    }
+
+    .open-menu-title {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: normal;
+      padding-top: 0.3rem;
+    }
+  }
+}

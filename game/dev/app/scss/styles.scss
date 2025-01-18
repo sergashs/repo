@@ -1,0 +1,26 @@
+@import "vars";
+@import "mixins/mixins";
+// libraries
+@import "libraries/bootstrap/bootstrap";
+@import "libraries/fancybox";
+@import "libraries/swiper/swiper";
+@import "libraries/simplebar";
+@import "libraries/bootstrap-icons";
+// global
+@import "_fonts";
+@import "reset";
+@import "common";
+// mixins
+@import "mixins/mixins";
+// components
+@import "components/layout/header";
+@import "components/layout/footer";
+@import "components/button";
+@import "components/card-video";
+
+// pages
+@import "pages/page-game";
+
+// wp
+
+// informers

@@ -1,0 +1,33 @@
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 2.5rem 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    a {
+      display: flex;
+      opacity: 0.9;
+
+      &:hover {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .icon-holder {
+    display: flex;
+    width: 4rem;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

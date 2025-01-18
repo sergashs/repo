@@ -1,0 +1,40 @@
+.stalker-inventory {
+  .inventory-block {
+    background: rgba(black, 0.3);
+    border-radius: 0.5rem;
+
+    .block-title {
+      background: rgba(white, 0.05);
+      border-radius: 0.5rem;
+    }
+
+    .inventory-equipment {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 1rem !important;
+      height: 100% !important;
+      border: solid 0.1rem $border-color !important;
+    }
+
+    .row-gutter-1 {
+      .col-auto {
+        margin-right: 1rem !important;
+        margin-bottom: 1rem !important;
+      }
+    }
+
+    .block-inner {
+      .inner-bg {
+        background-image: url("data:image/svg+xml,%3Csvg width='65' height='65' viewBox='0 0 65 65' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='64' height='64' stroke='%23F2E8D9' stroke-opacity='0.2'/%3E%3C/svg%3E%0A");
+      }
+
+      .img-holder {
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}

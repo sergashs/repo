@@ -1,0 +1,134 @@
+[
+	{
+		"id": "kagaming/WanFuJinAn",
+		"title": "WanFu JinAn",
+		"provider": "kagaming",
+		"collections": {
+			"popularity": 4735,
+			"all": 3261
+		},
+		"real": "/games/kagaming/WanFuJinAn/113697",
+		"demo": "/games/kagaming/WanFuJinAn/113713"
+	},
+	{
+		"id": "spinomenal/AztecSpell",
+		"title": "Aztec Spell",
+		"provider": "spinomenal",
+		"collections": {
+			"popularity": 3913,
+			"all": 3031
+		},
+		"real": "/games/spinomenal/AztecSpell/81313",
+		"demo": "/games/spinomenal/AztecSpell/81329"
+	},
+	{
+		"id": "evoplay/LegendOfKaan",
+		"title": "Legend Of Kaan",
+		"provider": "evoplay",
+		"collections": {
+			"popularity": 2546,
+			"all": 1812
+		},
+		"real": "/games/evoplay/LegendOfKaan/1932",
+		"demo": "/games/evoplay/LegendOfKaan/1931"
+	},
+	{
+		"id": "mascot/candy_crush",
+		"title": "The Candy Crush",
+		"provider": "mascot",
+		"collections": {
+			"popularity": 3997,
+			"all": 2078
+		},
+		"real": "/games/mascot/candy_crush/84626",
+		"demo": "/games/mascot/candy_crush/84642"
+	},
+	{
+		"id": "netent/scruffyduck_not_mobile_sw",
+		"title": "Scruffy Duck",
+		"provider": "netent",
+		"collections": {
+			"popularity": 1486,
+			"all": 5112
+		},
+		"real": "/games/netent/scruffyduck_not_mobile_sw/93852",
+		"demo": "/games/netent/scruffyduck_not_mobile_sw/93862"
+	},
+	{
+		"id": "nolimit/CasinoWinSpin1",
+		"title": "Casino Win Spin",
+		"provider": "nolimit",
+		"collections": {
+			"popularity": 4105,
+			"all": 2159
+		},
+		"real": "/games/nolimit/CasinoWinSpin1/138329",
+		"demo": "/games/nolimit/CasinoWinSpin1/138345"
+	},
+	{
+		"id": "mascot/blackjack_mg",
+		"title": "Black Jack",
+		"provider": "mascot",
+		"collections": {
+			"popularity": 3866,
+			"all": 2039
+		},
+		"real": "/games/mascot/blackjack_mg/78413",
+		"demo": "/games/mascot/blackjack_mg/78429"
+	},
+	{
+		"id": "evoplay/JuicyGemsBonusBuy",
+		"title": "Juicy Gems Bonus Buy",
+		"provider": "evoplay",
+		"collections": {
+			"popularity": 4456,
+			"all": 1077
+		},
+		"real": "/games/evoplay/JuicyGemsBonusBuy/114383",
+		"demo": "/games/evoplay/JuicyGemsBonusBuy/114399"
+	},
+	{
+		"id": "nolimit/MayanMagic1",
+		"title": "Mayan Magic Wildfire",
+		"provider": "nolimit",
+		"collections": {
+			"popularity": 4126,
+			"all": 2248
+		},
+		"real": "/games/nolimit/MayanMagic1/138905",
+		"demo": "/games/nolimit/MayanMagic1/138921"
+	},
+	{
+		"id": "netgame/RoyalFruits40",
+		"title": "Royal Fruits 40",
+		"provider": "netgame",
+		"collections": {
+			"popularity": 5125,
+			"all": 5486
+		},
+		"real": "/games/netgame/RoyalFruits40/123111",
+		"demo": "/games/netgame/RoyalFruits40/123127"
+	},
+	{
+		"id": "netgame/GoldenSkulls",
+		"title": "Golden Skulls",
+		"provider": "netgame",
+		"collections": {
+			"popularity": 5112,
+			"all": 3589
+		},
+		"real": "/games/netgame/GoldenSkulls/122674",
+		"demo": "/games/netgame/GoldenSkulls/122690"
+	},
+	{
+		"id": "kagaming/ChineseValentinesDay",
+		"title": "Chinese Valentines Day",
+		"provider": "kagaming",
+		"collections": {
+			"popularity": 4498,
+			"all": 4743
+		},
+		"real": "/games/kagaming/ChineseValentinesDay/108434",
+		"demo": "/games/kagaming/ChineseValentinesDay/108450"
+	}
+]

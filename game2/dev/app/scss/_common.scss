@@ -1,0 +1,69 @@
+.fancybox__container {
+  z-index: 1000000;
+}
+
+.row-gutter-1 {
+  @include grid-gutter(1rem);
+}
+
+.row-gutter-2 {
+  @include grid-gutter(2rem);
+}
+
+.row-gutter-3 {
+  @include grid-gutter(3rem);
+}
+
+.row-gutter-4 {
+  @include grid-gutter(4rem);
+}
+
+.form-control {
+  padding: 0.8rem 1rem;
+}
+
+.link-style-1 {
+  color: $blue;
+
+  &:hover {
+    color: $red;
+    text-decoration-color: $red;
+  }
+}
+
+.link-style-2 {
+  color: $red;
+
+  &:hover {
+    color: $blue;
+    text-decoration-color: $blue;
+  }
+}
+
+.dropdown-toggle {
+  &::after {
+    content: "\F282";
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -0.125em;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.2rem;
+    border: none;
+  }
+
+  &.show {
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.lead-sm {
+  font-size: 14px;
+  line-height: 18px;
+}

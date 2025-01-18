@@ -1,0 +1,120 @@
+/* buttons */
+.btn {
+	display: inline-flex;
+	text-align: center;
+	padding: 0;
+	white-space: normal;
+	font-family: $secondary-font;
+	font-weight: 500;
+	font-size: 1.7rem;
+	text-transform: uppercase;
+	outline: none;
+
+	&:hover {
+	}
+
+	&:active {
+		color: #000;
+	}
+
+	&:focus {
+		color: #000;
+		box-shadow: none;
+	}
+
+	&.btn-primary {
+		color: #000;
+		border: none;
+		background: transparent;
+
+		.button-before {
+			display: block;
+			width: 1rem;
+			background: url("#{$images}white-before.svg") no-repeat;
+			background-size: cover;
+			background-position: left;
+		}
+
+		.button-text {
+			flex: 1;
+			padding: 0.5rem 0;
+			background: #f2e8d9;
+		}
+
+		.button-after {
+			display: block;
+			width: 1rem;
+			background: url("#{$images}white-after.svg") no-repeat;
+			background-size: cover;
+			background-position: right;
+		}
+
+		.button-after,
+		.button-before {
+			height: auto;
+			min-height: 100%;
+		}
+
+		&.active {
+			.button-text,
+			.button-after,
+			.button-before {
+				filter: brightness(1.25);
+			}
+		}
+	}
+
+	&.with-icon {
+		.icon-holder {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 4.2rem;
+			font-size: 2rem;
+			background: url("#{$images}orange-before.svg") no-repeat;
+			background-size: cover;
+			background-position: right;
+			z-index: 3;
+
+			i {
+				transition: $transition;
+			}
+		}
+
+		.button-text {
+			position: relative;
+
+			&::before {
+				content: "";
+				top: 50%;
+				transform: translateY(-50%);
+				left: -0.625rem;
+				border-left: 0.625rem solid #ee991a;
+				position: absolute;
+				border-top: 2.113rem solid transparent;
+				border-bottom: 2.113rem solid transparent;
+				transition: left 0.2s;
+			}
+		}
+
+		&:hover {
+			.button-text {
+				&::before {
+					left: 0;
+					filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+				}
+			}
+
+			.icon-holder {
+				i {
+					transform: translateX(0.3rem);
+				}
+			}
+		}
+	}
+}
+
+a.btn {
+	text-decoration: none;
+}

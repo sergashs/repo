@@ -1,0 +1,32 @@
+.search-form {
+	display: flex;
+	width: 100%;
+	border-style: solid;
+	border-width: 0.5rem;
+	border-image: url("#{$images}input.svg") 9 9 stretch;
+	color: $text-color-base;
+	background: #2a282c;
+
+	.form-control,
+	.search-field {
+		flex: 1;
+		border: none;
+		font-size: 1.4rem;
+
+		&::placeholder {
+			color: rgba($text-color-base, 0.7);
+		}
+
+		&:focus {
+			box-shadow: none;
+		}
+	}
+
+	.btn {
+		font-size: 1.4rem;
+
+		.button-text {
+			padding: 0.5rem 0;
+		}
+	}
+}

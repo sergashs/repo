@@ -1,0 +1,28 @@
+.wp-pagenavi {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+
+  a,
+  span {
+    padding: 0.5rem 1rem;
+    background: $body-bg;
+    border: solid 0.1rem $border-color;
+    text-decoration: none;
+  }
+
+  a {
+    &:hover {
+      border-color: lighten($border-color, 20);
+      background: lighten($body-bg, 5);
+    }
+  }
+
+  span {
+    &.current {
+      color: $headings-color;
+      background: lighten($body-bg, 5);
+      border-color: lighten($border-color, 10);
+    }
+  }
+}

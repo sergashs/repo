@@ -1,0 +1,168 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bs-dark-bg-subtle);
+  font: $font-weight-base #{$font-size-base}/ $line-height-base $font-family-base;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  transition: $transition;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+input {
+  &:-webkit-autofill {
+    box-shadow: 0 0 0 1000px lighten($black, 30) inset !important;
+  }
+  &:focus,
+  &:focus-visible {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+button {
+  align-items: unset;
+}
+
+button,
+input[type="search"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: $transition;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  flex-direction: column;
+  max-width: 125rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 5;
+}
+
+.site-main {
+  flex-grow: 1;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 h5,
+.h5 {
+  font-family: $secondary-font;
+  font-weight: 400;
+}
+
+.bi {
+  line-height: 0;
+}
+
+.container {
+  max-width: 1250px;
+}
+
+// @include media-breakpoint-down(md) {
+//   $grid-gutter-width: 20px;
+// }
+
+/*! locomotive-scroll v3.5.4 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100vh;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.bg-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

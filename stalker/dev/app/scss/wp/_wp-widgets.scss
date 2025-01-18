@@ -1,0 +1,220 @@
+.widget_block {
+	&.widget_recent_comments {
+		.wp-block-latest-comments {
+			margin-bottom: 2rem;
+			padding-left: 0;
+		}
+
+		.wp-block-latest-comments__comment-author {
+			// color: $mercury;
+		}
+
+		.wp-block-latest-comments__comment-link {
+			// color: $mercury;
+		}
+
+		.wp-block-latest-comments__comment-date {
+		}
+	}
+}
+
+.widget_display_topics {
+	.bbp-topics-widget {
+		margin: 0 0 2.5rem 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			position: relative;
+			display: flex;
+			flex-wrap: wrap;
+			font-size: 1.3rem;
+			padding: 1rem;
+			border-radius: 0.5rem;
+			transition: $transition;
+
+			&:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+
+			.bbp-forum-title {
+				display: block;
+				width: 100%;
+				font-size: 1.6rem;
+			}
+
+			.topic-author {
+				margin: 0 0.5rem;
+
+				.bbp-author-avatar {
+					margin-right: 0.3rem;
+				}
+			}
+		}
+	}
+}
+
+.widget_block {
+	.wp-block-latest-comments {
+		margin-bottom: 2.5rem;
+	}
+}
+
+.widget_post_views_counter_list_widget {
+	ol {
+		margin: 0 0 2.5rem 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+
+			&:not(:last-child) {
+				padding-bottom: 1.5rem;
+				margin-bottom: 1.5rem;
+				border-bottom: solid 0.1rem #1d1d1d;
+			}
+		}
+	}
+
+	.post-thumbnail {
+		display: block;
+		margin-bottom: 1.5rem;
+		order: 2;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.post-title {
+		display: block;
+		font-weight: 600;
+		font-size: 1.4rem;
+		margin-bottom: 1.5rem;
+		order: 1;
+	}
+
+	.post-excerpt {
+		display: -webkit-box;
+		-webkit-line-clamp: 4;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		font-size: 1.3rem;
+		order: 3;
+	}
+
+	.count {
+		display: block;
+		padding-top: 0.5rem;
+		font-size: 1.3rem;
+		order: 4;
+
+		&::before {
+			content: "Переглядів: ";
+		}
+	}
+}
+
+.widget_display_stats {
+	dl {
+		margin-bottom: 2.5rem;
+	}
+}
+
+.cbxuseronline {
+	padding: 0;
+
+	.cbxuseronline_widget {
+		padding: 0 0 2rem 0;
+	}
+
+	.cbxuseronline_total_count {
+		margin-bottom: 0.3rem !important;
+	}
+
+	.cbxuseronline_memberlist {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		float: unset;
+
+		.cbxuseronline_memberlist_item {
+			&:not(:last-child) {
+				margin-right: 0.3rem;
+
+				&::after {
+					content: ",";
+				}
+			}
+		}
+	}
+
+	.cbxuseronline_desktop {
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='48' width='48'%3E%3Cpath d='M3.5 42q-.65 0-1.075-.425Q2 41.15 2 40.5q0-.65.425-1.075Q2.85 39 3.5 39h41q.65 0 1.075.425Q46 39.85 46 40.5q0 .65-.425 1.075Q45.15 42 44.5 42ZM7 36q-1.2 0-2.1-.9Q4 34.2 4 33V9q0-1.2.9-2.1Q5.8 6 7 6h34q1.2 0 2.1.9.9.9.9 2.1v24q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h34V9H7v24Zm0 0V9v24Z' fill='%23afaeac'/%3E%3C/svg%3E");
+		background-size: 1.5rem;
+	}
+
+	.cbxuseronline_mobile {
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='48' width='48'%3E%3Cpath d='M13 46q-1.2 0-2.1-.9-.9-.9-.9-2.1V5q0-1.2.9-2.1.9-.9 2.1-.9h22q1.2 0 2.1.9.9.9.9 2.1v38q0 1.2-.9 2.1-.9.9-2.1.9Zm0-7.5V43h22v-4.5Zm11 3.75q.65 0 1.075-.425.425-.425.425-1.075 0-.65-.425-1.075-.425-.425-1.075-.425-.65 0-1.075.425-.425.425-.425 1.075 0 .65.425 1.075.425.425 1.075.425ZM13 35.5h22v-26H13Zm0-29h22V5H13Zm0 32V43Zm0-32V5v1.5Z' fill='%23afaeac'/%3E%3C/svg%3E");
+		background-size: 1.5rem;
+	}
+}
+
+.widget_wpforo_recent_posts {
+	.wpforo-widget-wrap {
+		.posttext {
+			display: none;
+		}
+
+		li {
+			.wpforo-list-item-right {
+				width: unset !important;
+				float: unset !important;
+			}
+
+			&:last-child {
+				border: none !important;
+			}
+		}
+
+		.posttitle {
+			// color: $mercury;
+
+			a {
+				&:hover {
+					text-decoration: underline !important;
+				}
+			}
+		}
+
+		.postuser {
+			color: #9b9a97;
+		}
+	}
+
+	&.widget {
+		.wpforo-list-item-left {
+			display: none;
+		}
+
+		.widget-title {
+			border-bottom: 0.1rem solid #202020;
+		}
+
+		.wpforo-widget-wrap {
+			.wpforo-widget-content {
+				padding: 0 0 1.2rem 0 !important;
+			}
+		}
+	}
+}
+
+.wp-block-quote {
+	margin-bottom: 2rem;
+}
