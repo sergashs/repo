@@ -2,135 +2,22 @@ document.addEventListener('DOMContentLoaded', () => {
 	correctVh();
 	dropdown();
 	headerMenu();
+	// initSwiper();
 	pageScroll();
 	initSwiperCards();
 	videoBlocks();
 	gsapAnimations();
-	contactForm();
+	// scrollToSection();
 });
 
 window.addEventListener('resize', () => {
 	correctVh();
+	// initSwiper();
 });
 
 window.addEventListener('scroll', () => {
 	headerOnScroll();
 });
-
-function contactForm() {
-	const btn = document.querySelector('#btn-contact');
-	const form = document.querySelector('#contact-form');
-	const firstName = document.querySelector('#input-first-name');
-	const lastName = document.querySelector('#input-last-name');
-	const email = document.querySelector('#input-email');
-	const phone = document.querySelector('#input-phone');
-	const company = document.querySelector('#input-company');
-	const message = document.querySelector('#input-message');
-
-	form.addEventListener('submit', function (event) {
-		event.preventDefault();
-
-		if (validation()) {
-			sendingForm();
-		}
-	});
-
-	function validation() {
-		let isValid = true;
-
-		if (firstName.value.length === 0) {
-			printErrorMessage(firstName, 'Please fill out this field.');
-			isValid = false;
-		} else {
-			printErrorMessage(firstName, '');
-		}
-
-		if (lastName.value.length === 0) {
-			printErrorMessage(lastName, 'Please fill out this field.');
-			isValid = false;
-		} else {
-			printErrorMessage(lastName, '');
-		}
-
-		if (email.value.length > 0 && !validateEmail(email.value)) {
-			printErrorMessage(email, 'Invalid email format.');
-			isValid = false;
-		} else if (email.value.length === 0) {
-			printErrorMessage(email, 'Please fill out this field.');
-			isValid = false;
-		} else if (email.value.length > 0 && validateEmail(email.value)) {
-			printErrorMessage(email, '');
-		}
-
-		if (phone.value.length === 0) {
-			printErrorMessage(phone, 'Please fill out this field.');
-			isValid = false;
-		} else {
-			printErrorMessage(phone, '');
-		}
-
-		return isValid;
-	}
-
-	function printErrorMessage(element, message) {
-		element.parentNode.parentNode.parentNode.querySelector('.error-message').textContent = message;
-	}
-
-	function validateEmail(email) {
-		let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-		return emailRegex.test(email);
-	}
-
-	email.addEventListener("input", function (event) {
-		let input = event.target;
-		input.value = input.value.replace(/[^a-zA-Z0-9@._-]/g, "");
-	});
-
-	phone.addEventListener("input", function (event) {
-		let input = event.target;
-		input.value = input.value.replace(/(?!^)\+/g, "").replace(/[^0-9+]/g, "");
-	});
-
-
-	function sendingForm() {
-		btn.disabled = true;
-
-		fetch(ajaxurl.url, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				firstName: firstName,
-				lastName: lastName,
-				phone: phone,
-				email: email,
-				company: company,
-				message: message
-			})
-		})
-			.then(response => response.json())
-			.then(data => {
-				const formMessage = document.querySelector('#form-message');
-
-				if (data.status === 'error') {
-					const errorHtml = data.errors.map(error =>
-						`<div class="error-item">${error}</div>`
-					).join('');
-					formMessage.innerHTML = errorHtml;
-				} else {
-					formMessage.textContent = 'Your form has been successfully submitted. Thank you for getting in touch!';
-				}
-			})
-			.catch(() => {
-				document.querySelector('#form-message').textContent = 'An error occurred while submitting the form. Try again later.';
-			})
-			.finally(() => {
-
-				btn.disabled = false;
-			});
-	}
-}
 
 
 function headerOnScroll() {
@@ -143,6 +30,64 @@ function headerOnScroll() {
 	}
 }
 
+let swiper;
+
+function initSwiper() {
+	let scrollToFirstSlideBtn = document.querySelector('[data-scroll-next-section]');
+
+	if (scrollToFirstSlideBtn) {
+		scrollToFirstSlideBtn.addEventListener('click', function () {
+
+			if (window.innerWidth > 992) {
+				swiper.slideTo(1);
+			} else {
+				window.scroll({
+					top: document.querySelector('.section-intro').offsetHeight,
+					left: 0,
+					behavior: "smooth",
+				});
+			}
+		});
+	}
+
+	if (window.innerWidth > 992 && !swiper) {
+		swiper = new Swiper(".swiper-scroll-page", {
+			direction: "vertical",
+			slidesPerView: 1,
+			spaceBetween: 0,
+			mousewheel: true,
+			speed: 1000,
+			slidesOffsetAfter: 258 - window.innerHeight,
+			allowTouchMove: false,
+			on: {
+				slideChange: function () {
+					let currentSlideIndex = this.activeIndex;
+
+					console.log(currentSlideIndex)
+
+					if (currentSlideIndex > 0) {
+						document.querySelector('.site-header').classList.add('scrolled');
+					} else if (currentSlideIndex === 0) {
+						document.querySelector('.site-header').classList.remove('scrolled');
+					}
+
+					if (this.isBeginning) {
+						console.log('Це перший слайд');
+
+					}
+
+					if (this.isEnd) {
+						console.log('Слайдер прокручений до кінця');
+
+					}
+				}
+			}
+		});
+	} else if (window.innerWidth <= 992 && swiper) {
+		swiper.destroy(true, true);
+		swiper = null;
+	}
+}
 
 function initSwiperCards() {
 	const swiperCards = new Swiper(".swiper-cards", {
@@ -168,11 +113,6 @@ function headerMenu() {
 		});
 	}
 
-	document.querySelector('.header-menu-holder').addEventListener('click', function (event) {
-		if (!event.target.closest('.inner-holder')) {
-			document.body.classList.remove('menu-opened');
-		}
-	});
 }
 
 function correctVh() {
@@ -218,9 +158,282 @@ function videoBlocks() {
 	}
 }
 
+// gsap.registerPlugin(ScrollToPlugin);
 
+// const mm = gsap.matchMedia();
 
+// mm.add("(min-width: 992px)", () => {
+// 	const sections = gsap.utils.toArray("[data-scroll-section]");
+
+// 	if (sections.length === 0) {
+// 		return;
+// 	}
+
+// 	let currentSection = 0;
+
+// 	const scrollToSection = (index) => {
+// 		if (index < 0 || index >= sections.length) return;
+// 		currentSection = index;
+
+// 		gsap.to(window, {
+// 			scrollTo: { y: sections[index].offsetTop },
+// 			duration: 0.6,
+// 			ease: "power2.inOut",
+// 		});
+// 	};
+
+// 	const handleScroll = (event) => {
+// 		if (gsap.isTweening(window)) return;
+// 		const direction = event.deltaY > 0 ? 1 : -1;
+// 		scrollToSection(currentSection + direction);
+// 	};
+
+// 	window.addEventListener("wheel", handleScroll, { passive: false });
+// 	window.addEventListener("keydown", (event) => {
+// 		if (event.key === "ArrowDown") scrollToSection(currentSection + 1);
+// 		if (event.key === "ArrowUp") scrollToSection(currentSection - 1);
+// 	});
+
+// 	// Cleanup function in case the screen size changes
+// 	return () => {
+// 		window.removeEventListener("wheel", handleScroll);
+// 		window.removeEventListener("keydown", handleScroll);
+// 	};
+// });
+
+function scrollToSection() {
+	const scrolls = document.querySelectorAll("[scroll-to]");
+
+	if (scrolls) {
+		for (const scroll of scrolls) {
+			scroll.addEventListener("click", clickHandler);
+		}
+
+		function clickHandler(e) {
+			document.body.classList.remove('menu-opened');
+			e.preventDefault();
+			const dataScroll = this.getAttribute("scroll-to");
+			const targetElement = document.querySelector(`#${dataScroll}`);
+
+			if (targetElement) {
+				gsap.to(window, {
+					scrollTo: {
+						y: targetElement,
+						offsetY: 0,
+						autoKill: false
+					},
+					duration: 0.85,
+					ease: "power2.out",
+					onStart: () => {
+
+						ScrollTrigger.getAll().forEach((trigger) => trigger.disable());
+					},
+					onComplete: () => {
+						ScrollTrigger.getAll().forEach((trigger) => trigger.enable());
+					}
+				});
+			}
+		}
+	}
+}
+
+// плавний скрол на гсап, секція на секцію накладається
 function pageScroll() {
+	// const panelWrappers = document.querySelectorAll(".smooth-scroll-page");
+
+	// if (panelWrappers.length > 0) {
+
+	// 	panelWrappers.forEach((wrapper) => {
+	// 		if (window.innerWidth > 991) {
+	// 			const panels = gsap.utils.toArray(wrapper.querySelectorAll("[data-scroll-section]"));
+	// 			const scrollNormalizer = ScrollTrigger.normalizeScroll(true);
+	// 			let activeScroll = null;
+
+
+	// 			document.addEventListener(
+	// 				"touchstart",
+	// 				(e) => {
+	// 					if (activeScroll) {
+	// 						e.preventDefault();
+	// 						e.stopImmediatePropagation();
+	// 					}
+	// 				},
+	// 				{ capture: true, passive: false }
+	// 			);
+
+
+	// 			panels.forEach((panel, index) => {
+	// 				ScrollTrigger.create({
+	// 					trigger: panel,
+	// 					start: "top bottom",
+	// 					end: "+=199%",
+	// 					onToggle: (self) => {
+	// 						if (self.isActive && !activeScroll) {
+	// 							activeScroll = gsap.to(window, {
+	// 								scrollTo: { y: index * window.innerHeight, autoKill: false },
+	// 								onStart: () => {
+	// 									scrollNormalizer.disable();
+	// 									scrollNormalizer.enable();
+	// 								},
+	// 								duration: 1,
+	// 								onComplete: () => {
+	// 									activeScroll = null;
+	// 								},
+	// 								overwrite: true,
+	// 							});
+	// 						}
+	// 					},
+	// 				});
+	// 			});
+	// 		}
+	// 	});
+	// }
+
+
+	// let panels = gsap.utils.toArray("[data-scroll-section]");
+	// // we'll create a ScrollTrigger for each panel just to track when each panel's top hits the top of the viewport (we only need this for snapping)
+	// let tops = panels.map(panel => ScrollTrigger.create({ trigger: panel, start: "top top" }));
+
+	// panels.forEach((panel, i) => {
+	// 	ScrollTrigger.create({
+	// 		trigger: panel,
+	// 		start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
+	// 		pin: true,
+	// 		pinSpacing: false
+	// 	});
+	// });
+
+	// ScrollTrigger.create({
+	// 	snap: {
+	// 		snapTo: (progress, self) => {
+	// 			let panelStarts = tops.map(st => st.start), // an Array of all the starting scroll positions. We do this on each scroll to make sure it's totally responsive. Starting positions may change when the user resizes the viewport
+	// 				snapScroll = gsap.utils.snap(panelStarts, self.scroll()); // find the closest one
+	// 			return gsap.utils.normalize(0, ScrollTrigger.maxScroll(window), snapScroll); // snapping requires a progress value, so convert the scroll position into a normalized progress value between 0 and 1
+	// 		},
+	// 		duration: 0.5
+	// 	}
+	// });
+
+
+
+
+
+	// gsap.registerPlugin(ScrollTrigger);
+
+	// // Select all panels
+	// let panels = gsap.utils.toArray("[data-scroll-section]");
+
+	// // Create ScrollTrigger for each panel
+	// panels.forEach((panel, index) => {
+	// 	ScrollTrigger.create({
+	// 		trigger: panel,
+	// 		start: () =>
+	// 			panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
+	// 		pin: true,
+	// 		pinSpacing: index === panels.length - 1,
+	// 		scrub: true
+	// 	});
+	// });
+
+	// // Snap only when a panel is in view
+	// ScrollTrigger.create({
+	// 	trigger: panels[0], // Start snapping only when the first panel is in view
+	// 	start: "top top",
+	// 	endTrigger: panels[panels.length - 1], // End snapping after the last panel
+	// 	end: "bottom bottom",
+	// 	markers: true,
+	// 	snap: {
+	// 		snapTo: 1 / (panels.length - 1),
+	// 		duration: 0.5
+	// 	}
+	// });
+
+
+	// gsap.registerPlugin(ScrollTrigger);
+
+	// // Select all panels
+	// const panelWrappers = document.querySelectorAll(".smooth-scroll-page");
+
+	// if (panelWrappers.length > 0) {
+	// 	panelWrappers.forEach((wrapper) => {
+	// 		// Use matchMedia to check the screen size
+	// 		ScrollTrigger.matchMedia({
+	// 			// For screens larger than 991px
+	// 			"(min-width: 992px)": () => {
+	// 				const panels = gsap.utils.toArray(wrapper.querySelectorAll("[data-scroll-section]"));
+	// 				const scrollNormalizer = ScrollTrigger.normalizeScroll(true);
+	// 				let activeScroll = null;
+
+	// 				// Disable touch start when scroll is active
+	// 				document.addEventListener(
+	// 					"touchstart",
+	// 					(e) => {
+	// 						if (activeScroll) {
+	// 							e.preventDefault();
+	// 							e.stopImmediatePropagation();
+	// 						}
+	// 					},
+	// 					{ capture: true, passive: false }
+	// 				);
+
+	// 				// Create ScrollTrigger for each panel for smooth scroll effect
+	// 				panels.forEach((panel, index) => {
+	// 					ScrollTrigger.create({
+	// 						trigger: panel,
+	// 						start: "top bottom",
+	// 						end: "+=199%",
+	// 						onToggle: (self) => {
+	// 							if (self.isActive && !activeScroll) {
+	// 								activeScroll = gsap.to(window, {
+	// 									scrollTo: { y: index * window.innerHeight, autoKill: false },
+	// 									onStart: () => {
+	// 										scrollNormalizer.disable();
+	// 										scrollNormalizer.enable();
+	// 									},
+	// 									duration: 1,
+	// 									onComplete: () => {
+	// 										activeScroll = null;
+	// 									},
+	// 									overwrite: true,
+	// 								});
+	// 							}
+	// 						},
+	// 					});
+
+	// 					// ScrollPin for each panel
+	// 					ScrollTrigger.create({
+	// 						trigger: panel,
+	// 						start: () =>
+	// 							panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
+	// 						pin: true,
+	// 						pinSpacing: index === panels.length - 1,
+	// 						scrub: true
+	// 					});
+	// 				});
+
+	// 				// Snap only when a panel is in view
+	// 				ScrollTrigger.create({
+	// 					trigger: panels[0], // Start snapping only when the first panel is in view
+	// 					start: "top top",
+	// 					endTrigger: panels[panels.length - 1], // End snapping after the last panel
+	// 					end: "bottom bottom",
+	// 					// markers: true,
+	// 					snap: {
+	// 						snapTo: 1 / (panels.length - 1),
+	// 						duration: 0.5
+	// 					}
+	// 				});
+	// 			},
+
+	// 			// For smaller screens (less than 992px) you can implement custom behavior if needed
+	// 			"(max-width: 991px)": () => {
+	// 				// You can add alternative behavior for smaller screens if needed
+	// 			}
+	// 		});
+	// 	});
+	// }
+
+
 	gsap.registerPlugin(ScrollTrigger);
 
 	// Select all panels
@@ -230,8 +443,7 @@ function pageScroll() {
 		panelWrappers.forEach((wrapper) => {
 			ScrollTrigger.matchMedia({
 				"(min-width: 992px)": () => {
-					// const panels = gsap.utils.toArray(wrapper.querySelectorAll("[data-scroll-section]"));
-					const panels = gsap.utils.toArray("[data-scroll-section]", wrapper);
+					const panels = gsap.utils.toArray(wrapper.querySelectorAll("[data-scroll-section]"));
 					const scrollNormalizer = ScrollTrigger.normalizeScroll(true);
 					let activeScroll = null;
 
@@ -259,7 +471,7 @@ function pageScroll() {
 											scrollNormalizer.disable();
 											scrollNormalizer.enable();
 										},
-										duration: 0.8,
+										duration: 1,
 										onComplete: () => {
 											activeScroll = null;
 										},
@@ -280,13 +492,25 @@ function pageScroll() {
 						});
 					});
 
+
+					ScrollTrigger.create({
+						trigger: panels[0],
+						start: "top top",
+						endTrigger: panels[panels.length - 1],
+						end: "bottom bottom",
+						snap: {
+							snapTo: 1 / (panels.length - 1),
+							duration: 0.5,
+						},
+					});
+
+
 					const scrollToButtons = document.querySelectorAll("[scroll-to]");
 					scrollToButtons.forEach((button) => {
 						button.addEventListener("click", (e) => {
-							e.preventDefault();
-
 							document.body.classList.remove('menu-opened');
 							const targetId = button.getAttribute("scroll-to");
+							const targetSection = document.getElementById(targetId);
 							let targetIndex = panels.findIndex((panel) => panel.id === targetId);
 
 							if (targetIndex !== -1) {
@@ -296,7 +520,7 @@ function pageScroll() {
 										scrollNormalizer.disable();
 										scrollNormalizer.enable();
 									},
-									duration: 0.8,
+									duration: 2,
 									onComplete: () => {
 										activeScroll = null;
 									},
@@ -329,9 +553,10 @@ function pageScroll() {
 										offsetY: 0,
 										autoKill: false
 									},
-									duration: 0.8,
+									duration: 0.85,
 									ease: "power2.out",
 									onStart: () => {
+
 										ScrollTrigger.getAll().forEach((trigger) => trigger.disable());
 									},
 									onComplete: () => {

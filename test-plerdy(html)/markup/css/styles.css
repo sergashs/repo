@@ -158,10 +158,8 @@
 /* CSS Mode */
 .swiper-css-mode > .swiper-wrapper {
 	overflow: auto;
-	scrollbar-width: none;
-	/* For Firefox */
-	-ms-overflow-style: none;
-	/* For Internet Explorer and Edge */
+	scrollbar-width: none; /* For Firefox */
+	-ms-overflow-style: none; /* For Internet Explorer and Edge */
 }
 .swiper-css-mode > .swiper-wrapper::-webkit-scrollbar {
 	display: none;
@@ -1647,7 +1645,7 @@ h5 {
 	}
 }
 .modal-overlay .modal .btn-close:hover {
-	background-color: #e4e7eb;
+	background-color: rgb(228.4285714286, 230.6428571429, 235.0714285714);
 }
 .modal-overlay .modal.show {
 	opacity: 1;
@@ -1933,7 +1931,7 @@ h5 {
 	border: none;
 }
 .btn-primary:hover {
-	background: #778dff;
+	background: rgb(118.5, 141.25, 255);
 	text-decoration: none;
 }
 .btn:disabled, .btn[disabled] {
