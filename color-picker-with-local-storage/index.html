@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker with JavaScript</title>
+</head>
+<link href="css/acolorpicker.min.css" rel="stylesheet">
+
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .s-color-picker {
+            max-width: 232px;
+            box-shadow: 3px 3px 3px #efefef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .s-color-picker .a-color-picker {
+            box-shadow: none;
+        }
+
+        .s-color-picker .additional-panel {
+            padding: 0 15px 15px 15px;
+            border-top: solid 1px #EEEEEE;
+        }
+
+        .s-color-picker .additional-panel-title {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        .s-color-picker .panel-colors-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .s-color-picker .color-block {
+            position: relative;
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            border: solid 1px transparent;
+        }
+
+        .s-color-picker .color-block.add-new {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            background: #A6A6A6;
+            cursor: pointer;
+        }
+
+        .btn-color-delete {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+            width: 8px;
+            height: 8px;
+            display: flex;
+            padding: 0;
+            background-color: transparent;
+            background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.71929 0.280712C1.53069 0.0985538 1.27808 -0.00224062 1.01589 3.78026e-05C0.75369 0.00231622 0.502878 0.107485 0.31747 0.292893C0.132062 0.478301 0.0268926 0.729114 0.0246142 0.991311C0.0223357 1.25351 0.12313 1.50611 0.305288 1.69471L5.59829 6.98771L0.305288 12.2807C0.209778 12.373 0.133596 12.4833 0.0811868 12.6053C0.0287778 12.7273 0.00119157 12.8585 3.77567e-05 12.9913C-0.00111606 13.1241 0.0241857 13.2558 0.0744665 13.3787C0.124747 13.5016 0.199001 13.6132 0.292893 13.7071C0.386786 13.801 0.498438 13.8753 0.621334 13.9255C0.744231 13.9758 0.87591 14.0011 1.00869 14C1.14147 13.9988 1.27269 13.9712 1.39469 13.9188C1.5167 13.8664 1.62704 13.7902 1.71929 13.6947L7.01229 8.40171L12.3053 13.6947C12.4939 13.8769 12.7465 13.9777 13.0087 13.9754C13.2709 13.9731 13.5217 13.8679 13.7071 13.6825C13.8925 13.4971 13.9977 13.2463 14 12.9841C14.0022 12.7219 13.9014 12.4693 13.7193 12.2807L8.42629 6.98771L13.7193 1.69471C13.9014 1.50611 14.0022 1.25351 14 0.991311C13.9977 0.729114 13.8925 0.478301 13.7071 0.292893C13.5217 0.107485 13.2709 0.00231622 13.0087 3.78026e-05C12.7465 -0.00224062 12.4939 0.0985538 12.3053 0.280712L7.01229 5.57371L1.71929 0.280712Z' fill='black'/%3E%3C/svg%3E%0A");
+            background-size: 8px;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            transition: 0.3s;
+            pointer-events: none;
+        }
+
+        .color-block:not(.add-new):hover .btn-color-delete {
+            pointer-events: all;
+            opacity: 1;
+        }
+
+        .color-block:not(.add-new).selected {
+            border: solid 1px #68E25D;
+        }
+    </style>
+    <div class="s-color-picker" data-s-color-picker>
+        <div data-color-picker acp-color="#EFE9E7" acp-show-alpha acp-show-rgb="no" acp-show-hsl="no"></div>
+        <div class="additional-panel">
+            <p class="additional-panel-title"><b>Saved colors</b></p>
+            <div class="panel-colors-wrapper">
+                <button class="color-block add-new" data-btn-add-color>
+                    <svg width="13" height="13" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.97297 1.23077V2.78729C4.97297 3.16472 5.2973 3.47488 5.70292 3.47488H10.2971C10.3926 3.47531 10.4873 3.45785 10.5758 3.42351C10.6642 3.38917 10.7446 3.33862 10.8124 3.27475C10.8802 3.21088 10.9341 3.13495 10.9709 3.0513C11.0077 2.96765 11.0268 2.87794 11.027 2.78729V1.28575C10.8655 1.24953 10.7001 1.23108 10.5341 1.23077H4.97297ZM12.595 16H3.40584C2.95912 16.0009 2.51661 15.9182 2.1036 15.7567C1.6906 15.5951 1.3152 15.358 0.998883 15.0587C0.682565 14.7595 0.43153 14.404 0.260133 14.0126C0.0887361 13.6212 0.000340079 13.2016 0 12.7778V3.22134C0.000453674 2.7976 0.0889335 2.3781 0.260381 1.98682C0.431829 1.59554 0.682882 1.24016 0.999189 0.940991C1.3155 0.641819 1.69085 0.404726 2.1038 0.243266C2.51675 0.0818056 2.95919 -0.000856107 3.40584 6.685e-06H10.5341C11.4362 0.000684378 12.3015 0.339891 12.941 0.943596L15.0019 2.89149C15.3181 3.19017 15.569 3.54512 15.7403 3.93598C15.9115 4.32685 15.9998 4.74594 16 5.16923V12.777C15.9997 13.2008 15.9113 13.6203 15.7399 14.0116C15.5686 14.4029 15.3176 14.7584 15.0014 15.0576C14.6852 15.3569 14.3099 15.594 13.897 15.7556C13.4841 15.9172 13.0417 16.0007 12.595 16ZM11.027 14.7684V11.474C11.0268 11.3834 11.0077 11.2937 10.9709 11.21C10.9341 11.1264 10.8802 11.0505 10.8124 10.9866C10.7446 10.9227 10.6642 10.8722 10.5758 10.8378C10.4873 10.8035 10.3926 10.786 10.2971 10.7865H5.70292C5.60737 10.786 5.51267 10.8035 5.42424 10.8378C5.33581 10.8722 5.25539 10.9227 5.18759 10.9866C5.11979 11.0505 5.06593 11.1264 5.0291 11.21C4.99227 11.2937 4.9732 11.3834 4.97297 11.474V14.7684H11.027Z" fill="white" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="js/acolorpicker.min.js"></script>
+    <script>
+
+        document.querySelectorAll('[data-color-picker]').forEach((pickerElement, index) => {
+            const colorPicker = AColorPicker.from(pickerElement);
+            let colorsArray = [];
+
+            pickerElement.closest('.s-color-picker')
+                .querySelector('[data-btn-add-color]')
+                .addEventListener('click', () => {
+                    colorsArray.unshift(colorPicker[0].all.rgbacss);
+                    // console.log(colorPicker[0])
+                    // console.log(colorsArray);
+                    generateColorBlocks(pickerElement, colorsArray);
+                });
+
+            function generateColorBlocks(pickerElement, colors) {
+                let container = pickerElement.closest('.s-color-picker').querySelector('.panel-colors-wrapper');
+
+                Array.from(container.querySelectorAll('.color-block:not(.add-new)')).forEach(block => {
+                    block.remove();
+                });
+
+                let addNewButton = container.querySelector('.color-block.add-new');
+
+                colors.forEach(color => {
+                    let divElement = document.createElement('div');
+                    divElement.setAttribute('data-color-hex', color);
+                    divElement.innerHTML = '<button class="btn-color-delete" data-btn-color-delete></button>';
+                    divElement.className = 'color-block';
+                    divElement.style.background = color;
+                    addNewButton.insertAdjacentElement('afterend', divElement);
+                });
+
+                addDeleteEventHandlers(pickerElement);
+                addSelectEventHandlers(pickerElement);
+            }
+
+            function addDeleteEventHandlers(pickerElement) {
+                let container = pickerElement.closest('.s-color-picker').querySelector('.panel-colors-wrapper');
+                container.querySelectorAll('[data-btn-color-delete]').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        let colorBlock = e.target.closest('.color-block');
+                        let colorHex = colorBlock.getAttribute('data-color-hex');
+
+                        colorBlock.remove();
+                        colorsArray = colorsArray.filter(color => color !== colorHex);
+                    });
+                });
+            }
+
+            function addSelectEventHandlers(pickerElement) {
+                let container = pickerElement.closest('.s-color-picker').querySelector('.panel-colors-wrapper');
+                container.querySelectorAll('[data-color-hex]').forEach(button => {
+                    button.addEventListener('click', function (e) {
+                        let colorBlock = e.target.closest('.color-block');
+                        let colorHex = colorBlock.getAttribute('data-color-hex');
+
+                        container.querySelectorAll('[data-color-hex]').forEach(el => el.classList.remove('selected'));
+
+                        colorBlock.classList.add('selected');
+                        colorPicker[0].setColor(colorHex);
+                    });
+                });
+            }
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>
