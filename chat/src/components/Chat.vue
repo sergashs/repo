@@ -172,6 +172,8 @@ export default {
         const querySnapshot = await getDocs(q);
         const messages = [];
 
+        console.log(q);
+
         querySnapshot.forEach((doc) => {
           const messageData = doc.data();
           messages.push(messageData);
