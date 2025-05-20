@@ -1,0 +1,197 @@
+.section-intro {
+  padding-top: 7.3rem;
+  padding-bottom: 11.6rem;
+  color: #f6f6f6;
+  letter-spacing: 0.032rem;
+  background-size: cover;
+
+  @include media("<lg") {
+    padding-top: 6.3rem;
+    padding-bottom: 7.2rem;
+  }
+
+  @include media("<md") {
+    padding-top: 4.4rem;
+    background-position: center;
+  }
+
+  .container {
+    max-width: 132rem;
+  }
+
+  .before-title {
+    margin-bottom: 0.1rem;
+    font-size: 3rem;
+
+    @include media("<lg") {
+      margin-bottom: 0.4rem;
+    }
+
+    @include media("<md") {
+      margin-bottom: 0.3rem;
+    }
+  }
+
+  .h1 {
+    margin-bottom: 8.5rem;
+    text-transform: uppercase;
+
+    @include media("<lg") {
+      margin-bottom: 4.4rem;
+    }
+  }
+
+  .flex-row {
+    display: flex;
+
+    @include media("<lg") {
+      flex-direction: column-reverse;
+    }
+
+    .left-side {
+      @include media(">=lg") {
+        width: 35%;
+        padding-left: 3.1rem;
+      }
+
+      @include media("<lg") {
+        max-width: 51.2rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @include media("<md") {
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+      }
+    }
+
+    .right-side {
+      @include media(">=lg") {
+        width: 65%;
+        padding-left: 1.4rem;
+      }
+
+      @include media("<lg") {
+        margin-bottom: 3.9rem;
+      }
+
+      @include media("<md") {
+        margin-bottom: 3.7rem;
+      }
+    }
+  }
+
+  .text-holder {
+    max-width: 30.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.62;
+    letter-spacing: 0.049rem;
+
+    @include media("<lg") {
+      max-width: 100%;
+      margin-bottom: 2.2rem;
+    }
+
+    @include media("<md") {
+      font-size: 1.4rem;
+    }
+  }
+
+  .after-text {
+    margin-bottom: 0.8rem;
+    font-size: 2.5rem;
+
+    @include media("<lg") {
+      margin-bottom: 0.7rem;
+      font-size: 2.2rem;
+      letter-spacing: 0.08rem;
+    }
+  }
+
+  .swiper {
+    @include media("<xxl") {
+      margin-right: -2rem;
+    }
+
+    @include media("<lg") {
+      margin-left: -2rem;
+      padding-left: 2.8rem;
+      padding-right: 2.8rem;
+    }
+  }
+
+  .swiper-slide {
+    &.size-1 {
+      width: 25.8rem;
+
+      @include media("<lg") {
+        width: 20.9rem;
+      }
+
+      @include media("<md") {
+        width: 25.8rem;
+      }
+
+      .card-product {
+        height: 32.2rem;
+
+        @include media("<lg") {
+          height: 26.1rem;
+        }
+
+        @include media("<md") {
+          height: 32.2rem;
+        }
+      }
+    }
+
+    &.size-2 {
+      width: 27rem;
+
+      @include media("<lg") {
+        width: 21.9rem;
+      }
+
+      @include media("<md") {
+        width: 27rem;
+      }
+
+      .card-product {
+        height: 34rem;
+
+        @include media("<lg") {
+          height: 27.6rem;
+        }
+
+        @include media("<md") {
+          height: 34rem;
+        }
+      }
+    }
+
+    &.size-3 {
+      width: 25rem;
+
+      @include media("<lg") {
+        width: 20.3rem;
+      }
+
+      @include media("<md") {
+        width: 25rem;
+      }
+
+      .card-product {
+        height: 31.2rem;
+
+        @include media("<lg") {
+          height: 25.3rem;
+        }
+
+        @include media("<md") {
+          height: 31.2rem;
+        }
+      }
+    }
+  }
+}

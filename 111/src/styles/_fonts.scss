@@ -1,0 +1,25 @@
+@import "vars";
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("#{$fonts}Gilroy-Regular.woff2") format("woff2"), url("Gilroy-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("#{$fonts}Gilroy-Medium.woff2") format("woff2"), url("Gilroy-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Calypso";
+  src: url("#{$fonts}Calypso-Regular.woff2") format("woff2"), url("#{$fonts}Calypso-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

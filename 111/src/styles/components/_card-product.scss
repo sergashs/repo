@@ -1,0 +1,70 @@
+.card-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 1.54rem;
+  background-size: cover;
+
+  @include media("<lg") {
+    padding: 0.8rem 0.8rem 1rem 0.8rem;
+    border-radius: 1.2rem;
+  }
+
+  @include media("<md") {
+    padding-bottom: 1rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-end;
+    padding: 0.6rem 1.6rem;
+
+    @include media("<lg") {
+      font-size: 1.4rem;
+      padding-left: 1.3rem;
+      padding-right: 1.3rem;
+    }
+
+    @include media("<md") {
+      padding-left: 1.8rem;
+      padding-right: 1.8rem;
+      font-size: 1.5rem;
+    }
+
+    svg {
+      width: 0;
+      transition: 0.3s all;
+    }
+
+    &:hover {
+      color: #1d1d1b;
+      background: white;
+
+      svg {
+        width: 1.6rem;
+        margin-left: 0.7rem;
+      }
+    }
+  }
+
+  .card-tag {
+    font-weight: 400;
+    align-self: flex-start;
+    padding: 0.6rem 1.7rem;
+    border: solid 0.1rem white;
+    border-radius: 5rem;
+
+    @include media("<lg") {
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+      font-size: 1.4rem;
+    }
+
+    @include media("<md") {
+      padding: 0.8rem 2rem;
+      font-size: 1.5rem;
+    }
+  }
+}

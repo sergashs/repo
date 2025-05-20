@@ -1,0 +1,33 @@
+// vars
+$images: "../images/";
+$fonts: "../fonts/";
+
+// fonts
+$font-primary: "Roboto", sans-serif;
+$font-secondary: "Allura", cursive;
+$font-tertiary: "Gilroy";
+$font-quaternary: "Calypso";
+
+$breakpoints: (
+  sm: 575px,
+  md: 768px,
+  lg: 992px,
+  xl: 1280px,
+  xxl: 1440px,
+  xxxl: 1820px
+);
+
+// color vars
+$color-text: #1f1c4e;
+$color-primary: #feda00;
+$color-secondary: #5dbdfb;
+
+// base vars
+$text-color-base: $color-text;
+$body-bg: #f5f5f5;
+$font-family-base: $font-tertiary;
+$font-size-base: 16px;
+$font-weight-base: 500;
+$line-height-base: 1.35;
+$links-color-base: inherit;
+$transition: all 0.3s ease;
