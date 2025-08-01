@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    @import "https://fonts.googleapis.com/css?family=Inconsolata";
+
+    html {
+      min-height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      box-sizing: border-box;
+      height: 100%;
+      background-color: #000000;
+      background-image: radial-gradient(#11581e, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: "Inconsolata", Helvetica, sans-serif;
+      font-size: 1.5rem;
+      color: rgba(128, 255, 128, 0.8);
+      text-shadow: 0 0 1ex rgba(51, 255, 51, 1), 0 0 2px rgba(255, 255, 255, 0.8);
+    }
+
+    .noise {
+      pointer-events: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -1;
+      opacity: 0.02;
+    }
+
+    .overlay {
+      pointer-events: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+      background-size: auto 4px;
+      z-index: 1;
+    }
+
+    .overlay::before {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(0deg, transparent 0%, rgba(32, 128, 32, 0.2) 2%, rgba(32, 128, 32, 0.8) 3%, rgba(32, 128, 32, 0.2) 3%, transparent 100%);
+      background-repeat: no-repeat;
+      animation: scan 7.5s linear 0s infinite;
+    }
+
+    @keyframes scan {
+      0% {
+        background-position: 0 -100vh;
+      }
+      35%,
+      100% {
+        background-position: 0 100vh;
+      }
+    }
+
+    .terminal {
+      box-sizing: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      min-height: 100vh;
+      height: 100%;
+      max-width: 100%;
+      padding: 4rem;
+      text-transform: uppercase;
+    }
+
+    .output {
+      color: rgba(128, 255, 128, 0.8);
+      text-shadow: 0 0 1px rgba(51, 255, 51, 0.4), 0 0 2px rgba(255, 255, 255, 0.8);
+    }
+
+    .output::before {
+      content: "> ";
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    a::before {
+      content: "[";
+    }
+
+    a::after {
+      content: "]";
+    }
+
+    .errorcode {
+      color: white;
+    }
+
+    #countdown {
+      font-size: 2em;
+    }
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1000;
+    }
+  </style>
+  <body>
+    <div class="noise"></div>
+    <div class="overlay"></div>
+    <div class="terminal">
+      <h1>Will the <span class="errorcode">war end</span> on <span class="errorcode">August 8</span>, <span class="errorcode">2025</span>?</h1>
+      <p>> Time left until that day:</p>
+      <div id="countdown">Loading...</div>
+      <p class="output">May we be lucky.</p>
+      <video src="video.webm" autoplay muted loop style="display: none"></video>
+    </div>
+    <script>
+      function updateCountdown() {
+        const endDate = new Date("2025-08-08T00:00:00").getTime();
+        const now = new Date().getTime();
+        const distance = endDate - now;
+
+        if (distance <= 0) {
+          document.getElementById("countdown").innerHTML = "The day has come.";
+
+          const video = document.querySelector("video");
+          if (video) {
+            video.style.display = "";
+          }
+
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = `${days} <span style="text-transform: lowercase">Days</span> ` + `${hours} <span style="text-transform: lowercase">Hours</span> ` + `${minutes} <span style="text-transform: lowercase">Minutes</span> ` + `${seconds} <span style="text-transform: lowercase">Seconds</span>`;
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    </script>
+  </body>
+</html>
