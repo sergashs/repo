@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (max-width: 575px) {
+  .inputs-holder {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .inputs-holder .n-button--primary-type {
+    width: 100%;
+  }
+}
+
+.image-card {
+  position: relative;
+}
+
+.image-card .n-space {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.image-card .n-button {
+  background: white;
+}
+
+.image-card .n-button:hover {
+  background: white !important;
+}
