@@ -50,11 +50,11 @@ function getOrientation(img) {
 }
 
 const categoryOptions = [
+  { label: "Animals", value: "animals" },
   { label: "Nature", value: "nature" },
   { label: "Travel", value: "travel" },
   { label: "Food", value: "food" },
   { label: "Technology", value: "technology" },
-  { label: "Animals", value: "animals" },
   { label: "Architecture", value: "architecture" },
   { label: "Fashion", value: "fashion" },
   { label: "Sports", value: "sports" }
@@ -63,25 +63,19 @@ const categoryOptions = [
 
 <template>
   <div class="container">
-    <n-space class="inputs-holder" justify="center" horizontal style="margin-bottom: 20px"
-      ><n-select v-model:value="category" filterable tag :options="categoryOptions" placeholder="Select category" />
-
-      <n-input-number v-model:value="count" :min="1" :max="30" placeholder="Number of images" />
-
+    <n-space class="inputs-holder" justify="center" horizontal style="margin-bottom: 20px">
+      <n-select v-model:value="category" filterable tag :options="categoryOptions" placeholder="Select category" />
       <n-button type="primary" @click="fetchImages">Get Images</n-button>
     </n-space>
-
     <n-space justify="center" horizontal>
       <n-spin v-if="loading" size="medium" />
-      <div v-if="error" style="color: red">❌ {{ error }}</div>
+      <div v-if="error" style="color: red">❌ API request limit exceeded. Requests will reset in one hour. Please try again later.</div>
     </n-space>
-
     <masonry :cols="{ default: 3, 992: 2, 768: 1 }" :gutter="20">
       <div v-for="(img, i) in images" :key="i">
         <div class="image-card" :class="getOrientation(img)">
-          <n-skeleton v-if="!loaded[i]" height="400px" width="100%" :style="{ borderRadius: '8px' }" />
-          <img v-show="loaded[i]" :src="img.urls.regular" @load="onImageLoad(i)" />
-
+          <n-skeleton v-if="!loaded[i]" height="100%" width="100%" :style="{ borderRadius: '8px' }" />
+          <img :src="img.urls.regular" :class="{ loaded: loaded[i] }" @load="onImageLoad(i)" />
           <n-space v-show="loaded[i]" justify="center" horizontal style="margin-bottom: 20px">
             <n-button size="small" @click="downloadImage(img.urls.thumb)">Thumb</n-button>
             <n-button size="small" @click="downloadImage(img.urls.small)">Small</n-button>
@@ -142,5 +136,17 @@ img {
   height: 100%;
   border-radius: 8px;
   object-fit: cover;
+  opacity: 0;
+  transition: 0.5s ease-in;
+}
+
+img.loaded {
+  opacity: 1;
+}
+
+.n-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 </style>
