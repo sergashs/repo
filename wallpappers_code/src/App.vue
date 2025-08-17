@@ -7,9 +7,9 @@ import Sidebar from "@/components/layout/Sidebar.vue";
   <!-- <n-spin size="small"  /> -->
 
   <n-layout>
-    <Header :store="store" />
+    <Header />
 
-    <Sidebar class="sidebar" :store="store" />
+    <Sidebar class="sidebar" />
     <div class="content-holder">
       <router-view></router-view>
     </div>
