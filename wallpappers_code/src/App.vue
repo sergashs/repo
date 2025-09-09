@@ -22,7 +22,7 @@ watch(isDark, (val) => {
 
 <template>
   <n-config-provider :theme="isDark ? darkTheme : null">
-    <n-layout>
+    <n-layout style="min-height: 100vh">
       <n-space justify="end" style="padding: 20px">
         <n-switch v-model:value="isDark" size="large">
           <template #checked>🌙</template>
