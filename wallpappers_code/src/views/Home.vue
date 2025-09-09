@@ -1,8 +1,7 @@
 <script setup>
-import { ref } from "vue";
+import { ref, watch, onMounted } from "vue";
 
 const UNSPLASH_ACCESS_KEY = "VyoxZkHMlRKa2lr2dBxkJ8YdvSP9htPNchan2JdfQVA";
-
 const loading = ref(false);
 const error = ref(null);
 const images = ref([]);
@@ -12,24 +11,42 @@ const count = ref(30);
 
 const loaded = ref([]);
 
+const page = ref(1);
+const totalPages = ref(0);
+const totalResults = ref(0);
+
 const onImageLoad = (i) => {
   loaded.value[i] = true;
 };
 
-const fetchImages = async () => {
+const fetchImages = async (p = page.value) => {
   loading.value = true;
   error.value = null;
   images.value = [];
 
   try {
-    const res = await fetch(`https://api.unsplash.com/photos/random?query=${category.value}&count=${count.value}&client_id=${UNSPLASH_ACCESS_KEY}`);
+    const perPage = Math.min(count.value, 30);
+    const maxPages = Math.floor(1000 / perPage);
+
+    const res = await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(category.value)}&page=${p}&per_page=${perPage}&client_id=${UNSPLASH_ACCESS_KEY}`);
+
     if (!res.ok) throw new Error(`Error: ${res.status}`);
     const data = await res.json();
-    images.value = data;
-    loaded.value = Array(data.length).fill(false);
-    console.log(images.value);
+    console.log("unsplash:", data);
+
+    images.value = data.results || [];
+    totalResults.value = data.total || 0;
+
+    totalPages.value = Math.min(data.total_pages || 0, maxPages);
+
+    if (p > totalPages.value && totalPages.value > 0) {
+      images.value = [];
+    }
+
+    loaded.value = Array(images.value.length).fill(false);
+    page.value = p;
   } catch (err) {
-    error.value = err.message;
+    error.value = err.message || String(err);
   } finally {
     loading.value = false;
   }
@@ -59,6 +76,13 @@ const categoryOptions = [
   { label: "Fashion", value: "fashion" },
   { label: "Sports", value: "sports" }
 ];
+
+watch([category, count], () => {
+  page.value = 1;
+  fetchImages(1);
+});
+
+onMounted(() => fetchImages(1));
 </script>
 
 <template>
@@ -87,13 +111,7 @@ const categoryOptions = [
       </div>
     </masonry>
 
-    <!-- <div v-if="images.length" class="grid">
-      <div v-for="(img, i) in images" :key="i" class="image-card">
-        <div>
-          <img :src="img.urls.regular" />
-        </div>
-      </div>
-    </div> -->
+    <n-pagination v-model:page="page" :page-count="totalPages" @update:page="fetchImages" />
   </div>
 </template>
 
