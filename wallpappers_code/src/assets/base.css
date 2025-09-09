@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-body {
-  padding-top: 20px;
-}
-
 .container {
   max-width: 1200px;
   width: 100%;
@@ -44,10 +40,10 @@ body {
   padding: 0 10px;
 }
 
-.image-card .n-button {
+/* .image-card .n-button {
   background: white;
 }
 
 .image-card .n-button:hover {
   background: white !important;
-}
+} */

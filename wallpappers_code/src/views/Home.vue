@@ -86,7 +86,7 @@ onMounted(() => fetchImages(1));
 </script>
 
 <template>
-  <div class="container">
+  <div class="container" style="padding-top: 20px; padding-bottom: 20px">
     <n-space class="inputs-holder" justify="center" horizontal style="margin-bottom: 20px">
       <n-select v-model:value="category" filterable tag :options="categoryOptions" placeholder="Select category" />
       <n-button type="primary" @click="fetchImages">Get Images</n-button>
@@ -101,11 +101,10 @@ onMounted(() => fetchImages(1));
           <n-skeleton v-if="!loaded[i]" height="100%" width="100%" :style="{ borderRadius: '8px' }" />
           <img :src="img.urls.regular" :class="{ loaded: loaded[i] }" @load="onImageLoad(i)" />
           <n-space v-show="loaded[i]" justify="center" horizontal style="margin-bottom: 20px">
-            <n-button size="small" @click="downloadImage(img.urls.thumb)">Thumb</n-button>
-            <n-button size="small" @click="downloadImage(img.urls.small)">Small</n-button>
-            <n-button size="small" @click="downloadImage(img.urls.regular)">Regular</n-button>
-            <n-button size="small" @click="downloadImage(img.urls.full)">Full</n-button>
-            <n-button size="small" @click="downloadImage(img.urls.raw)">Raw</n-button>
+            <n-button type="primary" size="small" @click="downloadImage(img.urls.small)">Small</n-button>
+            <n-button type="primary" size="small" @click="downloadImage(img.urls.regular)">Regular</n-button>
+            <n-button type="primary" size="small" @click="downloadImage(img.urls.full)">Full</n-button>
+            <n-button type="primary" size="small" @click="downloadImage(img.urls.raw)">Raw</n-button>
           </n-space>
         </div>
       </div>
