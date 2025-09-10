@@ -110,7 +110,7 @@ onMounted(() => fetchImages(1));
       </div>
     </masonry>
 
-    <n-pagination v-model:page="page" :page-count="totalPages" @update:page="fetchImages" />
+    <n-pagination v-model:page="page" :page-count="totalPages" @update:page="(p) => fetchImages(p)" />
   </div>
 </template>
 
