@@ -141,6 +141,10 @@ onMounted(() => fetchImages(1));
   padding-bottom: 70%;
 }
 
+.image-card.square {
+  padding-bottom: 100%;
+}
+
 .image-card.portrait {
   padding-bottom: 150%;
 }
