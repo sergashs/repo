@@ -1,7 +1,5 @@
 <script setup>
 import { ref, onMounted, watch } from "vue";
-import Header from "@/components/layout/Header.vue";
-import Sidebar from "@/components/layout/Sidebar.vue";
 import { darkTheme } from "naive-ui";
 
 const isDark = ref(false);
@@ -30,8 +28,6 @@ watch(isDark, (val) => {
         </n-switch>
       </n-space>
 
-      <Header />
-      <Sidebar class="sidebar" />
       <div class="content-holder">
         <router-view></router-view>
       </div>
