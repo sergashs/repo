@@ -200,7 +200,7 @@ img {
   border-radius: 8px;
   object-fit: cover;
   opacity: 0;
-  transition: 0.5s ease-in;
+  /* transition: 0.7s ease; */
 }
 
 img.loaded {
